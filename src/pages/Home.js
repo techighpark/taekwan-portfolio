@@ -22,7 +22,7 @@ const Row = styled.div`
 `;
 const Text = styled.div`
   margin: 10px;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 14px;
 `;
 const Separator = styled.div`
