@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import high_booker from "../img/high-booker.JPG";
@@ -51,14 +50,6 @@ const ProjectPhoto = styled.img`
   :hover {
     opacity: 0.3;
   }
-`;
-
-const BlankCover = styled.div`
-  width: 50%;
-  height: 500px;
-  background-color: gray;
-  margin: 5px 0px;
-  border-radius: 10px;
 `;
 
 const Home = () => {
