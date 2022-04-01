@@ -28,5 +28,10 @@ body{
     font-size:12px;
     font-weight:300;
     margin:0px ;
+    /* -ms-overflow-style: none; */
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 `;

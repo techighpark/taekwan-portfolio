@@ -7,7 +7,7 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 0px 100px;
   @media screen and (max-width: 800px) {
     align-items: flex-start;
   }

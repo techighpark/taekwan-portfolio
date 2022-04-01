@@ -4,7 +4,6 @@ import Header from "./Header";
 const StyledLayout = styled.div`
   background-color: ${props => props.theme.bgColor};
   width: 100%;
-  padding: 0% 15%;
 `;
 
 const Layout = ({ children }) => {
