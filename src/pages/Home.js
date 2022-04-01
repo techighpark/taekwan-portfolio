@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import high_booker from "../img/high-booker.JPG";
+import high_booker_databse from "../img/high-booker-database.png";
 
 const ProjectContainer = styled.div`
   width: 100%;
@@ -53,13 +54,13 @@ const Separator = styled.div`
 const Project = styled.div`
   width: 100%;
   position: relative;
-  padding-bottom: 15vh;
+  padding-bottom: 50vh;
 `;
 const ProjectTitle = styled.div`
   position: absolute;
   font-size: 70px;
   font-weight: 300;
-  margin-bottom: 70px;
+  z-index: 1;
   @media screen and (max-width: 500px) {
     font-size: 40px;
   }
@@ -80,10 +81,10 @@ const StackText = styled(Text)`
 
 const Overlay = styled.div`
   position: absolute;
-  bottom: -2vh;
+  bottom: -1vh;
   left: 0;
   width: 0vw;
-  height: 64vh;
+  height: 62vh;
   background-color: rgba(255, 255, 255, 0.2);
   overflow: hidden;
   transition: 0.5s ease;
@@ -92,7 +93,7 @@ const Overlay = styled.div`
 
 const ProjectContents = styled.div`
   position: relative;
-  top: 7vh;
+  top: 20vh;
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -104,11 +105,39 @@ const ProjectContents = styled.div`
   }
 `;
 
-const HighBookerPhoto = styled.img`
-  display: block;
+const ProjectPhoto = styled.img`
   max-width: 100%;
   height: 60vh;
   object-fit: cover;
+  border-radius: 10px;
+  @media screen and (max-width: 500px) {
+    height: 300px;
+  }
+`;
+
+const HighBookerBackTitle = styled(ProjectTitle)`
+  width: 100vw;
+  text-align: center;
+`;
+
+const HighBookerBackContents = styled.div`
+  position: relative;
+  top: 20vh;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  &:hover {
+    ${Overlay} {
+      width: 98vw;
+      left: 0;
+    }
+  }
+`;
+
+const HighBookerBackPhoto = styled.img`
+  max-width: 100%;
+  height: 60vh;
+  object-fit: contain;
   border-radius: 10px;
   @media screen and (max-width: 500px) {
     height: 300px;
@@ -155,7 +184,7 @@ const Home = () => {
           <ProjectTitle>HIGH-BOOKER: Web</ProjectTitle>
           <ProjectContents>
             <Link to={"/high-booker"}>
-              <HighBookerPhoto src={high_booker} />
+              <ProjectPhoto src={high_booker} />
             </Link>
             <Overlay>
               <ProjectStack>
@@ -169,12 +198,12 @@ const Home = () => {
           </ProjectContents>
         </Project>
         <Project>
-          <ProjectTitle>HIGH-BOOKER: Database</ProjectTitle>
-          <ProjectContents>
+          <HighBookerBackTitle>HIGH-BOOKER: Database</HighBookerBackTitle>
+          <HighBookerBackContents>
             <Link to={"/high-booker"}>
-              <HighBookerPhoto src={high_booker} />
+              <HighBookerBackPhoto src={high_booker_databse} />
             </Link>
-          </ProjectContents>
+          </HighBookerBackContents>
         </Project>
       </ProjectContainer>
     </Layout>
