@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import high_booker from "../img/high-booker.JPG";
-import high_booker_databse from "../img/high-booker-database.png";
+import HighSearchBook from "../components/high-search-book/HighSearchBook";
+import HighBookerWeb from "../components/high-booker/HighBookerWeb";
+import HighBookerDataBase from "../components/high-booker-database/HighBookerDataBase";
+import HighZoom from "../components/high-zoom/highZoom";
 
 const ProjectContainer = styled.div`
   width: 100%;
@@ -45,104 +46,6 @@ const Text = styled.div`
     padding-bottom: 15px;
   }
 `;
-const Separator = styled.div`
-  width: 80%;
-  border-bottom: 0.5px solid white;
-  margin-bottom: 2vh;
-`;
-
-const Project = styled.div`
-  width: 100%;
-  position: relative;
-  padding-bottom: 50vh;
-`;
-const ProjectTitle = styled.div`
-  position: absolute;
-  font-size: 70px;
-  font-weight: 300;
-  z-index: 1;
-  @media screen and (max-width: 500px) {
-    font-size: 40px;
-  }
-`;
-
-const ProjectStack = styled.div`
-  height: 100%;
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const StackText = styled(Text)`
-  font-weight: 500;
-  padding: 10px;
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  bottom: -1vh;
-  left: 0;
-  width: 0vw;
-  height: 62vh;
-  background-color: rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-  transition: 0.5s ease;
-  border-radius: 10px;
-`;
-
-const ProjectContents = styled.div`
-  position: relative;
-  top: 20vh;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  &:hover {
-    ${Overlay} {
-      width: 98vw;
-      left: 0;
-    }
-  }
-`;
-
-const ProjectPhoto = styled.img`
-  max-width: 100%;
-  height: 60vh;
-  object-fit: cover;
-  border-radius: 10px;
-  @media screen and (max-width: 500px) {
-    height: 300px;
-  }
-`;
-
-const HighBookerBackTitle = styled(ProjectTitle)`
-  width: 100vw;
-  text-align: center;
-`;
-
-const HighBookerBackContents = styled.div`
-  position: relative;
-  top: 20vh;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  &:hover {
-    ${Overlay} {
-      width: 98vw;
-      left: 0;
-    }
-  }
-`;
-
-const HighBookerBackPhoto = styled.img`
-  max-width: 100%;
-  height: 60vh;
-  object-fit: contain;
-  border-radius: 10px;
-  @media screen and (max-width: 500px) {
-    height: 300px;
-  }
-`;
 
 const Home = () => {
   return (
@@ -178,33 +81,11 @@ const Home = () => {
           </TextContainer>
         </Row>
       </StackContainer>
-      <Separator />
       <ProjectContainer>
-        <Project>
-          <ProjectTitle>HIGH-BOOKER: Web</ProjectTitle>
-          <ProjectContents>
-            <Link to={"/high-booker"}>
-              <ProjectPhoto src={high_booker} />
-            </Link>
-            <Overlay>
-              <ProjectStack>
-                <StackText>React JS</StackText>
-                <StackText>ApolloGraphql</StackText>
-                <StackText>React Hook Form</StackText>
-                <StackText>Styled Components</StackText>
-                <StackText>Netlify</StackText>
-              </ProjectStack>
-            </Overlay>
-          </ProjectContents>
-        </Project>
-        <Project>
-          <HighBookerBackTitle>HIGH-BOOKER: Database</HighBookerBackTitle>
-          <HighBookerBackContents>
-            <Link to={"/high-booker"}>
-              <HighBookerBackPhoto src={high_booker_databse} />
-            </Link>
-          </HighBookerBackContents>
-        </Project>
+        <HighBookerWeb />
+        <HighBookerDataBase />
+        <HighSearchBook />
+        <HighZoom />
       </ProjectContainer>
     </Layout>
   );

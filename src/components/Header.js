@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
@@ -40,6 +41,10 @@ const PortfolioLink = styled.div`
   font-size: 16px;
   font-weight: 200;
   margin-left: 30px;
+  cursor: pointer;
+  :hover {
+    font-weight: 300;
+  }
   @media screen and (max-width: 800px) {
     margin-bottom: 10px;
   }
@@ -48,14 +53,30 @@ const PortfolioLink = styled.div`
     font-size: 14px;
   }
 `;
+const InfoContainer = styled.ul`
+  position: absolute;
+  top: 100px;
+  right: 150px;
+  font-size: 20px;
+  font-weight: 100;
+`;
 
 const Header = () => {
+  const [visible, setVisible] = useState("");
+  console.log(visible);
+
   return (
     <StyledHeader>
       <Title>TAE KWAN</Title>
       <LinkContainer>
         <PortfolioLink>PORTFOLIO</PortfolioLink>
-        <PortfolioLink>INFO</PortfolioLink>
+        <PortfolioLink visible onClick={() => setVisible("info")}>
+          INFO
+        </PortfolioLink>
+        <InfoContainer>
+          <li>email_ techigh.b@gmail.com</li>
+          <li>mobile_ 010.6644.3892</li>
+        </InfoContainer>
         <PortfolioLink>CONTACT</PortfolioLink>
       </LinkContainer>
     </StyledHeader>
