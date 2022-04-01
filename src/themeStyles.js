@@ -21,14 +21,12 @@ export const GlobalStyles = createGlobalStyle`
 }
 ${reset}
 body{
-    width:100vw;
     background-color:${props => props.theme.bgColor};
     color:${props => props.theme.fontColor};
     font-family : ${fonts.Lato};
     font-size:12px;
     font-weight:300;
-    margin:0px ;
-    /* -ms-overflow-style: none; */
+    position:relative;
 }
 ::-webkit-scrollbar { 
     display: none; 

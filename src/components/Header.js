@@ -3,11 +3,9 @@ import styled from "styled-components";
 const StyledHeader = styled.div`
   width: 100%;
   height: 100%;
-  margin: 50px 0px 50px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 100px;
   @media screen and (max-width: 800px) {
     align-items: flex-start;
   }
@@ -35,7 +33,7 @@ const LinkContainer = styled.div`
   }
   @media screen and (max-width: 500px) {
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10vh;
   }
 `;
 const PortfolioLink = styled.div`
