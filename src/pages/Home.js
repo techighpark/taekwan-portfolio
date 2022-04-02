@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import { fonts } from "../themeStyles";
 
 const MainContainer = styled.div`
   height: 95vh;
@@ -14,25 +13,27 @@ const MainContainer = styled.div`
 const FieldContainer = styled.div`
   position: relative;
   width: 100vw;
-  top: 50vh;
+  top: 400px;
   left: 0vw;
 
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 800px) {
     width: 50vw;
-    top: 35vh;
+    top: 270px;
   }
   @media screen and (max-width: 500px) {
     width: 50vw;
-    top: 22vh;
+    top: 120px;
   }
 `;
 const FieldText = styled.div`
-  font-family: ${fonts.Staliches};
-  font-size: 130px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.1em;
+  font-size: 120px;
   text-align: left;
   @media screen and (max-width: 500px) {
-    font-size: 70px;
+    font-size: 60px;
   }
 `;
 
@@ -49,7 +50,7 @@ const MainStackContainer = styled.div`
     top: 40vh;
   }
   @media screen and (max-width: 500px) {
-    top: 24vh;
+    top: 22vh;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -85,7 +86,7 @@ const Home = () => {
     <Layout>
       <MainContainer>
         <FieldContainer>
-          <FieldText>FRONT-ENGINEER</FieldText>
+          <FieldText>Front-Engineer</FieldText>
         </FieldContainer>
         <MainStackContainer>
           <Row>

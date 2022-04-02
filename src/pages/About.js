@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const AboutContainer = styled.div`
   padding-top: 500px;
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
     padding-top: 300px;
   }
@@ -12,9 +12,9 @@ const AboutContainer = styled.div`
 
 const FieldContainer = styled.div`
   position: absolute;
-  width: 50vw;
-  top: 50vh;
-  left: 10vw;
+  width: 100vw;
+  top: 400px;
+  right: 30px;
 
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 800px) {
@@ -27,8 +27,10 @@ const FieldText = styled.div`
   font-size: 70px;
   font-weight: 500;
   letter-spacing: -0.1em;
-  text-align: left;
+  text-align: right;
   @media screen and (max-width: 500px) {
+    font-size: 50px;
+    font-weight: 400;
   }
 `;
 

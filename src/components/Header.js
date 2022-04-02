@@ -34,6 +34,9 @@ const Line = styled.div`
   top: 4vh;
   border-top: 0.5px solid;
   animation: ${LineSnake} 20s infinite linear;
+  @media screen and (max-width: 500px) {
+    top: 9vh;
+  }
 `;
 const HeaderTitle = styled.div`
   width: 100%;
