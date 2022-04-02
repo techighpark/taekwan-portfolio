@@ -5,16 +5,16 @@ import { keyframes } from "styled-components";
 
 const LineSnake = keyframes`
 0%{
- width:25%;
- left:-50%;
+ width:50vw;
+ left:-50vw;
 }
 50%{
-  width:25%;
-  left:25%;
+  width:50vw;
+  left:25vw;
 }
 100%{
-  width:25%;
-  left:100%;
+  width:50vw;
+  left:100vw;
 }`;
 
 const StyledHeader = styled.div`
@@ -22,8 +22,7 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 0.5px solid gray;
-  box-sizing: border-box; */
+  /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
@@ -41,8 +40,7 @@ const HeaderTitle = styled.div`
   font-size: 24px;
   font-weight: 200;
 
-  /* border: 0.5px solid gray;
-  box-sizing: border-box; */
+  /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
     text-align: center;
   }
@@ -53,8 +51,7 @@ const HeaderLinks = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  /* border: 0.5px solid gray;
-  box-sizing: border-box; */
+  /* border: 0.5px solid gray; */
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -67,8 +64,8 @@ const HeaderLink = styled.div`
   font-weight: 200;
   margin-left: 30px;
 
-  /* border: 0.5px solid gray;
-  box-sizing: border-box; */
+  /* border: 0.5px solid gray; */
+
   cursor: pointer;
   :hover {
     font-weight: 300;
@@ -86,20 +83,19 @@ const PopUpWrapper = styled.div`
   left: 0vw;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 
-  /* border: 0.5px solid blue;
-  box-sizing: border-box; */
+  /* border: 0.5px solid blue; */
 `;
 
 const PopUp = styled.div`
   position: absolute;
   width: 250px;
   height: 400px;
-  top: 40vh;
-  left: 50vw;
+  top: 250px;
+  right: -80px;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
 
   display: flex;
   flex-direction: column;
@@ -107,8 +103,7 @@ const PopUp = styled.div`
   align-items: center;
   opacity: ${props => (props.visible ? "1" : "0")};
 
-  /* border: 2px solid blue;
-  box-sizing: border-box; */
+  /* border: 2px solid blue; */
 `;
 
 const ContactTitle = styled.div`
@@ -116,8 +111,7 @@ const ContactTitle = styled.div`
   color: rgba(255, 255, 255, 1);
   letter-spacing: 0.3rem;
 
-  /* border: 0.5px solid yellow;
-  box-sizing: border-box; */
+  /* border: 0.5px solid yellow; */
 `;
 
 const ContactContainer = styled.div`
@@ -127,8 +121,7 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  /* border: 0.5px solid red;
-  box-sizing: border-box; */
+  /* border: 0.5px solid red; */
 `;
 
 const ContactWrapper = styled.div`
@@ -137,8 +130,7 @@ const ContactWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  /* border: 0.5px solid yellow;
-  box-sizing: border-box; */
+  /* border: 0.5px solid yellow; */
 `;
 
 const Contact = styled.span`
@@ -148,15 +140,13 @@ const Contact = styled.span`
   padding-bottom: 10%;
   color: rgba(255, 255, 255, 0.5);
 
-  /* border: 0.5px solid skyblue;
-  box-sizing: border-box; */
+  /* border: 0.5px solid skyblue; */
 `;
 const ContactContent = styled.span`
   font-weight: 300;
   font-size: 12px;
 
-  /* border: 0.5px solid skyblue;
-  box-sizing: border-box; */
+  /* border: 0.5px solid skyblue; */
 `;
 const ContactContentNum = styled(ContactContent)`
   letter-spacing: 0.1rem;
@@ -199,7 +189,7 @@ const Header = () => {
         <HeaderLink>
           <Link to={"/portfolio"}>PORTFOLIO</Link>
         </HeaderLink>
-        <HeaderLink>INFO</HeaderLink>
+        <HeaderLink>ABOUT</HeaderLink>
         <HeaderLink onClick={() => setVisible(true)}>CONTACT</HeaderLink>
       </HeaderLinks>
       {visible ? (

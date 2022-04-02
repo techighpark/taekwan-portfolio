@@ -1,51 +1,55 @@
 import styled from "styled-components";
-import { keyframes } from "styled-components";
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
 
 const MainContainer = styled.div`
   height: 95vh;
 
-  /* border: 1px solid tomato;
-  box-sizing: border-box; */
-`;
-const Pulse = keyframes`
-  0% {
-    left: -100vw;
-  }
-  100% {
-    left: 100vw;
+  /* border: 1px solid tomato; */
+  @media screen and (max-width: 500px) {
+    height: 68vh;
   }
 `;
 
 const FieldContainer = styled.div`
-  position: absolute;
-  width: 98vw;
-  top: 45vh;
-  left: 1vw;
-  animation: ${Pulse} 10s infinite linear;
+  position: relative;
+  width: 100vw;
+  top: 50vh;
+  left: 0vw;
 
-  /* border: 0.5px solid yellow;
-  box-sizing: border-box; */
+  /* border: 0.5px solid yellow; */
+  @media screen and (max-width: 800px) {
+    width: 50vw;
+    top: 35vh;
+  }
+  @media screen and (max-width: 500px) {
+    width: 50vw;
+    top: 22vh;
+  }
 `;
 const FieldText = styled.div`
   font-family: ${fonts.Staliches};
-  font-size: 150px;
+  font-size: 130px;
   text-align: left;
+  @media screen and (max-width: 500px) {
+    font-size: 70px;
+  }
 `;
 
 const MainStackContainer = styled.div`
   position: relative;
-  top: 75vh;
+  top: 55vh;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
-  /* border: 2px solid tomato;
-  box-sizing: border-box; */
+  /* border: 2px solid tomato; */
+  @media screen and (max-width: 800px) {
+    top: 40vh;
+  }
   @media screen and (max-width: 500px) {
-    top: 50%;
+    top: 24vh;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -57,8 +61,7 @@ const Row = styled.div`
   justify-content: flex-end;
   padding: 5px 0;
 
-  /* border: 0.5px solid yellow;
-  box-sizing: border-box; */
+  /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -70,10 +73,10 @@ const Stack = styled.div`
   font-weight: 100;
   padding-left: 20px;
 
-  /* border: 1px solid burlywood;
-  box-sizing: border-box; */
+  /* border: 1px solid burlywood; */
   @media screen and (max-width: 500px) {
     padding-left: 0px;
+    padding-bottom: 10px;
   }
 `;
 
