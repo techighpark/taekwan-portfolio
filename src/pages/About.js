@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 const AboutContainer = styled.div`
-  padding-top: 500px;
+  padding-top: 600px;
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
     padding-top: 300px;

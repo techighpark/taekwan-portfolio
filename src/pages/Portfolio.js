@@ -5,9 +5,10 @@ import highBookerWeb from "../img/high-booker.JPG";
 import highBookerDB from "../img/high-booker-database.png";
 import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
+import { Link } from "react-router-dom";
 
 const PortfolioContainer = styled.div`
-  padding-top: 500px;
+  padding-top: 600px;
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
     padding-top: 300px;
@@ -34,67 +35,93 @@ const FieldText = styled.div`
     font-size: 50px;
     font-weight: 400;
   }
+  ::first-letter {
+    /* font-weight: 800; */
+  }
 `;
 const PortfolioWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 30rem;
-  row-gap: 400px;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
   padding-bottom: 400px;
-  /* justify-content: center; */
-  /* border: 3px solid goldenrod; */
-  /* @media screen and (max-width: 1400px) {
-    grid-template-columns: repeat(1, 1100px);
-    grid-template-rows: repeat(4, 900px);
-  }
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: repeat(1, 900px);
-    grid-template-rows: repeat(4, 800px);
-  }
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: repeat(1, 700px);
-    grid-template-rows: repeat(4, 700px);
-  }
-  @media screen and (max-width: 800px) {
-    grid-template-columns: repeat(1, 500px);
-    grid-template-rows: repeat(4, 500px);
-  }*/
-  @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: 50rem;
-    row-gap: 200px;
-  }
-`;
-const ProjectContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgba(255, 255, 255, 0.1);
 
-  @media screen and (max-width: 900px) {
-    flex-direction: column;
-    justify-content: flex-start;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
   }
 `;
 const ProjectTitle = styled.div`
-  font-size: 24px;
+  font-size: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  color: ${props => props.theme.fontColor};
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1000;
+
   /* border: 1px solid red; */
 `;
+const Subtitle = styled.div`
+  font-size: 20px;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  font-weight: 200;
+  color: black;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1000;
+  background-color: white;
 
-const PortfolioCover = styled.div`
-  background-image: url(${props => props.src});
-  background-size: contain;
+  /* border: 1px solid red; */
+`;
+const ProjectContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* border: 3px solid tomato; */
+  &::before {
+    content: "";
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* border: 2px solid orange; */
+    display: block;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 999;
+  }
+  :hover {
+    &::before {
+      opacity: 0.8;
+    }
+    ${ProjectTitle} {
+      opacity: 1;
+    }
+    ${Subtitle} {
+      opacity: 1;
+    }
+  }
+`;
+
+const PortfolioCover = styled.img`
+  position: relative;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 30rem;
-  align-items: center;
-  @media screen and (max-width: 900px) {
-    background-position: top;
-    height: 30rem;
-    width: 100%;
-  }
+  width: 100%;
 
-  /* border: 3px solid blue;
-  box-sizing: border-box; */
+  /* height: 300px; */
+  /* border: 3px solid blue; */
 `;
 
 const Portfolio = () => {
@@ -105,25 +132,33 @@ const Portfolio = () => {
       </FieldContainer>
       <PortfolioContainer>
         <PortfolioWrapper>
-          <ProjectContainer>
-            <PortfolioCover src={highBookerWeb}>
-              <ProjectTitle>BookerWeb</ProjectTitle>
-            </PortfolioCover>
+          <ProjectContainer content={"Booker:Web"}>
+            <Link to={"booker-web"}>
+              <PortfolioCover src={highBookerWeb} />
+            </Link>
+            <ProjectTitle>Booker</ProjectTitle>
+            <Subtitle>Web</Subtitle>
           </ProjectContainer>
           <ProjectContainer>
-            <PortfolioCover src={highBookerDB}>
-              <ProjectTitle>BookerDB</ProjectTitle>
-            </PortfolioCover>
+            <Link to={"booker-db"}>
+              <PortfolioCover src={highBookerDB} />
+            </Link>
+            <ProjectTitle>Booker</ProjectTitle>
+            <Subtitle>Database</Subtitle>
           </ProjectContainer>
           <ProjectContainer>
-            <PortfolioCover src={highSearchBook}>
-              <ProjectTitle>SearchBook</ProjectTitle>
-            </PortfolioCover>
+            <Link to={"search-book"}>
+              <PortfolioCover src={highSearchBook} />
+            </Link>
+            <ProjectTitle>Search-Books</ProjectTitle>
+            <Subtitle>Web</Subtitle>
           </ProjectContainer>
-          <ProjectContainer last>
-            <PortfolioCover src={highVedio}>
-              <ProjectTitle>VedioCall</ProjectTitle>
-            </PortfolioCover>
+          <ProjectContainer>
+            <Link to={"high-video"}>
+              <PortfolioCover src={highVedio} />
+            </Link>
+            <ProjectTitle>High-Video</ProjectTitle>
+            <Subtitle>Web</Subtitle>
           </ProjectContainer>
         </PortfolioWrapper>
       </PortfolioContainer>
