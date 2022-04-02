@@ -8,8 +8,29 @@ import highVedio from "../img/high-booker-web-3.png";
 
 const PortfolioContainer = styled.div`
   padding-top: 500px;
+  /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
     padding-top: 300px;
+  }
+`;
+const FieldContainer = styled.div`
+  position: absolute;
+  width: 50vw;
+  top: 50vh;
+  left: 10vw;
+
+  /* border: 0.5px solid yellow; */
+  @media screen and (max-width: 800px) {
+  }
+  @media screen and (max-width: 500px) {
+  }
+`;
+const FieldText = styled.div`
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -0.1em;
+  text-align: left;
+  @media screen and (max-width: 500px) {
   }
 `;
 const PortfolioWrapper = styled.div`
@@ -77,7 +98,9 @@ const PortfolioCover = styled.div`
 const Portfolio = () => {
   return (
     <Layout>
-      The Work
+      <FieldContainer>
+        <FieldText>The Work</FieldText>
+      </FieldContainer>
       <PortfolioContainer>
         <PortfolioWrapper>
           <ProjectContainer>

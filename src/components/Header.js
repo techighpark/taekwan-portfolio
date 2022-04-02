@@ -31,8 +31,8 @@ const StyledHeader = styled.div`
 const Line = styled.div`
   position: absolute;
   width: 100%;
-  height: 25px;
-  border-bottom: 0.5px solid;
+  top: 4vh;
+  border-top: 0.5px solid;
   animation: ${LineSnake} 20s infinite linear;
 `;
 const HeaderTitle = styled.div`
@@ -189,7 +189,9 @@ const Header = () => {
         <HeaderLink>
           <Link to={"/portfolio"}>PORTFOLIO</Link>
         </HeaderLink>
-        <HeaderLink>ABOUT</HeaderLink>
+        <HeaderLink>
+          <Link to={"/about"}>ABOUT</Link>
+        </HeaderLink>
         <HeaderLink onClick={() => setVisible(true)}>CONTACT</HeaderLink>
       </HeaderLinks>
       {visible ? (
