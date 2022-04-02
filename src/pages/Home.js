@@ -1,92 +1,105 @@
 import styled from "styled-components";
 import Layout from "../components/Layout";
-import HighSearchBook from "../components/high-search-book/HighSearchBook";
-import HighBookerWeb from "../components/high-booker/HighBookerWeb";
-import HighBookerDataBase from "../components/high-booker-database/HighBookerDataBase";
-import HighZoom from "../components/high-zoom/highZoom";
+import { fonts } from "../themeStyles";
 
-const ProjectContainer = styled.div`
-  width: 100%;
-  padding-bottom: 20vh;
+const MainContainer = styled.div`
+  height: 95vh;
+
+  /* border: 1px solid tomato;
+  box-sizing: border-box; */
 `;
-const StackContainer = styled.div`
-  width: 100%;
+
+const FieldContainer = styled.div`
+  position: absolute;
+  width: 98vw;
+  top: 45vh;
+  left: 1vw;
+
+  /* border: 0.5px solid yellow;
+  box-sizing: border-box; */
+`;
+const FieldText = styled.div`
+  font-family: ${fonts.Staliches};
+  font-size: 150px;
+  text-align: left;
+`;
+
+const MainStackContainer = styled.div`
+  position: relative;
+  top: 75vh;
+  right: 0;
   display: flex;
   flex-direction: column;
-  padding-top: 60vh;
-  padding-bottom: 20vh;
+  align-items: flex-end;
+
+  /* border: 2px solid tomato;
+  box-sizing: border-box; */
   @media screen and (max-width: 500px) {
+    top: 50%;
     flex-direction: row;
-    padding-top: 30vh;
+    align-items: flex-start;
   }
 `;
+
 const Row = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1vh;
-  @media screen and (max-width: 500px) {
-    justify-content: center;
-    text-align: center;
-  }
-`;
-const TextContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
+  padding: 5px 0;
+
+  /* border: 0.5px solid yellow;
+  box-sizing: border-box; */
+
   @media screen and (max-width: 500px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
-const Text = styled.div`
-  font-weight: 300;
+const Stack = styled.div`
   font-size: 14px;
-  padding-right: 15px;
+  font-weight: 100;
+  padding-left: 20px;
+
+  /* border: 1px solid burlywood;
+  box-sizing: border-box; */
   @media screen and (max-width: 500px) {
-    padding-right: 0px;
-    padding-bottom: 15px;
+    padding-left: 0px;
   }
 `;
 
 const Home = () => {
   return (
     <Layout>
-      <StackContainer>
-        <Row>
-          <TextContainer>
-            <Text>HTML</Text>
-            <Text>CSS</Text>
-            <Text>JavaScript</Text>
-            <Text>TypeScript</Text>
-            <Text>Node JS</Text>
-            <Text>React JS</Text>
-            <Text>React Native</Text>
-          </TextContainer>
-        </Row>
-        <Row>
-          <TextContainer>
-            <Text>Web Sockets</Text>
-            <Text>WebRTC</Text>
-            <Text>AWS S3</Text>
-            <Text>Rest API</Text>
-            <Text>GraphQL</Text>
-          </TextContainer>
-        </Row>
-        <Row>
-          <TextContainer>
-            <Text>MySQL</Text>
-            <Text>Postgresql</Text>
-            <Text>Prisma</Text>
-            <Text>ApolloGraphql</Text>
-            <Text>Nest JS</Text>
-          </TextContainer>
-        </Row>
-      </StackContainer>
-      <ProjectContainer>
-        <HighBookerWeb />
-        <HighBookerDataBase />
-        <HighSearchBook />
-        <HighZoom />
-      </ProjectContainer>
+      <MainContainer>
+        <FieldContainer>
+          <FieldText>FRONT-ENGINEER</FieldText>
+        </FieldContainer>
+        <MainStackContainer>
+          <Row>
+            <Stack>HTML</Stack>
+            <Stack>CSS</Stack>
+            <Stack>JavaScript</Stack>
+            <Stack>TypeScript</Stack>
+            <Stack>Node JS</Stack>
+            <Stack>React JS</Stack>
+            <Stack>React Native</Stack>
+          </Row>
+          <Row>
+            <Stack>Web Sockets</Stack>
+            <Stack>WebRTC</Stack>
+            <Stack>AWS S3</Stack>
+            <Stack>Rest API</Stack>
+            <Stack>GraphQL</Stack>
+          </Row>
+          <Row>
+            <Stack>MySQL</Stack>
+            <Stack>Postgresql</Stack>
+            <Stack>Prisma</Stack>
+            <Stack>ApolloGraphql</Stack>
+            <Stack>Nest JS</Stack>
+          </Row>
+        </MainStackContainer>
+      </MainContainer>
     </Layout>
   );
 };

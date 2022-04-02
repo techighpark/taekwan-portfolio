@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { darkMode, GlobalStyles, lightMode } from "./themeStyles";
-import HighBooker from "./pages/HighBooker";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   const themeDarkMode = false;
@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/high-booker" element={<HighBooker />}></Route>
+          <Route path="/portfolio" element={<Portfolio />}></Route>
         </Routes>
       </Router>
     </ThemeProvider>
