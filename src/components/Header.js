@@ -1,19 +1,40 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
+
+const LineSnake = keyframes`
+0%{
+ width:25%;
+ left:-50%;
+}
+50%{
+  width:25%;
+  left:25%;
+}
+100%{
+  width:25%;
+  left:100%;
+}`;
 
 const StyledHeader = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   /* border: 0.5px solid gray;
   box-sizing: border-box; */
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
   }
+`;
+const Line = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  border-bottom: 0.5px solid;
+  animation: ${LineSnake} 20s infinite linear;
 `;
 const HeaderTitle = styled.div`
   width: 100%;
@@ -84,12 +105,13 @@ const PopUp = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  opacity: ${props => (props.visible ? "1" : "0")};
 
   /* border: 2px solid blue;
   box-sizing: border-box; */
 `;
 
-const ContactTitle = styled.span`
+const ContactTitle = styled.div`
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
   letter-spacing: 0.3rem;
@@ -148,7 +170,7 @@ const CloseBtn = styled.div`
 
   &::before {
     content: "\\00d7";
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 100;
     color: rgba(255, 255, 255, 0.5);
     z-index: 999;
@@ -169,7 +191,10 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <HeaderTitle>TAE KWAN</HeaderTitle>
+      <HeaderTitle>
+        <Link to={"/"}>TAE KWAN</Link>
+      </HeaderTitle>
+      <Line />
       <HeaderLinks>
         <HeaderLink>
           <Link to={"/portfolio"}>PORTFOLIO</Link>
@@ -179,7 +204,7 @@ const Header = () => {
       </HeaderLinks>
       {visible ? (
         <PopUpWrapper>
-          <PopUp>
+          <PopUp visible={visible}>
             <ContactTitle>CONTACT</ContactTitle>
             <CloseBtn onClick={onClickCloseBtn} />
             <ContactContainer>

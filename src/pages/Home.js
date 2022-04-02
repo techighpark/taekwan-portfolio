@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
 
@@ -8,12 +9,21 @@ const MainContainer = styled.div`
   /* border: 1px solid tomato;
   box-sizing: border-box; */
 `;
+const Pulse = keyframes`
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 100vw;
+  }
+`;
 
 const FieldContainer = styled.div`
   position: absolute;
   width: 98vw;
   top: 45vh;
   left: 1vw;
+  animation: ${Pulse} 10s infinite linear;
 
   /* border: 0.5px solid yellow;
   box-sizing: border-box; */
