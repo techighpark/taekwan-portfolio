@@ -6,20 +6,23 @@ import highBookerDB from "../img/high-booker-database.png";
 import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
 import { Link } from "react-router-dom";
+import { keyframes } from "styled-components";
 
 const PortfolioContainer = styled.div`
-  padding-top: 70vh;
-  /* border: 1px solid tomato; */
+  position: relative;
+  padding-top: 110vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
-    padding-top: 70vh;
+    padding-top: 130vh;
   }
 `;
 const FieldContainer = styled.div`
   position: absolute;
   top: 50vh;
+  z-index: 11;
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
     top: 70vh;
@@ -36,11 +39,16 @@ const FieldText = styled.div`
   }
 `;
 const PortfolioList = styled.div`
+  position: absolute;
+  top: 60vh;
   width: 100%;
-  padding-bottom: 140px;
+  padding-bottom: 150px;
   text-align: right;
 
-  /* border: 1px solid; */
+  @media screen and (max-width: 500px) {
+    top: 100vh;
+    text-align: center;
+  }
 `;
 const Portfolios = styled.div`
   padding-bottom: 10px;
@@ -57,13 +65,14 @@ const Portfolios = styled.div`
 `;
 
 const PortfolioWrapper = styled.div`
+  position: relative;
   width: 50%;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 200px;
   padding-bottom: 400px;
-  align-items: center;
-  /* border: 1px solid red; */
+  /* align-items: center;
+  border: 1px solid red; */
 
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -141,6 +150,63 @@ const PortfolioCover = styled.img`
   /* height: 300px; */
   /* border: 3px solid blue; */
 `;
+const ArrowPulse = keyframes`
+0% {
+		transform: scale(0.95)rotate(45deg);
+	}
+
+	70% {
+		transform: scale(1) rotate(45deg);
+    border-bottom:3px solid ;
+    border-right:3px solid
+	}
+
+	100% {
+		transform: scale(0.95) rotate(45deg);
+	}
+`;
+const Arrow = styled.div`
+  border: 3px solid red;
+  position: absolute;
+  top: 80vh;
+  left: 50vw;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    transform: rotate(45deg);
+    animation: ${ArrowPulse} 2s infinite alternate;
+
+    /* &:hover {
+      transition-delay: 0s;
+      transform: rotate(45deg) scale(1.5);
+    } */
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 40px;
+    border: 2px solid gray;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
 
 const Portfolio = () => {
   return (
@@ -155,6 +221,7 @@ const Portfolio = () => {
           <Portfolios>#3 Search-Books: Web</Portfolios>
           <Portfolios>#4 High-Video: Web</Portfolios>
         </PortfolioList>
+        <Arrow />
         <PortfolioWrapper>
           <ProjectContainer content={"Booker:Web"}>
             <Link to={"booker-web"}>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 const StyledLayout = styled.div`
+  width: 100%;
   position: relative;
   padding: 1vh 1vw;
   overflow: hidden;

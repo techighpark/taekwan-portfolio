@@ -2,11 +2,13 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 const MainContainer = styled.div`
-  /* height: 95vh; */
-  padding-top: 70vh;
+  position: relative;
+  padding-top: 75vh;
+  z-index: -1;
   /* border: 1px solid tomato; */
+
   @media screen and (max-width: 500px) {
-    padding-top: 60vh;
+    padding-top: 100vh;
   }
 `;
 
@@ -59,6 +61,9 @@ const MainStackContainer = styled.div`
   align-items: flex-end;
 
   /* border: 2px solid tomato; */
+  @media screen and (max-width: 500px) {
+    padding-bottom: 20vh;
+  }
 `;
 
 const Row = styled.div`

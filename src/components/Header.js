@@ -3,32 +3,20 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-export const LineSnake = keyframes`
-0%{
- width:30vw;
- left:-50vw;
-}
-100%{
-  width:30vw;
-  left:100vw;
-}`;
-const Line = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 4vh;
-  border-top: 0.5px solid;
-  animation: ${LineSnake} 20s infinite linear;
-  @media screen and (max-width: 500px) {
-    top: 13vh;
-  }
-`;
-const StyledHeader = styled.div`
-  width: 100%;
+// const StyledHeader = styled.div`
+//   position: relative;
+//   border: 0.5px solid gray;
+// `;
+const HeaderContainer = styled.div`
+  position: fixed;
+  width: 98vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 999;
   /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
+    position: absolute;
     flex-direction: column;
     align-items: center;
   }
@@ -58,8 +46,9 @@ const HeaderTitle = styled.div`
     }
   }
 `;
+
 const HeaderLinks = styled.div`
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -206,14 +195,35 @@ const CloseBtn = styled.div`
   }
 `;
 
-const Header = () => {
+const LineSnake = keyframes`
+0%{
+ width:30vw;
+ left:-50vw;
+}
+100%{
+  width:30vw;
+  left:100vw;
+}`;
+const Line = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 4vh;
+  border-top: 0.5px solid;
+  animation: ${LineSnake} 20s infinite linear;
+  @media screen and (max-width: 500px) {
+    top: 10vh;
+  }
+`;
+
+let Header = () => {
   const [visible, setVisible] = useState(false);
   const onClickCloseBtn = () => {
     setVisible(false);
   };
 
   return (
-    <StyledHeader>
+    // <StyledHeader>
+    <HeaderContainer>
       <Link to={"/"}>
         <HeaderTitle />
       </Link>
@@ -249,7 +259,8 @@ const Header = () => {
           </PopUp>
         </PopUpWrapper>
       ) : null}
-    </StyledHeader>
+    </HeaderContainer>
+    // </StyledHeader>
   );
 };
 
