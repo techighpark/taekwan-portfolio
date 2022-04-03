@@ -111,7 +111,7 @@ const FieldText = styled.div`
   letter-spacing: -0.1em;
   @media screen and (max-width: 500px) {
     font-size: 50px;
-    font-weight: 400;
+    font-weight: 800;
   }
 `;
 const PortfolioList = styled.div`
@@ -123,7 +123,7 @@ const PortfolioList = styled.div`
   z-index: 9999;
   ${props =>
     props.fixed &&
-    css`
+    `
       position: fixed;
       top: 200px;
       right: 1vw;
@@ -170,8 +170,8 @@ const Portfolios = styled.div`
     height: 5px;
     width: 100%;
     z-index: -1;
-    background-color: ${props =>
-      props.selected ? "rgba(254, 23, 162, 0.8)" : "none"};
+    /* background-color: ${props =>
+      props.selected ? "rgba(254, 23, 162, 0.8)" : "none"}; */
     /* z-index: -1; */
   }
   :hover {
