@@ -2,28 +2,22 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 const MainContainer = styled.div`
-  height: 95vh;
-
+  /* height: 95vh; */
+  padding-top: 70vh;
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
-    height: 68vh;
+    padding-top: 70vh;
   }
 `;
 
 const FieldContainer = styled.div`
-  position: relative;
-  width: 100vw;
-  top: 400px;
-  left: 0vw;
+  position: absolute;
+  top: 50vh;
 
   /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 800px) {
-    width: 50vw;
-    top: 270px;
-  }
   @media screen and (max-width: 500px) {
     width: 50vw;
-    top: 120px;
+    top: 70vh;
   }
 `;
 const FieldText = styled.div`
@@ -32,28 +26,39 @@ const FieldText = styled.div`
   letter-spacing: -0.1em;
   font-size: 120px;
   text-align: left;
+  /* cursor: pointer; */
+  @media screen and (max-width: 800px) {
+    font-size: 90px;
+  }
   @media screen and (max-width: 500px) {
     font-size: 60px;
+  }
+  &::after {
+    content: "Front-Engineer";
+  }
+  :hover {
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "프론트 엔지니어";
+      font-size: 110px;
+      @media screen and (max-width: 800px) {
+        font-size: 80px;
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 50px;
+      }
+    }
   }
 `;
 
 const MainStackContainer = styled.div`
-  position: relative;
-  top: 55vh;
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
   /* border: 2px solid tomato; */
-  @media screen and (max-width: 800px) {
-    top: 40vh;
-  }
-  @media screen and (max-width: 500px) {
-    top: 22vh;
-    flex-direction: row;
-    align-items: flex-start;
-  }
 `;
 
 const Row = styled.div`
@@ -67,10 +72,11 @@ const Row = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
+    padding: 30px 0;
   }
 `;
 const Stack = styled.div`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 100;
   padding-left: 20px;
 
@@ -86,7 +92,7 @@ const Home = () => {
     <Layout>
       <MainContainer>
         <FieldContainer>
-          <FieldText>Front-Engineer</FieldText>
+          <FieldText />
         </FieldContainer>
         <MainStackContainer>
           <Row>

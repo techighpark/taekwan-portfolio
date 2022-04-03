@@ -8,21 +8,21 @@ import highVedio from "../img/high-booker-web-3.png";
 import { Link } from "react-router-dom";
 
 const PortfolioContainer = styled.div`
-  padding-top: 600px;
+  padding-top: 70vh;
   /* border: 1px solid tomato; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media screen and (max-width: 500px) {
-    padding-top: 300px;
+    padding-top: 70vh;
   }
 `;
 const FieldContainer = styled.div`
   position: absolute;
-  width: 100vw;
-  top: 400px;
-  /* left: 50%; */
+  top: 50vh;
   /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 800px) {
-  }
   @media screen and (max-width: 500px) {
+    top: 70vh;
   }
 `;
 const FieldText = styled.div`
@@ -30,25 +30,40 @@ const FieldText = styled.div`
   font-size: 70px;
   font-weight: 500;
   letter-spacing: -0.1em;
-  text-align: center;
   @media screen and (max-width: 500px) {
     font-size: 50px;
     font-weight: 400;
   }
-  ::first-letter {
-    /* font-weight: 800; */
-  }
 `;
+const PortfolioList = styled.div`
+  width: 100%;
+  padding-bottom: 140px;
+  text-align: right;
+
+  /* border: 1px solid; */
+`;
+const Portfolios = styled.div`
+  padding-bottom: 10px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+  ::first-letter {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* border: 1px solid tomato; */
+`;
+
 const PortfolioWrapper = styled.div`
+  width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 10px;
+  grid-template-columns: 1fr;
+  row-gap: 200px;
   padding-bottom: 400px;
+  align-items: center;
+  /* border: 1px solid red; */
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
+    width: 100%;
   }
 `;
 const ProjectTitle = styled.div`
@@ -66,22 +81,22 @@ const ProjectTitle = styled.div`
   /* border: 1px solid red; */
 `;
 const Subtitle = styled.div`
+  padding-left: 30px;
   font-size: 20px;
+  font-weight: 600;
   position: absolute;
-  right: 10%;
-  top: 10%;
-  font-weight: 200;
+  right: 30px;
+  top: 30px;
   color: black;
   opacity: 0;
   transition: opacity 0.5s;
   z-index: 1000;
   background-color: white;
+  text-align: left;
 
   /* border: 1px solid red; */
 `;
 const ProjectContainer = styled.div`
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   position: relative;
 
@@ -127,10 +142,16 @@ const PortfolioCover = styled.img`
 const Portfolio = () => {
   return (
     <Layout>
-      <FieldContainer>
-        <FieldText>The Work</FieldText>
-      </FieldContainer>
       <PortfolioContainer>
+        <FieldContainer>
+          <FieldText>The Work</FieldText>
+        </FieldContainer>
+        <PortfolioList>
+          <Portfolios>#1 Booker: Web</Portfolios>
+          <Portfolios>#2 Booker: Database / Server</Portfolios>
+          <Portfolios>#3 Search-Books: Web</Portfolios>
+          <Portfolios>#4 High-Video: Web</Portfolios>
+        </PortfolioList>
         <PortfolioWrapper>
           <ProjectContainer content={"Booker:Web"}>
             <Link to={"booker-web"}>

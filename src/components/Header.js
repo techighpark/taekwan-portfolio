@@ -3,20 +3,25 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-const LineSnake = keyframes`
+export const LineSnake = keyframes`
 0%{
- width:50vw;
+ width:30vw;
  left:-50vw;
 }
-50%{
-  width:50vw;
-  left:25vw;
-}
 100%{
-  width:50vw;
+  width:30vw;
   left:100vw;
 }`;
-
+const Line = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 4vh;
+  border-top: 0.5px solid;
+  animation: ${LineSnake} 20s infinite linear;
+  @media screen and (max-width: 500px) {
+    top: 13vh;
+  }
+`;
 const StyledHeader = styled.div`
   width: 100%;
   display: flex;
@@ -28,24 +33,29 @@ const StyledHeader = styled.div`
     align-items: center;
   }
 `;
-const Line = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 4vh;
-  border-top: 0.5px solid;
-  animation: ${LineSnake} 20s infinite linear;
-  @media screen and (max-width: 500px) {
-    top: 9vh;
-  }
-`;
+
 const HeaderTitle = styled.div`
-  width: 100%;
+  width: 140px;
   font-size: 24px;
   font-weight: 200;
 
   /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
     text-align: center;
+  }
+  &::after {
+    content: "TAE KWAN";
+    width: 140px;
+  }
+  :hover {
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "태관";
+      width: 140px;
+      text-align: center;
+    }
   }
 `;
 const HeaderLinks = styled.div`
@@ -59,25 +69,38 @@ const HeaderLinks = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
-    margin-top: 10vh;
+    padding-top: 110px;
   }
 `;
 const HeaderLink = styled.div`
   font-size: 16px;
   font-weight: 200;
-  margin-left: 30px;
+  padding-left: 50px;
+  cursor: pointer;
 
   /* border: 0.5px solid gray; */
 
-  cursor: pointer;
+  &::after {
+    content: "${props => props.title}";
+    width: 140px;
+  }
   :hover {
     font-weight: 300;
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "${props => props.content}";
+      width: 140px;
+      text-align: center;
+    }
   }
 
   @media screen and (max-width: 500px) {
-    margin-left: 0px;
-    margin-bottom: 15px;
+    padding-left: 0px;
+    padding-bottom: 30px;
     font-size: 14px;
+    font-weight: 300;
   }
 `;
 const PopUpWrapper = styled.div`
@@ -94,8 +117,8 @@ const PopUpWrapper = styled.div`
 const PopUp = styled.div`
   position: absolute;
   width: 250px;
-  height: 400px;
-  top: 250px;
+  height: 300px;
+  top: 200px;
   right: -80px;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.3);
@@ -184,18 +207,22 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <HeaderTitle>
-        <Link to={"/"}>TAE KWAN</Link>
-      </HeaderTitle>
+      <Link to={"/"}>
+        <HeaderTitle />
+      </Link>
       <Line />
       <HeaderLinks>
-        <HeaderLink>
-          <Link to={"/portfolio"}>PORTFOLIO</Link>
-        </HeaderLink>
-        <HeaderLink>
-          <Link to={"/about"}>ABOUT</Link>
-        </HeaderLink>
-        <HeaderLink onClick={() => setVisible(true)}>CONTACT</HeaderLink>
+        <Link to={"/portfolio"}>
+          <HeaderLink title={"PORTFOLIO"} content={"포트폴리오"} />
+        </Link>
+        <Link to={"/about"}>
+          <HeaderLink title={"ABOUT"} content={"소개"} />
+        </Link>
+        <HeaderLink
+          onClick={() => setVisible(true)}
+          title={"CONTACT"}
+          content={"연락처"}
+        />
       </HeaderLinks>
       {visible ? (
         <PopUpWrapper>
