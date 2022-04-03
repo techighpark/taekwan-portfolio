@@ -18,6 +18,8 @@ export const fonts = {
   Lato: `'Lato', sans-serif`,
   Staliches: `'Staatliches', cursive`,
   Montserrat: `'Montserrat', sans-serif`,
+  KorGothic: `font-family: 'Gothic A1', sans-serif`,
+  KorNoto: `font-family: 'Noto Sans KR', sans-serif`,
 };
 
 export const GlobalStyles = createGlobalStyle`

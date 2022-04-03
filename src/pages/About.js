@@ -10,31 +10,60 @@ const About = () => {
         <FieldContainer>
           <FieldText>About</FieldText>
         </FieldContainer>
-        <Container>
-          I am Taekwan Park, a creative frontend engineer from Busan, Rep of
-          Korea. I am Rapheal, a creative frontend engineer from Lagos, Nigeria
-          🇳🇬 ,that occasionally dabbles with product design. I love functional
-          interfaces that also look aesthetically pleasing. A Result-oriented
-          Software Engineer with superior problem-solving and critical thinking
-          skills, as well as meticulous attention to detail and methodical
-          nature with over 7 years of professional experience. Skilled in
-          handling problems in unique ways to develop innovative solution. On
-          the fun side, i love to produce music on my spare time, digital paint,
-          and take photos. Huge gym rat, and foodie. Always open to talk about
-          Tech, Product design, hip-hop, classic music or anything interesting
-          to be honest. Also, I'm open to work too!
-        </Container>
+        <AboutWrapper>
+          <KorContainer>
+            <KorMain>
+              저는 프론트 엔지니어로서 새로운 발걸음을 내딛고 있는 중 입니다.
+            </KorMain>
+            <KorSub>
+              브랜드 기획을 담당했던 과거의 경험은 고객과 잠재적 고객에 대해
+              한층 더 이해할수 있는 안목과 새로운 관점에서 바라볼 수 있도록
+              시야를 넓혀주었습니다. 뿐만 아니라 다른 직원들과 공감하고 의사
+              소통을 통해 협업하는 능력을 크게 향상 시켜주었습니다.
+            </KorSub>
+          </KorContainer>
+        </AboutWrapper>
       </AboutContainer>
     </Layout>
   );
 };
+const KorSub = styled.div`
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 2.5;
+`;
+const KorMain = styled.div`
+  font-size: 20px;
+  font-weight: 400;
+`;
+
+const KorContainer = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 40vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+`;
+const AboutWrapper = styled.div`
+  position: relative;
+  width: 50%;
+  display: flex;
+  padding-bottom: 400px;
+  /* height: 100vh; */
+  border: 1px solid tomato;
+`;
 
 const AboutContainer = styled.div`
   position: relative;
   padding-top: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
@@ -56,6 +85,7 @@ const GrayLine = styled.hr`
 const FieldContainer = styled.div`
   position: absolute;
   top: 50vh;
+  right: 0;
   background-color: black;
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
@@ -75,5 +105,5 @@ const FieldText = styled.div`
     font-weight: 800;
   }
 `;
-const Container = styled.div``;
+
 export default About;

@@ -55,16 +55,16 @@ const Portfolio = () => {
 
 const portfolioData = [
   {
-    title: "#1 Booker: Web",
+    title: "#1 High-Booker: Web",
     url: "booker-web",
-    imgTitle: "Booker",
+    imgTitle: "High-Booker",
     subtitle: "Web",
     src: highBookerWeb,
   },
   {
-    title: "#2 Booker: Database / Server",
+    title: "#2 High-Booker: Database / Server",
     url: "booker-db",
-    imgTitle: "Booker",
+    imgTitle: "High-Booker",
     subtitle: "Database",
     src: highBookerDB,
   },
@@ -236,9 +236,9 @@ const Subtitle = styled.div`
   /* border: 1px solid red; */
 `;
 const ProjectContainer = styled.div`
-  overflow: hidden;
   position: relative;
   padding-top: 30vh;
+  overflow: hidden;
   /* border: 3px solid tomato; */
   &::before {
     content: "";
