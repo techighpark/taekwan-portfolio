@@ -109,7 +109,7 @@ const PopUpWrapper = styled.div`
   left: 0vw;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 
   /* border: 0.5px solid blue; */
 `;
@@ -121,7 +121,7 @@ const PopUp = styled.div`
   top: 200px;
   right: -80px;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
 
   display: flex;
   flex-direction: column;
@@ -130,11 +130,18 @@ const PopUp = styled.div`
   opacity: ${props => (props.visible ? "1" : "0")};
 
   /* border: 2px solid blue; */
+
+  @media screen and (max-width: 500px) {
+    top: 45vh;
+    left: 50vw;
+    /* transform: translate(-50%, -50%); */
+  }
 `;
 
 const ContactTitle = styled.div`
   font-size: 20px;
-  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  color: black;
   letter-spacing: 0.3rem;
 
   /* border: 0.5px solid yellow; */
@@ -160,11 +167,11 @@ const ContactWrapper = styled.div`
 `;
 
 const Contact = styled.span`
-  font-weight: 300;
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.4rem;
   padding-bottom: 10%;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.3);
 
   /* border: 0.5px solid skyblue; */
 `;

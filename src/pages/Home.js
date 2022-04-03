@@ -6,7 +6,7 @@ const MainContainer = styled.div`
   padding-top: 70vh;
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
-    padding-top: 70vh;
+    padding-top: 60vh;
   }
 `;
 
@@ -17,21 +17,21 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
     width: 50vw;
-    top: 70vh;
+    top: 65vh;
   }
 `;
 const FieldText = styled.div`
   font-style: italic;
-  font-weight: 500;
-  letter-spacing: -0.1em;
   font-size: 120px;
+  font-weight: 500;
   text-align: left;
+  letter-spacing: -0.1em;
   /* cursor: pointer; */
   @media screen and (max-width: 800px) {
     font-size: 90px;
   }
   @media screen and (max-width: 500px) {
-    font-size: 60px;
+    font-size: 50px;
   }
   &::after {
     content: "Front-Engineer";
@@ -72,7 +72,7 @@ const Row = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
+    padding-bottom: 30px;
   }
 `;
 const Stack = styled.div`
@@ -84,6 +84,8 @@ const Stack = styled.div`
   @media screen and (max-width: 500px) {
     padding-left: 0px;
     padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 300;
   }
 `;
 

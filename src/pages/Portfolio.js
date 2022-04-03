@@ -50,7 +50,10 @@ const Portfolios = styled.div`
     color: rgba(255, 255, 255, 0.9);
   }
 
-  /* border: 1px solid tomato; */
+  @media screen and (max-width: 500px) {
+    font-size: 13px;
+    font-weight: 300;
+  }
 `;
 
 const PortfolioWrapper = styled.div`

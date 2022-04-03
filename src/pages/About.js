@@ -3,23 +3,23 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 
 const AboutContainer = styled.div`
-  padding-top: 600px;
+  padding-top: 70vh;
   /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
-    padding-top: 300px;
+    padding-top: 70vh;
   }
 `;
 
 const FieldContainer = styled.div`
   position: absolute;
   width: 100vw;
-  top: 400px;
+  top: 50vh;
   right: 30px;
-
   /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 800px) {
-  }
   @media screen and (max-width: 500px) {
+    top: 70vh;
+    width: 70vw;
+    right: 3vw;
   }
 `;
 const FieldText = styled.div`
