@@ -108,7 +108,7 @@ const PopUp = styled.div`
   width: 250px;
   height: 300px;
   top: 200px;
-  right: -80px;
+  right: -60px;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.4);
 
@@ -122,7 +122,7 @@ const PopUp = styled.div`
 
   @media screen and (max-width: 500px) {
     top: 45vh;
-    left: 50vw;
+    left: 49vw;
     /* transform: translate(-50%, -50%); */
   }
 `;

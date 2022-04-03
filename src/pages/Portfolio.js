@@ -7,10 +7,42 @@ import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
 import { Link } from "react-router-dom";
 import { keyframes } from "styled-components";
+import { useRef, useState } from "react";
+
+const portfolioData = [
+  {
+    title: "#1 Booker: Web",
+    url: "booker-web",
+    imgTitle: "Booker",
+    subtitle: "Web",
+    src: highBookerWeb,
+  },
+  {
+    title: "#2 Booker: Database / Server",
+    url: "booker-db",
+    imgTitle: "Booker",
+    subtitle: "Database",
+    src: highBookerDB,
+  },
+  {
+    title: "# #3 Search-Books: Web",
+    url: "search-book",
+    imgTitle: "Search-Books",
+    subtitle: "Web",
+    src: highSearchBook,
+  },
+  {
+    title: "#4 High-Video: Web",
+    url: "booker-web",
+    imgTitle: "High-Video",
+    subtitle: "Web",
+    src: highVedio,
+  },
+];
 
 const PortfolioContainer = styled.div`
   position: relative;
-  padding-top: 110vh;
+  padding-top: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,13 +71,15 @@ const FieldText = styled.div`
   }
 `;
 const PortfolioList = styled.div`
-  position: absolute;
+  position: fixed;
   top: 60vh;
+  right: 1vw;
   width: 100%;
   padding-bottom: 150px;
   text-align: right;
 
   @media screen and (max-width: 500px) {
+    position: absolute;
     top: 100vh;
     text-align: center;
   }
@@ -82,9 +116,9 @@ const ProjectTitle = styled.div`
   font-size: 80px;
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 70%;
   font-weight: 800;
+  transform: translate(-50%, -50%);
   color: ${props => props.theme.fontColor};
   opacity: 0;
   transition: opacity 0.5s;
@@ -97,8 +131,8 @@ const Subtitle = styled.div`
   font-size: 20px;
   font-weight: 600;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 0;
+  top: 30vh;
   color: black;
   opacity: 0;
   transition: opacity 0.5s;
@@ -111,7 +145,7 @@ const Subtitle = styled.div`
 const ProjectContainer = styled.div`
   overflow: hidden;
   position: relative;
-
+  padding-top: 30vh;
   /* border: 3px solid tomato; */
   &::before {
     content: "";
@@ -150,6 +184,7 @@ const PortfolioCover = styled.img`
   /* height: 300px; */
   /* border: 3px solid blue; */
 `;
+
 const ArrowPulse = keyframes`
 0% {
 		transform: scale(0.95)rotate(45deg);
@@ -165,11 +200,12 @@ const ArrowPulse = keyframes`
 		transform: scale(0.95) rotate(45deg);
 	}
 `;
+
 const Arrow = styled.div`
-  border: 3px solid red;
+  box-sizing: border-box;
   position: absolute;
   top: 80vh;
-  left: 50vw;
+  left: 49vw;
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   transform: scale(1);
@@ -209,6 +245,15 @@ const Arrow = styled.div`
 `;
 
 const Portfolio = () => {
+  const portfolioRef = useRef([]);
+  console.log(portfolioRef);
+
+  const [currentTab, setCurrentTab] = useState();
+  const onClickList = index => {
+    portfolioRef.current[index].scrollIntoView({ behavior: "smooth" });
+    setCurrentTab(portfolioRef.current[index]);
+  };
+
   return (
     <Layout>
       <PortfolioContainer>
@@ -216,41 +261,30 @@ const Portfolio = () => {
           <FieldText>The Work</FieldText>
         </FieldContainer>
         <PortfolioList>
-          <Portfolios>#1 Booker: Web</Portfolios>
-          <Portfolios>#2 Booker: Database / Server</Portfolios>
-          <Portfolios>#3 Search-Books: Web</Portfolios>
-          <Portfolios>#4 High-Video: Web</Portfolios>
+          {portfolioData.map((data, index) => (
+            <Portfolios
+              onClick={() => onClickList(index)}
+              selected={portfolioRef.current[index] === currentTab}
+              key={index}
+            >
+              {data.title}
+            </Portfolios>
+          ))}
         </PortfolioList>
         <Arrow />
         <PortfolioWrapper>
-          <ProjectContainer content={"Booker:Web"}>
-            <Link to={"booker-web"}>
-              <PortfolioCover src={highBookerWeb} />
-            </Link>
-            <ProjectTitle>Booker</ProjectTitle>
-            <Subtitle>Web</Subtitle>
-          </ProjectContainer>
-          <ProjectContainer>
-            <Link to={"booker-db"}>
-              <PortfolioCover src={highBookerDB} />
-            </Link>
-            <ProjectTitle>Booker</ProjectTitle>
-            <Subtitle>Database</Subtitle>
-          </ProjectContainer>
-          <ProjectContainer>
-            <Link to={"search-book"}>
-              <PortfolioCover src={highSearchBook} />
-            </Link>
-            <ProjectTitle>Search-Books</ProjectTitle>
-            <Subtitle>Web</Subtitle>
-          </ProjectContainer>
-          <ProjectContainer>
-            <Link to={"high-video"}>
-              <PortfolioCover src={highVedio} />
-            </Link>
-            <ProjectTitle>High-Video</ProjectTitle>
-            <Subtitle>Web</Subtitle>
-          </ProjectContainer>
+          {portfolioData.map((data, index) => (
+            <ProjectContainer
+              ref={el => (portfolioRef.current[index] = el)}
+              key={index}
+            >
+              <Link to={`${data.url}`}>
+                <PortfolioCover src={data.src} />
+              </Link>
+              <ProjectTitle>{data.imgTitle}</ProjectTitle>
+              <Subtitle>{data.subtitle}</Subtitle>
+            </ProjectContainer>
+          ))}
         </PortfolioWrapper>
       </PortfolioContainer>
     </Layout>
