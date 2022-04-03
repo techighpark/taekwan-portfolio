@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import Layout from "../components/Layout";
 import highBookerWeb from "../img/high-booker.JPG";
@@ -7,7 +7,51 @@ import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
 import { Link } from "react-router-dom";
 import { keyframes } from "styled-components";
-import { useRef, useState } from "react";
+import useScroll from "../hooks/useScroll";
+import useSticky from "../hooks/useSticky";
+
+const Portfolio = () => {
+  const { portfolioRef, currentTab, onClickList } = useScroll(null);
+  const { fixedPosition, stickyRef } = useSticky();
+  return (
+    <Layout>
+      <PortfolioContainer>
+        <FieldContainer>
+          <FieldText>The Work</FieldText>
+        </FieldContainer>
+        <PortfolioList fixed={fixedPosition} ref={stickyRef}>
+          {portfolioData.map((data, index) => {
+            return (
+              <Portfolios
+                onClick={() => onClickList(index)}
+                selected={portfolioRef.current[index] === currentTab}
+                key={index}
+                last={Boolean(index === portfolioData.length - 1)}
+              >
+                {data.title}
+              </Portfolios>
+            );
+          })}
+        </PortfolioList>
+        <Arrow
+          onClick={() => onClickList(0)}
+          selected={portfolioRef.current[0] === currentTab}
+        />
+        <PortfolioWrapper>
+          {portfolioData.map((data, index) => (
+            <Link to={`${data.url}`} key={index}>
+              <ProjectContainer ref={el => (portfolioRef.current[index] = el)}>
+                <PortfolioCover src={data.src} />
+                <ProjectTitle>{data.imgTitle}</ProjectTitle>
+                <Subtitle>{data.subtitle}</Subtitle>
+              </ProjectContainer>
+            </Link>
+          ))}
+        </PortfolioWrapper>
+      </PortfolioContainer>
+    </Layout>
+  );
+};
 
 const portfolioData = [
   {
@@ -25,7 +69,7 @@ const portfolioData = [
     src: highBookerDB,
   },
   {
-    title: "# #3 Search-Books: Web",
+    title: "#3 Search-Books: Web",
     url: "search-book",
     imgTitle: "Search-Books",
     subtitle: "Web",
@@ -71,30 +115,78 @@ const FieldText = styled.div`
   }
 `;
 const PortfolioList = styled.div`
-  position: fixed;
-  top: 60vh;
-  right: 1vw;
-  width: 100%;
-  padding-bottom: 150px;
+  position: absolute;
+  top: 110vh;
+  right: 0%;
   text-align: right;
-
+  overflow: hidden;
+  z-index: 9999;
+  ${props =>
+    props.fixed &&
+    css`
+      position: fixed;
+      top: 200px;
+      right: 1vw;
+    `}
+  /* border:1px solid red; */
   @media screen and (max-width: 500px) {
-    position: absolute;
-    top: 100vh;
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 5px;
+    border: 0.5px solid;
+    ${props =>
+      props.fixed &&
+      css`
+        top: 100px;
+        right: 3vw;
+      `}
   }
 `;
+
+const LineEccent = keyframes`
+0%{
+  width: 0;
+}
+
+100%{
+  width: 100%;
+}`;
+
 const Portfolios = styled.div`
-  padding-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  /* border: 1px solid yellowgreen; */
+
+  padding-bottom: ${props => (props.last ? "0px" : "20px")};
+  color: ${props => (props.selected ? "white" : "rgba(255, 255, 255, 0.5)")};
+  z-index: 999;
   ::first-letter {
     color: rgba(255, 255, 255, 0.9);
   }
-
-  @media screen and (max-width: 500px) {
-    font-size: 13px;
+  cursor: pointer;
+  ::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    height: 5px;
+    width: 100%;
+    background-color: ${props =>
+      props.selected ? "rgba(254, 23, 162, 0.3)" : "none"};
+    /* z-index: -1; */
+  }
+  :hover {
+    color: white;
     font-weight: 300;
+    ::before {
+      content: "";
+      background-color: rgba(254, 23, 162, 0.3);
+      animation: ${LineEccent} 0.5s 1 ease-in forwards;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 10px;
+    font-weight: 400;
+    padding-left: 0px;
   }
 `;
 
@@ -128,6 +220,7 @@ const ProjectTitle = styled.div`
 `;
 const Subtitle = styled.div`
   padding-left: 30px;
+  padding-right: 2px;
   font-size: 20px;
   font-weight: 600;
   position: absolute;
@@ -243,52 +336,5 @@ const Arrow = styled.div`
     display: none;
   }
 `;
-
-const Portfolio = () => {
-  const portfolioRef = useRef([]);
-  console.log(portfolioRef);
-
-  const [currentTab, setCurrentTab] = useState();
-  const onClickList = index => {
-    portfolioRef.current[index].scrollIntoView({ behavior: "smooth" });
-    setCurrentTab(portfolioRef.current[index]);
-  };
-
-  return (
-    <Layout>
-      <PortfolioContainer>
-        <FieldContainer>
-          <FieldText>The Work</FieldText>
-        </FieldContainer>
-        <PortfolioList>
-          {portfolioData.map((data, index) => (
-            <Portfolios
-              onClick={() => onClickList(index)}
-              selected={portfolioRef.current[index] === currentTab}
-              key={index}
-            >
-              {data.title}
-            </Portfolios>
-          ))}
-        </PortfolioList>
-        <Arrow />
-        <PortfolioWrapper>
-          {portfolioData.map((data, index) => (
-            <ProjectContainer
-              ref={el => (portfolioRef.current[index] = el)}
-              key={index}
-            >
-              <Link to={`${data.url}`}>
-                <PortfolioCover src={data.src} />
-              </Link>
-              <ProjectTitle>{data.imgTitle}</ProjectTitle>
-              <Subtitle>{data.subtitle}</Subtitle>
-            </ProjectContainer>
-          ))}
-        </PortfolioWrapper>
-      </PortfolioContainer>
-    </Layout>
-  );
-};
 
 export default Portfolio;
