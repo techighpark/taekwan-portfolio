@@ -17,7 +17,7 @@ const Portfolio = () => {
     <Layout>
       <PortfolioContainer>
         <FieldContainer>
-          <FieldText>The Work</FieldText>
+          <FieldText>Works</FieldText>
         </FieldContainer>
         <PortfolioList fixed={fixedPosition} ref={stickyRef}>
           {portfolioData.map((data, index) => {
@@ -107,7 +107,7 @@ const FieldContainer = styled.div`
 const FieldText = styled.div`
   font-style: italic;
   font-size: 70px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: -0.1em;
   @media screen and (max-width: 500px) {
     font-size: 50px;
@@ -159,7 +159,6 @@ const Portfolios = styled.div`
 
   padding-bottom: ${props => (props.last ? "0px" : "20px")};
   color: ${props => (props.selected ? "white" : "rgba(255, 255, 255, 0.5)")};
-  z-index: 999;
   ::first-letter {
     color: rgba(255, 255, 255, 0.9);
   }
@@ -167,11 +166,12 @@ const Portfolios = styled.div`
   ::before {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 7px;
     height: 5px;
     width: 100%;
+    z-index: -1;
     background-color: ${props =>
-      props.selected ? "rgba(254, 23, 162, 0.3)" : "none"};
+      props.selected ? "rgba(254, 23, 162, 0.8)" : "none"};
     /* z-index: -1; */
   }
   :hover {
@@ -179,7 +179,7 @@ const Portfolios = styled.div`
     font-weight: 300;
     ::before {
       content: "";
-      background-color: rgba(254, 23, 162, 0.3);
+      background-color: rgba(254, 23, 162, 0.8);
       animation: ${LineEccent} 0.5s 1 ease-in forwards;
     }
   }
@@ -280,17 +280,17 @@ const PortfolioCover = styled.img`
 
 const ArrowPulse = keyframes`
 0% {
-		transform: scale(0.95)rotate(45deg);
+		transform: scale(0.9)rotate(45deg);
 	}
 
 	70% {
 		transform: scale(1) rotate(45deg);
-    border-bottom:3px solid ;
-    border-right:3px solid
+    border-bottom: 1px solid rgba(254, 23, 162, 1);
+    border-right: 1px solid rgba(254, 23, 162, 1);
 	}
 
 	100% {
-		transform: scale(0.95) rotate(45deg);
+		transform: scale(0.9) rotate(45deg);
 	}
 `;
 
@@ -300,7 +300,7 @@ const Arrow = styled.div`
   top: 80vh;
   left: 49vw;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
   transform: scale(1);
   &::after {
     content: "";
@@ -309,8 +309,8 @@ const Arrow = styled.div`
     left: -10px;
     width: 20px;
     height: 20px;
-    border-bottom: 2px solid gray;
-    border-right: 2px solid gray;
+    border-bottom: 1px solid ${props => props.theme.lightAccentColor};
+    border-right: 1px solid ${props => props.theme.lightAccentColor};
     transform: rotate(45deg);
     animation: ${ArrowPulse} 2s infinite alternate;
 
@@ -330,7 +330,19 @@ const Arrow = styled.div`
     height: 80px;
     background: transparent;
     border-radius: 40px;
-    border: 2px solid gray;
+    border: 2px solid ${props => props.theme.lightWhiteColor};
+    box-sizing: border-box;
+  }
+  :hover {
+    ::before {
+      border: 2px solid ${props => props.theme.whiteColor};
+      transform: translateX(-50%) scale(1.05);
+    }
+    ::after {
+      animation: none;
+      border-bottom: 1px solid ${props => props.theme.accentColor};
+      border-right: 1px solid ${props => props.theme.accentColor};
+    }
   }
   @media screen and (max-width: 500px) {
     display: none;

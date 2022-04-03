@@ -1,99 +1,6 @@
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
-const MainContainer = styled.div`
-  position: relative;
-  padding-top: 75vh;
-  z-index: -1;
-  /* border: 1px solid tomato; */
-
-  @media screen and (max-width: 500px) {
-    padding-top: 100vh;
-  }
-`;
-
-const FieldContainer = styled.div`
-  position: absolute;
-  top: 50vh;
-
-  /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 500px) {
-    width: 50vw;
-    top: 65vh;
-  }
-`;
-const FieldText = styled.div`
-  font-style: italic;
-  font-size: 120px;
-  font-weight: 500;
-  text-align: left;
-  letter-spacing: -0.1em;
-  /* cursor: pointer; */
-  @media screen and (max-width: 800px) {
-    font-size: 90px;
-  }
-  @media screen and (max-width: 500px) {
-    font-size: 50px;
-  }
-  &::after {
-    content: "Front-Engineer";
-  }
-  :hover {
-    &::after {
-      display: none;
-    }
-    &::before {
-      content: "프론트 엔지니어";
-      font-size: 110px;
-      @media screen and (max-width: 800px) {
-        font-size: 80px;
-      }
-      @media screen and (max-width: 500px) {
-        font-size: 50px;
-      }
-    }
-  }
-`;
-
-const MainStackContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  /* border: 2px solid tomato; */
-  @media screen and (max-width: 500px) {
-    padding-bottom: 20vh;
-  }
-`;
-
-const Row = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 5px 0;
-
-  /* border: 0.5px solid yellow; */
-
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 30px;
-  }
-`;
-const Stack = styled.div`
-  font-size: 15px;
-  font-weight: 100;
-  padding-left: 20px;
-
-  /* border: 1px solid burlywood; */
-  @media screen and (max-width: 500px) {
-    padding-left: 0px;
-    padding-bottom: 10px;
-    font-size: 12px;
-    font-weight: 300;
-  }
-`;
-
 const Home = () => {
   return (
     <Layout>
@@ -119,6 +26,7 @@ const Home = () => {
             <Stack>GraphQL</Stack>
           </Row>
           <Row>
+            <GrayLine />
             <Stack>MySQL</Stack>
             <Stack>Postgresql</Stack>
             <Stack>Prisma</Stack>
@@ -130,5 +38,121 @@ const Home = () => {
     </Layout>
   );
 };
+
+const MainContainer = styled.div`
+  position: relative;
+  padding-top: 75vh;
+  /* z-index: -1; */
+  /* border: 1px solid tomato; */
+
+  @media screen and (max-width: 500px) {
+    padding-top: 100vh;
+  }
+`;
+const FieldContainer = styled.div`
+  position: absolute;
+  top: 50vh;
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    right: -4%;
+    height: 1.3vw;
+    width: 1.3vw;
+    background-color: ${props => props.theme.accentColor};
+  }
+  /* border: 0.5px solid yellow; */
+  @media screen and (max-width: 500px) {
+    /* width: 50vw; */
+    top: 65vh;
+    ::after {
+      bottom: 10%;
+      right: -4%;
+      height: 1.5vh;
+      width: 1.5vh;
+    }
+  }
+`;
+const FieldText = styled.div`
+  font-style: italic;
+  font-size: 10vw;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: -0.1em;
+  /* cursor: pointer; */
+
+  @media screen and (max-width: 500px) {
+    font-size: 50px;
+  }
+  &::after {
+    content: "Front-Engineer";
+  }
+  :hover {
+    &::after {
+      display: none;
+    }
+    &::before {
+      content: "프론트 엔지니어";
+      font-size: 110px;
+      @media screen and (max-width: 800px) {
+        font-size: 80px;
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 50px;
+      }
+    }
+  }
+`;
+
+const GrayLine = styled.hr`
+  height: 1px;
+  background-color: gray;
+  width: 100%;
+  border-width: 0;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`;
+
+const MainStackContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  /* border: 2px solid tomato; */
+  @media screen and (max-width: 500px) {
+    padding-bottom: 20vh;
+  }
+`;
+
+const Row = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 0;
+
+  /* border: 0.5px solid yellow; */
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+`;
+const Stack = styled.div`
+  font-size: 15px;
+  font-weight: 100;
+  padding-left: 20px;
+  white-space: nowrap;
+
+  /* border: 1px solid burlywood; */
+  @media screen and (max-width: 500px) {
+    padding-left: 0px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+`;
 
 export default Home;

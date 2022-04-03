@@ -25,7 +25,7 @@ const FieldContainer = styled.div`
 const FieldText = styled.div`
   font-style: italic;
   font-size: 70px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: -0.1em;
   text-align: right;
   @media screen and (max-width: 500px) {
@@ -39,7 +39,7 @@ const About = () => {
     <Layout>
       <AboutContainer>
         <FieldContainer>
-          <FieldText>About Taekwan</FieldText>
+          <FieldText>About</FieldText>
         </FieldContainer>
         I am Taekwan Park, a creative frontend engineer from Busan, Rep of
         Korea. I am Rapheal, a creative frontend engineer from Lagos, Nigeria 🇳🇬

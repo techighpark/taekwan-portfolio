@@ -3,6 +3,55 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
+let Header = () => {
+  const [visible, setVisible] = useState(false);
+  const onClickCloseBtn = () => {
+    setVisible(false);
+  };
+
+  return (
+    // <StyledHeader>
+    <HeaderContainer>
+      <Link to={"/"}>
+        <HeaderTitle />
+      </Link>
+      <Line />
+      <HeaderLinks>
+        <Link to={"/portfolio"}>
+          <HeaderLink title={"PORTFOLIO"} content={"포트폴리오"} />
+        </Link>
+        <Link to={"/about"}>
+          <HeaderLink title={"ABOUT"} content={"소개"} />
+        </Link>
+        <HeaderLink
+          onClick={() => setVisible(true)}
+          title={"CONTACT"}
+          content={"연락처"}
+        />
+      </HeaderLinks>
+      {visible ? (
+        <PopUpWrapper>
+          <PopUp visible={visible}>
+            <ContactTitle>CONTACT</ContactTitle>
+            <CloseBtn onClick={onClickCloseBtn} />
+            <ContactContainer>
+              <ContactWrapper>
+                <Contact>EMAIL</Contact>
+                <ContactContent>techigh.b@gmail.com</ContactContent>
+              </ContactWrapper>
+              <ContactWrapper>
+                <Contact>MOBILE</Contact>
+                <ContactContentNum>+82 010 6644 3892</ContactContentNum>
+              </ContactWrapper>
+            </ContactContainer>
+          </PopUp>
+        </PopUpWrapper>
+      ) : null}
+    </HeaderContainer>
+    // </StyledHeader>
+  );
+};
+
 // const StyledHeader = styled.div`
 //   position: relative;
 //   border: 0.5px solid gray;
@@ -23,26 +72,30 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderTitle = styled.div`
-  width: 140px;
   font-size: 24px;
   font-weight: 200;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  ::first-letter {
+    color: ${props => props.theme.accentColor};
+    font-weight: 300;
+  }
 
   /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
     text-align: center;
   }
   &::after {
-    content: "TAE KWAN";
-    width: 140px;
+    content: "NAWK EAT";
   }
   :hover {
     &::after {
       display: none;
     }
     &::before {
-      content: "태관";
+      content: "관태박";
       width: 140px;
-      text-align: center;
+      /* text-align: center; */
     }
   }
 `;
@@ -214,54 +267,5 @@ const Line = styled.div`
     top: 10vh;
   }
 `;
-
-let Header = () => {
-  const [visible, setVisible] = useState(false);
-  const onClickCloseBtn = () => {
-    setVisible(false);
-  };
-
-  return (
-    // <StyledHeader>
-    <HeaderContainer>
-      <Link to={"/"}>
-        <HeaderTitle />
-      </Link>
-      <Line />
-      <HeaderLinks>
-        <Link to={"/portfolio"}>
-          <HeaderLink title={"PORTFOLIO"} content={"포트폴리오"} />
-        </Link>
-        <Link to={"/about"}>
-          <HeaderLink title={"ABOUT"} content={"소개"} />
-        </Link>
-        <HeaderLink
-          onClick={() => setVisible(true)}
-          title={"CONTACT"}
-          content={"연락처"}
-        />
-      </HeaderLinks>
-      {visible ? (
-        <PopUpWrapper>
-          <PopUp visible={visible}>
-            <ContactTitle>CONTACT</ContactTitle>
-            <CloseBtn onClick={onClickCloseBtn} />
-            <ContactContainer>
-              <ContactWrapper>
-                <Contact>EMAIL</Contact>
-                <ContactContent>techigh.b@gmail.com</ContactContent>
-              </ContactWrapper>
-              <ContactWrapper>
-                <Contact>MOBILE</Contact>
-                <ContactContentNum>+82 010 6644 3892</ContactContentNum>
-              </ContactWrapper>
-            </ContactContainer>
-          </PopUp>
-        </PopUpWrapper>
-      ) : null}
-    </HeaderContainer>
-    // </StyledHeader>
-  );
-};
 
 export default Header;
