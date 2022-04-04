@@ -5,14 +5,17 @@ import highBookerWeb from "../img/high-booker.JPG";
 import highBookerDB from "../img/high-booker-database.png";
 import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
-import { Link } from "react-router-dom";
 import { keyframes } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
+// import { useState } from "react";
+import PortfoliosItems from "../components/PortfoliosItems";
 
 const Portfolio = () => {
   const { portfolioRef, currentTab, onClickList } = useScroll(null);
   const { fixedPosition, stickyRef } = useSticky();
+  console.log(portfolioRef);
+
   return (
     <Layout>
       <PortfolioContainer>
@@ -28,7 +31,7 @@ const Portfolio = () => {
               key={index}
               last={Boolean(index === portfolioData.length - 1)}
             >
-              {data.title}
+              {data.listTitle}
             </Portfolios>
           ))}
         </PortfolioList>
@@ -37,55 +40,47 @@ const Portfolio = () => {
           onClick={() => onClickList(0)}
           selected={portfolioRef.current[0] === currentTab}
         />
-        <PortfolioItemsContainer>
-          {portfolioData.map((data, index) => (
-            <Link to={`${data.url}`} key={index}>
-              <ProjectContainer ref={el => (portfolioRef.current[index] = el)}>
-                <PortfolioCover src={data.src} />
-                <ProjectTitle>{data.imgTitle}</ProjectTitle>
-                <Subtitle>{data.subtitle}</Subtitle>
-                <PortfolioDate>{data.date}</PortfolioDate>
-              </ProjectContainer>
-            </Link>
-          ))}
-        </PortfolioItemsContainer>
+        <PortfoliosItems ref={portfolioRef} />
       </PortfolioContainer>
     </Layout>
   );
 };
-
 const portfolioData = [
   {
-    title: "High-Booker: Web",
+    listTitle: "High-Booker: Web",
     url: "booker-web",
     imgTitle: "High-Booker",
     subtitle: "Web",
     src: highBookerWeb,
     date: "Mar. 2022",
+    stack: ["React JS", "CSS", "Prisma"],
   },
   {
-    title: "High-Booker: Database / Server",
+    listTitle: "High-Booker: Database / Server",
     url: "booker-db",
     imgTitle: "High-Booker",
     subtitle: "Database",
     src: highBookerDB,
     date: "Mar. 2022",
+    stack: ["Postgresql", "GraphQL", "Prisma"],
   },
   {
-    title: "Search-Books: Web",
+    listTitle: "Search-Books: Web",
     url: "search-book",
     imgTitle: "Search-Books",
     subtitle: "Web",
     src: highSearchBook,
     date: "Mar. 2022",
+    stack: ["Postgresql", "GraphQL", "Prisma"],
   },
   {
-    title: "High-Video: Web",
+    listTitle: "High-Video: Web",
     url: "booker-web",
     imgTitle: "High-Video",
     subtitle: "Web",
     src: highVedio,
     date: "Mar. 2022",
+    stack: ["Postgresql", "GraphQL", "Prisma"],
   },
 ];
 
@@ -99,6 +94,7 @@ const PortfolioContainer = styled.div`
 const FieldContainer = styled.div`
   margin-top: 30%;
   text-align: center;
+  z-index: 30;
 
   border: 0.5px solid yellow;
 
@@ -120,98 +116,6 @@ const FieldText = styled.div`
   }
 `;
 
-const PortfolioItemsContainer = styled.div`
-  width: 50%;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 300px;
-  margin-top: 500px;
-  margin-bottom: 500px;
-
-  /* border: 2px solid tomato; */
-  @media screen and (max-width: 500px) {
-    width: 80%;
-    margin-top: 200px;
-  }
-`;
-
-const ProjectTitle = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  font-weight: 800;
-  color: ${props => props.theme.fontColor};
-  opacity: 0;
-  transition: opacity 0.5s;
-  z-index: 11;
-
-  /* border: 1px solid red; */
-`;
-const Subtitle = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding-left: 30px;
-  padding-right: 2px;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
-  color: black;
-  opacity: 0;
-  transition: opacity 0.5s;
-  background-color: white;
-  z-index: 11;
-
-  /* border: 1px solid red; */
-`;
-const ProjectContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  /* border: 3px solid tomato; */
-  &::before {
-    content: "";
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    display: block;
-    opacity: 0;
-    z-index: 10;
-    transition: opacity 1s;
-
-    /* border: 2px solid orange; */
-  }
-  :hover {
-    &::before {
-      opacity: 0.8;
-    }
-    ${ProjectTitle} {
-      opacity: 1;
-    }
-    ${Subtitle} {
-      opacity: 1;
-    }
-  }
-`;
-
-const PortfolioCover = styled.img`
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-
-  /* border: 3px solid blue; */
-`;
-
-const PortfolioDate = styled.div`
-  color: ${props => props.theme.superLightWhiteColor};
-`;
-
 const PortfolioList = styled.div`
   position: absolute;
   top: 800px;
@@ -219,6 +123,7 @@ const PortfolioList = styled.div`
   text-align: right;
   padding: 20px 0px 20px 5px;
   overflow: hidden;
+  z-index: 999;
   /* border: 2px solid red; */
 
   ${props =>
@@ -320,7 +225,7 @@ const ArrowPulse = keyframes`
 const Arrow = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 15%;
+  top: 80vh;
   left: 49vw;
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};

@@ -103,7 +103,7 @@ const HeaderTitle = styled.div`
   }
   ::first-letter {
     /* color: ${props => props.theme.accentColor}; */
-    font-weight: 500;
+    /* font-weight: 500; */
   }
   /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
@@ -135,7 +135,7 @@ const HeaderLink = styled.div`
   /* border: 0.5px solid gray; */
 
   :hover {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   @media screen and (max-width: 500px) {
