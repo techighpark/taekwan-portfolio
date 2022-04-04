@@ -18,7 +18,9 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               <PortfolioSubtitle>{data.imgSubtitle}</PortfolioSubtitle>
               <StackContainer>
                 {data.stacks.map((stack, index) => (
-                  <div key={index}>{stack}</div>
+                  <div key={index}>
+                    <Stack>{stack}</Stack>
+                  </div>
                 ))}
               </StackContainer>
             </PortfolioTitle>
@@ -28,24 +30,32 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
     </PortfolioItemsContainer>
   );
 });
-
+const Stack = styled.div`
+  font-size: 14px;
+  font-weight: 300;
+  padding-bottom: 10px;
+`;
 const StackContainer = styled.div`
   position: absolute;
-  left: -20vh;
-  font-size: 14px;
-  font-weight: 100;
+  left: 50%;
+  top: 200%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-  border: 1px solid whtie;
+  /* border: 1px solid white; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    bottom: -100%;
+    top: 280px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
 `;
 const PortfolioSubtitle = styled.div`
   position: absolute;
-  bottom: 102%;
+  bottom: 101%;
   right: 0;
   font-size: 20px;
   font-weight: 300;
@@ -55,13 +65,18 @@ const PortfolioSubtitle = styled.div`
 
 const PortfolioTitle = styled.div`
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-style: italic;
   font-size: 70px;
   font-weight: 800;
   border: 0.5px solid yellow;
+  @media screen and (max-width: 500px) {
+    white-space: nowrap;
+    font-size: 40px;
+    top: 10px;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -70,8 +85,14 @@ const TitleContainer = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
+  /* border: 0.5px solid yellow; */
+
   cursor: pointer;
   :hover {
+    opacity: 1;
+  }
+  @media screen and (max-width: 500px) {
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
 `;
@@ -88,12 +109,15 @@ const PortfolioPhoto = styled.img`
 `;
 
 const ProjectContainer = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 400px;
   position: relative;
   display: flex;
   justify-content: center;
   /* border: 1px solid yellow; */
+  @media screen and (max-width: 500px) {
+    height: 300px;
+  }
 `;
 
 const PortfolioItemsContainer = styled.div`
@@ -119,7 +143,7 @@ const portfolioData = [
     imgSubtitle: "Web",
     src: highBookerWeb,
     date: "Mar. 2022",
-    stacks: ["React JS", "CSS", "Prisma"],
+    stacks: ["React JS", "Apollo Client"],
   },
   {
     listTitle: "High-Booker: Database / Server",
@@ -128,7 +152,7 @@ const portfolioData = [
     imgSubtitle: "Database",
     src: highBookerDB,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "GraphQL", "Prisma"],
+    stacks: ["Postgresql", "GraphQL", "Apollo Server", "Prisma"],
   },
   {
     listTitle: "Search-Books: Web",
@@ -137,7 +161,7 @@ const portfolioData = [
     imgSubtitle: "Web",
     src: highSearchBook,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "GraphQL", "Prisma"],
+    stacks: ["React JS", "Rest API", "GraphQL"],
   },
   {
     listTitle: "High-Video: Web",
@@ -146,7 +170,7 @@ const portfolioData = [
     imgSubtitle: "Web",
     src: highVedio,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "GraphQL", "Prisma"],
+    stacks: ["Web RTC", "JavaScript"],
   },
 ];
 

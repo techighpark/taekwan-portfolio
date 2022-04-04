@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { keyframes } from "styled-components";
+// import { keyframes } from "styled-components";
 import Layout from "../components/Layout";
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
             <Stack>GraphQL</Stack>
           </Row>
           <Row>
-            <GrayLine />
+            {/* <GrayLine /> */}
             <Stack>MySQL</Stack>
             <Stack>Postgresql</Stack>
             <Stack>Prisma</Stack>
@@ -51,7 +51,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 400px;
+    margin-top: 440px;
     text-align: center;
   }
 `;
@@ -74,7 +74,7 @@ const FieldText = styled.span`
     background-color: ${props => props.theme.accentColor};
   }
   @media screen and (max-width: 500px) {
-    font-size: 50px;
+    font-size: 45px;
     &::after {
       content: "";
       bottom: 10px;
@@ -85,28 +85,37 @@ const FieldText = styled.span`
   }
 `;
 
-const StackLine = keyframes`
-0%{
-  left:-10vw;
-  background-color: yellowgreen;
-}
-100%{
-  left:80vw;
-  background-color: yellowgreen;
-}`;
+// const StackLine = keyframes`
+// 0%{
+//   left:-10vw;
+// }
+// 20%{
+// }
+// 40%{
 
-const GrayLine = styled.hr`
-  height: 5px;
-  width: 5px;
-  left: -10vw;
-  position: absolute;
-  background-color: yellowgreen;
-  border-width: 0;
-  animation: ${StackLine} 0.5s 10 ease-in-out alternate;
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-`;
+// }
+// 60%{
+
+// }
+// 80%{
+
+// }
+// 100%{
+//   left:100vw;
+// }`;
+
+// const GrayLine = styled.hr`
+//   height: 30px;
+//   width: 30px;
+//   left: -10vw;
+//   position: absolute;
+//   background-color: yellowgreen;
+//   border-width: 0;
+//   animation: ${StackLine} 10s infinite ease-in-out alternate;
+//   @media screen and (max-width: 500px) {
+//     display: none;
+//   }
+// `;
 
 const MainStackContainer = styled.div`
   display: flex;
@@ -115,8 +124,8 @@ const MainStackContainer = styled.div`
   margin-top: 15%;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    margin-top: 190px;
+    margin-bottom: 100px;
   }
 `;
 
