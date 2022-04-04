@@ -18,34 +18,37 @@ const BookerWeb = () => {
 
 const WebLink = styled.div``;
 const LinkContainer = styled.div``;
-const PortfolioContainer = styled.div`
-  position: relative;
-  padding-top: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* border: 1px solid tomato; */
-  @media screen and (max-width: 500px) {
-    padding-top: 130vh;
-  }
-`;
-const FieldContainer = styled.div`
-  position: absolute;
-  top: 30vh;
-  z-index: 11;
-  /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 500px) {
-    top: 70vh;
-  }
-`;
+
 const FieldText = styled.div`
   font-style: italic;
   font-size: 70px;
   font-weight: 800;
   letter-spacing: -0.1em;
+
+  /* border: 1px solid yellowgreen; */
+
   @media screen and (max-width: 500px) {
     font-size: 50px;
-    font-weight: 800;
   }
+`;
+
+const FieldContainer = styled.div`
+  margin-top: 30%;
+  text-align: center;
+
+  border: 0.5px solid yellow;
+
+  @media screen and (max-width: 500px) {
+    margin-top: 400px;
+    text-align: center;
+  }
+`;
+
+const PortfolioContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border: 3px solid purple; */
 `;
 export default BookerWeb;

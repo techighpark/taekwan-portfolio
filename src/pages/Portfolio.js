@@ -317,7 +317,7 @@ const ArrowPulse = keyframes`
 const Arrow = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 80vh;
+  top: 15%;
   left: 49vw;
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};

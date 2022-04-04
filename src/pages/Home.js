@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import Layout from "../components/Layout";
 
 const Home = () => {
@@ -84,11 +85,24 @@ const FieldText = styled.span`
   }
 `;
 
+const StackLine = keyframes`
+0%{
+  left:-10vw;
+  background-color: yellowgreen;
+}
+100%{
+  left:80vw;
+  background-color: yellowgreen;
+}`;
+
 const GrayLine = styled.hr`
-  height: 1px;
-  background-color: gray;
-  width: 100%;
+  height: 5px;
+  width: 5px;
+  left: -10vw;
+  position: absolute;
+  background-color: yellowgreen;
   border-width: 0;
+  animation: ${StackLine} 0.5s 10 ease-in-out alternate;
   @media screen and (max-width: 500px) {
     display: none;
   }

@@ -102,7 +102,7 @@ const HeaderTitle = styled.div`
     font-weight: 300;
   }
   ::first-letter {
-    color: ${props => props.theme.accentColor};
+    /* color: ${props => props.theme.accentColor}; */
     font-weight: 500;
   }
   /* border: 0.5px solid gray; */
