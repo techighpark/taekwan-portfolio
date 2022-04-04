@@ -121,14 +121,16 @@ const FieldText = styled.div`
 `;
 
 const PortfolioItemsContainer = styled.div`
-  width: 80%;
+  width: 50%;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 200px;
+  row-gap: 300px;
   margin-top: 500px;
+  margin-bottom: 500px;
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
+    width: 80%;
     margin-top: 200px;
   }
 `;
@@ -272,7 +274,7 @@ const Portfolios = styled.div`
     top: 7px;
     height: 5px;
     width: 100%;
-    /* z-index: -1; */
+    z-index: -1;
     background-color: ${props =>
       props.selected ? "rgba(254, 23, 162, 0.8)" : "none"};
   }
@@ -331,11 +333,6 @@ const Arrow = styled.div`
     border-right: 1px solid ${props => props.theme.lightAccentColor};
     transform: rotate(45deg);
     animation: ${ArrowPulse} 2s infinite alternate;
-
-    /* &:hover {
-      transition-delay: 0s;
-      transform: rotate(45deg) scale(1.5);
-    } */
   }
 
   &::before {

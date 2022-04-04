@@ -40,7 +40,7 @@ const Home = () => {
 };
 
 const MainContainer = styled.div`
-  /* z-index: -1; */
+  z-index: -1;
 
   /* border: 3px solid tomato; */
 `;

@@ -84,6 +84,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 999;
   /* border: 0.5px solid brown; */
   /* overflow: hidden; */
   @media screen and (max-width: 500px) {

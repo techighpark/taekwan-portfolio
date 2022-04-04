@@ -6,9 +6,9 @@ const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1vw;
-  /* overflow: hidden; */
+  overflow: hidden;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   @media screen and (max-width: 500px) {
     margin: 2vh 3vw;
   }
