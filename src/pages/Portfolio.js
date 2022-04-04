@@ -145,6 +145,7 @@ const ProjectTitle = styled.div`
   color: ${props => props.theme.fontColor};
   opacity: 0;
   transition: opacity 0.5s;
+  z-index: 11;
 
   /* border: 1px solid red; */
 `;
@@ -161,6 +162,7 @@ const Subtitle = styled.div`
   opacity: 0;
   transition: opacity 0.5s;
   background-color: white;
+  z-index: 11;
 
   /* border: 1px solid red; */
 `;
@@ -178,6 +180,7 @@ const ProjectContainer = styled.div`
     top: 0;
     display: block;
     opacity: 0;
+    z-index: 10;
     transition: opacity 1s;
 
     /* border: 2px solid orange; */

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
@@ -9,7 +10,9 @@ const BookerWeb = () => {
           <FieldText>High-Booker</FieldText>
         </FieldContainer>
         <LinkContainer>
-          <WebLink>https://high-booker.netlify.app/</WebLink>
+          <Link to={"/ex/high-booker"}>
+            <WebLink>https://high-booker.netlify.app/</WebLink>
+          </Link>
         </LinkContainer>
       </PortfolioContainer>
     </Layout>

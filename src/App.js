@@ -8,6 +8,7 @@ import BookerWeb from "./pages/BookerWeb";
 import BookerDB from "./pages/BookerDB";
 import SearchBook from "./pages/SearchBook";
 import HighVideo from "./pages/HighVideo";
+import ExWeb from "./pages/ExWeb";
 
 function App() {
   const themeDarkMode = false;
@@ -16,13 +17,14 @@ function App() {
       <GlobalStyles />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/portfolio" element={<Portfolio />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/portfolio/booker-web" element={<BookerWeb />}></Route>
-          <Route path="/portfolio/booker-db" element={<BookerDB />}></Route>
-          <Route path="/portfolio/search-book" element={<SearchBook />}></Route>
-          <Route path="/portfolio/high-video" element={<HighVideo />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/booker-web" element={<BookerWeb />} />
+          <Route path="/portfolio/booker-db" element={<BookerDB />} />
+          <Route path="/portfolio/search-book" element={<SearchBook />} />
+          <Route path="/portfolio/high-video" element={<HighVideo />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/ex/:title" element={<ExWeb />} />
         </Routes>
       </Router>
     </ThemeProvider>
