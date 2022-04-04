@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
@@ -9,25 +9,52 @@ let Header = () => {
     setVisible(false);
   };
 
+  const [currentTab, setCurrentTab] = useState(0);
+  const tabRef = useRef([]);
+  const onClickTab = index => {
+    setCurrentTab(index);
+  };
   return (
-    // <StyledHeader>
     <HeaderContainer>
-      <Link to={"/"}>
-        <HeaderTitle />
+      <Link
+        to={"/"}
+        ref={tabRef.current[0]}
+        onClick={() => onClickTab(0)}
+        selected={tabRef.current[0] === currentTab}
+      >
+        <HeaderTitle>TAE KWAN</HeaderTitle>
       </Link>
       <Line />
       <HeaderLinks>
         <Link to={"/portfolio"}>
-          <HeaderLink title={"PORTFOLIO"} content={"포트폴리오"} />
+          <HeaderLink
+            ref={tabRef.current[1]}
+            onClick={() => onClickTab(1)}
+            selected={tabRef.current[1] === currentTab}
+          >
+            PORTFOLIO
+          </HeaderLink>
         </Link>
         <Link to={"/about"}>
-          <HeaderLink title={"ABOUT"} content={"소개"} />
+          <HeaderLink
+            ref={tabRef.current[2]}
+            onClick={() => onClickTab(2)}
+            selected={tabRef.current[2] === currentTab}
+          >
+            ABOUT
+          </HeaderLink>
         </Link>
         <HeaderLink
-          onClick={() => setVisible(true)}
-          title={"CONTACT"}
+          onClick={() => {
+            setVisible(true);
+            onClickTab(3);
+          }}
           content={"연락처"}
-        />
+          ref={tabRef.current[3]}
+          selected={tabRef.current[3] === currentTab}
+        >
+          CONTACT
+        </HeaderLink>
       </HeaderLinks>
       {visible ? (
         <PopUpWrapper>
@@ -48,24 +75,20 @@ let Header = () => {
         </PopUpWrapper>
       ) : null}
     </HeaderContainer>
-    // </StyledHeader>
   );
 };
 
-// const StyledHeader = styled.div`
-//   position: relative;
-//   border: 0.5px solid gray;
-// `;
 const HeaderContainer = styled.div`
   position: fixed;
   width: 98vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
-  /* border: 0.5px solid gray; */
+  /* border: 0.5px solid brown; */
+  /* overflow: hidden; */
   @media screen and (max-width: 500px) {
     position: absolute;
+    width: 94vw;
     flex-direction: column;
     align-items: center;
   }
@@ -74,29 +97,17 @@ const HeaderContainer = styled.div`
 const HeaderTitle = styled.div`
   font-size: 24px;
   font-weight: 200;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  ::first-letter {
-    color: ${props => props.theme.accentColor};
+  :hover {
     font-weight: 300;
   }
-
+  ::first-letter {
+    color: ${props => props.theme.accentColor};
+    font-weight: 500;
+  }
   /* border: 0.5px solid gray; */
   @media screen and (max-width: 500px) {
     text-align: center;
-  }
-  &::after {
-    content: "NAWK EAT";
-  }
-  :hover {
-    &::after {
-      display: none;
-    }
-    &::before {
-      content: "관태박";
-      width: 140px;
-      /* text-align: center; */
-    }
+    margin-top: 5vh;
   }
 `;
 
@@ -122,20 +133,8 @@ const HeaderLink = styled.div`
 
   /* border: 0.5px solid gray; */
 
-  &::after {
-    content: "${props => props.title}";
-    width: 140px;
-  }
   :hover {
     font-weight: 300;
-    &::after {
-      display: none;
-    }
-    &::before {
-      content: "${props => props.content}";
-      width: 140px;
-      text-align: center;
-    }
   }
 
   @media screen and (max-width: 500px) {
@@ -147,8 +146,8 @@ const HeaderLink = styled.div`
 `;
 const PopUpWrapper = styled.div`
   position: absolute;
-  top: 0vh;
-  left: 0vw;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
@@ -175,8 +174,9 @@ const PopUp = styled.div`
 
   @media screen and (max-width: 500px) {
     top: 45vh;
-    left: 49vw;
-    /* transform: translate(-50%, -50%); */
+    left: 47vw;
+    transform: translate(-50%, -50%);
+    /* z-index: 999; */
   }
 `;
 
@@ -238,7 +238,7 @@ const CloseBtn = styled.div`
     font-size: 25px;
     font-weight: 100;
     color: rgba(255, 255, 255, 0.5);
-    z-index: 999;
+    /* z-index: 999; */
     /* border: 0.5px solid red; */
   }
   &:hover {
@@ -263,6 +263,7 @@ const Line = styled.div`
   top: 4vh;
   border-top: 0.5px solid;
   animation: ${LineSnake} 20s infinite linear;
+  /* z-index: -1; */
   @media screen and (max-width: 500px) {
     top: 10vh;
   }

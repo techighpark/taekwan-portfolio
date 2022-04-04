@@ -20,34 +20,35 @@ const Portfolio = () => {
           <FieldText>Works</FieldText>
         </FieldContainer>
         <PortfolioList fixed={fixedPosition} ref={stickyRef}>
-          {portfolioData.map((data, index) => {
-            return (
-              <Portfolios
-                onClick={() => onClickList(index)}
-                selected={portfolioRef.current[index] === currentTab}
-                key={index}
-                last={Boolean(index === portfolioData.length - 1)}
-              >
-                {data.title}
-              </Portfolios>
-            );
-          })}
+          <ListTitle>LIST</ListTitle>
+          {portfolioData.map((data, index) => (
+            <Portfolios
+              onClick={() => onClickList(index)}
+              selected={portfolioRef.current[index] === currentTab}
+              key={index}
+              last={Boolean(index === portfolioData.length - 1)}
+            >
+              {data.title}
+            </Portfolios>
+          ))}
         </PortfolioList>
+        <Placeholder />
         <Arrow
           onClick={() => onClickList(0)}
           selected={portfolioRef.current[0] === currentTab}
         />
-        <PortfolioWrapper>
+        <PortfolioItemsContainer>
           {portfolioData.map((data, index) => (
             <Link to={`${data.url}`} key={index}>
               <ProjectContainer ref={el => (portfolioRef.current[index] = el)}>
                 <PortfolioCover src={data.src} />
                 <ProjectTitle>{data.imgTitle}</ProjectTitle>
                 <Subtitle>{data.subtitle}</Subtitle>
+                <PortfolioDate>{data.date}</PortfolioDate>
               </ProjectContainer>
             </Link>
           ))}
-        </PortfolioWrapper>
+        </PortfolioItemsContainer>
       </PortfolioContainer>
     </Layout>
   );
@@ -55,53 +56,55 @@ const Portfolio = () => {
 
 const portfolioData = [
   {
-    title: "#1 High-Booker: Web",
+    title: "High-Booker: Web",
     url: "booker-web",
     imgTitle: "High-Booker",
     subtitle: "Web",
     src: highBookerWeb,
+    date: "Mar. 2022",
   },
   {
-    title: "#2 High-Booker: Database / Server",
+    title: "High-Booker: Database / Server",
     url: "booker-db",
     imgTitle: "High-Booker",
     subtitle: "Database",
     src: highBookerDB,
+    date: "Mar. 2022",
   },
   {
-    title: "#3 Search-Books: Web",
+    title: "Search-Books: Web",
     url: "search-book",
     imgTitle: "Search-Books",
     subtitle: "Web",
     src: highSearchBook,
+    date: "Mar. 2022",
   },
   {
-    title: "#4 High-Video: Web",
+    title: "High-Video: Web",
     url: "booker-web",
     imgTitle: "High-Video",
     subtitle: "Web",
     src: highVedio,
+    date: "Mar. 2022",
   },
 ];
 
 const PortfolioContainer = styled.div`
-  position: relative;
-  padding-top: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid tomato; */
-  @media screen and (max-width: 500px) {
-    padding-top: 130vh;
-  }
+
+  /* border: 3px solid purple; */
 `;
 const FieldContainer = styled.div`
-  position: absolute;
-  top: 50vh;
-  z-index: 11;
-  /* border: 0.5px solid yellow; */
+  margin-top: 30%;
+  text-align: center;
+
+  border: 0.5px solid yellow;
+
   @media screen and (max-width: 500px) {
-    top: 70vh;
+    margin-top: 400px;
+    text-align: center;
   }
 `;
 const FieldText = styled.div`
@@ -109,135 +112,58 @@ const FieldText = styled.div`
   font-size: 70px;
   font-weight: 800;
   letter-spacing: -0.1em;
-  @media screen and (max-width: 500px) {
-    font-size: 50px;
-    font-weight: 800;
-  }
-`;
-const PortfolioList = styled.div`
-  position: absolute;
-  top: 110vh;
-  right: 0%;
-  text-align: right;
-  overflow: hidden;
-  z-index: 9999;
-  ${props =>
-    props.fixed &&
-    `
-      position: fixed;
-      top: 200px;
-      right: 1vw;
-    `}
-  /* border:1px solid red; */
-  @media screen and (max-width: 500px) {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px 5px;
-    border: 0.5px solid;
-    ${props =>
-      props.fixed &&
-      css`
-        top: 100px;
-        right: 3vw;
-      `}
-  }
-`;
 
-const LineEccent = keyframes`
-0%{
-  width: 0;
-}
-
-100%{
-  width: 100%;
-}`;
-
-const Portfolios = styled.div`
-  position: relative;
-  padding-left: 20px;
-  font-weight: 200;
   /* border: 1px solid yellowgreen; */
 
-  padding-bottom: ${props => (props.last ? "0px" : "20px")};
-  color: ${props => (props.selected ? "white" : "rgba(255, 255, 255, 0.5)")};
-  ::first-letter {
-    color: rgba(255, 255, 255, 0.9);
-  }
-  cursor: pointer;
-  ::before {
-    content: "";
-    position: absolute;
-    top: 7px;
-    height: 5px;
-    width: 100%;
-    z-index: -1;
-    /* background-color: ${props =>
-      props.selected ? "rgba(254, 23, 162, 0.8)" : "none"}; */
-    /* z-index: -1; */
-  }
-  :hover {
-    color: white;
-    font-weight: 300;
-    ::before {
-      content: "";
-      background-color: rgba(254, 23, 162, 0.8);
-      animation: ${LineEccent} 0.5s 1 ease-in forwards;
-    }
-  }
   @media screen and (max-width: 500px) {
-    font-size: 10px;
-    font-weight: 400;
-    padding-left: 0px;
+    font-size: 50px;
   }
 `;
 
-const PortfolioWrapper = styled.div`
-  position: relative;
-  width: 50%;
+const PortfolioItemsContainer = styled.div`
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 200px;
-  padding-bottom: 400px;
-  /* align-items: center;
-  border: 1px solid red; */
+  margin-top: 500px;
 
+  /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    width: 100%;
+    margin-top: 200px;
   }
 `;
+
 const ProjectTitle = styled.div`
-  font-size: 80px;
   position: absolute;
   left: 50%;
-  top: 70%;
-  font-weight: 800;
+  top: 50%;
   transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: 800;
   color: ${props => props.theme.fontColor};
   opacity: 0;
   transition: opacity 0.5s;
-  z-index: 1000;
 
   /* border: 1px solid red; */
 `;
 const Subtitle = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
   padding-left: 30px;
   padding-right: 2px;
   font-size: 20px;
   font-weight: 600;
-  position: absolute;
-  right: 0;
-  top: 30vh;
+  text-align: left;
   color: black;
   opacity: 0;
   transition: opacity 0.5s;
-  z-index: 1000;
   background-color: white;
-  text-align: left;
 
   /* border: 1px solid red; */
 `;
 const ProjectContainer = styled.div`
   position: relative;
-  padding-top: 30vh;
   overflow: hidden;
   /* border: 3px solid tomato; */
   &::before {
@@ -248,11 +174,11 @@ const ProjectContainer = styled.div`
     height: 100%;
     left: 0;
     top: 0;
-    /* border: 2px solid orange; */
     display: block;
     opacity: 0;
     transition: opacity 1s;
-    z-index: 999;
+
+    /* border: 2px solid orange; */
   }
   :hover {
     &::before {
@@ -274,8 +200,100 @@ const PortfolioCover = styled.img`
   background-position: center;
   width: 100%;
 
-  /* height: 300px; */
   /* border: 3px solid blue; */
+`;
+
+const PortfolioDate = styled.div`
+  color: ${props => props.theme.superLightWhiteColor};
+`;
+
+const PortfolioList = styled.div`
+  position: absolute;
+  top: 800px;
+  right: 0;
+  text-align: right;
+  padding: 20px 0px 20px 5px;
+  overflow: hidden;
+  /* border: 2px solid red; */
+
+  ${props =>
+    props.fixed &&
+    css`
+      position: fixed;
+      top: 100px;
+      right: 1vw;
+    `}
+  @media screen and (max-width: 500px) {
+    top: 600px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    ${props =>
+      props.fixed &&
+      css`
+        top: 100px;
+        right: 3vw;
+      `}
+  }
+`;
+const ListTitle = styled.div`
+  letter-spacing: 0.5em;
+  font-weight: 400;
+  padding: 3px;
+  border-bottom: 0.5px solid;
+  margin-bottom: 20px;
+  /* border: 1px solid yellow; */
+`;
+
+const LineAccent = keyframes`
+0%{
+  width: 0;
+}
+
+100%{
+  width: 100%;
+}`;
+
+const Portfolios = styled.div`
+  position: relative;
+  font-weight: 200;
+  color: ${props => (props.selected ? "white" : "rgba(255, 255, 255, 0.5)")};
+  padding-bottom: ${props => (props.last ? "0px" : "20px")};
+  cursor: pointer;
+
+  /* border: 1px solid yellowgreen; */
+
+  ::first-letter {
+    color: ${props => props.theme.fontColor};
+  }
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    height: 5px;
+    width: 100%;
+    /* z-index: -1; */
+    background-color: ${props =>
+      props.selected ? "rgba(254, 23, 162, 0.8)" : "none"};
+  }
+  :hover {
+    color: white;
+    font-weight: 300;
+    ::before {
+      content: "";
+      background-color: rgba(254, 23, 162, 0.8);
+      animation: ${LineAccent} 0.5s 1 ease-in forwards;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 10px;
+    font-weight: 400;
+    padding-left: 0px;
+  }
+`;
+
+const Placeholder = styled.div`
+  height: 184.05px;
 `;
 
 const ArrowPulse = keyframes`

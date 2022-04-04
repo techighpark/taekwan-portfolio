@@ -2,12 +2,15 @@ import styled from "styled-components";
 import Header from "./Header";
 
 const StyledLayout = styled.div`
-  width: 100%;
   position: relative;
-  padding: 1vh 1vw;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 1vw;
+  /* overflow: hidden; */
+
+  border: 1px solid blue;
   @media screen and (max-width: 500px) {
-    padding: 5vh 3vw;
+    margin: 2vh 3vw;
   }
 `;
 

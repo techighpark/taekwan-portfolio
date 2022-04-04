@@ -6,7 +6,7 @@ const Home = () => {
     <Layout>
       <MainContainer>
         <FieldContainer>
-          <FieldText />
+          <FieldText>Front-Engineer</FieldText>
         </FieldContainer>
         <MainStackContainer>
           <Row>
@@ -40,66 +40,46 @@ const Home = () => {
 };
 
 const MainContainer = styled.div`
-  position: relative;
-  padding-top: 75vh;
   /* z-index: -1; */
-  /* border: 1px solid tomato; */
 
-  @media screen and (max-width: 500px) {
-    padding-top: 100vh;
-  }
+  /* border: 3px solid tomato; */
 `;
 const FieldContainer = styled.div`
-  position: absolute;
-  top: 50vh;
-  ::after {
-    content: "";
-    position: absolute;
-    bottom: 10%;
-    right: -4%;
-    height: 1.3vw;
-    width: 1.3vw;
-    background-color: ${props => props.theme.accentColor};
-  }
+  margin-top: 30%;
+
   /* border: 0.5px solid yellow; */
-  @media screen and (max-width: 500px) {
-    /* width: 50vw; */
-    top: 65vh;
-    ::after {
-      bottom: 10%;
-      right: -4%;
-      height: 1.5vh;
-      width: 1.5vh;
-    }
-  }
-`;
-const FieldText = styled.div`
-  font-style: italic;
-  font-size: 10vw;
-  font-weight: 700;
-  text-align: left;
-  letter-spacing: -0.1em;
-  /* cursor: pointer; */
 
   @media screen and (max-width: 500px) {
-    font-size: 50px;
+    margin-top: 400px;
+    text-align: center;
   }
+`;
+const FieldText = styled.span`
+  position: relative;
+  font-style: italic;
+  font-size: 140px;
+  font-weight: 700;
+  letter-spacing: -0.1em;
+
+  /* border: 1px solid yellowgreen; */
+
   &::after {
-    content: "Front-Engineer";
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    right: -25px;
+    height: 25px;
+    width: 25px;
+    background-color: ${props => props.theme.accentColor};
   }
-  :hover {
+  @media screen and (max-width: 500px) {
+    font-size: 50px;
     &::after {
-      display: none;
-    }
-    &::before {
-      content: "프론트 엔지니어";
-      font-size: 110px;
-      @media screen and (max-width: 800px) {
-        font-size: 80px;
-      }
-      @media screen and (max-width: 500px) {
-        font-size: 50px;
-      }
+      content: "";
+      bottom: 10px;
+      right: -10px;
+      height: 10px;
+      width: 10px;
     }
   }
 `;
@@ -115,14 +95,14 @@ const GrayLine = styled.hr`
 `;
 
 const MainStackContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  overflow: hidden;
+  margin-top: 15%;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    padding-bottom: 20vh;
+    padding-top: 50px;
+    padding-bottom: 100px;
   }
 `;
 
