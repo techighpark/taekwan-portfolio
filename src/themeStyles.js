@@ -7,7 +7,7 @@ export const darkMode = {
   accentColor: "rgba(254, 23, 162, 1)",
   lightAccentColor: "rgba(254, 23, 162, 0.3)",
   whiteColor: "rgba(255, 255, 255, 0.8)",
-  lightWhiteColor: "rgba(255, 255, 255, 0.7)",
+  lightWhiteColor: "rgba(255, 255, 255, 0.5)",
   superLightWhiteColor: "rgba(255, 255, 255, 0.3)",
 };
 export const lightMode = {

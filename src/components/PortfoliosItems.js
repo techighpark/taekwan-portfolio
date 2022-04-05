@@ -42,8 +42,10 @@ const LinkArrowUpRight = styled(ArrowUpRight)`
   }
 `;
 const LinkText = styled.span`
-  color: ${props => props.theme.WhiteColor};
+  color: ${props => props.theme.lightWhiteColor};
+  font-weight: 500;
   @media screen and (max-width: 500px) {
+    color: ${props => props.theme.whiteColor};
   }
 `;
 
@@ -103,7 +105,8 @@ const PortfolioTitle = styled.div`
   font-style: italic;
   font-size: 70px;
   font-weight: 800;
-  border: 0.5px solid yellow;
+  white-space: nowrap;
+  /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
     white-space: nowrap;
     font-size: 40px;
