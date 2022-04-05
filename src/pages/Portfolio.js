@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Helmet } from "react-helmet";
 
 import Layout from "../components/Layout";
 import useScroll from "../hooks/useScroll";
@@ -13,6 +14,9 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>TAE KWAN | PORTFOLIO</title>
+      </Helmet>
       <PortfolioContainer>
         <FieldContainer>
           <FieldText>Works</FieldText>

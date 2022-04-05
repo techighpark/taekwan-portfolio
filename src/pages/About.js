@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
@@ -10,6 +11,9 @@ import { aboutData } from "../assets/aboutData";
 const About = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>TAE KWAN | ABOUT</title>
+      </Helmet>
       <AboutContainer>
         <FieldContainer>
           <FieldText>About</FieldText>

@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
+
 import Layout from "../components/Layout";
 
 const Home = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>TAE KWAN | HOME</title>
+      </Helmet>
       <MainContainer>
         <FieldContainer>
           <FieldText>Front-Engineer</FieldText>
