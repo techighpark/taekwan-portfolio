@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
+import { Check } from "@styled-icons/feather/Check";
 import { portfolioDatas } from "./portfolioDatas";
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,10 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               <StackContainer>
                 {data.stacks.map((stack, index) => (
                   <div key={index}>
-                    <Stack>{stack}</Stack>
+                    <Stack>
+                      <StckCheck />
+                      {stack}
+                    </Stack>
                   </div>
                 ))}
               </StackContainer>
@@ -32,6 +36,12 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
     </PortfolioItemsContainer>
   );
 });
+
+const StckCheck = styled(Check)`
+  width: 25px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+`;
 
 const LinkArrowUpRight = styled(ArrowUpRight)`
   color: ${props => props.theme.lightAccentColor};
