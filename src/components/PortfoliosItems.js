@@ -53,7 +53,7 @@ const LinkArrowUpRight = styled(ArrowUpRight)`
 `;
 const LinkText = styled.span`
   color: ${props => props.theme.lightWhiteColor};
-  font-weight: 500;
+  font-weight: 300;
   @media screen and (max-width: 500px) {
     color: ${props => props.theme.whiteColor};
   }
@@ -61,7 +61,7 @@ const LinkText = styled.span`
 
 const StyledLink = styled(Link)`
   position: absolute;
-  bottom: 0%;
+  bottom: -30px;
   right: 0%;
 
   :hover {
@@ -92,7 +92,7 @@ const StackContainer = styled.div`
   /* border: 1px solid white; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    top: 310px;
+    top: 360px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
@@ -123,7 +123,7 @@ const PortfolioTitle = styled.div`
   @media screen and (max-width: 500px) {
     white-space: nowrap;
     font-size: 35px;
-    top: 0px;
+    top: -30px;
   }
 `;
 
@@ -133,7 +133,8 @@ const TitleContainer = styled.div`
   height: 400px;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  /* border: 0.5px solid red; */
+  border: 0.5px solid ${props => props.theme.lightWhiteColor};
+  /* border-radius: 1px; */
 
   /* cursor: pointer; */
   :hover {
@@ -184,6 +185,8 @@ const PortfolioItemsContainer = styled.div`
   @media screen and (max-width: 500px) {
     width: 100%;
     margin-top: 200px;
+    margin-bottom: 300px;
+    row-gap: 500px;
   }
 `;
 
