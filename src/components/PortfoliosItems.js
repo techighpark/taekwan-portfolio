@@ -76,7 +76,7 @@ const StyledLink = styled(Link)`
 
 const Stack = styled.div`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 100;
   padding-bottom: 10px;
 `;
 const StackContainer = styled.div`
@@ -115,9 +115,9 @@ const PortfolioTitle = styled.div`
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 70px;
-  font-weight: 800;
+  font-weight: 100;
   white-space: nowrap;
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
@@ -131,7 +131,7 @@ const TitleContainer = styled.div`
   position: absolute;
   width: 50%;
   height: 400px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
   /* border: 0.5px solid red; */
 

@@ -19,7 +19,7 @@ const Portfolio = () => {
       </Helmet>
       <PortfolioContainer>
         <FieldContainer>
-          <FieldText>Works</FieldText>
+          <FieldText>WORKS</FieldText>
         </FieldContainer>
         <PortfolioStickList ref={portfolioRef} />
         <Placeholder />
@@ -46,7 +46,7 @@ const FieldContainer = styled.div`
   text-align: center;
   z-index: 30;
 
-  border: 0.5px solid yellow;
+  /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
     margin-top: 400px;
@@ -54,10 +54,10 @@ const FieldContainer = styled.div`
   }
 `;
 const FieldText = styled.div`
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 70px;
-  font-weight: 800;
-  letter-spacing: -0.1em;
+  font-weight: 100;
+  letter-spacing: 0.3em;
 
   /* border: 1px solid yellowgreen; */
 

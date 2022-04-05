@@ -16,66 +16,45 @@ const About = () => {
       </Helmet>
       <AboutContainer>
         <FieldContainer>
-          <FieldText>About</FieldText>
+          <FieldText>ABOUT</FieldText>
         </FieldContainer>
         <AboutItemContainer>
           {/*  */}
-          <AboutWrapperFirst>
-            <ImageContainerFirst>
+          <AboutItems>
+            <ImageContainer>
               <MeEngImg src={meEng} />
-            </ImageContainerFirst>
-            <KorContainerFirst>
-              <KorMain>{aboutData.first.main}</KorMain>
-              <KorSub>{aboutData.first.sub}</KorSub>
-            </KorContainerFirst>
-          </AboutWrapperFirst>
+            </ImageContainer>
+            <TextContainer>
+              <TextMain>{aboutData.first.main}</TextMain>
+              <TextSub>{aboutData.first.sub}</TextSub>
+            </TextContainer>
+          </AboutItems>
           {/*  */}
-          <AboutWrapperSecond>
-            <KorContainerSecond>
-              <KorMain>{aboutData.second.main}</KorMain>
-              <KorSub>{aboutData.second.sub}</KorSub>
-            </KorContainerSecond>
-            <ImageContainerSecond>
+          <AboutItems>
+            <TextContainer>
+              <TextMain>{aboutData.second.main}</TextMain>
+              <TextSub>{aboutData.second.sub}</TextSub>
+            </TextContainer>
+            <ImageContainer>
               <VerticalBgDogImg src={verticalBgDog2} />
-            </ImageContainerSecond>
-          </AboutWrapperSecond>
+            </ImageContainer>
+          </AboutItems>
           {/*  */}
-          <AboutWrapperThird>
-            <ImageContainerThird>
+          <AboutItems>
+            <ImageContainer>
               <HorizontalWineImg src={horizontalTableWine} />
-            </ImageContainerThird>
-            <KorContainerThird>
-              <KorMain>{aboutData.second.main}</KorMain>
-              <KorSub>{aboutData.second.sub}</KorSub>
-            </KorContainerThird>
-          </AboutWrapperThird>
+            </ImageContainer>
+            <TextContainer>
+              <TextMain>{aboutData.second.main}</TextMain>
+              <TextSub>{aboutData.second.sub}</TextSub>
+            </TextContainer>
+          </AboutItems>
         </AboutItemContainer>
       </AboutContainer>
     </Layout>
   );
 };
-const KorSub = styled.div`
-  padding: 20px;
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 3;
-  width: 500px;
-  /* border: 1px solid green; */
-  @media screen and (max-width: 500px) {
-    width: 400px;
-  }
-`;
-const KorMain = styled.div`
-  line-height: 2;
-  padding: 40px;
-  font-size: 18px;
-  font-weight: 300;
-  width: 430px;
-  /* border: 1px solid green; */
-  @media screen and (max-width: 500px) {
-    width: 340px;
-  }
-`;
+
 const HorizontalWineImg = styled.img`
   width: 100%;
   height: 100%;
@@ -83,85 +62,15 @@ const HorizontalWineImg = styled.img`
   filter: grayscale(100%);
 `;
 
-const ImageContainerThird = styled.div`
-  height: 100%;
-  width: 40%;
-  padding: 40px;
-  /* border: 1px solid green; */
-`;
-
-const KorContainerThird = styled.div`
-  width: 60%;
-  padding: 40px;
-  font-family: ${fonts.Gothic};
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-
-  /* border: 1px solid gray; */
-`;
-
-const AboutWrapperThird = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* height: 400px; */
-  /* border: 2px solid red; */
-`;
-
 const VerticalBgDogImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   @media screen and (max-width: 500px) {
-    /* filter: grayscale(100%); */
-    /* object-fit: contain; */
     opacity: 0.4;
     object-position: -50px top;
   }
 `;
-
-const ImageContainerSecond = styled.div`
-  height: 100%;
-  width: 30%;
-  padding: 40px;
-  /* border: 1px solid green; */
-  @media screen and (max-width: 500px) {
-    position: absolute;
-    right: 0;
-    padding: 10px;
-    height: 100%;
-    width: 40%;
-    z-index: -1;
-  }
-`;
-const KorContainerSecond = styled.div`
-  width: 70%;
-  padding: 40px;
-  font-family: ${fonts.Gothic};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  /* border: 1px solid gray; */
-`;
-const AboutWrapperSecond = styled.div`
-  display: flex;
-  width: 100%;
-  height: 700px;
-  /* height: 400px; */
-  /* border: 2px solid red; */
-  /* @media screen and (max-width: 500px) {
-    flex-direction: column;
-  } */
-  @media screen and (max-width: 500px) {
-    position: relative;
-  }
-`;
-
 const MeEngImg = styled.img`
   width: 100%;
   height: 100%;
@@ -169,17 +78,32 @@ const MeEngImg = styled.img`
   filter: grayscale(100%);
 `;
 
-const ImageContainerFirst = styled.div`
-  height: 100%;
-  width: 40%;
-  padding: 40px;
+const TextSub = styled.div`
+  padding: 20px;
+  width: 600px;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 3;
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
-    width: 70%;
+    width: 400px;
   }
 `;
-const KorContainerFirst = styled.div`
-  width: 60%;
+const TextMain = styled.div`
+  padding: 40px;
+  width: 600px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 340px;
+  }
+`;
+
+const TextContainer = styled.div`
+  /* width: 60vw; */
+  height: 40vw;
   padding: 40px;
   font-family: ${fonts.Gothic};
   display: flex;
@@ -193,18 +117,26 @@ const KorContainerFirst = styled.div`
   }
 `;
 
-const AboutWrapperFirst = styled.div`
+const ImageContainer = styled.div`
+  width: 500px;
+  height: 500px;
+  padding: 100px;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 20px;
+  }
+`;
+const AboutItems = styled.div`
   display: flex;
-  width: 100%;
-  /* height: 400px; */
-  /* border: 2px solid red; */
+  margin-bottom: 50px;
+  /* border: 1px solid white; */
   @media screen and (max-width: 500px) {
     flex-direction: column;
   }
 `;
 
 const AboutItemContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 500px;
@@ -214,14 +146,13 @@ const AboutItemContainer = styled.div`
 `;
 
 const FieldText = styled.div`
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 70px;
-  font-weight: 800;
-  letter-spacing: -0.1em;
-  padding-right: 1vw;
-  background-color: black;
+  font-weight: 100;
+  letter-spacing: 0.5em;
+  /* background-color: black; */
 
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 
   @media screen and (max-width: 500px) {
     font-size: 50px;

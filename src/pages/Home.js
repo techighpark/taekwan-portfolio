@@ -11,7 +11,7 @@ const Home = () => {
       </Helmet>
       <MainContainer>
         <FieldContainer>
-          <FieldText>Front-Engineer</FieldText>
+          <FieldText>FRONT-ENGINEER</FieldText>
         </FieldContainer>
         <MainStackContainer>
           <Row>
@@ -61,24 +61,24 @@ const FieldContainer = styled.div`
 `;
 const FieldText = styled.span`
   position: relative;
-  font-style: italic;
-  font-size: 140px;
-  font-weight: 700;
-  letter-spacing: -0.1em;
+  /* font-style: italic; */
+  font-size: 90px;
+  font-weight: 100;
+  letter-spacing: 0.1em;
 
   /* border: 1px solid yellowgreen; */
 
   &::after {
     content: "";
     position: absolute;
-    bottom: 25px;
-    right: -25px;
-    height: 25px;
-    width: 25px;
-    background-color: ${props => props.theme.accentColor};
+    bottom: 20px;
+    right: -20px;
+    height: 20px;
+    width: 20px;
+    border: 1px solid ${props => props.theme.accentColor};
   }
   @media screen and (max-width: 1000px) {
-    font-size: 100px;
+    font-size: 50px;
   }
   @media screen and (max-width: 500px) {
     font-size: 45px;
