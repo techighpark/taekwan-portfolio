@@ -134,9 +134,9 @@ const FieldText = styled.div`
 const FieldContainer = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 30%;
+  margin-top: 400px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 
   /* border: 0.5px solid yellow; */
 

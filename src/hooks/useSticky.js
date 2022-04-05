@@ -5,8 +5,9 @@ const useSticky = (defaultValue = false) => {
   const stickyRef = useRef();
   useEffect(() => {
     const initialTop = stickyRef.current.getBoundingClientRect().top;
+
     const handleScroll = () => {
-      setFiexPosition(window.scrollY + 100 > initialTop);
+      setFiexPosition(window.scrollY + 190 > initialTop);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
