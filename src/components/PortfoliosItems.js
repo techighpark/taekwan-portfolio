@@ -174,11 +174,11 @@ const ProjectContainer = styled.div`
 
 const PortfolioItemsContainer = styled.div`
   width: 100%;
+  margin-top: 500px;
+  margin-bottom: 200px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 400px;
-  margin-top: 500px;
-  margin-bottom: 200px;
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {

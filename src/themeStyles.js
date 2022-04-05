@@ -19,7 +19,8 @@ export const fonts = {
   Lato: `'Lato', sans-serif`,
   Staliches: `'Staatliches', cursive`,
   Montserrat: `'Montserrat', sans-serif`,
-  GothicA1: `'Gothic A1', sans-serif`,
+  Gothic: `'Gothic A1', sans-serif`,
+  NotoSans: `'Noto Sans KR', sans-serif`,
 };
 
 export const GlobalStyles = createGlobalStyle`

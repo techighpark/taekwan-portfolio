@@ -1,8 +1,8 @@
-import highBookerWeb from "../img/high-booker.JPG";
-import highBookerDB from "../img/high-booker-database.png";
-import highSearchBook from "../img/high-search-book.png";
-import highVedio from "../img/high-booker-web-3.png";
-import portfolio from "../img/portfolio.png";
+import highBookerWeb from "../assets/img/high-booker.JPG";
+import highBookerDB from "../assets/img/high-booker-database.png";
+import highSearchBook from "../assets/img/high-search-book.png";
+import highVedio from "../assets/img/high-booker-web-3.png";
+import portfolio from "../assets/img/portfolio.png";
 
 export const portfolioDatas = [
   {

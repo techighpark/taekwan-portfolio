@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
-// import ymImg from "../img/IMG_0673.JPG";
-import myImg from "../img/IMG_8999.JPG";
+import meEng from "../assets/img/meEng.JPG";
+import verticalBgDog1 from "../assets/img/verticalBgDog1.JPG";
+import verticalBgDog2 from "../assets/img/verticalBgDog2.JPG";
+import horizontalTableWine from "../assets/img/horizontalTableWine.JPG";
+import { aboutData } from "../assets/aboutData";
 
 const About = () => {
   return (
@@ -13,37 +16,36 @@ const About = () => {
           <FieldText>About</FieldText>
         </FieldContainer>
         <AboutItemContainer>
-          <ImageContainer>
-            <Image />
-          </ImageContainer>
-          <KorContainer>
-            <KorMain>
-              프론트 엔지니어로서 새로운 발걸음을 내딛고 있는 박태관 입니다.
-            </KorMain>
-            <KorSub>
-              브랜드 기획을 담당했던 과거의 경험은 고객과 잠재적 고객에 대해
-              한층 더 이해할수 있는 안목과 새로운 관점에서 바라볼 수 있도록
-              시야를 넓혀주었습니다. 뿐만 아니라 다른 직원들과 공감하고 의사
-              소통을 통해 협업하는 능력을 크게 향상 시켜주었습니다.
-            </KorSub>
-          </KorContainer>
-        </AboutItemContainer>
-        <AboutItemContainer>
-          <ImageContainer>
-            <SecondImage />
-            <BgImage />
-          </ImageContainer>
-          <KorContainer>
-            <KorMain>
-              브랜드를 디자인하며 수많은 문제를 해결했고,
-              <br />
-              이를 통해 창의성과 공감 능력이 향상 되었습니다.
-            </KorMain>
-            <KorSub>
-              또한 각 팀의 리더가 브랜드의 전체적인 프로세스를 이해할 수 있도록
-              노력하였습니다. 브랜드가 성장하는 것과 동시에
-            </KorSub>
-          </KorContainer>
+          {/*  */}
+          <AboutWrapperFirst>
+            <ImageContainerFirst>
+              <MeEngImg src={meEng} />
+            </ImageContainerFirst>
+            <KorContainerFirst>
+              <KorMain>{aboutData.first.main}</KorMain>
+              <KorSub>{aboutData.first.sub}</KorSub>
+            </KorContainerFirst>
+          </AboutWrapperFirst>
+          {/*  */}
+          <AboutWrapperSecond>
+            <KorContainerSecond>
+              <KorMain>{aboutData.second.main}</KorMain>
+              <KorSub>{aboutData.second.sub}</KorSub>
+            </KorContainerSecond>
+            <ImageContainerSecond>
+              <VerticalBgDogImg src={verticalBgDog2} />
+            </ImageContainerSecond>
+          </AboutWrapperSecond>
+          {/*  */}
+          <AboutWrapperThird>
+            <ImageContainerThird>
+              <HorizontalWineImg src={horizontalTableWine} />
+            </ImageContainerThird>
+            <KorContainerThird>
+              <KorMain>{aboutData.second.main}</KorMain>
+              <KorSub>{aboutData.second.sub}</KorSub>
+            </KorContainerThird>
+          </AboutWrapperThird>
         </AboutItemContainer>
       </AboutContainer>
     </Layout>
@@ -53,68 +55,159 @@ const KorSub = styled.div`
   padding: 20px;
   font-size: 14px;
   font-weight: 100;
-  line-height: 2.5;
+  line-height: 3;
+  width: 500px;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 400px;
+  }
 `;
 const KorMain = styled.div`
-  padding: 20px;
+  line-height: 2;
+  padding: 40px;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
+  width: 430px;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 340px;
+  }
 `;
-const KorContainer = styled.div`
-  width: 50%;
-  font-family: ${fonts.GothicA1};
+const HorizontalWineImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+`;
+
+const ImageContainerThird = styled.div`
+  height: 100%;
+  width: 40%;
+  padding: 40px;
+  /* border: 1px solid green; */
+`;
+
+const KorContainerThird = styled.div`
+  width: 60%;
+  padding: 40px;
+  font-family: ${fonts.Gothic};
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  align-items: center;
   justify-content: center;
 
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* border: 1px solid gray; */
 `;
 
-const SecondImage = styled.img`
+const AboutWrapperThird = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 400px; */
+  /* border: 2px solid red; */
+`;
+
+const VerticalBgDogImg = styled.img`
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  @media screen and (max-width: 500px) {
+    /* filter: grayscale(100%); */
+    /* object-fit: contain; */
+    opacity: 0.4;
+    object-position: -50px top;
+  }
 `;
-SecondImage.defaultProps = {
-  src: myImg,
-};
 
-const BgImage = styled.img`
-  position: absolute;
-  height: 200%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  filter: grayscale(100%) brightness(40%) blur(2px);
-`;
-BgImage.defaultProps = {
-  src: myImg,
-};
-const Image = styled.img`
-  height: 150%;
-  transform: translateY(-20%);
-
-  /* filter: grayscale(100%) brightness(70%); */
-`;
-Image.defaultProps = {
-  src: myImg,
-};
-const ImageContainer = styled.div`
+const ImageContainerSecond = styled.div`
   height: 100%;
-  position: relative;
-  /* border: 1px solid tomato; */
+  width: 30%;
+  padding: 40px;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    height: 100%;
+    width: 40%;
+    z-index: -1;
+  }
+`;
+const KorContainerSecond = styled.div`
+  width: 70%;
+  padding: 40px;
+  font-family: ${fonts.Gothic};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* border: 1px solid gray; */
+`;
+const AboutWrapperSecond = styled.div`
+  display: flex;
+  width: 100%;
+  height: 700px;
+  /* height: 400px; */
+  /* border: 2px solid red; */
+  /* @media screen and (max-width: 500px) {
+    flex-direction: column;
+  } */
+  @media screen and (max-width: 500px) {
+    position: relative;
+  }
+`;
+
+const MeEngImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+`;
+
+const ImageContainerFirst = styled.div`
+  height: 100%;
+  width: 40%;
+  padding: 40px;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 70%;
+  }
+`;
+const KorContainerFirst = styled.div`
+  width: 60%;
+  padding: 40px;
+  font-family: ${fonts.Gothic};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* border: 1px solid gray; */
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
+const AboutWrapperFirst = styled.div`
+  display: flex;
+  width: 100%;
+  /* height: 400px; */
+  /* border: 2px solid red; */
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const AboutItemContainer = styled.div`
-  margin-top: 200px;
-  /* margin-bottom: 500px; */
-  /* width: 100%; */
-  height: 300px;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  flex-direction: column;
+  margin-top: 500px;
+  margin-bottom: 200px;
 
-  /* border: 1px solid tomato; */
+  /* border: 1px solid white; */
 `;
 
 const FieldText = styled.div`
@@ -125,7 +218,7 @@ const FieldText = styled.div`
   padding-right: 1vw;
   background-color: black;
 
-  /* border: 1px solid yellowgreen; */
+  border: 1px solid yellow;
 
   @media screen and (max-width: 500px) {
     font-size: 50px;
@@ -139,16 +232,6 @@ const FieldContainer = styled.div`
   justify-content: center;
 
   /* border: 0.5px solid yellow; */
-
-  /* ::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 0.5px;
-    z-index: -1;
-    background-color: gray;
-  } */
 
   @media screen and (max-width: 500px) {
     margin-top: 400px;
