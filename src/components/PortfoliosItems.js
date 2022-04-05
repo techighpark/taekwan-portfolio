@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
 import { Check } from "@styled-icons/feather/Check";
-import { portfolioDatas } from "./portfolioDatas";
+import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
@@ -44,7 +44,7 @@ const StckCheck = styled(Check)`
 `;
 
 const LinkArrowUpRight = styled(ArrowUpRight)`
-  color: ${props => props.theme.lightAccentColor};
+  color: ${props => props.theme.accentColor};
   width: 15px;
   font-weight: bold;
   @media screen and (max-width: 500px) {
@@ -75,8 +75,8 @@ const StyledLink = styled(Link)`
 `;
 
 const Stack = styled.div`
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 500;
   padding-bottom: 10px;
 `;
 const StackContainer = styled.div`

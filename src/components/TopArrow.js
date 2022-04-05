@@ -38,8 +38,8 @@ const TopArrowP = styled.div`
     display: block;
     width: 12px;
     height: 12px;
-    border-top: 2px solid ${props => props.theme.lightAccentColor};
-    border-left: 2px solid ${props => props.theme.lightAccentColor};
+    border-top: 2px solid ${props => props.theme.accentColor};
+    border-left: 2px solid ${props => props.theme.accentColor};
     transform: rotate(45deg);
     margin: -5px;
     animation: ${TopArrowAnimation} 2s infinite;

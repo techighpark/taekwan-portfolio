@@ -2,8 +2,18 @@ import highBookerWeb from "../img/high-booker.JPG";
 import highBookerDB from "../img/high-booker-database.png";
 import highSearchBook from "../img/high-search-book.png";
 import highVedio from "../img/high-booker-web-3.png";
+import portfolio from "../img/portfolio.png";
 
 export const portfolioDatas = [
+  {
+    listTitle: "Portfolio: Web",
+    url: "techighportfolio",
+    imgTitle: "Portfolio",
+    imgSubtitle: "Web",
+    src: portfolio,
+    date: "April. 2022",
+    stacks: ["React JS"],
+  },
   {
     listTitle: "High-Booker: Web",
     url: "high-booker",

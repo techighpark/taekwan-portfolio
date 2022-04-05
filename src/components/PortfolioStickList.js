@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
-import { portfolioDatas } from "./portfolioDatas";
+import { portfolioDatas } from "../assets/portfolioDatas";
 import { EmojiSmileUpsideDown } from "@styled-icons/bootstrap/EmojiSmileUpsideDown";
 
 const PortfolioStickList = React.forwardRef((props, ref) => {
