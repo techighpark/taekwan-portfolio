@@ -82,7 +82,7 @@ const StackContainer = styled.div`
   /* border: 1px solid white; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    top: 280px;
+    top: 310px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
@@ -95,6 +95,9 @@ const PortfolioSubtitle = styled.div`
   font-weight: 300;
   color: ${props => props.theme.bgColor};
   background-color: white;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const PortfolioTitle = styled.div`
@@ -109,8 +112,8 @@ const PortfolioTitle = styled.div`
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
     white-space: nowrap;
-    font-size: 40px;
-    top: 10px;
+    font-size: 35px;
+    top: 0px;
   }
 `;
 
@@ -130,7 +133,7 @@ const TitleContainer = styled.div`
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 300px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
   }
 `;
