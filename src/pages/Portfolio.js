@@ -77,7 +77,7 @@ const FieldText = styled.div`
 const PortfolioList = styled.div`
   position: absolute;
   top: 800px;
-  right: 0;
+  left: 0;
   text-align: right;
   padding: 20px 0px 20px 5px;
   overflow: hidden;
@@ -89,17 +89,16 @@ const PortfolioList = styled.div`
     css`
       position: fixed;
       top: 100px;
-      right: 1vw;
+      left: 1vw;
     `}
   @media screen and (max-width: 500px) {
     top: 600px;
-
     background-color: rgba(255, 255, 255, 0.1);
     ${props =>
       props.fixed &&
       css`
         top: 100px;
-        right: 3vw;
+        left: 3vw;
       `}
   }
 `;
@@ -109,6 +108,7 @@ const ListTitle = styled.div`
   padding: 3px;
   border-bottom: 0.5px solid;
   margin-bottom: 20px;
+  text-align: left;
   /* border: 1px solid yellow; */
 `;
 
@@ -124,6 +124,7 @@ const LineAccent = keyframes`
 const Portfolios = styled.div`
   position: relative;
   font-weight: 200;
+  /* width: 100%; */
   color: ${props => (props.selected ? "white" : "rgba(255, 255, 255, 0.5)")};
   padding-bottom: ${props => (props.last ? "0px" : "20px")};
   cursor: pointer;
@@ -150,7 +151,7 @@ const Portfolios = styled.div`
     ::before {
       content: "";
       background-color: rgba(254, 23, 162, 0.8);
-      animation: ${LineAccent} 0.5s 1 ease-in forwards;
+      animation: ${LineAccent} 0.3s 1 ease-in forwards;
     }
   }
   @media screen and (max-width: 500px) {

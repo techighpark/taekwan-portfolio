@@ -47,6 +47,21 @@ const LinkText = styled.span`
   }
 `;
 
+const StyledLink = styled(Link)`
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+
+  :hover {
+    span {
+      color: ${props => props.theme.fontColor};
+    }
+    ${LinkArrowUpRight} {
+      color: ${props => props.theme.accentColor};
+    }
+  }
+`;
+
 const Stack = styled.div`
   font-size: 14px;
   font-weight: 300;
@@ -138,21 +153,6 @@ const ProjectContainer = styled.div`
 
   @media screen and (max-width: 500px) {
     height: 300px;
-  }
-`;
-const StyledLink = styled(Link)`
-  position: absolute;
-  bottom: 0%;
-  right: 0%;
-  /* transform: translateX(-50%); */
-
-  :hover {
-    span {
-      color: ${props => props.theme.fontColor};
-    }
-    ${LinkArrowUpRight} {
-      color: ${props => props.theme.accentColor};
-    }
   }
 `;
 
