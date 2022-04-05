@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
+import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
 import { portfolioDatas } from "./portfolioDatas";
-import PageArrowSVG from "../components/PageArrow";
+import { Link } from "react-router-dom";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   return (
@@ -22,13 +22,30 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
                 ))}
               </StackContainer>
             </PortfolioTitle>
-            <PageArrowSVG fill="pink" width={30} height={30} />
           </TitleContainer>
+          <StyledLink to={`/ex/${data.url}`} target="_blank">
+            <LinkText>Visit Website</LinkText>
+            <LinkArrowUpRight />
+          </StyledLink>
         </ProjectContainer>
       ))}
     </PortfolioItemsContainer>
   );
 });
+
+const LinkArrowUpRight = styled(ArrowUpRight)`
+  color: ${props => props.theme.lightAccentColor};
+  width: 15px;
+  font-weight: bold;
+  @media screen and (max-width: 500px) {
+    color: ${props => props.theme.accentColor};
+  }
+`;
+const LinkText = styled.span`
+  color: ${props => props.theme.WhiteColor};
+  @media screen and (max-width: 500px) {
+  }
+`;
 
 const Stack = styled.div`
   font-size: 14px;
@@ -81,17 +98,20 @@ const PortfolioTitle = styled.div`
 
 const TitleContainer = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 400px;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  /* border: 0.5px solid yellow; */
+  /* border: 0.5px solid red; */
 
   cursor: pointer;
   :hover {
     opacity: 1;
   }
+
   @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 300px;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
@@ -115,8 +135,24 @@ const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   /* border: 1px solid yellow; */
+
   @media screen and (max-width: 500px) {
     height: 300px;
+  }
+`;
+const StyledLink = styled(Link)`
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  /* transform: translateX(-50%); */
+
+  :hover {
+    span {
+      color: ${props => props.theme.fontColor};
+    }
+    ${LinkArrowUpRight} {
+      color: ${props => props.theme.accentColor};
+    }
   }
 `;
 
@@ -130,7 +166,7 @@ const PortfolioItemsContainer = styled.div`
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    width: 80%;
+    width: 100%;
     margin-top: 200px;
   }
 `;

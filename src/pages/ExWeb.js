@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function ExWeb() {
-  const { title } = useParams();
+  const { url } = useParams();
 
   useEffect(() => {
-    window.location.href = `http://${title}.netlify.app`;
-  }, [title]);
+    window.location.href = `https://${url}.netlify.app`;
+  }, [url]);
 
   return (
     <div>

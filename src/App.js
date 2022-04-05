@@ -4,10 +4,6 @@ import Home from "./pages/Home";
 import { darkMode, GlobalStyles, lightMode } from "./themeStyles";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import BookerWeb from "./pages/BookerWeb";
-import BookerDB from "./pages/BookerDB";
-import SearchBook from "./pages/SearchBook";
-import HighVideo from "./pages/HighVideo";
 import ExWeb from "./pages/ExWeb";
 
 function App() {
@@ -19,12 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/booker-web" element={<BookerWeb />} />
-          <Route path="/portfolio/booker-db" element={<BookerDB />} />
-          <Route path="/portfolio/search-book" element={<SearchBook />} />
-          <Route path="/portfolio/high-video" element={<HighVideo />} />
           <Route path="/about" element={<About />} />
-          <Route path="/ex/:title" element={<ExWeb />} />
+          <Route path="/ex/:url" element={<ExWeb />} />
         </Routes>
       </Router>
     </ThemeProvider>

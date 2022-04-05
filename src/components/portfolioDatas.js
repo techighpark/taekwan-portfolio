@@ -6,7 +6,7 @@ import highVedio from "../img/high-booker-web-3.png";
 export const portfolioDatas = [
   {
     listTitle: "High-Booker: Web",
-    url: "booker-web",
+    url: "high-booker",
     imgTitle: "High-Booker",
     imgSubtitle: "Web",
     src: highBookerWeb,
@@ -15,7 +15,7 @@ export const portfolioDatas = [
   },
   {
     listTitle: "High-Booker: Database / Server",
-    url: "booker-db",
+    url: "high-booker",
     imgTitle: "High-Booker",
     imgSubtitle: "Database",
     src: highBookerDB,
@@ -24,7 +24,7 @@ export const portfolioDatas = [
   },
   {
     listTitle: "Search-Books: Web",
-    url: "search-book",
+    url: "high-search-book",
     imgTitle: "Search-Books",
     imgSubtitle: "Web",
     src: highSearchBook,
@@ -33,7 +33,7 @@ export const portfolioDatas = [
   },
   {
     listTitle: "High-Video: Web",
-    url: "booker-web",
+    url: "high-search-book",
     imgTitle: "High-Video",
     imgSubtitle: "Web",
     src: highVedio,
