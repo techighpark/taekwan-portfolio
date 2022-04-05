@@ -135,7 +135,7 @@ const TitleContainer = styled.div`
   opacity: 0;
   /* border: 0.5px solid red; */
 
-  cursor: pointer;
+  /* cursor: pointer; */
   :hover {
     opacity: 1;
   }

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
 import meEng from "../assets/img/meEng.JPG";
-import verticalBgDog1 from "../assets/img/verticalBgDog1.JPG";
 import verticalBgDog2 from "../assets/img/verticalBgDog2.JPG";
 import horizontalTableWine from "../assets/img/horizontalTableWine.JPG";
 import { aboutData } from "../assets/aboutData";
