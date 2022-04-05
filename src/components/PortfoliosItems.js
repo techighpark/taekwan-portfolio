@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import highBookerWeb from "../img/high-booker.JPG";
-import highBookerDB from "../img/high-booker-database.png";
-import highSearchBook from "../img/high-search-book.png";
-import highVedio from "../img/high-booker-web-3.png";
+import { portfolioDatas } from "./portfolioDatas";
+import PageArrowSVG from "../components/PageArrow";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   return (
     <PortfolioItemsContainer>
-      {portfolioData.map((data, index) => (
+      {portfolioDatas.map((data, index) => (
         <ProjectContainer ref={el => (ref.current[index] = el)} key={index}>
           <PortfolioPhoto src={data.src} />
           <TitleContainer>
@@ -24,12 +22,14 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
                 ))}
               </StackContainer>
             </PortfolioTitle>
+            <PageArrowSVG fill="pink" width={30} height={30} />
           </TitleContainer>
         </ProjectContainer>
       ))}
     </PortfolioItemsContainer>
   );
 });
+
 const Stack = styled.div`
   font-size: 14px;
   font-weight: 300;
@@ -124,9 +124,9 @@ const PortfolioItemsContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 300px;
+  row-gap: 400px;
   margin-top: 500px;
-  margin-bottom: 500px;
+  margin-bottom: 200px;
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
@@ -134,44 +134,5 @@ const PortfolioItemsContainer = styled.div`
     margin-top: 200px;
   }
 `;
-
-const portfolioData = [
-  {
-    listTitle: "High-Booker: Web",
-    url: "booker-web",
-    imgTitle: "High-Booker",
-    imgSubtitle: "Web",
-    src: highBookerWeb,
-    date: "Mar. 2022",
-    stacks: ["React JS", "Apollo Client"],
-  },
-  {
-    listTitle: "High-Booker: Database / Server",
-    url: "booker-db",
-    imgTitle: "High-Booker",
-    imgSubtitle: "Database",
-    src: highBookerDB,
-    date: "Mar. 2022",
-    stacks: ["Postgresql", "GraphQL", "Apollo Server", "Prisma"],
-  },
-  {
-    listTitle: "Search-Books: Web",
-    url: "search-book",
-    imgTitle: "Search-Books",
-    imgSubtitle: "Web",
-    src: highSearchBook,
-    date: "Mar. 2022",
-    stacks: ["React JS", "Rest API", "GraphQL"],
-  },
-  {
-    listTitle: "High-Video: Web",
-    url: "booker-web",
-    imgTitle: "High-Video",
-    imgSubtitle: "Web",
-    src: highVedio,
-    date: "Mar. 2022",
-    stacks: ["Web RTC", "JavaScript"],
-  },
-];
 
 export default PortfoliosItems;

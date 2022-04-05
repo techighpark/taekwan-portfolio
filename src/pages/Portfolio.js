@@ -1,20 +1,15 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import Layout from "../components/Layout";
-import highBookerWeb from "../img/high-booker.JPG";
-import highBookerDB from "../img/high-booker-database.png";
-import highSearchBook from "../img/high-search-book.png";
-import highVedio from "../img/high-booker-web-3.png";
-import { keyframes } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
-// import { useState } from "react";
 import PortfoliosItems from "../components/PortfoliosItems";
+import { portfolioDatas } from "../components/portfolioDatas";
+import TopArrow from "../components/TopArrow";
 
 const Portfolio = () => {
   const { portfolioRef, currentTab, onClickList } = useScroll(null);
   const { fixedPosition, stickyRef } = useSticky();
-  console.log(portfolioRef);
 
   return (
     <Layout>
@@ -24,12 +19,12 @@ const Portfolio = () => {
         </FieldContainer>
         <PortfolioList fixed={fixedPosition} ref={stickyRef}>
           <ListTitle>LIST</ListTitle>
-          {portfolioData.map((data, index) => (
+          {portfolioDatas.map((data, index) => (
             <Portfolios
               onClick={() => onClickList(index)}
               selected={portfolioRef.current[index] === currentTab}
               key={index}
-              last={Boolean(index === portfolioData.length - 1)}
+              last={Boolean(index === portfolioDatas.length - 1)}
             >
               {data.listTitle}
             </Portfolios>
@@ -42,47 +37,10 @@ const Portfolio = () => {
         />
         <PortfoliosItems ref={portfolioRef} />
       </PortfolioContainer>
+      <TopArrow />
     </Layout>
   );
 };
-const portfolioData = [
-  {
-    listTitle: "High-Booker: Web",
-    url: "booker-web",
-    imgTitle: "High-Booker",
-    subtitle: "Web",
-    src: highBookerWeb,
-    date: "Mar. 2022",
-    stack: ["React JS", "CSS", "Prisma"],
-  },
-  {
-    listTitle: "High-Booker: Database / Server",
-    url: "booker-db",
-    imgTitle: "High-Booker",
-    subtitle: "Database",
-    src: highBookerDB,
-    date: "Mar. 2022",
-    stack: ["Postgresql", "GraphQL", "Prisma"],
-  },
-  {
-    listTitle: "Search-Books: Web",
-    url: "search-book",
-    imgTitle: "Search-Books",
-    subtitle: "Web",
-    src: highSearchBook,
-    date: "Mar. 2022",
-    stack: ["Postgresql", "GraphQL", "Prisma"],
-  },
-  {
-    listTitle: "High-Video: Web",
-    url: "booker-web",
-    imgTitle: "High-Video",
-    subtitle: "Web",
-    src: highVedio,
-    date: "Mar. 2022",
-    stack: ["Postgresql", "GraphQL", "Prisma"],
-  },
-];
 
 const PortfolioContainer = styled.div`
   display: flex;

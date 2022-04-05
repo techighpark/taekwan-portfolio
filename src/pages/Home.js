@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { keyframes } from "styled-components";
 import Layout from "../components/Layout";
 
 const Home = () => {
@@ -46,7 +45,7 @@ const MainContainer = styled.div`
   /* border: 3px solid tomato; */
 `;
 const FieldContainer = styled.div`
-  margin-top: 30%;
+  margin-top: 50vh;
 
   /* border: 0.5px solid yellow; */
 
@@ -73,6 +72,9 @@ const FieldText = styled.span`
     width: 25px;
     background-color: ${props => props.theme.accentColor};
   }
+  @media screen and (max-width: 1000px) {
+    font-size: 100px;
+  }
   @media screen and (max-width: 500px) {
     font-size: 45px;
     &::after {
@@ -85,43 +87,11 @@ const FieldText = styled.span`
   }
 `;
 
-// const StackLine = keyframes`
-// 0%{
-//   left:-10vw;
-// }
-// 20%{
-// }
-// 40%{
-
-// }
-// 60%{
-
-// }
-// 80%{
-
-// }
-// 100%{
-//   left:100vw;
-// }`;
-
-// const GrayLine = styled.hr`
-//   height: 30px;
-//   width: 30px;
-//   left: -10vw;
-//   position: absolute;
-//   background-color: yellowgreen;
-//   border-width: 0;
-//   animation: ${StackLine} 10s infinite ease-in-out alternate;
-//   @media screen and (max-width: 500px) {
-//     display: none;
-//   }
-// `;
-
 const MainStackContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 15%;
+  margin-top: 10%;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
     margin-top: 190px;
