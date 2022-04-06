@@ -15,7 +15,7 @@ const Portfolio = () => {
   return (
     <Layout>
       <Helmet>
-        <title>TAE KWAN | PORTFOLIO</title>
+        <title>TAE KWAN | WORKS</title>
       </Helmet>
       <PortfolioContainer>
         <FieldContainer>

@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   return (
-    <PortfolioItemsContainer>
+    <PortfolioContainer>
       {portfolioDatas.map((data, index) => (
-        <ProjectContainer ref={el => (ref.current[index] = el)} key={index}>
+        <ProjectItemContainer ref={el => (ref.current[index] = el)} key={index}>
           <PortfolioPhoto src={data.src} />
           <TitleContainer>
             <PortfolioTitle>
@@ -31,9 +31,9 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
             <LinkText>Visit Website</LinkText>
             <LinkArrowUpRight />
           </StyledLink>
-        </ProjectContainer>
+        </ProjectItemContainer>
       ))}
-    </PortfolioItemsContainer>
+    </PortfolioContainer>
   );
 });
 
@@ -160,7 +160,7 @@ const PortfolioPhoto = styled.img`
   }
 `;
 
-const ProjectContainer = styled.div`
+const ProjectItemContainer = styled.div`
   /* overflow: hidden; */
   height: 400px;
   position: relative;
@@ -173,7 +173,7 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const PortfolioItemsContainer = styled.div`
+const PortfolioContainer = styled.div`
   width: 100%;
   margin-top: 500px;
   margin-bottom: 200px;

@@ -33,7 +33,7 @@ let Header = () => {
             onClick={() => onClickTab(1)}
             selected={tabRef.current[1] === currentTab}
           >
-            PORTFOLIO
+            WORKS
           </HeaderLink>
         </Link>
         <Link to={"/about"}>
