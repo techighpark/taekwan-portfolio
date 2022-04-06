@@ -12,7 +12,7 @@ const StyledLayout = styled.div`
 
   /* border: 1px solid blue; */
   @media screen and (max-width: 500px) {
-    padding: 20px;
+    padding: 0px;
   }
 `;
 

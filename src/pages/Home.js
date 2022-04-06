@@ -136,6 +136,7 @@ const Stack = styled.div`
   font-weight: 100;
   padding-left: 20px;
   white-space: nowrap;
+  color: ${props => props.theme.lightWhiteColor};
 
   /* border: 1px solid burlywood; */
   @media screen and (max-width: 500px) {

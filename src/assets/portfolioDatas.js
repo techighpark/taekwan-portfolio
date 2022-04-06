@@ -6,6 +6,7 @@ import portfolio from "../assets/img/portfolio.png";
 
 export const portfolioDatas = [
   {
+    listNum: "1",
     listTitle: "Portfolio: Web",
     url: "techighportfolio",
     imgTitle: "Portfolio",
@@ -15,6 +16,8 @@ export const portfolioDatas = [
     stacks: ["React JS"],
   },
   {
+    listNum: "2",
+
     listTitle: "High-Booker: Web",
     url: "high-booker",
     imgTitle: "High-Booker",
@@ -24,6 +27,8 @@ export const portfolioDatas = [
     stacks: ["React JS", "Apollo Client"],
   },
   {
+    listNum: "3",
+
     listTitle: "High-Booker: Database / Server",
     url: "high-booker",
     imgTitle: "High-Booker",
@@ -33,6 +38,7 @@ export const portfolioDatas = [
     stacks: ["Postgresql", "GraphQL", "Apollo Server", "Prisma"],
   },
   {
+    listNum: "4",
     listTitle: "Search-Books: Web",
     url: "high-search-book",
     imgTitle: "Search-Books",
@@ -42,6 +48,7 @@ export const portfolioDatas = [
     stacks: ["React JS", "Rest API", "GraphQL"],
   },
   {
+    listNum: "5",
     listTitle: "High-Video: Web",
     url: "high-search-book",
     imgTitle: "High-Video",

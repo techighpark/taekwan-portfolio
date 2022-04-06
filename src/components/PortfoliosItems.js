@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
-import { Check } from "@styled-icons/feather/Check";
+import { Check } from "@styled-icons/fa-solid/Check";
 import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
                 {data.stacks.map((stack, index) => (
                   <div key={index}>
                     <Stack>
-                      <StckCheck />
+                      <StackCheck />
                       {stack}
                     </Stack>
                   </div>
@@ -37,8 +37,9 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
   );
 });
 
-const StckCheck = styled(Check)`
-  width: 25px;
+const StackCheck = styled(Check)`
+  width: 20px;
+  color: ${props => props.theme.lightWhiteColor};
   padding-right: 10px;
   padding-bottom: 2px;
 `;
@@ -133,7 +134,7 @@ const TitleContainer = styled.div`
   height: 400px;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  border: 0.5px solid ${props => props.theme.lightWhiteColor};
+  /* border: 0.5px solid ${props => props.theme.lightWhiteColor}; */
   /* border-radius: 1px; */
 
   /* cursor: pointer; */
