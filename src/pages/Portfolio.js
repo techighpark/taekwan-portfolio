@@ -95,7 +95,7 @@ const ArrowPulse = keyframes`
 	}
 `;
 
-const BottomArrow = styled.div`
+export const BottomArrow = styled.div`
   box-sizing: border-box;
   position: absolute;
   top: 620px;
@@ -142,7 +142,7 @@ const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 450px;
+    top: 400px;
   }
 `;
 

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
 import meCoffee from "../assets/img/meCoffee.JPG";
 import { aboutData } from "../assets/aboutData";
+import TopArrow from "../components/TopArrow";
 
 const About = () => {
   return (
@@ -32,6 +33,7 @@ const About = () => {
           ))}
         </AboutItemContainer>
       </AboutContainer>
+      <TopArrow />
     </Layout>
   );
 };
@@ -106,6 +108,10 @@ const ImageContainer = styled.div`
   @media screen and (max-width: 500px) {
     width: 350px;
     height: 200px;
+    ::after {
+      top: 0px;
+      transform: rotate(270deg);
+    }
     /* padding: 20px; */
   }
 `;

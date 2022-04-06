@@ -6,10 +6,9 @@ import { portfolioDatas } from "../assets/portfolioDatas";
 import { EmojiSmileUpsideDown } from "@styled-icons/bootstrap/EmojiSmileUpsideDown";
 
 const PortfolioStickList = React.forwardRef((props, ref) => {
-  const { fixedPosition, stickyRef } = useSticky(false);
   const { currentTab, onClickList } = useScroll("");
-
   const [listItem, setListItem] = useState(window.innerWidth < 500);
+  const { fixedPosition, stickyRef } = useSticky(false, listItem);
   useEffect(() => {
     const sizeDetect = () => {
       if (window.innerWidth < 500) {

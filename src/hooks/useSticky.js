@@ -1,25 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 
-const useSticky = (defaultValue = false) => {
+const useSticky = (defaultValue = false, listItem) => {
   const [fixedPosition, setFiexPosition] = useState(defaultValue);
   const stickyRef = useRef([]);
   useEffect(() => {
     const initialTop = stickyRef.current.getBoundingClientRect().top;
-    console.log(initialTop);
-    console.log(window.scrollY);
-    console.log(window.innerWidth);
-
+    const offSet = listItem ? 30 : 190;
     const handleScroll = () => {
-      if (window.innerWidth < 500) {
-        setFiexPosition(window.scrollY + 30 > initialTop);
-      }
-      setFiexPosition(window.scrollY + 190 > initialTop);
+      setFiexPosition(window.scrollY + offSet > initialTop);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [listItem]);
   return { fixedPosition, stickyRef };
 };
 
