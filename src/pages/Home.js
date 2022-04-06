@@ -46,7 +46,7 @@ const Home = () => {
 
 const MainContainer = styled.div`
   z-index: -1;
-  max-width: 1500px;
+  max-width: 2000px;
   width: 100%;
   height: 94vh;
   position: relative;
@@ -104,8 +104,8 @@ const MainStackContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 1px;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
     height: 500px;

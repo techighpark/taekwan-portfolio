@@ -195,7 +195,7 @@ const AboutContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  max-width: 1500px;
+  max-width: 2000px;
 
   /* border: 1px solid orange; */
 `;

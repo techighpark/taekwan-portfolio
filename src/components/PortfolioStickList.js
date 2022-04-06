@@ -143,9 +143,9 @@ const ListTitle = styled.div`
 `;
 
 const PortfolioList = styled.div`
-  position: relative;
+  position: absolute;
   top: 750px;
-  left: -500px;
+  left: 0;
   padding: 20px;
   text-align: right;
   overflow: hidden;
@@ -154,7 +154,6 @@ const PortfolioList = styled.div`
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);
   /* border-radius: 10px; */
-
   /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
   border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
   ${props =>
