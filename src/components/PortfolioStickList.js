@@ -174,6 +174,7 @@ const PortfolioList = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     /* border: 1px solid red; */
     ${props =>
