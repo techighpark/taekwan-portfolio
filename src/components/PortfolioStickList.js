@@ -3,7 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
 import { portfolioDatas } from "../assets/portfolioDatas";
-import { EmojiSmileUpsideDown } from "@styled-icons/bootstrap/EmojiSmileUpsideDown";
+// import { EmojiSmileUpsideDown } from "@styled-icons/bootstrap/EmojiSmileUpsideDown";
 
 const PortfolioStickList = React.forwardRef((props, ref) => {
   const { currentTab, onClickList } = useScroll("");
