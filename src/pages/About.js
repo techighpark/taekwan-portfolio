@@ -14,7 +14,7 @@ const About = () => {
       </Helmet>
       <AboutContainer>
         <FieldContainer>
-          <FieldText>ABOUT</FieldText>
+          <FieldText>TUOBA</FieldText>
         </FieldContainer>
         <AboutItemContainer>
           {/*  */}
@@ -127,6 +127,12 @@ const FieldText = styled.div`
   font-size: 70px;
   font-weight: 100;
   letter-spacing: 0.5em;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  letter-spacing: 0.3em;
+  ::first-letter {
+    letter-spacing: 0em;
+  }
   /* background-color: black; */
 
   /* border: 1px solid yellow; */
@@ -142,7 +148,7 @@ const FieldContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  /* border: 0.5px solid yellow; */
+  border: 0.5px solid yellow;
 
   @media screen and (max-width: 500px) {
     margin-top: 275px;
@@ -155,6 +161,8 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  border: 0.5px solid yellow;
 `;
 
 export default About;

@@ -46,13 +46,18 @@ const Home = () => {
 
 const MainContainer = styled.div`
   z-index: -1;
-  width: 100%;
   max-width: 1500px;
+  width: 100%;
+  height: 94vh;
+  position: relative;
 
   /* border: 3px solid tomato; */
+  @media screen and (max-width: 500px) {
+    height: 130vh;
+  }
 `;
 const FieldContainer = styled.div`
-  margin-top: 250px;
+  margin-top: 50vh;
 
   /* border: 0.5px solid yellow; */
 
@@ -98,9 +103,15 @@ const MainStackContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 10%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
+    height: 500px;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 200px;
     margin-bottom: 30px;
   }
