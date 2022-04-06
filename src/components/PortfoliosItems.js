@@ -184,7 +184,7 @@ const PortfolioItemsContainer = styled.div`
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
     width: 100%;
-    margin-top: 200px;
+    margin-top: 500px;
     margin-bottom: 300px;
     row-gap: 500px;
   }

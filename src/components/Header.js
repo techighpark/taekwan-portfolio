@@ -14,6 +14,7 @@ let Header = () => {
   const onClickTab = index => {
     setCurrentTab(index);
   };
+
   return (
     <HeaderContainer>
       <Link
@@ -79,8 +80,8 @@ let Header = () => {
 };
 
 const HeaderContainer = styled.div`
-  position: fixed;
-  width: 98vw;
+  width: 100%;
+  max-width: 1500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,8 +89,6 @@ const HeaderContainer = styled.div`
   /* border: 0.5px solid brown; */
   /* overflow: hidden; */
   @media screen and (max-width: 500px) {
-    position: absolute;
-    width: 94vw;
     flex-direction: column;
     align-items: center;
   }
@@ -252,7 +251,7 @@ const CloseBtn = styled.div`
 const LineSnake = keyframes`
 0%{
  width:30vw;
- left:-50vw;
+ left:-30vw;
 }
 100%{
   width:30vw;
@@ -261,12 +260,12 @@ const LineSnake = keyframes`
 const Line = styled.div`
   position: absolute;
   width: 100%;
-  top: 4vh;
-  border-top: 0.5px solid;
+  top: 50px;
+  border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
   animation: ${LineSnake} 20s infinite linear;
   /* z-index: -1; */
   @media screen and (max-width: 500px) {
-    top: 10vh;
+    top: 120px;
   }
 `;
 

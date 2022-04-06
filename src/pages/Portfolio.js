@@ -35,11 +35,15 @@ const Portfolio = () => {
 };
 
 const PortfolioContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
 
-  /* border: 3px solid purple; */
+  /* border: 3px solid orange; */
 `;
 const FieldContainer = styled.div`
   margin-top: 400px;
@@ -49,7 +53,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 400px;
+    margin-top: 275px;
     text-align: center;
   }
 `;
@@ -67,7 +71,7 @@ const FieldText = styled.div`
 `;
 
 const Placeholder = styled.div`
-  height: 189.06px;
+  /* height: 800px; */
 `;
 
 const ArrowPulse = keyframes`
@@ -89,11 +93,12 @@ const ArrowPulse = keyframes`
 const BottomArrow = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 600px;
-  left: 49vw;
+  top: 620px;
+  left: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
   transform: scale(1);
+  border: 1px solid;
   &::after {
     content: "";
     position: absolute;

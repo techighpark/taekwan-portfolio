@@ -35,18 +35,13 @@ const About = () => {
               <TextMain>{aboutData.second.main}</TextMain>
               <TextSub>{aboutData.second.sub}</TextSub>
             </TextContainer>
-            <ImageContainer>
-              <VerticalBgDogImg src={verticalBgDog2} />
-            </ImageContainer>
           </AboutItems>
           {/*  */}
           <AboutItems>
-            <ImageContainer>
-              <HorizontalWineImg src={horizontalTableWine} />
-            </ImageContainer>
             <TextContainer>
-              <TextMain>{aboutData.second.main}</TextMain>
-              <TextSub>{aboutData.second.sub}</TextSub>
+              <TextMain>Education</TextMain>
+              <TextSub>{aboutData.education.bachelor}</TextSub>
+              <TextSub>{aboutData.education.master}</TextSub>
             </TextContainer>
           </AboutItems>
         </AboutItemContainer>
@@ -55,22 +50,6 @@ const About = () => {
   );
 };
 
-const HorizontalWineImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-`;
-
-const VerticalBgDogImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  @media screen and (max-width: 500px) {
-    opacity: 0.4;
-    object-position: -50px top;
-  }
-`;
 const MeEngImg = styled.img`
   width: 100%;
   height: 100%;
@@ -168,7 +147,8 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 400px;
+    margin-top: 275px;
+
     text-align: center;
   }
 `;

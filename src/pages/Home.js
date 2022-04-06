@@ -46,16 +46,18 @@ const Home = () => {
 
 const MainContainer = styled.div`
   z-index: -1;
+  width: 100%;
+  max-width: 1500px;
 
   /* border: 3px solid tomato; */
 `;
 const FieldContainer = styled.div`
-  margin-top: 50vh;
+  margin-top: 250px;
 
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 440px;
+    margin-top: 300px;
     text-align: center;
   }
 `;
@@ -99,8 +101,8 @@ const MainStackContainer = styled.div`
   margin-top: 10%;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    margin-top: 190px;
-    margin-bottom: 100px;
+    margin-top: 200px;
+    margin-bottom: 30px;
   }
 `;
 

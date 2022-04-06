@@ -32,12 +32,15 @@ a{
     box-sizing:border-box ;
 }
 ${reset}
-body{
+body{    
     background-color:${props => props.theme.bgColor};
     color:${props => props.theme.fontColor};
     font-family : ${fonts.Montserrat};
+    /* max-width: 1500px; */
     font-size:12px;
-    font-weight:300;
+    font-weight:200;
+    /* border:3px solid yellow; */
+    
 }
 ::-webkit-scrollbar { 
     display: none; 
