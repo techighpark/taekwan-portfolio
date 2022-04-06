@@ -38,7 +38,7 @@ const About = () => {
 
 const TextSub = styled.div`
   padding: 20px;
-  width: 800px;
+  width: 600px;
   font-size: 14px;
   font-weight: 100;
   line-height: 2.5;
@@ -50,7 +50,7 @@ const TextSub = styled.div`
 `;
 const TextMain = styled.div`
   padding: 20px 40px;
-  width: 800px;
+  width: 600px;
   font-size: 16px;
   font-weight: 300;
   line-height: 2;
@@ -63,7 +63,7 @@ const TextMain = styled.div`
 `;
 
 const TextContainer = styled.div`
-  width: 800px;
+  /* width: 400px; */
   /* height: 400px; */
   padding: 40px;
   font-family: ${fonts.Gothic};
@@ -83,6 +83,7 @@ const MeEngImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(50%) contrast(120%) grayscale(30%) saturate(90%) sepia(20%);
   /* filter: grayscale(100%); */
 `;
 
@@ -90,6 +91,16 @@ const ImageContainer = styled.div`
   width: 700px;
   height: 350px;
   margin-bottom: 150px;
+  position: relative;
+  ::after {
+    content: "TAEKWAN";
+    position: absolute;
+    color: ${props => props.theme.lightAccentColor};
+    font-weight: 800;
+    left: -20px;
+    top: 30px;
+    /* z-index: 30; */
+  }
   /* padding: 50px; */
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
@@ -112,7 +123,7 @@ const AboutItems = styled.div`
 const AboutPhotoItems = styled(AboutItems)`
   justify-content: flex-end;
   width: 100%;
-  filter: brightness(50%) contrast(120%) grayscale(30%) saturate(90%) sepia(20%);
+
   @media screen and (max-width: 500px) {
     flex-direction: row;
     justify-content: center;
