@@ -103,7 +103,7 @@ const BottomArrow = styled.div`
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
   transform: scale(1);
-  border: 1px solid;
+  /* border: 1px solid; */
   &::after {
     content: "";
     position: absolute;
@@ -142,7 +142,7 @@ const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    display: none;
+    top: 450px;
   }
 `;
 

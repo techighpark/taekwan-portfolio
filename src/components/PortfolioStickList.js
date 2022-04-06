@@ -144,42 +144,48 @@ const ListTitle = styled.div`
 `;
 
 const PortfolioList = styled.div`
-  position: absolute;
+  position: relative;
   top: 750px;
   left: -500px;
+  padding: 20px;
   text-align: right;
-  padding: 20px 0px 20px 5px;
   overflow: hidden;
   z-index: 999;
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* border-radius: 10px; */
 
+  /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
+  border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
   ${props =>
     props.fixed &&
     css`
       position: fixed;
       top: 190px;
-      left: 1vw;
+      left: 20px;
       /* padding: 0px 20px; */
     `}
   @media screen and (max-width: 500px) {
-    top: 600px;
-    margin: 10px 0px;
-    padding: 5px;
+    position: relative;
+    top: 350px;
+    left: 0;
     width: 300px;
+    padding: 5px 10px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid ${props => props.theme.lightWhiteColor};
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border: 1px solid red; */
     ${props =>
       props.fixed &&
       css`
-        top: 0px;
-        /* left: 20px; */
+        position: fixed;
+        top: 30px;
         left: 50%;
         transform: translateX(-50%);
+        /* left: 50%;
+        transform: translateX(-50%); */
       `}
   }
 `;

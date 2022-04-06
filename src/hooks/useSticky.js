@@ -7,8 +7,12 @@ const useSticky = (defaultValue = false) => {
     const initialTop = stickyRef.current.getBoundingClientRect().top;
     console.log(initialTop);
     console.log(window.scrollY);
+    console.log(window.innerWidth);
 
     const handleScroll = () => {
+      if (window.innerWidth < 500) {
+        setFiexPosition(window.scrollY + 30 > initialTop);
+      }
       setFiexPosition(window.scrollY + 190 > initialTop);
     };
     window.addEventListener("scroll", handleScroll);
