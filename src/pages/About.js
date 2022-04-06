@@ -4,8 +4,6 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
 import meEng from "../assets/img/meEng.JPG";
-import verticalBgDog2 from "../assets/img/verticalBgDog2.JPG";
-import horizontalTableWine from "../assets/img/horizontalTableWine.JPG";
 import { aboutData } from "../assets/aboutData";
 
 const About = () => {
