@@ -56,13 +56,13 @@ const LinkText = styled.span`
   color: ${props => props.theme.lightWhiteColor};
   font-weight: 300;
   @media screen and (max-width: 500px) {
-    color: ${props => props.theme.whiteColor};
+    color: ${props => props.theme.lightWhiteColor};
   }
 `;
 
 const StyledLink = styled(Link)`
   position: absolute;
-  bottom: -30px;
+  bottom: -10px;
   right: 0%;
 
   :hover {
@@ -77,7 +77,7 @@ const StyledLink = styled(Link)`
 
 const Stack = styled.div`
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 300;
   padding-bottom: 10px;
 `;
 const StackContainer = styled.div`
@@ -90,7 +90,7 @@ const StackContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  /* border: 1px solid white; */
+  /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
     left: 50%;
     top: 320px;

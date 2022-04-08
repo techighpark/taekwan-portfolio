@@ -35,7 +35,7 @@ export const portfolioDatas = [
     imgSubtitle: "Database",
     src: highBookerDB,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "Prisma", "GraphQL", "Apollographql", "Prisma"],
+    stacks: ["Postgresql", "Prisma", "GraphQL", "Apollographql"],
   },
   {
     listNum: "4",
