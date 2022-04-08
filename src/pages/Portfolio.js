@@ -50,7 +50,7 @@ const FieldContainer = styled.div`
   text-align: center;
   z-index: 30;
 
-  border: 0.5px solid yellow;
+  /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
     margin-top: 100px;
