@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 import Layout from "../components/Layout";
 import { fonts } from "../themeStyles";
-import meCoffee from "../assets/img/meCoffee.JPG";
+// import meCoffee from "../assets/img/meCoffee.JPG";
 import meEng from "../assets/img/meEng.JPG";
 import { aboutData } from "../assets/aboutData";
 import TopArrow from "../components/TopArrow";
@@ -86,8 +86,8 @@ const MeEngImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(80%) contrast(110%) grayscale(30%) saturate(110%);
-  sepia(10%);
+  filter: brightness(80%) contrast(110%) grayscale(30%) saturate(110%)
+    sepia(10%);
   /* filter: grayscale(100%); */
 `;
 
