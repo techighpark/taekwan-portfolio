@@ -4,12 +4,21 @@ import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
 import { Check } from "@styled-icons/fa-solid/Check";
 import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
+import useScroll from "../hooks/useScroll";
+import { keyframes } from "styled-components";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
+  const { currentTab, onClickList } = useScroll("");
+
   return (
     <PortfolioContainer>
       {portfolioDatas.map((data, index) => (
         <ProjectItemContainer ref={el => (ref.current[index] = el)} key={index}>
+          <BottomArrow
+            onClick={() => onClickList(index + 1, ref)}
+            selected={ref.current[index] === currentTab}
+            last={Boolean(ref.current.length - 1 === index)}
+          />
           <PortfolioPhoto src={data.src} />
           <TitleContainer>
             <PortfolioTitle>
@@ -36,6 +45,74 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
     </PortfolioContainer>
   );
 });
+const ArrowPulse = keyframes`
+0% {
+		transform: scale(0.9)rotate(45deg);
+	}
+
+	70% {
+		transform: scale(1) rotate(45deg);
+    border-bottom: 1px solid rgba(254, 23, 162, 1);
+    border-right: 1px solid rgba(254, 23, 162, 1);
+	}
+
+	100% {
+		transform: scale(0.9) rotate(45deg);
+	}
+`;
+
+export const BottomArrow = styled.div`
+  box-sizing: border-box;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
+  transform: scale(1);
+  display: ${props => (props.last ? "none" : "")};
+  /* border: 1px solid; */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -8px;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid ${props => props.theme.lightAccentColor};
+    border-right: 1px solid ${props => props.theme.lightAccentColor};
+    transform: rotate(45deg);
+    animation: ${ArrowPulse} 2s infinite alternate;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 40px;
+    border: 2px solid ${props => props.theme.lightWhiteColor};
+    box-sizing: border-box;
+  }
+  :hover {
+    ::before {
+      border: 2px solid ${props => props.theme.whiteColor};
+      transform: translateX(-50%) scale(1.05);
+    }
+    ::after {
+      animation: none;
+      border-bottom: 1px solid ${props => props.theme.accentColor};
+      border-right: 1px solid ${props => props.theme.accentColor};
+    }
+  }
+  @media screen and (max-width: 500px) {
+    top: 500px;
+    /* right: 0px; */
+  }
+`;
 
 const StackCheck = styled(Check)`
   width: 20px;
@@ -181,7 +258,7 @@ const ProjectItemContainer = styled.div`
 
 const PortfolioContainer = styled.div`
   width: 100%;
-  margin-top: 500px;
+  margin-top: 600px;
   margin-bottom: 200px;
   display: grid;
   grid-template-columns: 1fr;

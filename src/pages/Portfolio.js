@@ -46,14 +46,14 @@ const PortfolioContainer = styled.div`
   /* border: 1px solid orange; */
 `;
 const FieldContainer = styled.div`
-  margin-top: 400px;
+  margin-top: 300px;
   text-align: center;
   z-index: 30;
 
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 275px;
+    margin-top: 220px;
     text-align: center;
   }
 `;

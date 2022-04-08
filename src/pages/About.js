@@ -176,14 +176,14 @@ const FieldText = styled.div`
 const FieldContainer = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 400px;
+  margin-top: 300px;
   display: flex;
   justify-content: center;
 
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 275px;
+    margin-top: 220px;
     text-align: center;
   }
 `;
