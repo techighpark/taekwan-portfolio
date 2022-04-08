@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import smoothscroll from "smoothscroll-polyfill";
 
 const TopArrow = () => {
   const onClickTopArrow = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    smoothscroll.polyfill();
   };
   return (
     <TopArrowP onClick={onClickTopArrow}>
