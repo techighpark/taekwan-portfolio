@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <Layout>
       <Helmet>
-        <title>TAE KWAN | HOME</title>
+        <title>HOME | TAE KWAN</title>
       </Helmet>
       <MainContainer>
         <FieldContainer>

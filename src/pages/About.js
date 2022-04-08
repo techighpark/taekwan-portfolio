@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Layout>
       <Helmet>
-        <title>TAE KWAN | ABOUT</title>
+        <title>ABOUT | TAE KWAN</title>
       </Helmet>
       <AboutContainer>
         <FieldContainer>
