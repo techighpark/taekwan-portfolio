@@ -3,6 +3,8 @@ import styled, { css, keyframes } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
 import { portfolioDatas } from "../assets/portfolioDatas";
+import smoothscroll from "smoothscroll-polyfill";
+
 // import { EmojiSmileUpsideDown } from "@styled-icons/bootstrap/EmojiSmileUpsideDown";
 
 const PortfolioStickList = React.forwardRef((props, ref) => {
@@ -22,7 +24,9 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
 
   const onClickTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    smoothscroll.polyfill();
   };
+  console.log(ref.current.length);
 
   return (
     <PortfolioList fixed={fixedPosition} ref={stickyRef}>
@@ -32,7 +36,7 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
           onClick={() => onClickList(index, ref)}
           selected={ref.current[index] === currentTab}
           key={index}
-          last={Boolean(index === portfolioDatas.length - 1)}
+          // last={Boolean(index === ref.current.length - 1)}
         >
           {listItem ? data.listNum : data.listTitle}
         </Portfolios>

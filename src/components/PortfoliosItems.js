@@ -10,6 +10,8 @@ import { keyframes } from "styled-components";
 const PortfoliosItems = React.forwardRef((props, ref) => {
   const { currentTab, onClickList } = useScroll("");
 
+  console.log(ref.current.length);
+
   return (
     <PortfolioContainer>
       {portfolioDatas.map((data, index) => (
@@ -17,7 +19,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
           <BottomArrow
             onClick={() => onClickList(index + 1, ref)}
             selected={ref.current[index] === currentTab}
-            last={Boolean(ref.current.length - 1 === index)}
+            last={ref.current.length - 1 === index}
           />
           <PortfolioPhoto src={data.src} />
           <TitleContainer>
