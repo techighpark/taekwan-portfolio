@@ -59,7 +59,7 @@ const MainContainer = styled.div`
 const FieldContainer = styled.div`
   margin-top: 50vh;
 
-  /* border: 0.5px solid yellow; */
+  border: 0.5px solid yellow;
 
   @media screen and (max-width: 500px) {
     margin-top: 300px;
@@ -106,13 +106,13 @@ const MainStackContainer = styled.div`
   position: absolute;
   bottom: 20px;
   right: 1px;
-  /* border: 2px solid tomato; */
+  border: 2px solid tomato;
   @media screen and (max-width: 500px) {
     height: 500px;
     bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 200px;
+    /* margin-top: 200px; */
     margin-bottom: 30px;
   }
 `;

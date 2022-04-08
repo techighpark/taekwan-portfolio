@@ -132,19 +132,20 @@ const TitleContainer = styled.div`
   position: absolute;
   width: 50%;
   height: 400px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: ${props => props.theme.bgColor};
   opacity: 0;
-  /* border: 0.5px solid ${props => props.theme.lightWhiteColor}; */
+  /* border: 0.5px solid red; */
   /* border-radius: 1px; */
 
   /* cursor: pointer; */
   :hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 
   @media screen and (max-width: 500px) {
     width: 100%;
     height: 300px;
+    /* border: 0.5px solid red; */
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
   }
@@ -153,9 +154,9 @@ const TitleContainer = styled.div`
 const PortfolioPhoto = styled.img`
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: contain;
-  width: 50%;
-  /* border: 1px solid blue; */
+  object-fit: cover;
+  width: 700px;
+  border: 1px solid ${props => props.theme.superLightWhiteColor};
   @media screen and (max-width: 500px) {
     width: 100%;
   }

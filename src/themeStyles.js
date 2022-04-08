@@ -2,13 +2,13 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const darkMode = {
-  bgColor: "black",
-  fontColor: "white",
+  bgColor: "#000000",
+  fontColor: "#EEEEEE",
   accentColor: "rgba(254, 23, 162, 1)",
   lightAccentColor: "rgba(254, 23, 162, 0.3)",
-  whiteColor: "rgba(255, 255, 255, 0.8)",
-  lightWhiteColor: "rgba(255, 255, 255, 0.5)",
-  superLightWhiteColor: "rgba(255, 255, 255, 0.3)",
+  whiteColor: "#EEEEEE",
+  lightWhiteColor: "#999999",
+  superLightWhiteColor: "#333333",
 };
 export const lightMode = {
   bgColor: "white",

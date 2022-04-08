@@ -7,9 +7,6 @@ const useSticky = (defaultValue = false, listItem) => {
     const initialTop = stickyRef.current.getBoundingClientRect().top;
     const offSet = listItem ? 30 : 190;
 
-    console.log(initialTop);
-    console.log(offSet);
-    console.log(window.scrollY);
     const handleScroll = () => {
       setFiexPosition(window.scrollY + offSet > initialTop);
     };
