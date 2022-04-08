@@ -50,10 +50,10 @@ const FieldContainer = styled.div`
   text-align: center;
   z-index: 30;
 
-  /* border: 0.5px solid yellow; */
+  border: 0.5px solid yellow;
 
   @media screen and (max-width: 500px) {
-    margin-top: 220px;
+    margin-top: 100px;
     text-align: center;
   }
 `;
@@ -142,7 +142,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 400px;
+    top: 270px;
   }
 `;
 

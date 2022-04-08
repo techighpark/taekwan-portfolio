@@ -113,7 +113,7 @@ const MainContainer = styled.div`
 
   /* border: 3px solid tomato; */
   @media screen and (max-width: 500px) {
-    height: 120vh;
+    height: 110vh;
   }
 `;
 const FieldContainer = styled.div`
@@ -122,7 +122,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 300px;
+    margin-top: 220px;
     text-align: center;
   }
 `;

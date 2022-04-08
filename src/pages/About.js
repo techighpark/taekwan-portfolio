@@ -7,6 +7,7 @@ import { fonts } from "../themeStyles";
 import meEng from "../assets/img/meEng.JPG";
 import { aboutData } from "../assets/aboutData";
 import TopArrow from "../components/TopArrow";
+import ScrollDown from "../components/ScrollDown";
 
 const About = () => {
   return (
@@ -18,6 +19,7 @@ const About = () => {
         <FieldContainer>
           <FieldText>TUOBA</FieldText>
         </FieldContainer>
+        <ScrollDown />
         <AboutItemContainer>
           <AboutPhotoItems>
             <ImageContainer>
@@ -185,7 +187,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 220px;
+    margin-top: 100px;
     text-align: center;
   }
 `;
