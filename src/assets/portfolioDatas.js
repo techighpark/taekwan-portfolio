@@ -39,9 +39,9 @@ export const portfolioDatas = [
   },
   {
     listNum: "4",
-    listTitle: "Search-Books: Web",
+    listTitle: "High-Search-Books: Web",
     url: "high-search-book",
-    imgTitle: "Search-Books",
+    imgTitle: "High-Search-Books",
     imgSubtitle: "Web",
     src: highSearchBook,
     date: "Mar. 2022",
