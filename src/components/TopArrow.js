@@ -32,7 +32,7 @@ const TopArrowAnimation = keyframes`
 
 const TopArrowP = styled.div`
   position: absolute;
-  bottom: 100px;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
@@ -51,6 +51,9 @@ const TopArrowP = styled.div`
   }
   & span:nth-child(1) {
     animation-delay: -0.4s;
+  }
+  @media screen and(max-width: 500px) {
+    bottom: 120px;
   }
 `;
 const TopArrowCA = styled.span``;
