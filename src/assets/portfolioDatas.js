@@ -24,7 +24,7 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highBookerWeb,
     date: "Mar. 2022",
-    stacks: ["React JS", "Apollo Client"],
+    stacks: ["React JS", "Apollographql"],
   },
   {
     listNum: "3",
@@ -35,7 +35,7 @@ export const portfolioDatas = [
     imgSubtitle: "Database",
     src: highBookerDB,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "GraphQL", "Apollo Server", "Prisma"],
+    stacks: ["Postgresql", "Prisma", "GraphQL", "Apollographql", "Prisma"],
   },
   {
     listNum: "4",
@@ -45,7 +45,7 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highSearchBook,
     date: "Mar. 2022",
-    stacks: ["React JS", "Rest API", "GraphQL"],
+    stacks: ["React JS", "Rest API"],
   },
   {
     listNum: "5",
@@ -55,6 +55,6 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highVedio,
     date: "Mar. 2022",
-    stacks: ["Web RTC", "JavaScript"],
+    stacks: ["JavaScript", "Web RTC"],
   },
 ];

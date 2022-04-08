@@ -93,7 +93,7 @@ const StackContainer = styled.div`
   /* border: 1px solid white; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    top: 360px;
+    top: 320px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
@@ -124,13 +124,13 @@ const PortfolioTitle = styled.div`
   @media screen and (max-width: 500px) {
     white-space: nowrap;
     font-size: 35px;
-    top: -30px;
+    top: -10px;
   }
 `;
 
 const TitleContainer = styled.div`
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: 400px;
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
@@ -143,11 +143,11 @@ const TitleContainer = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    width: 100%;
-    height: 300px;
-    /* border: 0.5px solid red; */
-    background-color: rgba(0, 0, 0, 0.2);
+    /* width: 100%; */
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.1);
     opacity: 1;
+    /* border: 0.5px solid red; */
   }
 `;
 
@@ -158,7 +158,11 @@ const PortfolioPhoto = styled.img`
   width: 700px;
   border: 1px solid ${props => props.theme.superLightWhiteColor};
   @media screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
+    border: none;
+    object-fit: contain;
+
+    /* margin: 5px; */
   }
 `;
 
