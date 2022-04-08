@@ -142,7 +142,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 270px;
+    top: 220px;
   }
 `;
 

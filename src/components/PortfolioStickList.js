@@ -147,7 +147,7 @@ const PortfolioList = styled.div`
     props.fixed &&
     css`
       position: fixed;
-      top: 190px;
+      top: 130px;
       left: 20px;
       /* padding: 0px 20px; */
     `}

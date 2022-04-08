@@ -5,7 +5,7 @@ const useSticky = (defaultValue = false, listItem) => {
   const stickyRef = useRef([]);
   useEffect(() => {
     const initialTop = stickyRef.current.getBoundingClientRect().top;
-    const offSet = listItem ? 30 : 190;
+    const offSet = listItem ? 30 : 130;
 
     const handleScroll = () => {
       setFiexPosition(window.scrollY + offSet > initialTop);

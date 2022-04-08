@@ -113,7 +113,7 @@ const MainContainer = styled.div`
 
   /* border: 3px solid tomato; */
   @media screen and (max-width: 500px) {
-    height: 110vh;
+    height: 115vh;
   }
 `;
 const FieldContainer = styled.div`
@@ -122,7 +122,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 220px;
+    margin-top: 160px;
     text-align: center;
   }
 `;
@@ -170,11 +170,11 @@ const MainStackContainer = styled.div`
   @media screen and (max-width: 500px) {
     position: relative;
     /* height: 700px; */
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* margin-top: 200px; */
-    margin-bottom: 30px;
+    /* margin-bottom: 200px; */
   }
 `;
 

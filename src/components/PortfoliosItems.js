@@ -74,10 +74,10 @@ export const BottomArrow = styled.div`
   &::after {
     content: "";
     position: absolute;
-    top: 20px;
-    left: -8px;
-    width: 15px;
-    height: 15px;
+    top: 16px;
+    left: -5.5px;
+    width: 10px;
+    height: 10px;
     border-bottom: 1px solid ${props => props.theme.lightAccentColor};
     border-right: 1px solid ${props => props.theme.lightAccentColor};
     transform: rotate(45deg);
@@ -90,8 +90,8 @@ export const BottomArrow = styled.div`
     top: 0;
     left: 0;
     transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: transparent;
     border-radius: 40px;
     border: 2px solid ${props => props.theme.lightWhiteColor};
@@ -109,7 +109,15 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 450px;
+    top: 420px;
+    &::before {
+      width: 35px;
+      height: 35px;
+    }
+    &::after {
+      top: 10px;
+    }
+
     /* right: 0px; */
   }
 `;
