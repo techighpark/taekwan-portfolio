@@ -62,9 +62,9 @@ const StackWrapper = styled.div`
 
   /* border: 1px solid orange; */
 `;
-const StackMain = styled.div`
-  border: 1px solid orange;
-`;
+// const StackMain = styled.div`
+//   border: 1px solid orange;
+// `;
 const StackContainer = styled.div`
   padding: 40px;
   margin-bottom: 100px;
