@@ -6,12 +6,23 @@ import useScroll from "../hooks/useScroll";
 import PortfoliosItems from "../components/PortfoliosItems";
 import TopArrow from "../components/TopArrow";
 import PortfolioStickList from "../components/PortfolioStickList";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Portfolio = () => {
   const portfolioRef = useRef([]);
-  const { currentTab, onClickList } = useScroll("");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth < 500);
+  const { currentTab, onClickList } = useScroll("", screenWidth);
 
+  useEffect(() => {
+    const sizeDetect = () => {
+      if (window.innerWidth < 500) {
+        setScreenWidth(true);
+      } else {
+        setScreenWidth(false);
+      }
+    };
+    window.onresize = sizeDetect;
+  });
   return (
     <Layout>
       <Helmet>

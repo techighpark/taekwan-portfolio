@@ -1,11 +1,11 @@
 import { useState } from "react";
 import smoothscroll from "smoothscroll-polyfill";
 
-const useScroll = defaultValue => {
+const useScroll = (defaultValue, screenWidth) => {
   const [currentTab, setCurrentTab] = useState(defaultValue);
   const onClickList = (index, ref) => {
     const tab = ref.current[index];
-    const headerOffset = 130;
+    const headerOffset = screenWidth ? 210 : 130;
     const tabPosition = tab.getBoundingClientRect().top;
     const offsetPosition = tabPosition + window.pageYOffset - headerOffset;
     window.scrollTo({ top: offsetPosition, behavior: "smooth" });

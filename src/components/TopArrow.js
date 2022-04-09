@@ -53,7 +53,7 @@ const TopArrowP = styled.div`
     animation-delay: -0.4s;
   }
   @media screen and(max-width: 500px) {
-    bottom: 120px;
+    /* bottom: 120px; */
   }
 `;
 const TopArrowCA = styled.span``;

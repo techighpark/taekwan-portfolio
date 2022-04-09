@@ -9,15 +9,15 @@ import { keyframes } from "styled-components";
 import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
-  const { currentTab, onClickList } = useScroll("");
-  const [listItem, setListItem] = useState(window.innerWidth < 500);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth < 500);
+  const { currentTab, onClickList } = useScroll("", screenWidth);
 
   useEffect(() => {
     const sizeDetect = () => {
       if (window.innerWidth < 500) {
-        setListItem(true);
+        setScreenWidth(true);
       } else {
-        setListItem(false);
+        setScreenWidth(false);
       }
     };
     window.onresize = sizeDetect;
@@ -50,7 +50,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
             </PortfolioTitle>
           </TitleContainer>
           <StyledLink to={`/ex/${data.url}`} target="_blank">
-            {listItem ? (
+            {screenWidth ? (
               <LinkIcon />
             ) : (
               <>
@@ -128,7 +128,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 420px;
+    top: 370px;
     &::before {
       width: 35px;
       height: 35px;
@@ -158,7 +158,7 @@ const LinkArrowUpRight = styled(ArrowUpRight)`
 
 const LinkIcon = styled(ExternalLinkAlt)`
   width: 15px;
-  color: ${props => props.theme.lightWhiteColor};
+  color: ${props => props.theme.lightAccentColor};
 `;
 
 const LinkText = styled.span`
@@ -211,7 +211,7 @@ const StackContainer = styled.div`
   /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    top: 280px;
+    top: 320px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
@@ -277,9 +277,13 @@ const PortfolioPhoto = styled.img`
   width: 700px;
   border: 1px solid ${props => props.theme.superLightWhiteColor};
   @media screen and (max-width: 500px) {
-    width: 90vw;
-    height: 200px;
+    width: 94vw;
+    height: 250px;
     border-radius: 20px;
+    border: none;
+    /* border: 0.5px solid ${props => props.theme.superLightWhiteColor}; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     /* border: none; */
     /* object-fit: contain; */
 
@@ -312,7 +316,7 @@ const PortfolioContainer = styled.div`
   @media screen and (max-width: 500px) {
     width: 100%;
     margin-top: 500px;
-    margin-bottom: 300px;
+    margin-bottom: 220px;
     row-gap: 500px;
   }
 `;
