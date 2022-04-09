@@ -231,7 +231,7 @@ const PortfolioTitle = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   /* font-style: italic; */
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 500;
   white-space: nowrap;
   /* border: 0.5px solid yellow; */
@@ -249,6 +249,8 @@ const TitleContainer = styled.div`
   height: 400px;
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
+  border-radius: 30px;
+
   /* border: 0.5px solid red; */
   /* border-radius: 1px; */
   /* cursor: pointer; */
@@ -270,16 +272,15 @@ const PortfolioPhoto = styled.img`
   background-position: center;
   object-fit: cover;
   width: 700px;
-  /* border: 1px solid ${props => props.theme.superLightWhiteColor}; */
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.4),
-    0px 15px 40px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
+    10px 10px 5px 5px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 500px) {
     width: 94vw;
     height: 250px;
     border-radius: 20px;
     border: none;
-    /* border: 0.5px solid ${props => props.theme.superLightWhiteColor}; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     /* border: none; */

@@ -8,7 +8,7 @@ import meEng from "../assets/img/meEng.JPG";
 import { aboutData } from "../assets/aboutData";
 import TopArrow from "../components/TopArrow";
 import ScrollDown from "../components/ScrollDown";
-import { stacks } from "../assets/stackdata";
+// import { stacks } from "../assets/stackdata";
 
 const About = () => {
   return (
@@ -35,7 +35,7 @@ const About = () => {
               </TextContainer>
             </AboutItems>
           ))}
-          <AboutItems>
+          {/* <AboutItems>
             <StackContainer>
               {stacks.map(stack => (
                 <StackWrapper key={stack}>
@@ -43,7 +43,7 @@ const About = () => {
                 </StackWrapper>
               ))}
             </StackContainer>
-          </AboutItems>
+          </AboutItems> */}
         </AboutItemContainer>
       </AboutContainer>
       <TopArrow />
@@ -51,98 +51,98 @@ const About = () => {
   );
 };
 
-const StackSub = styled.span``;
-const StackWrapper = styled.div`
-  height: 30px;
-  width: 100px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// const StackSub = styled.span``;
+// const StackWrapper = styled.div`
+//   height: 30px;
+//   width: 100px;
+//   border-radius: 15px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-  /* border: 1px solid orange; */
-`;
-// const StackMain = styled.div`
-//   border: 1px solid orange;
+//   /* border: 1px solid orange; */
 // `;
-const StackContainer = styled.div`
-  padding: 40px;
-  margin-bottom: 100px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 30px;
-  row-gap: 10px;
+// // const StackMain = styled.div`
+// //   border: 1px solid orange;
+// // `;
+// const StackContainer = styled.div`
+//   padding: 40px;
+//   margin-bottom: 100px;
+//   display: grid;
+//   grid-template-columns: repeat(5, 1fr);
+//   column-gap: 30px;
+//   row-gap: 10px;
 
-  border: 1px solid green;
-  ${StackWrapper}:nth-child(1) {
-    grid-row: 1;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(2) {
-    grid-row: 2;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(3) {
-    grid-row: 3;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(4) {
-    grid-row: 1;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(5) {
-    grid-row: 1;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(6) {
-    grid-row: 4;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(7) {
-    grid-row: 2;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(8) {
-    grid-row: 3;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(9) {
-    grid-row: 4;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(10) {
-    grid-row: 5;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(11) {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(12) {
-    grid-row: 5;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(13) {
-    grid-row: 6;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(14) {
-    grid-row: 3;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(15) {
-    grid-row: 4;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(16) {
-    grid-row: 7;
-    grid-column: 1;
-  }
+//   border: 1px solid green;
+//   ${StackWrapper}:nth-child(1) {
+//     grid-row: 1;
+//     grid-column: 3;
+//   }
+//   ${StackWrapper}:nth-child(2) {
+//     grid-row: 2;
+//     grid-column: 3;
+//   }
+//   ${StackWrapper}:nth-child(3) {
+//     grid-row: 3;
+//     grid-column: 3;
+//   }
+//   ${StackWrapper}:nth-child(4) {
+//     grid-row: 1;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(5) {
+//     grid-row: 1;
+//     grid-column: 2;
+//   }
+//   ${StackWrapper}:nth-child(6) {
+//     grid-row: 4;
+//     grid-column: 3;
+//   }
+//   ${StackWrapper}:nth-child(7) {
+//     grid-row: 2;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(8) {
+//     grid-row: 3;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(9) {
+//     grid-row: 4;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(10) {
+//     grid-row: 5;
+//     grid-column: 3;
+//   }
+//   ${StackWrapper}:nth-child(11) {
+//     grid-row: 2;
+//     grid-column: 2;
+//   }
+//   ${StackWrapper}:nth-child(12) {
+//     grid-row: 5;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(13) {
+//     grid-row: 6;
+//     grid-column: 1;
+//   }
+//   ${StackWrapper}:nth-child(14) {
+//     grid-row: 3;
+//     grid-column: 2;
+//   }
+//   ${StackWrapper}:nth-child(15) {
+//     grid-row: 4;
+//     grid-column: 2;
+//   }
+//   ${StackWrapper}:nth-child(16) {
+//     grid-row: 7;
+//     grid-column: 1;
+//   }
 
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
-`;
+//   @media screen and (max-width: 500px) {
+//     width: 100%;
+//   }
+// `;
 
 const TextSub = styled.div`
   padding: 20px;
@@ -152,6 +152,7 @@ const TextSub = styled.div`
   line-height: 2.5;
   color: ${props => props.theme.lightWhiteColor};
   /* border: 1px solid yellow; */
+
   @media screen and (max-width: 500px) {
     width: 100%;
     font-weight: 300;
@@ -185,6 +186,8 @@ const TextContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
+  /* background-color: #181818;
+  border-radius: 30px; */
 
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
