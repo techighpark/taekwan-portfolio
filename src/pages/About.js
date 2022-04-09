@@ -51,6 +51,7 @@ const TextSub = styled.div`
   /* border: 1px solid yellow; */
   @media screen and (max-width: 500px) {
     width: 100%;
+    font-weight: 300;
   }
 `;
 const TextMain = styled.div`
@@ -64,6 +65,8 @@ const TextMain = styled.div`
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
     width: 100%;
+    font-weight: 600;
+    letter-spacing: 0.1em;
   }
 `;
 
@@ -175,6 +178,7 @@ const FieldText = styled.div`
 
   @media screen and (max-width: 500px) {
     font-size: 50px;
+    font-weight: 700;
   }
 `;
 const FieldContainer = styled.div`

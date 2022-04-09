@@ -149,12 +149,15 @@ const FieldText = styled.span`
   }
   @media screen and (max-width: 500px) {
     font-size: 45px;
+    font-weight: 700;
     &::after {
       content: "";
       bottom: 10px;
-      right: -10px;
-      height: 10px;
-      width: 10px;
+      right: -14px;
+      height: 15px;
+      width: 15px;
+      border: 3px solid ${props => props.theme.accentColor};
+      box-sizing: border-box;
     }
   }
 `;

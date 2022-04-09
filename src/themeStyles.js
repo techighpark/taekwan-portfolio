@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const darkMode = {
-  bgColor: "#000000",
+  bgColor: "#0e0f11",
   fontColor: "#EEEEEE",
   accentColor: "rgba(254, 23, 162, 1)",
   lightAccentColor: "rgba(254, 23, 162, 0.3)",

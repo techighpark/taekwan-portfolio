@@ -72,6 +72,7 @@ const FieldText = styled.div`
 
   @media screen and (max-width: 500px) {
     font-size: 50px;
+    font-weight: 700;
   }
 `;
 

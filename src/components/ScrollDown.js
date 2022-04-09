@@ -63,6 +63,9 @@ const ScrollDownText = styled.div`
   animation: ${ScrollText} 1s infinite alternate ease-in-out;
   color: ${props => props.theme.accentColor};
   /* border: 1px solid red; */
+  @media screen and (max-width: 500px) {
+    font-weight: 500;
+  }
 `;
 const ScrollDownWrapper = styled.div`
   /* border: 1px solid red; */

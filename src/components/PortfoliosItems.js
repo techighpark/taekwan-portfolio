@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
 import { Check } from "@styled-icons/fa-solid/Check";
@@ -6,11 +6,22 @@ import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
 import { keyframes } from "styled-components";
+import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   const { currentTab, onClickList } = useScroll("");
+  const [listItem, setListItem] = useState(window.innerWidth < 500);
 
-  console.log(ref.current.length);
+  useEffect(() => {
+    const sizeDetect = () => {
+      if (window.innerWidth < 500) {
+        setListItem(true);
+      } else {
+        setListItem(false);
+      }
+    };
+    window.onresize = sizeDetect;
+  });
 
   return (
     <PortfolioContainer>
@@ -39,8 +50,14 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
             </PortfolioTitle>
           </TitleContainer>
           <StyledLink to={`/ex/${data.url}`} target="_blank">
-            <LinkText>Visit Website</LinkText>
-            <LinkArrowUpRight />
+            {listItem ? (
+              <LinkIcon />
+            ) : (
+              <>
+                <LinkText>Visit Website</LinkText>
+                <LinkArrowUpRight />
+              </>
+            )}
           </StyledLink>
         </ProjectItemContainer>
       ))}
@@ -119,7 +136,6 @@ export const BottomArrow = styled.div`
     &::after {
       top: 10px;
     }
-
     /* right: 0px; */
   }
 `;
@@ -139,11 +155,18 @@ const LinkArrowUpRight = styled(ArrowUpRight)`
     color: ${props => props.theme.accentColor};
   }
 `;
+
+const LinkIcon = styled(ExternalLinkAlt)`
+  width: 15px;
+  color: ${props => props.theme.lightWhiteColor};
+`;
+
 const LinkText = styled.span`
   color: ${props => props.theme.lightWhiteColor};
   font-weight: 300;
   @media screen and (max-width: 500px) {
-    color: ${props => props.theme.lightWhiteColor};
+    /* color: ${props => props.theme.lightWhiteColor}; */
+    font-weight: 400;
   }
 `;
 
@@ -151,7 +174,6 @@ const StyledLink = styled(Link)`
   position: absolute;
   bottom: -10px;
   right: 0%;
-
   :hover {
     span {
       color: ${props => props.theme.fontColor};
@@ -160,12 +182,21 @@ const StyledLink = styled(Link)`
       color: ${props => props.theme.accentColor};
     }
   }
+  @media screen and (max-width: 500px) {
+    bottom: 60px;
+    /* top: -45px; */
+    right: 6vw;
+  }
 `;
 
 const Stack = styled.div`
   font-size: 16px;
   font-weight: 300;
   padding-bottom: 10px;
+  @media screen and (max-width: 500px) {
+    font-size: 14px;
+    font-weight: 400;
+  }
 `;
 const StackContainer = styled.div`
   position: absolute;
@@ -180,7 +211,7 @@ const StackContainer = styled.div`
   /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
     left: 50%;
-    top: 320px;
+    top: 280px;
     transform: translateX(-50%);
     /* margin-top: 200px; */
   }
@@ -194,7 +225,8 @@ const PortfolioSubtitle = styled.div`
   color: ${props => props.theme.bgColor};
   background-color: white;
   @media screen and (max-width: 500px) {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
   }
 `;
 
@@ -210,8 +242,9 @@ const PortfolioTitle = styled.div`
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
     white-space: nowrap;
-    font-size: 35px;
-    top: -10px;
+    font-size: 25px;
+    top: -40px;
+    font-weight: 500;
   }
 `;
 
@@ -223,7 +256,6 @@ const TitleContainer = styled.div`
   opacity: 0;
   /* border: 0.5px solid red; */
   /* border-radius: 1px; */
-
   /* cursor: pointer; */
   :hover {
     opacity: 0.8;
@@ -232,7 +264,7 @@ const TitleContainer = styled.div`
   @media screen and (max-width: 500px) {
     /* width: 100%; */
     height: 250px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
     opacity: 1;
     /* border: 0.5px solid red; */
   }
@@ -245,9 +277,11 @@ const PortfolioPhoto = styled.img`
   width: 700px;
   border: 1px solid ${props => props.theme.superLightWhiteColor};
   @media screen and (max-width: 500px) {
-    width: 100vw;
-    border: none;
-    object-fit: contain;
+    width: 90vw;
+    height: 200px;
+    border-radius: 20px;
+    /* border: none; */
+    /* object-fit: contain; */
 
     /* margin: 5px; */
   }

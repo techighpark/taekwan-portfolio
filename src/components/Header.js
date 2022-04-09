@@ -108,6 +108,7 @@ const HeaderTitle = styled.div`
   @media screen and (max-width: 500px) {
     text-align: center;
     margin-top: 5vh;
+    font-weight: 500;
   }
 `;
 
@@ -141,7 +142,7 @@ const HeaderLink = styled.div`
     padding-left: 0px;
     padding-bottom: 30px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
   }
 `;
 const PopUpWrapper = styled.div`
@@ -265,7 +266,7 @@ const Line = styled.div`
   animation: ${LineSnake} 20s infinite linear;
   /* z-index: -1; */
   @media screen and (max-width: 500px) {
-    top: 120px;
+    top: 90px;
   }
 `;
 

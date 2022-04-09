@@ -26,7 +26,6 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     smoothscroll.polyfill();
   };
-  console.log(ref.current.length);
 
   return (
     <PortfolioList fixed={fixedPosition} ref={stickyRef}>
@@ -103,6 +102,7 @@ const Portfolios = styled.div`
     text-align: center;
     padding: 5px 0px;
     width: 20px;
+    font-weight: 500;
 
     ::first-letter {
       color: ${props =>
@@ -126,9 +126,14 @@ const ListTitle = styled.div`
   @media screen and (max-width: 500px) {
     /* font-size: 10px; */
     /* font-weight: 400; */
+    border: none;
+    /* border: 1px solid yellow; */
+
     padding-left: 0px;
     letter-spacing: 0em;
+    margin-bottom: 0px;
     text-align: center;
+    font-weight: 500;
   }
 `;
 
@@ -162,13 +167,14 @@ const PortfolioList = styled.div`
     position: relative;
     top: 350px;
     left: 0;
-    width: 300px;
-    padding: 5px 10px;
+    width: 90vw;
+    height: 40px;
+    padding: 5px 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     /* border: 1px solid red; */
     ${props =>
       props.fixed &&
