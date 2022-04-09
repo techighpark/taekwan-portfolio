@@ -51,7 +51,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
           </TitleContainer>
           <StyledLink
             to={`/ex/${data.url}`}
-            target={screenWidth ? "_blank" : "_self"}
+            target={screenWidth ? "_self" : "_blank"}
           >
             {screenWidth ? (
               <LinkIcon />
