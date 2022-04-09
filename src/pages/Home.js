@@ -47,10 +47,7 @@ const Home = () => {
               <TypescriptIcon />
               {/* TypeScript */}
             </Stack>
-            <Stack>
-              <NodejsIcon />
-              {/* Node JS */}
-            </Stack>
+
             <Stack>
               <ReactLogoIcon />
               {/* React JS */}
@@ -76,7 +73,10 @@ const Home = () => {
             <Stack>Rest API</Stack>
           </Row>
           <Row>
-            {/* <GrayLine /> */}
+            <Stack>
+              <NodejsIcon />
+              {/* Node JS */}
+            </Stack>
             <Stack>
               <MysqllIcon />
               {/* MySQL */}
@@ -130,7 +130,7 @@ const FieldText = styled.span`
   position: relative;
   /* font-style: italic; */
   font-size: 90px;
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 0.1em;
 
   /* border: 1px solid yellowgreen; */
@@ -140,9 +140,10 @@ const FieldText = styled.span`
     position: absolute;
     bottom: 20px;
     right: -20px;
-    height: 20px;
-    width: 20px;
-    border: 1px solid ${props => props.theme.accentColor};
+    height: 25px;
+    width: 25px;
+    border: 5px solid ${props => props.theme.accentColor};
+    box-sizing: border-box;
   }
   @media screen and (max-width: 1000px) {
     font-size: 50px;

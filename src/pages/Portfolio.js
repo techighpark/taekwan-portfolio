@@ -33,7 +33,6 @@ const Portfolio = () => {
           <FieldText>SKROW</FieldText>
         </FieldContainer>
         <PortfolioStickList ref={portfolioRef} />
-        <Placeholder />
         <BottomArrow
           onClick={() => onClickList(0, portfolioRef)}
           selected={portfolioRef.current[0] === currentTab}
@@ -71,7 +70,7 @@ const FieldContainer = styled.div`
 const FieldText = styled.div`
   /* font-style: italic; */
   font-size: 70px;
-  font-weight: 100;
+  font-weight: 700;
   unicode-bidi: bidi-override;
   direction: rtl;
   letter-spacing: 0.3em;
@@ -85,10 +84,6 @@ const FieldText = styled.div`
     font-size: 50px;
     font-weight: 700;
   }
-`;
-
-const Placeholder = styled.div`
-  /* height: 800px; */
 `;
 
 const ArrowPulse = keyframes`
@@ -123,8 +118,8 @@ export const BottomArrow = styled.div`
     left: -10px;
     width: 20px;
     height: 20px;
-    border-bottom: 1px solid ${props => props.theme.lightAccentColor};
-    border-right: 1px solid ${props => props.theme.lightAccentColor};
+    border-bottom: 3px solid ${props => props.theme.lightAccentColor};
+    border-right: 3px solid ${props => props.theme.lightAccentColor};
     transform: rotate(45deg);
     animation: ${ArrowPulse} 2s infinite alternate;
   }
@@ -139,21 +134,32 @@ export const BottomArrow = styled.div`
     height: 80px;
     background: transparent;
     border-radius: 40px;
-    border: 2px solid ${props => props.theme.lightWhiteColor};
+    border: 3px solid ${props => props.theme.lightWhiteColor};
     box-sizing: border-box;
   }
   :hover {
-    ::before {
-      border: 2px solid ${props => props.theme.whiteColor};
-      transform: translateX(-50%) scale(1.05);
-    }
     ::after {
       animation: none;
       border-bottom: 1px solid ${props => props.theme.accentColor};
       border-right: 1px solid ${props => props.theme.accentColor};
     }
+    ::before {
+      border: 2px solid ${props => props.theme.whiteColor};
+      transform: translateX(-50%) scale(1.05);
+    }
   }
   @media screen and (max-width: 500px) {
+    &::after {
+      width: 10px;
+      height: 10px;
+      top: 17px;
+      left: -6px;
+    }
+    &::before {
+      width: 50px;
+      height: 50px;
+      border: 3px solid ${props => props.theme.lightWhiteColor};
+    }
     top: 220px;
   }
 `;

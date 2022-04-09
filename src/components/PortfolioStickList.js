@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import useScroll from "../hooks/useScroll";
 import useSticky from "../hooks/useSticky";
 import { portfolioDatas } from "../assets/portfolioDatas";
@@ -45,18 +45,9 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
   );
 });
 
-const LineAccent = keyframes`
-0%{
-  width: 0;
-}
-
-100%{
-  width: 100%;
-}`;
-
 const Portfolios = styled.div`
   position: relative;
-  font-weight: 200;
+  font-weight: 300;
   color: ${props =>
     props.selected ? props.theme.fontColor : props.theme.lightWhiteColor};
   padding-bottom: 30px;
@@ -69,33 +60,12 @@ const Portfolios = styled.div`
       props.selected ? props.theme.accentColor : props.theme.fontColor};
   }
 
-  /* ::before {
-    content: "";
-    position: absolute;
-    bottom: 8px;
-    right: 0px;
-    height: 1px;
-    width: 100%;
-    z-index: -1;
-    ${props =>
-    props.selected &&
-    css`
-      background-color: ${props => props.theme.accentColor};
-    `}
-  } */
-  /* border: 1px solid; */
-
   :hover {
     ::first-letter {
       color: ${props => props.theme.accentColor};
     }
-    /* color: white; */
-    font-weight: 300;
-    /* ::before {
-      content: "";
-      background-color: ${props => props.theme.accentColor};
-      animation: ${LineAccent} 0.3s 1 ease-in forwards;
-    } */
+    color: white;
+    /* font-weight: 300; */
   }
   @media screen and (max-width: 500px) {
     padding-left: 0px;
@@ -117,7 +87,7 @@ const PortfoliosTitle = styled(Portfolios)``;
 
 const ListTitle = styled.div`
   letter-spacing: 0.5em;
-  font-weight: 400;
+  font-weight: 600;
   padding: 3px;
   border-bottom: 0.5px solid;
   margin-bottom: 20px;

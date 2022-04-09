@@ -96,9 +96,9 @@ const HeaderContainer = styled.div`
 
 const HeaderTitle = styled.div`
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 600;
   :hover {
-    font-weight: 300;
+    font-weight: 500;
   }
   ::first-letter {
     /* color: ${props => props.theme.accentColor}; */
@@ -128,14 +128,14 @@ const HeaderLinks = styled.div`
 `;
 const HeaderLink = styled.div`
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 500;
   padding-left: 50px;
   cursor: pointer;
 
   /* border: 0.5px solid gray; */
 
   :hover {
-    font-weight: 400;
+    font-weight: 300;
   }
 
   @media screen and (max-width: 500px) {
@@ -183,11 +183,16 @@ const PopUp = styled.div`
 
 const ContactTitle = styled.div`
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   color: black;
   letter-spacing: 0.3rem;
 
   /* border: 0.5px solid yellow; */
+  @media screen and (max-width: 500px) {
+    font-weight: 500;
+
+    /* z-index: 999; */
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -210,17 +215,22 @@ const ContactWrapper = styled.div`
 `;
 
 const Contact = styled.span`
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.4rem;
   padding-bottom: 10%;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.5);
 
   /* border: 0.5px solid skyblue; */
+  @media screen and (max-width: 500px) {
+    font-weight: 500;
+
+    /* z-index: 999; */
+  }
 `;
 const ContactContent = styled.span`
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
 
   /* border: 0.5px solid skyblue; */
 `;
@@ -230,14 +240,14 @@ const ContactContentNum = styled(ContactContent)`
 
 const CloseBtn = styled.div`
   position: absolute;
-  right: 3px;
+  right: 5px;
   top: 0px;
   cursor: pointer;
 
   &::before {
     content: "\\00d7";
-    font-size: 25px;
-    font-weight: 100;
+    font-size: 30px;
+    font-weight: 200;
     color: rgba(255, 255, 255, 0.5);
     /* z-index: 999; */
     /* border: 0.5px solid red; */

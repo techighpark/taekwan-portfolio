@@ -8,6 +8,7 @@ import meEng from "../assets/img/meEng.JPG";
 import { aboutData } from "../assets/aboutData";
 import TopArrow from "../components/TopArrow";
 import ScrollDown from "../components/ScrollDown";
+import { stacks } from "../assets/stackdata";
 
 const About = () => {
   return (
@@ -34,6 +35,15 @@ const About = () => {
               </TextContainer>
             </AboutItems>
           ))}
+          <AboutItems>
+            <StackContainer>
+              {stacks.map(stack => (
+                <StackWrapper key={stack}>
+                  <StackSub>{stack}</StackSub>
+                </StackWrapper>
+              ))}
+            </StackContainer>
+          </AboutItems>
         </AboutItemContainer>
       </AboutContainer>
       <TopArrow />
@@ -41,11 +51,104 @@ const About = () => {
   );
 };
 
+const StackSub = styled.span``;
+const StackWrapper = styled.div`
+  height: 30px;
+  width: 100px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid orange; */
+`;
+const StackMain = styled.div`
+  border: 1px solid orange;
+`;
+const StackContainer = styled.div`
+  padding: 40px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 10px;
+
+  border: 1px solid green;
+  ${StackWrapper}:nth-child(1) {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  ${StackWrapper}:nth-child(2) {
+    grid-row: 2;
+    grid-column: 3;
+  }
+  ${StackWrapper}:nth-child(3) {
+    grid-row: 3;
+    grid-column: 3;
+  }
+  ${StackWrapper}:nth-child(4) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(5) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  ${StackWrapper}:nth-child(6) {
+    grid-row: 4;
+    grid-column: 3;
+  }
+  ${StackWrapper}:nth-child(7) {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(8) {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(9) {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(10) {
+    grid-row: 5;
+    grid-column: 3;
+  }
+  ${StackWrapper}:nth-child(11) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  ${StackWrapper}:nth-child(12) {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(13) {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  ${StackWrapper}:nth-child(14) {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  ${StackWrapper}:nth-child(15) {
+    grid-row: 4;
+    grid-column: 2;
+  }
+  ${StackWrapper}:nth-child(16) {
+    grid-row: 7;
+    grid-column: 1;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
 const TextSub = styled.div`
   padding: 20px;
-  width: 600px;
+  width: 800px;
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 2.5;
   color: ${props => props.theme.lightWhiteColor};
   /* border: 1px solid yellow; */
@@ -55,12 +158,14 @@ const TextSub = styled.div`
   }
 `;
 const TextMain = styled.div`
-  padding: 20px 40px;
-  width: 600px;
+  padding: 20px 50px;
+  width: 800px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 2;
   color: ${props => props.theme.whiteColor};
+  opacity: 0.9;
+  letter-spacing: 0.2em;
 
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
@@ -79,6 +184,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100px;
 
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
@@ -164,7 +270,7 @@ const AboutItemContainer = styled.div`
 const FieldText = styled.div`
   /* font-style: italic; */
   font-size: 70px;
-  font-weight: 100;
+  font-weight: 700;
   letter-spacing: 0.5em;
   unicode-bidi: bidi-override;
   direction: rtl;

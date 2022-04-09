@@ -58,6 +58,7 @@ const ScrollDownText = styled.div`
   top: 0;
   margin: 0px auto 20px auto;
   width: 100px;
+  font-weight: 500;
   /* height: 20px; */
   text-align: center;
   animation: ${ScrollText} 1s infinite alternate ease-in-out;

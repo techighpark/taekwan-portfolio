@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ArrowUpRight } from "@styled-icons/bootstrap/ArrowUpRight";
 import { Check } from "@styled-icons/fa-solid/Check";
 import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
@@ -53,14 +52,8 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
             to={`/ex/${data.url}`}
             target={screenWidth ? "_self" : "_blank"}
           >
-            {screenWidth ? (
-              <LinkIcon />
-            ) : (
-              <>
-                <LinkText>Visit Website</LinkText>
-                <LinkArrowUpRight />
-              </>
-            )}
+            {screenWidth ? null : <LinkText>Visit Website</LinkText>}
+            <LinkIcon />
           </StyledLink>
         </ProjectItemContainer>
       ))}
@@ -150,23 +143,21 @@ const StackCheck = styled(Check)`
   padding-bottom: 2px;
 `;
 
-const LinkArrowUpRight = styled(ArrowUpRight)`
-  color: ${props => props.theme.accentColor};
-  width: 15px;
-  font-weight: bold;
-  @media screen and (max-width: 500px) {
-    color: ${props => props.theme.accentColor};
-  }
-`;
-
 const LinkIcon = styled(ExternalLinkAlt)`
   width: 15px;
   color: ${props => props.theme.lightAccentColor};
+
+  @media screen and (max-width: 500px) {
+    color: ${props => props.theme.accentColor};
+    font-weight: 400;
+    opacity: 0.6;
+  }
 `;
 
 const LinkText = styled.span`
   color: ${props => props.theme.lightWhiteColor};
-  font-weight: 300;
+  font-weight: 400;
+  padding-right: 5px;
   @media screen and (max-width: 500px) {
     /* color: ${props => props.theme.lightWhiteColor}; */
     font-weight: 400;
@@ -177,24 +168,25 @@ const StyledLink = styled(Link)`
   position: absolute;
   bottom: -10px;
   right: 0%;
+  display: flex;
+  align-items: center;
   :hover {
     span {
       color: ${props => props.theme.fontColor};
     }
-    ${LinkArrowUpRight} {
+    ${LinkIcon} {
       color: ${props => props.theme.accentColor};
     }
   }
   @media screen and (max-width: 500px) {
     bottom: 60px;
-    /* top: -45px; */
     right: 6vw;
   }
 `;
 
 const Stack = styled.div`
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 500;
   padding-bottom: 10px;
   @media screen and (max-width: 500px) {
     font-size: 14px;
@@ -224,7 +216,7 @@ const PortfolioSubtitle = styled.div`
   bottom: 101%;
   right: 0;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 500;
   color: ${props => props.theme.bgColor};
   background-color: white;
   @media screen and (max-width: 500px) {
@@ -240,7 +232,7 @@ const PortfolioTitle = styled.div`
   transform: translate(-50%, -50%);
   /* font-style: italic; */
   font-size: 70px;
-  font-weight: 100;
+  font-weight: 500;
   white-space: nowrap;
   /* border: 0.5px solid yellow; */
   @media screen and (max-width: 500px) {
@@ -253,7 +245,7 @@ const PortfolioTitle = styled.div`
 
 const TitleContainer = styled.div`
   position: absolute;
-  width: 100%;
+  width: 700px;
   height: 400px;
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
@@ -261,7 +253,7 @@ const TitleContainer = styled.div`
   /* border-radius: 1px; */
   /* cursor: pointer; */
   :hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   @media screen and (max-width: 500px) {
@@ -278,7 +270,10 @@ const PortfolioPhoto = styled.img`
   background-position: center;
   object-fit: cover;
   width: 700px;
-  border: 1px solid ${props => props.theme.superLightWhiteColor};
+  /* border: 1px solid ${props => props.theme.superLightWhiteColor}; */
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.4),
+    0px 15px 40px 10px rgba(0, 0, 0, 0.3);
+
   @media screen and (max-width: 500px) {
     width: 94vw;
     height: 250px;
