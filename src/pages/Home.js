@@ -17,6 +17,7 @@ import {
   ReactLogoIcon,
   TypescriptIcon,
   WebrtcIcon,
+  StyledcomponentsIcon,
 } from "../assets/Icons";
 
 const Home = () => {
@@ -52,10 +53,9 @@ const Home = () => {
               <ReactLogoIcon />
               {/* React JS */}
             </Stack>
-            {/* <Stack>
-              <ReactLogoIcon />
-              React Native
-            </Stack> */}
+            <Stack>
+              <StyledcomponentsIcon />
+            </Stack>
           </Row>
           <Row>
             <Stack>

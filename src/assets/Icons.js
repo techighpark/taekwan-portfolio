@@ -12,11 +12,15 @@ import { Mysql } from "@styled-icons/simple-icons/Mysql";
 import { Postgresql } from "@styled-icons/simple-icons/Postgresql";
 import { Prisma } from "@styled-icons/simple-icons/Prisma";
 import { Nestjs } from "@styled-icons/simple-icons/Nestjs";
+import { Styledcomponents } from "@styled-icons/simple-icons/Styledcomponents";
 
 import styled from "styled-components";
 
 const height = "20px";
 
+export const StyledcomponentsIcon = styled(Styledcomponents)`
+  height: 30px;
+`;
 export const Html5Icon = styled(Html5)`
   height: ${height};
 `;

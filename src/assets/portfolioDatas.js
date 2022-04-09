@@ -3,6 +3,23 @@ import highBookerWeb from "../assets/img/high-booker.png";
 import highBookerDB from "../assets/img/high-booker-database.png";
 import highSearchBook from "../assets/img/high-search-books.png";
 import highVedio from "../assets/img/high-techigh-portfolio.png";
+import {
+  ApollographqlIcon,
+  AwsIcon,
+  // Css3Icon,
+  GraphqlIcon,
+  // Html5Icon,
+  JavascriptIcon,
+  // MysqllIcon,
+  // NestjsIcon,
+  // NodejsIcon,
+  PostgresqlIcon,
+  PrismaIcon,
+  ReactLogoIcon,
+  // TypescriptIcon,
+  WebrtcIcon,
+  StyledcomponentsIcon,
+} from "../assets/Icons";
 
 export const portfolioDatas = [
   {
@@ -13,7 +30,10 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: portfolio,
     date: "April. 2022",
-    stacks: ["React JS"],
+    stacks: {
+      text: ["React JS", "Styled Components"],
+      stacksIcon: [<ReactLogoIcon />, <StyledcomponentsIcon />],
+    },
   },
   {
     listNum: "2",
@@ -24,7 +44,14 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highBookerWeb,
     date: "Mar. 2022",
-    stacks: ["React JS", "Apollographql"],
+    stacks: {
+      text: ["React JS", "Apollographql", "Styled Components"],
+      stacksIcon: [
+        <ReactLogoIcon />,
+        <ApollographqlIcon />,
+        <StyledcomponentsIcon />,
+      ],
+    },
   },
   {
     listNum: "3",
@@ -35,7 +62,16 @@ export const portfolioDatas = [
     imgSubtitle: "Database",
     src: highBookerDB,
     date: "Mar. 2022",
-    stacks: ["Postgresql", "Prisma", "GraphQL", "Apollographql"],
+    stacks: {
+      text: ["Postgresql", "Prisma", "GraphQL", "Apollographql", "AWS S3"],
+      stacksIcon: [
+        <PostgresqlIcon />,
+        <PrismaIcon />,
+        <GraphqlIcon />,
+        <ApollographqlIcon />,
+        <AwsIcon />,
+      ],
+    },
   },
   {
     listNum: "4",
@@ -45,7 +81,10 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highSearchBook,
     date: "Mar. 2022",
-    stacks: ["React JS", "Rest API"],
+    stacks: {
+      text: ["React JS", "Rest API", "Styled Components"],
+      stacksIcon: [<ReactLogoIcon />, "", <StyledcomponentsIcon />],
+    },
   },
   {
     listNum: "5",
@@ -55,6 +94,9 @@ export const portfolioDatas = [
     imgSubtitle: "Web",
     src: highVedio,
     date: "Mar. 2022",
-    stacks: ["JavaScript", "Web RTC"],
+    stacks: {
+      text: ["JavaScript", "Web RTC"],
+      stacksIcon: [<JavascriptIcon />, <WebrtcIcon />],
+    },
   },
 ];

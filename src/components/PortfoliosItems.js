@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Check } from "@styled-icons/fa-solid/Check";
 import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
@@ -37,14 +36,15 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               {data.imgTitle}
               <PortfolioSubtitle>{data.imgSubtitle}</PortfolioSubtitle>
               <StackContainer>
-                {data.stacks.map((stack, index) => (
-                  <div key={index}>
-                    <Stack>
-                      <StackCheck />
-                      {stack}
-                    </Stack>
-                  </div>
-                ))}
+                {screenWidth
+                  ? data.stacks.stacksIcon.map((icon, index) => (
+                      <StackWrapper key={index}>{icon}</StackWrapper>
+                    ))
+                  : data.stacks.text.map((text, index) => (
+                      <StackWrapper key={index}>
+                        <Stack>{text}</Stack>
+                      </StackWrapper>
+                    ))}
               </StackContainer>
             </PortfolioTitle>
           </TitleContainer>
@@ -136,12 +136,12 @@ export const BottomArrow = styled.div`
   }
 `;
 
-const StackCheck = styled(Check)`
-  width: 20px;
-  color: ${props => props.theme.lightWhiteColor};
-  padding-right: 10px;
-  padding-bottom: 2px;
-`;
+// const StackCheck = styled(Check)`
+//   width: 20px;
+//   color: ${props => props.theme.lightWhiteColor};
+//   padding-right: 10px;
+//   padding-bottom: 2px;
+// `;
 
 const LinkIcon = styled(ExternalLinkAlt)`
   width: 15px;
@@ -179,19 +179,23 @@ const StyledLink = styled(Link)`
     }
   }
   @media screen and (max-width: 500px) {
-    bottom: 60px;
+    bottom: 12px;
     right: 6vw;
   }
 `;
 
 const Stack = styled.div`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   padding-bottom: 10px;
   @media screen and (max-width: 500px) {
     font-size: 14px;
     font-weight: 400;
   }
+`;
+const StackWrapper = styled.div`
+  padding: 0 10px;
+  color: ${props => props.theme.lightWhiteColor};
 `;
 const StackContainer = styled.div`
   position: absolute;
@@ -201,13 +205,17 @@ const StackContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 
   /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
     left: 50%;
     top: 320px;
     transform: translateX(-50%);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     /* margin-top: 200px; */
   }
 `;
@@ -249,7 +257,7 @@ const TitleContainer = styled.div`
   height: 400px;
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 
   /* border: 0.5px solid red; */
   /* border-radius: 1px; */
@@ -272,16 +280,17 @@ const PortfolioPhoto = styled.img`
   background-position: center;
   object-fit: cover;
   width: 700px;
-  border-radius: 30px;
+  /* border-radius: 30px; */
   box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
     10px 10px 5px 5px rgba(0, 0, 0, 0.2);
 
   @media screen and (max-width: 500px) {
-    width: 94vw;
+    width: 90vw;
     height: 250px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
+      10px 10px 5px 5px rgba(0, 0, 0, 0.2);
 
     /* border: none; */
     /* object-fit: contain; */
