@@ -49,7 +49,10 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               </StackContainer>
             </PortfolioTitle>
           </TitleContainer>
-          <StyledLink to={`/ex/${data.url}`} target="_blank">
+          <StyledLink
+            to={`/ex/${data.url}`}
+            target={screenWidth ? "_blank" : "_self"}
+          >
             {screenWidth ? (
               <LinkIcon />
             ) : (
