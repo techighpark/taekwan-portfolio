@@ -174,8 +174,8 @@ const PopUp = styled.div`
   /* border: 2px solid blue; */
 
   @media screen and (max-width: 500px) {
-    top: 45vh;
-    left: 47vw;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     /* z-index: 999; */
   }
