@@ -19,7 +19,7 @@ import styled from "styled-components";
 const height = "20px";
 
 export const StyledcomponentsIcon = styled(Styledcomponents)`
-  margin-top: 5px;
+  /* margin-top: 5px; */
   height: 30px;
 `;
 export const Html5Icon = styled(Html5)`
@@ -52,7 +52,7 @@ export const GraphqlIcon = styled(Graphql)`
 export const ApollographqlIcon = styled(Apollographql)`
   height: ${height};
 `;
-export const MysqllIcon = styled(Mysql)`
+export const MysqlIcon = styled(Mysql)`
   height: 40px;
 `;
 export const PostgresqlIcon = styled(Postgresql)`

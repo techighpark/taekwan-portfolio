@@ -1,14 +1,44 @@
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Layout from "../components/Layout";
-import { stacks } from "../assets/stackdata";
+import { keyframes } from "styled-components";
+import { backEndStacks, frontEndStacks } from "../assets/stackdata";
 
 const Skill = () => {
-  let numArray = [];
-  for (let i = 1; i < 6; i++) {
-    numArray.push(i);
-  }
+  const getFrontSkillColor = skillLv => {
+    if (skillLv === "Beginner") {
+      return "#fedef1";
+    } else if (skillLv === "Intermediate") {
+      return "#feadde";
+    } else if (skillLv === "Advanced") {
+      return "#fe7bca";
+    } else if (skillLv === "Professional") {
+      return "#fe5bbd";
+    } else if (skillLv === "Master") {
+      return "#FE0F9E";
+    }
+  };
+  const getBackSkillColor = skillLv => {
+    if (skillLv === "Beginner") {
+      return "#f1edff";
+    } else if (skillLv === "Intermediate") {
+      return "#c9b9ff";
+    } else if (skillLv === "Advanced") {
+      return "#ae97ff";
+    } else if (skillLv === "Professional") {
+      return "#9374ff";
+    } else if (skillLv === "Master") {
+      return "#7852ff";
+    }
+  };
 
+  const lvRef = [
+    "Beginner",
+    "Intermediate",
+    "Advanced",
+    "Professional",
+    "Master",
+  ];
   return (
     <Layout>
       <Helmet>
@@ -19,225 +49,238 @@ const Skill = () => {
           <FieldText>SLLIKS</FieldText>
         </FieldContainer>
         <BodyContainer>
-          <MainContainer>
-            <SkillTextContainer>
-              <SkillText>Front-end</SkillText>
-            </SkillTextContainer>
-            <SkillTextContainer>
-              <SkillText>Back-end</SkillText>
-            </SkillTextContainer>
-            <MySkillLv />
-            <MySkillLv />
-            <SkillLv />
-            <SkillLv />
-          </MainContainer>
-          <AboutItems>
-            <StackContainer>
-              {numArray.map(num => (
-                <StackWrapper key={num}>
-                  <StackLv>
-                    <StackSub>{num}</StackSub>
-                  </StackLv>
-                </StackWrapper>
+          <FrontBackContainer>
+            <EndContainer>
+              <EndWrapper>
+                <EndTextWrapper>
+                  <EndText>Front-end</EndText>
+                  <EndLvContainer>
+                    <FrontendLv />
+                  </EndLvContainer>
+                </EndTextWrapper>
+              </EndWrapper>
+              <SkillLvRefContainer>
+                {lvRef.map(ref => (
+                  <SkillLvRef key={ref} skillLv={getFrontSkillColor(ref)}>
+                    {ref}
+                  </SkillLvRef>
+                ))}
+              </SkillLvRefContainer>
+              {frontEndStacks.map(stacks => (
+                <StackContainer key={stacks.stack}>
+                  <StackWrapper>
+                    <StackIcon>{stacks.icon}</StackIcon>
+                    <StackText>{stacks.stack}</StackText>
+                  </StackWrapper>
+                  <StackSkillLv skillLv={getFrontSkillColor(stacks.skillLv)}>
+                    {stacks.skillLv}
+                  </StackSkillLv>
+                </StackContainer>
               ))}
-              {stacks.map(stack => (
-                <StackWrapper key={stack}>
-                  <StackSub>{stack}</StackSub>
-                </StackWrapper>
+            </EndContainer>
+            <EndContainer>
+              <EndWrapper>
+                <EndTextWrapper>
+                  <EndText>Back-end</EndText>
+                  <EndLvContainer>
+                    <BackendLv />
+                  </EndLvContainer>
+                </EndTextWrapper>
+              </EndWrapper>
+              <SkillLvRefContainer>
+                {lvRef.map(ref => (
+                  <SkillLvRef key={ref} skillLv={getBackSkillColor(ref)}>
+                    {ref}
+                  </SkillLvRef>
+                ))}
+              </SkillLvRefContainer>
+              {backEndStacks.map(stacks => (
+                <StackContainer key={stacks.stack}>
+                  <StackWrapper>
+                    <StackIcon>{stacks.icon}</StackIcon>
+                    <StackText>{stacks.stack}</StackText>
+                  </StackWrapper>
+                  <StackSkillLv skillLv={getBackSkillColor(stacks.skillLv)}>
+                    {stacks.skillLv}
+                  </StackSkillLv>
+                </StackContainer>
               ))}
-            </StackContainer>
-          </AboutItems>
+            </EndContainer>
+          </FrontBackContainer>
         </BodyContainer>
       </AboutContainer>
     </Layout>
   );
 };
-
-const StackSub = styled.span``;
-const StackLv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-`;
-const StackWrapper = styled.div`
-  height: 30px;
-  width: 100px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* border: 1px solid orange; */
-`;
-const StackContainer = styled.div`
-  padding: 200px 50px 100px 50px;
-  /* margin-bottom: 100px; */
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 30px;
-  row-gap: 20px;
-  /* border: 1px solid green; */
-  ${StackWrapper}:nth-child(1), ${StackWrapper}:nth-child(2),${StackWrapper}:nth-child(3),${StackWrapper}:nth-child(4),${StackWrapper}:nth-child(5) {
-    div {
-      width: 30px;
-      height: 30px;
-      /* color: hsl(317 100% 54%); */
-      border: hsl(317 100% 54%) 3px solid;
-      background-color: transparent;
-      border-radius: 15px;
-      /* text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor; */
-      box-shadow: inset 0 0 0.5em 0 hsl(317 100% 54%),
-        0 0 0.5em 0 hsl(317 100% 54%);
-      transition: all 0.5s;
-    }
-  }
-  ${StackWrapper}:nth-child(6) {
-    grid-row: 2;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(7) {
-    grid-row: 3;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(8) {
-    grid-row: 4;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(9) {
-    grid-row: 2;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(10) {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(11) {
-    grid-row: 5;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(12) {
-    grid-row: 3;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(13) {
-    grid-row: 4;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(14) {
-    grid-row: 5;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(15) {
-    grid-row: 6;
-    grid-column: 3;
-  }
-  ${StackWrapper}:nth-child(16) {
-    grid-row: 3;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(17) {
-    grid-row: 6;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(18) {
-    grid-row: 7;
-    grid-column: 1;
-  }
-  ${StackWrapper}:nth-child(19) {
-    grid-row: 4;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(20) {
-    grid-row: 5;
-    grid-column: 2;
-  }
-  ${StackWrapper}:nth-child(21) {
-    grid-row: 8;
-    grid-column: 1;
-  }
-
+const SkillLvRef = styled.div`
+  width: 80px;
+  margin: 50px 5px 50px 5px;
+  font-weight: 300;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0px;
+  border: 1px solid ${props => props.skillLv};
   @media screen and (max-width: 500px) {
-    width: 100%;
+    margin: 5px 0px;
   }
 `;
-const AboutItems = styled.div`
-  width: 100%;
+const SkillLvRefContainer = styled.div`
+  display: flex;
+  /* border: 1px solid white; */
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+`;
+const StackSkillLv = styled.div`
+  width: 100px;
+  font-weight: 500;
+  font-size: 10px;
+  /* color: ${props => props.theme.bgColor}; */
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0px;
+  border: 1px solid ${props => props.skillLv};
+  /* background-color: ${props => props.skillLv}; */
+  @media screen and (max-width: 500px) {
+  }
+`;
+
+const StackText = styled.div`
+  width: 150px;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+
+  /* border: 1px solid white; */
+  @media screen and (max-width: 500px) {
+    width: 120px;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+`;
+
+const StackIcon = styled.div`
+  height: 30px;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* border: 1px solid white; */
-  @media screen and (max-width: 500px) {
-    /* width: 400px; */
-  }
 `;
-
-const MySkillLv = styled.div`
-  background-color: ${props => props.theme.lightAccentColor};
-`;
-const SkillLv = styled.div`
-  background-color: ${props => props.theme.darkLine};
-
-  /* border: 1px solid red; */
-`;
-const SkillText = styled.div`
-  font-weight: 500;
-  font-size: 18px;
-`;
-const SkillTextContainer = styled.div`
+const StackWrapper = styled.div`
   display: flex;
   align-items: center;
+  /* border: 1px solid white; */
 `;
 
-const MainContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(22, 1fr);
-  grid-template-rows: 50px 3px;
-  padding: 0 100px 50px 100px;
+const StackContainer = styled.div`
+  width: 460px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  div:nth-child(1) {
-    grid-column: 1 / 11;
-    grid-row: 1;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 500px) {
+    width: 320px;
+    /* justify-content: center; */
   }
-  div:nth-child(2) {
-    grid-column: 13 / 23;
-    grid-row: 1;
+`;
+
+const BackLvCharge = keyframes`
+0%{  
+    width:0%;
+}
+25%{
+    width:0%;
+}
+100%{
+    width:30%;
+}`;
+const FrontLvCharge = keyframes`
+0%{  
+    width:0%;
+}
+100%{
+    width:50%;
+}`;
+const BackendLv = styled.div`
+  width: 30%;
+  height: 2px;
+  background-color: ${props => props.theme.secAccentColor};
+  animation: ${BackLvCharge} 2.5s ease-in 1;
+`;
+
+const FrontendLv = styled.div`
+  width: 50%;
+  height: 2px;
+  background-color: ${props => props.theme.accentColor};
+  animation: ${FrontLvCharge} 2s ease-in 1;
+`;
+const EndLvContainer = styled.div`
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 500px;
+  display: flex;
+  background-color: ${props => props.theme.darkLine};
+
+  /* border: 1px solid blue; */
+  @media screen and (max-width: 500px) {
+    width: 300px;
   }
-  div:nth-child(3) {
-    grid-column: 1 / 6;
-    grid-row: 2;
+`;
+const EndText = styled.div`
+  width: 150px;
+  font-weight: 500;
+  font-size: 20px;
+  /* border: 1px solid yellow; */
+`;
+const EndTextWrapper = styled.div``;
+
+const EndWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid yellow; */
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
   }
-  div:nth-child(5) {
-    grid-column: 6 / 11;
-    grid-row: 2;
+`;
+const EndContainer = styled.div`
+  width: 50%;
+  margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid green; */
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin: 0px 10px 200px 10px;
   }
-  div:nth-child(4) {
-    grid-column: 13 / 16;
-    grid-row: 2;
+`;
+const FrontBackContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
   }
-  div:nth-child(6) {
-    grid-column: 16 / 23;
-    grid-row: 2;
-  }
-  /* @media and screen (max-width: 500px) {
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: 50px 3px 50px 3px;
-  } */
 `;
 
 const BodyContainer = styled.div`
   width: 100%;
   margin-top: 200px;
   margin-bottom: 200px;
-  display: grid;
-  grid-template-columns: 1fr;
-  /* row-gap: 50px; */
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
     width: 100%;
     margin-top: 300px;
-    margin-bottom: 300px;
+    margin-bottom: 0px;
     /* row-gap: 500px; */
   }
 `;
@@ -281,8 +324,12 @@ const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 200vh;
   max-width: 2000px;
+
+  @media screen and (max-width: 500px) {
+    height: 100%;
+  }
 
   /* border: 1px solid orange; */
 `;

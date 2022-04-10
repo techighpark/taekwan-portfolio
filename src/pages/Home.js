@@ -9,7 +9,7 @@ import {
   GraphqlIcon,
   Html5Icon,
   JavascriptIcon,
-  MysqllIcon,
+  MysqlIcon,
   NestjsIcon,
   NodejsIcon,
   PostgresqlIcon,
@@ -78,7 +78,7 @@ const Home = () => {
               {/* Node JS */}
             </Stack>
             <Stack>
-              <MysqllIcon />
+              <MysqlIcon />
               {/* MySQL */}
             </Stack>
             <Stack>

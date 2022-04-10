@@ -4,8 +4,9 @@ import reset from "styled-reset";
 export const darkMode = {
   bgColor: "#0e0f11",
   fontColor: "#EEEEEE",
-  accentColor: "rgba(254, 23, 162, 1)",
+  accentColor: "#FE16A2",
   lightAccentColor: "rgba(254, 23, 162, 0.3)",
+  secAccentColor: "#7852FF",
   whiteColor: "#EEEEEE",
   lightWhiteColor: "#999999",
   superLightWhiteColor: "#333333",
