@@ -46,5 +46,11 @@ export const backEndStacks = [
   { stack: "MySQL", skillLv: "Beginner", icon: <MysqlIcon /> },
   { stack: "Postgresql", skillLv: "Beginner", icon: <PostgresqlIcon /> },
   { stack: "Prisma", skillLv: "Intermediate", icon: <PrismaIcon /> },
+  { stack: "GraphQL", skillLv: "Advanced", icon: <GraphqlIcon /> },
+  {
+    stack: "ApolloGraphql",
+    skillLv: "Intermediate",
+    icon: <ApollographqlIcon />,
+  },
   { stack: "Nest JS", skillLv: "Beginner", icon: <NestjsIcon /> },
 ];
