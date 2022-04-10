@@ -4,7 +4,7 @@ import { portfolioDatas } from "../assets/portfolioDatas";
 import { Link } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
 import { keyframes } from "styled-components";
-import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
+import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth < 500);
@@ -143,14 +143,15 @@ export const BottomArrow = styled.div`
 //   padding-bottom: 2px;
 // `;
 
-const LinkIcon = styled(ExternalLinkAlt)`
+const LinkIcon = styled(LinkExternal)`
   width: 15px;
   color: ${props => props.theme.lightAccentColor};
 
   @media screen and (max-width: 500px) {
-    color: ${props => props.theme.accentColor};
+    color: ${props => props.theme.fontColor};
     font-weight: 400;
     opacity: 0.6;
+    /* border: 1px solid white; */
   }
 `;
 
@@ -315,7 +316,7 @@ const ProjectItemContainer = styled.div`
 const PortfolioContainer = styled.div`
   width: 100%;
   margin-top: 600px;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 400px;
@@ -324,7 +325,7 @@ const PortfolioContainer = styled.div`
   @media screen and (max-width: 500px) {
     width: 100%;
     margin-top: 500px;
-    margin-bottom: 220px;
+    margin-bottom: 320px;
     row-gap: 500px;
   }
 `;
