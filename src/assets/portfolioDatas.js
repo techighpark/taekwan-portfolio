@@ -34,7 +34,6 @@ export const portfolioDatas = [
     imgTitle: "Portfolio",
     imgSubtitle: "Web",
     src: portfolio,
-    date: "April. 2022",
     stacks: {
       text: ["React JS", "Styled Components"],
       stacksIcon: [<ReactLogoIcon />, <StyledcomponentsIcon />],
@@ -48,7 +47,6 @@ export const portfolioDatas = [
     imgTitle: "High-Booker",
     imgSubtitle: "Web",
     src: highBookerWeb,
-    date: "Mar. 2022",
     stacks: {
       text: ["React JS", "Apollographql", "Styled Components"],
       stacksIcon: [
@@ -66,7 +64,6 @@ export const portfolioDatas = [
     imgTitle: "High-Booker",
     imgSubtitle: "Database",
     src: highBookerDB,
-    date: "Mar. 2022",
     stacks: {
       text: ["Postgresql", "Prisma", "GraphQL", "Apollographql", "AWS S3"],
       stacksIcon: [
@@ -85,7 +82,6 @@ export const portfolioDatas = [
     imgTitle: "High-Search-Books",
     imgSubtitle: "Web",
     src: highSearchBook,
-    date: "Mar. 2022",
     stacks: {
       text: ["React JS", "Styled Components", "Rest API"],
       stacksIcon: [
@@ -102,10 +98,21 @@ export const portfolioDatas = [
     imgTitle: "High-Video",
     imgSubtitle: "Web",
     src: highVedio,
-    date: "Mar. 2022",
     stacks: {
       text: ["JavaScript", "Web RTC"],
       stacksIcon: [<JavascriptIcon />, <WebrtcIcon />],
     },
   },
+  // {
+  //   listNum: "6",
+  //   listTitle: "High-Booker: App",
+  //   url: "high-booker",
+  //   imgTitle: "High-Booker",
+  //   imgSubtitle: "App",
+  //   src: highVedio,
+  //   stacks: {
+  //     text: ["React Native"],
+  //     stacksIcon: [<ReactLogoIcon />],
+  //   },
+  // },
 ];

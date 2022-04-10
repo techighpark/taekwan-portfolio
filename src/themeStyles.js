@@ -6,6 +6,7 @@ export const darkMode = {
   fontColor: "#EEEEEE",
   accentColor: "#FE16A2",
   lightAccentColor: "rgba(254, 23, 162, 0.3)",
+  firAccentColor: "#84d632",
   secAccentColor: "#7852FF",
   whiteColor: "#EEEEEE",
   lightWhiteColor: "#999999",

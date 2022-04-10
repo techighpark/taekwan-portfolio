@@ -20,6 +20,14 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
     };
     window.onresize = sizeDetect;
   });
+  const getBgColor = subtitle => {
+    if (subtitle === "Web" || subtitle === "App") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  console.log(getBgColor("App"));
 
   return (
     <PortfolioContainer>
@@ -34,7 +42,9 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
           <TitleContainer>
             <PortfolioTitle>
               {data.imgTitle}
-              <PortfolioSubtitle>{data.imgSubtitle}</PortfolioSubtitle>
+              <PortfolioSubtitle bgColor={getBgColor(data.imgSubtitle)}>
+                {data.imgSubtitle}
+              </PortfolioSubtitle>
               <StackContainer>
                 {screenWidth
                   ? data.stacks.stacksIcon.map((icon, index) => (
@@ -224,12 +234,15 @@ const PortfolioSubtitle = styled.div`
   position: absolute;
   bottom: 101%;
   right: 0;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 500;
-  color: ${props => props.theme.bgColor};
-  background-color: white;
+  border: 1px solid
+    ${props =>
+      props.bgColor ? props.theme.firAccentColor : props.theme.secAccentColor};
+  border-radius: 20px;
+  padding: 3px 5px;
   @media screen and (max-width: 500px) {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
   }
 `;
@@ -260,7 +273,6 @@ const TitleContainer = styled.div`
   opacity: 0;
   /* border-radius: 30px; */
 
-  /* border: 0.5px solid red; */
   /* border-radius: 1px; */
   /* cursor: pointer; */
   :hover {
@@ -268,7 +280,7 @@ const TitleContainer = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    /* width: 100%; */
+    width: 90vw;
     height: 250px;
     background-color: rgba(0, 0, 0, 0);
     opacity: 1;

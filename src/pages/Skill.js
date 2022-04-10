@@ -7,15 +7,15 @@ import { backEndStacks, frontEndStacks } from "../assets/stackdata";
 const Skill = () => {
   const getFrontSkillColor = skillLv => {
     if (skillLv === "Beginner") {
-      return "#fedef1";
+      return "#e0f4cc";
     } else if (skillLv === "Intermediate") {
-      return "#feadde";
+      return "#c1ea99";
     } else if (skillLv === "Advanced") {
-      return "#fe7bca";
+      return "#a3e066";
     } else if (skillLv === "Professional") {
-      return "#fe5bbd";
+      return "#84d632";
     } else if (skillLv === "Master") {
-      return "#FE0F9E";
+      return "#66cc00";
     }
   };
   const getBackSkillColor = skillLv => {
@@ -216,7 +216,7 @@ const BackendLv = styled.div`
 const FrontendLv = styled.div`
   width: 50%;
   height: 2px;
-  background-color: ${props => props.theme.accentColor};
+  background-color: ${props => props.theme.firAccentColor};
   animation: ${FrontLvCharge} 2s ease-in 1;
 `;
 const EndLvContainer = styled.div`
