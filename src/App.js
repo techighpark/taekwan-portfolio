@@ -5,6 +5,7 @@ import { darkMode, GlobalStyles, lightMode } from "./themeStyles";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import ExWeb from "./pages/ExWeb";
+import Skill from "./pages/Skill";
 
 function App() {
   const themeDarkMode = false;
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/skill" element={<Skill />} />
           <Route path="/about" element={<About />} />
           <Route path="/ex/:url" element={<ExWeb />} />
         </Routes>

@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import portfolio from "../assets/img/high-techigh-portfolio.png";
 import highBookerWeb from "../assets/img/high-booker.png";
 import highBookerDB from "../assets/img/high-booker-database.png";
@@ -20,6 +21,10 @@ import {
   WebrtcIcon,
   StyledcomponentsIcon,
 } from "../assets/Icons";
+
+const RestAPI = styled.span`
+  font-size: 12px;
+`;
 
 export const portfolioDatas = [
   {
@@ -82,8 +87,12 @@ export const portfolioDatas = [
     src: highSearchBook,
     date: "Mar. 2022",
     stacks: {
-      text: ["React JS", "Rest API", "Styled Components"],
-      stacksIcon: [<ReactLogoIcon />, "", <StyledcomponentsIcon />],
+      text: ["React JS", "Styled Components", "Rest API"],
+      stacksIcon: [
+        <ReactLogoIcon />,
+        <StyledcomponentsIcon />,
+        <RestAPI>RestAPI</RestAPI>,
+      ],
     },
   },
   {

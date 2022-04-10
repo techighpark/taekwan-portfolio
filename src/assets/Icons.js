@@ -19,6 +19,7 @@ import styled from "styled-components";
 const height = "20px";
 
 export const StyledcomponentsIcon = styled(Styledcomponents)`
+  margin-top: 5px;
   height: 30px;
 `;
 export const Html5Icon = styled(Html5)`

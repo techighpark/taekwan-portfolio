@@ -9,6 +9,7 @@ export const darkMode = {
   whiteColor: "#EEEEEE",
   lightWhiteColor: "#999999",
   superLightWhiteColor: "#333333",
+  darkLine: "#1D1D1D",
 };
 export const lightMode = {
   bgColor: "white",

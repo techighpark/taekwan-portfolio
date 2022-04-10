@@ -36,23 +36,31 @@ let Header = () => {
             WORKS
           </HeaderLink>
         </Link>
-        <Link to={"/about"}>
+        <Link to={"/skill"}>
           <HeaderLink
             ref={tabRef.current[2]}
             onClick={() => onClickTab(2)}
             selected={tabRef.current[2] === currentTab}
           >
+            SKILLS
+          </HeaderLink>
+        </Link>
+        <Link to={"/about"}>
+          <HeaderLink
+            ref={tabRef.current[3]}
+            onClick={() => onClickTab(3)}
+            selected={tabRef.current[3] === currentTab}
+          >
             ABOUT
           </HeaderLink>
         </Link>
         <HeaderLink
+          ref={tabRef.current[4]}
           onClick={() => {
             setVisible(true);
-            onClickTab(3);
+            onClickTab(4);
           }}
-          content={"연락처"}
-          ref={tabRef.current[3]}
-          selected={tabRef.current[3] === currentTab}
+          selected={tabRef.current[4] === currentTab}
         >
           CONTACT
         </HeaderLink>

@@ -35,114 +35,12 @@ const About = () => {
               </TextContainer>
             </AboutItems>
           ))}
-          {/* <AboutItems>
-            <StackContainer>
-              {stacks.map(stack => (
-                <StackWrapper key={stack}>
-                  <StackSub>{stack}</StackSub>
-                </StackWrapper>
-              ))}
-            </StackContainer>
-          </AboutItems> */}
         </AboutItemContainer>
       </AboutContainer>
       <TopArrow />
     </Layout>
   );
 };
-
-// const StackSub = styled.span``;
-// const StackWrapper = styled.div`
-//   height: 30px;
-//   width: 100px;
-//   border-radius: 15px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   /* border: 1px solid orange; */
-// `;
-// // const StackMain = styled.div`
-// //   border: 1px solid orange;
-// // `;
-// const StackContainer = styled.div`
-//   padding: 40px;
-//   margin-bottom: 100px;
-//   display: grid;
-//   grid-template-columns: repeat(5, 1fr);
-//   column-gap: 30px;
-//   row-gap: 10px;
-
-//   border: 1px solid green;
-//   ${StackWrapper}:nth-child(1) {
-//     grid-row: 1;
-//     grid-column: 3;
-//   }
-//   ${StackWrapper}:nth-child(2) {
-//     grid-row: 2;
-//     grid-column: 3;
-//   }
-//   ${StackWrapper}:nth-child(3) {
-//     grid-row: 3;
-//     grid-column: 3;
-//   }
-//   ${StackWrapper}:nth-child(4) {
-//     grid-row: 1;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(5) {
-//     grid-row: 1;
-//     grid-column: 2;
-//   }
-//   ${StackWrapper}:nth-child(6) {
-//     grid-row: 4;
-//     grid-column: 3;
-//   }
-//   ${StackWrapper}:nth-child(7) {
-//     grid-row: 2;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(8) {
-//     grid-row: 3;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(9) {
-//     grid-row: 4;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(10) {
-//     grid-row: 5;
-//     grid-column: 3;
-//   }
-//   ${StackWrapper}:nth-child(11) {
-//     grid-row: 2;
-//     grid-column: 2;
-//   }
-//   ${StackWrapper}:nth-child(12) {
-//     grid-row: 5;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(13) {
-//     grid-row: 6;
-//     grid-column: 1;
-//   }
-//   ${StackWrapper}:nth-child(14) {
-//     grid-row: 3;
-//     grid-column: 2;
-//   }
-//   ${StackWrapper}:nth-child(15) {
-//     grid-row: 4;
-//     grid-column: 2;
-//   }
-//   ${StackWrapper}:nth-child(16) {
-//     grid-row: 7;
-//     grid-column: 1;
-//   }
-
-//   @media screen and (max-width: 500px) {
-//     width: 100%;
-//   }
-// `;
 
 const TextSub = styled.div`
   padding: 20px;
