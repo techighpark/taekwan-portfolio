@@ -40,6 +40,11 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
           />
           <PortfolioPhoto src={data.src} />
           <TitleContainer>
+            {data.coding ? (
+              <CodingContainer>
+                <Coding>Developed Soon</Coding>{" "}
+              </CodingContainer>
+            ) : null}
             <PortfolioTitle>
               {data.imgTitle}
               <PortfolioSubtitle bgColor={getBgColor(data.imgSubtitle)}>
@@ -70,6 +75,33 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
     </PortfolioContainer>
   );
 });
+
+const Coding = styled.div`
+  position: absolute;
+  top: 35px;
+  left: -43px;
+  /* width: 200px; */
+  padding: 5px 40px;
+  font-weight: 700;
+  text-align: center;
+  background-color: ${props => props.theme.whiteColor};
+  color: ${props => props.theme.accentColor};
+  transform: rotate(-45deg);
+  /* border: 1px solid white; */
+  @media screen and (max-width: 500px) {
+    transform: rotate(0deg);
+    width: 100%;
+    padding: 5px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid; */
+    background-color: white;
+
+    /* width: ; */
+  }
+`;
+const CodingContainer = styled.div``;
 const ArrowPulse = keyframes`
 0% {
 		transform: scale(0.9)rotate(45deg);
@@ -77,8 +109,8 @@ const ArrowPulse = keyframes`
 
 	70% {
 		transform: scale(1) rotate(45deg);
-    border-bottom: 1px solid rgba(254, 23, 162, 1);
-    border-right: 1px solid rgba(254, 23, 162, 1);
+    border-bottom: 1px solid #FE16A2;
+    border-right: 1px solid #FE16A2;
 	}
 
 	100% {
@@ -271,10 +303,7 @@ const TitleContainer = styled.div`
   height: 400px;
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
-  /* border-radius: 30px; */
-
-  /* border-radius: 1px; */
-  /* cursor: pointer; */
+  overflow: hidden;
   :hover {
     opacity: 0.9;
   }
@@ -284,6 +313,7 @@ const TitleContainer = styled.div`
     height: 250px;
     background-color: rgba(0, 0, 0, 0);
     opacity: 1;
+    overflow: visible;
     /* border: 0.5px solid red; */
   }
 `;

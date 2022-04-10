@@ -38,6 +38,7 @@ export const portfolioDatas = [
       text: ["React JS", "Styled Components"],
       stacksIcon: [<ReactLogoIcon />, <StyledcomponentsIcon />],
     },
+    coding: false,
   },
   {
     listNum: "2",
@@ -55,6 +56,7 @@ export const portfolioDatas = [
         <StyledcomponentsIcon />,
       ],
     },
+    coding: false,
   },
   {
     listNum: "3",
@@ -74,6 +76,7 @@ export const portfolioDatas = [
         <AwsIcon />,
       ],
     },
+    coding: false,
   },
   {
     listNum: "4",
@@ -90,6 +93,7 @@ export const portfolioDatas = [
         <RestAPI>RestAPI</RestAPI>,
       ],
     },
+    coding: false,
   },
   {
     listNum: "5",
@@ -102,6 +106,7 @@ export const portfolioDatas = [
       text: ["JavaScript", "Web RTC"],
       stacksIcon: [<JavascriptIcon />, <WebrtcIcon />],
     },
+    coding: true,
   },
   // {
   //   listNum: "6",
