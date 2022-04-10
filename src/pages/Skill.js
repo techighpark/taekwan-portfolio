@@ -219,10 +219,10 @@ const MainContainer = styled.div`
     grid-column: 16 / 23;
     grid-row: 2;
   }
-  @media and screen (max-width: 500px) {
+  /* @media and screen (max-width: 500px) {
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: 50px 3px 50px 3px;
-  }
+  } */
 `;
 
 const BodyContainer = styled.div`
