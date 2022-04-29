@@ -107,7 +107,7 @@ const AboutContainer = styled.div`
   max-width: 2000px;
   margin-top: 150px;
 
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 `;
 
 const TitleContainer = styled.div`
@@ -135,13 +135,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   /* margin-top: 50px; */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 `;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     row-gap: 30px;
