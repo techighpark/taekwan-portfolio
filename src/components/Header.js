@@ -171,6 +171,7 @@ const PopUp = styled.div`
   top: 200px;
   right: -60px;
   transform: translate(-50%, -50%);
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.4);
 
   display: flex;
@@ -248,8 +249,8 @@ const ContactContentNum = styled(ContactContent)`
 
 const CloseBtn = styled.div`
   position: absolute;
-  right: 5px;
-  top: 0px;
+  right: 10px;
+  top: 3px;
   cursor: pointer;
 
   &::before {

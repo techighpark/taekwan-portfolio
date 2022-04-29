@@ -2,7 +2,12 @@ import styled from "styled-components";
 import Helmet from "react-helmet";
 import Layout from "../components/Layout";
 import { keyframes } from "styled-components";
-import { backEndStacks, frontEndStacks } from "../assets/stackdata";
+import {
+  backEndStacks,
+  deploymentStacks,
+  frontEndStacks,
+  versionStacks,
+} from "../assets/stackdata";
 
 const Skill = () => {
   const getFrontSkillColor = skillLv => {
@@ -29,6 +34,32 @@ const Skill = () => {
       return "#9374ff";
     } else if (skillLv === "Master") {
       return "#7852ff";
+    }
+  };
+  const getDeploySkillColor = skillLv => {
+    if (skillLv === "Beginner") {
+      return "#fdd5b7";
+    } else if (skillLv === "Intermediate") {
+      return "#fcba87";
+    } else if (skillLv === "Advanced") {
+      return "#fb9f57";
+    } else if (skillLv === "Professional") {
+      return "#fa8327";
+    } else if (skillLv === "Master") {
+      return "#fa7610";
+    }
+  };
+  const getVersionSkillColor = skillLv => {
+    if (skillLv === "Beginner") {
+      return "#f4cce3";
+    } else if (skillLv === "Intermediate") {
+      return "#e999c8";
+    } else if (skillLv === "Advanced") {
+      return "#de66ac";
+    } else if (skillLv === "Professional") {
+      return "#d33291";
+    } else if (skillLv === "Master") {
+      return "#c90076";
     }
   };
 
@@ -106,6 +137,62 @@ const Skill = () => {
                 </StackContainer>
               ))}
             </EndContainer>
+            <EndContainer>
+              <EndWrapper>
+                <EndTextWrapper>
+                  <EndText>Deployment</EndText>
+                  <EndLvContainer>
+                    <Deployment />
+                  </EndLvContainer>
+                </EndTextWrapper>
+              </EndWrapper>
+              <SkillLvRefContainer>
+                {lvRef.map(ref => (
+                  <SkillLvRef key={ref} skillLv={getDeploySkillColor(ref)}>
+                    {ref}
+                  </SkillLvRef>
+                ))}
+              </SkillLvRefContainer>
+              {deploymentStacks.map(stacks => (
+                <StackContainer key={stacks.stack}>
+                  <StackWrapper>
+                    <StackIcon>{stacks.icon}</StackIcon>
+                    <StackText>{stacks.stack}</StackText>
+                  </StackWrapper>
+                  <StackSkillLv skillLv={getDeploySkillColor(stacks.skillLv)}>
+                    {stacks.skillLv}
+                  </StackSkillLv>
+                </StackContainer>
+              ))}
+            </EndContainer>
+            <EndContainer>
+              <EndWrapper>
+                <EndTextWrapper>
+                  <EndText>Version Control</EndText>
+                  <EndLvContainer>
+                    <VersionControl />
+                  </EndLvContainer>
+                </EndTextWrapper>
+              </EndWrapper>
+              <SkillLvRefContainer>
+                {lvRef.map(ref => (
+                  <SkillLvRef key={ref} skillLv={getVersionSkillColor(ref)}>
+                    {ref}
+                  </SkillLvRef>
+                ))}
+              </SkillLvRefContainer>
+              {versionStacks.map(stacks => (
+                <StackContainer key={stacks.stack}>
+                  <StackWrapper>
+                    <StackIcon>{stacks.icon}</StackIcon>
+                    <StackText>{stacks.stack}</StackText>
+                  </StackWrapper>
+                  <StackSkillLv skillLv={getVersionSkillColor(stacks.skillLv)}>
+                    {stacks.skillLv}
+                  </StackSkillLv>
+                </StackContainer>
+              ))}
+            </EndContainer>
           </FrontBackContainer>
         </BodyContainer>
       </AboutContainer>
@@ -114,13 +201,15 @@ const Skill = () => {
 };
 const SkillLvRef = styled.div`
   width: 80px;
-  margin: 50px 5px 50px 5px;
+  margin: 10px 5px 10px 5px;
   font-weight: 300;
   font-size: 10px;
   text-align: center;
   border-radius: 10px;
   padding: 5px 0px;
   border: 1px solid ${props => props.skillLv};
+  /* border: 1px solid white; */
+
   @media screen and (max-width: 500px) {
     margin: 5px 0px;
   }
@@ -189,6 +278,26 @@ const StackContainer = styled.div`
   }
 `;
 
+const VersionControlCharge = keyframes`
+0%{  
+    width:0%;
+}
+55%{
+    width:0%;
+}
+100%{
+    width:40%;
+}`;
+const DeploymentCharge = keyframes`
+0%{  
+    width:0%;
+}
+40%{
+    width:0%;
+}
+100%{
+    width:40%;
+}`;
 const BackLvCharge = keyframes`
 0%{  
     width:0%;
@@ -197,24 +306,36 @@ const BackLvCharge = keyframes`
     width:0%;
 }
 100%{
-    width:30%;
+    width:40%;
 }`;
 const FrontLvCharge = keyframes`
 0%{  
     width:0%;
 }
 100%{
-    width:50%;
+    width:65%;
 }`;
+const VersionControl = styled.div`
+  width: 40%;
+  height: 2px;
+  background-color: ${props => props.theme.fouAccentColor};
+  animation: ${VersionControlCharge} 2.5s ease-in 1;
+`;
+const Deployment = styled.div`
+  width: 40%;
+  height: 2px;
+  background-color: ${props => props.theme.thiAccentColor};
+  animation: ${DeploymentCharge} 2.5s ease-in 1;
+`;
 const BackendLv = styled.div`
-  width: 30%;
+  width: 40%;
   height: 2px;
   background-color: ${props => props.theme.secAccentColor};
   animation: ${BackLvCharge} 2.5s ease-in 1;
 `;
 
 const FrontendLv = styled.div`
-  width: 50%;
+  width: 65%;
   height: 2px;
   background-color: ${props => props.theme.firAccentColor};
   animation: ${FrontLvCharge} 2s ease-in 1;
@@ -232,7 +353,7 @@ const EndLvContainer = styled.div`
   }
 `;
 const EndText = styled.div`
-  width: 150px;
+  width: 200px;
   font-weight: 500;
   font-size: 20px;
   /* border: 1px solid yellow; */
@@ -251,7 +372,7 @@ const EndWrapper = styled.div`
   }
 `;
 const EndContainer = styled.div`
-  width: 50%;
+  /* width: 50%; */
   margin: 0 50px;
   display: flex;
   flex-direction: column;
@@ -259,23 +380,26 @@ const EndContainer = styled.div`
   /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
     width: 100%;
-    margin: 0px 10px 200px 10px;
+    margin: 0px;
   }
 `;
 const FrontBackContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 150px;
+  /* justify-content: center; */
   @media screen and (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 120px;
   }
 `;
 
 const BodyContainer = styled.div`
   width: 100%;
-  margin-top: 200px;
-  margin-bottom: 200px;
-
+  margin-top: 300px;
+  padding-bottom: 200px;
+  display: flex;
+  justify-content: center;
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
     width: 100%;

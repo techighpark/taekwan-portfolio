@@ -93,7 +93,7 @@ const Portfolios = styled.div`
 const PortfoliosTitle = styled(Portfolios)`
   width: 100%;
   /* border: 1px solid yellow; */
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     width: 50px;
   }
 `;
@@ -143,7 +143,6 @@ const PortfolioList = styled.div`
   border-radius: 10px;
   /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
   border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
-
   ${props =>
     props.fixed &&
     css`
@@ -152,27 +151,45 @@ const PortfolioList = styled.div`
       left: 20px;
       /* padding: 0px 20px; */
     `}
-  @media
-    screen
-    and
-    (max-width: 1200px) {
+
+  @media screen and (max-width: 1200px) {
     position: relative;
     top: 400px;
-    left: 0;
     width: 90vw;
     height: 40px;
     padding: 5px 20px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
-    background-color: #2f3030;
+
     /* border: 1px solid red; */
     ${props =>
       props.fixed &&
       css`
         position: fixed;
-        top: 30px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* left: 50%;
+        transform: translateX(-50%); */
+      `}
+  }
+  @media screen and (max-width: 500px) {
+    position: relative;
+    top: 350px;
+    width: 90vw;
+    height: 40px;
+    padding: 5px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    /* border: 1px solid red; */
+    ${props =>
+      props.fixed &&
+      css`
+        position: fixed;
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
         /* left: 50%;

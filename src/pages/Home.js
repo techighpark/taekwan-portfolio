@@ -20,6 +20,10 @@ import {
   StyledcomponentsIcon,
   TailwindcssIcon,
   NextdotjsIcon,
+  VercelIcon,
+  NetlifyIcon,
+  HerokuIcon,
+  GithubIcon,
 } from "../assets/Icons";
 
 const Home = () => {
@@ -36,30 +40,22 @@ const Home = () => {
           <Row>
             <Stack>
               <Html5Icon />
-              {/* Html5 */}
             </Stack>
             <Stack>
               <Css3Icon />
-              {/* CSS */}
             </Stack>
             <Stack>
               <JavascriptIcon />
-              {/* JavaScript */}
             </Stack>
             <Stack>
               <TypescriptIcon />
-              {/* TypeScript */}
             </Stack>
-
             <Stack>
               <ReactLogoIcon />
-              {/* React JS */}
             </Stack>
             <Stack>
               <NextdotjsIcon />
             </Stack>
-          </Row>
-          <Row>
             <Stack>
               <StyledcomponentsIcon />
             </Stack>
@@ -68,43 +64,48 @@ const Home = () => {
             </Stack>
             <Stack>
               <WebrtcIcon />
-              {/* WebRTC */}
+            </Stack>
+          </Row>
+          <Row>
+            <Stack>
+              <GithubIcon />
+            </Stack>
+            <Stack>
+              <HerokuIcon />
+            </Stack>
+            <Stack>
+              <VercelIcon />
+            </Stack>
+            <Stack>
+              <NetlifyIcon />
             </Stack>
             <Stack>
               <AwsIcon />
-              {/* AWS S3 */}
             </Stack>
             <Stack>
-              <GraphqlIcon />
-              {/* GraphQL */}
+              <ApollographqlIcon />
             </Stack>
-            <Stack>Rest API</Stack>
           </Row>
           <Row>
             <Stack>
               <NodejsIcon />
-              {/* Node JS */}
             </Stack>
             <Stack>
               <MysqlIcon />
-              {/* MySQL */}
             </Stack>
             <Stack>
               <PostgresqlIcon />
-              {/* Postgresql */}
             </Stack>
             <Stack>
               <PrismaIcon />
-              {/* Prisma */}
-            </Stack>
-            <Stack>
-              <ApollographqlIcon />
-              {/* ApolloGraphql */}
             </Stack>
             <Stack>
               <NestjsIcon />
-              {/* Nest JS */}
             </Stack>
+            <Stack>
+              <GraphqlIcon />
+            </Stack>
+            <Stack>Rest API</Stack>
           </Row>
         </MainStackContainer>
       </MainContainer>

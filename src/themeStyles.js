@@ -8,6 +8,8 @@ export const darkMode = {
   lightAccentColor: "rgba(254, 23, 162, 0.3)",
   firAccentColor: "#84d632",
   secAccentColor: "#7852FF",
+  thiAccentColor: "#fa8a28",
+  fouAccentColor: "#c90076",
   whiteColor: "#EEEEEE",
   lightWhiteColor: "#999999",
   superLightWhiteColor: "#333333",

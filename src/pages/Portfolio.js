@@ -149,7 +149,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 260px;
+    top: 240px;
     &::after {
       width: 10px;
       height: 10px;

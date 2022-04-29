@@ -15,16 +15,32 @@ import { Nestjs } from "@styled-icons/simple-icons/Nestjs";
 import { Styledcomponents } from "@styled-icons/simple-icons/Styledcomponents";
 import { Nextdotjs } from "@styled-icons/simple-icons/Nextdotjs";
 import { Tailwindcss } from "@styled-icons/simple-icons/Tailwindcss";
+import { Github } from "@styled-icons/simple-icons/Github";
+import { Netlify } from "@styled-icons/simple-icons/Netlify";
+import { Vercel } from "@styled-icons/simple-icons/Vercel";
+import { Heroku } from "@styled-icons/simple-icons/Heroku";
 
 import styled from "styled-components";
 
 const height = "20px";
 
+export const HerokuIcon = styled(Heroku)`
+  height: 20px;
+`;
+export const VercelIcon = styled(Vercel)`
+  height: 20px;
+`;
+export const NetlifyIcon = styled(Netlify)`
+  height: 20px;
+`;
+export const GithubIcon = styled(Github)`
+  height: 20px;
+`;
 export const TailwindcssIcon = styled(Tailwindcss)`
   height: 25px;
 `;
 export const NextdotjsIcon = styled(Nextdotjs)`
-  height: 25px;
+  height: 23px;
 `;
 export const StyledcomponentsIcon = styled(Styledcomponents)`
   /* margin-top: 5px; */

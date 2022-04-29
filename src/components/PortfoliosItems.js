@@ -282,16 +282,15 @@ const PortfolioSubtitle = styled.div`
   top: 5%;
   left: 100%;
   font-size: 14px;
-  font-weight: 500;
-  border: 1px solid
-    ${props =>
-      props.bgColor ? props.theme.firAccentColor : props.theme.secAccentColor};
+  font-weight: 600;
+  color: ${props => props.theme.bgColor};
+  /* border: 1px solid white; */
+  background-color: white;
   border-radius: 20px;
   padding: 3px 5px;
   @media screen and (max-width: 500px) {
     left: 102%;
     font-size: 8px;
-    font-weight: 500;
   }
 `;
 
