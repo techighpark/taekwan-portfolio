@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { keyframes } from "styled-components";
+// import { keyframes } from "styled-components";
 
 let Header = () => {
   const [visible, setVisible] = useState(false);
@@ -25,7 +25,7 @@ let Header = () => {
       >
         <HeaderTitle>TAE KWAN</HeaderTitle>
       </Link>
-      <Line />
+      {/* <Line /> */}
       <HeaderLinks>
         <Link to={"/portfolio"}>
           <HeaderLink
@@ -267,25 +267,25 @@ const CloseBtn = styled.div`
   }
 `;
 
-const LineSnake = keyframes`
-0%{
- width:30vw;
- left:-30vw;
-}
-100%{
-  width:30vw;
-  left:100vw;
-}`;
-const Line = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 50px;
-  border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
-  animation: ${LineSnake} 20s infinite linear;
-  /* z-index: -1; */
-  @media screen and (max-width: 500px) {
-    top: 90px;
-  }
-`;
+// const LineSnake = keyframes`
+// 0%{
+//  width:30vw;
+//  left:-30vw;
+// }
+// 100%{
+//   width:30vw;
+//   left:100vw;
+// }`;
+// const Line = styled.div`
+//   position: absolute;
+//   width: 100%;
+//   top: 50px;
+//   border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
+//   animation: ${LineSnake} 20s infinite linear;
+//   /* z-index: -1; */
+//   @media screen and (max-width: 500px) {
+//     top: 90px;
+//   }
+// `;
 
 export default Header;

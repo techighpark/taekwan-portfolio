@@ -13,7 +13,7 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
   const { fixedPosition, stickyRef } = useSticky(false, listItem);
   useEffect(() => {
     const sizeDetect = () => {
-      if (window.innerWidth < 500) {
+      if (window.innerWidth < 700) {
         setListItem(true);
       } else {
         setListItem(false);
@@ -37,7 +37,7 @@ const PortfolioStickList = React.forwardRef((props, ref) => {
           key={index}
           // last={Boolean(index === ref.current.length - 1)}
         >
-          {listItem ? data.listNum : data.listTitle}
+          {listItem ? index + 1 : data.listTitle}
         </Portfolios>
       ))}
       <PortfoliosTitle onClick={onClickTop}>Top</PortfoliosTitle>
@@ -67,11 +67,11 @@ const Portfolios = styled.div`
     color: white;
     /* font-weight: 300; */
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1200px) {
     padding-left: 0px;
     text-align: center;
     padding: 5px 0px;
-    width: 20px;
+    width: 150px;
     font-weight: 500;
 
     ::first-letter {
@@ -82,8 +82,15 @@ const Portfolios = styled.div`
       height: 3px;
     } */
   }
+  @media screen and (max-width: 700px) {
+    width: 20px;
+  }
 `;
-const PortfoliosTitle = styled(Portfolios)``;
+const PortfoliosTitle = styled(Portfolios)`
+  @media screen and (max-width: 1000px) {
+    width: 50px;
+  }
+`;
 
 const ListTitle = styled.div`
   letter-spacing: 0.5em;
@@ -92,8 +99,9 @@ const ListTitle = styled.div`
   border-bottom: 0.5px solid;
   margin-bottom: 20px;
   text-align: left;
+  width: 100%;
   /* border: 1px solid yellow; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1200px) {
     /* font-size: 10px; */
     /* font-weight: 400; */
     border: none;
@@ -104,6 +112,12 @@ const ListTitle = styled.div`
     margin-bottom: 0px;
     text-align: center;
     font-weight: 500;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 50px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 20px;
   }
 `;
 
@@ -117,7 +131,8 @@ const PortfolioList = styled.div`
   z-index: 999;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #2f3030;
+  /* opacity: 0.8; */
   border-radius: 10px;
   /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor}; */
   /* border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
@@ -133,7 +148,7 @@ const PortfolioList = styled.div`
   @media
     screen
     and
-    (max-width: 500px) {
+    (max-width: 1200px) {
     position: relative;
     top: 350px;
     left: 0;
@@ -144,7 +159,7 @@ const PortfolioList = styled.div`
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #2f3030;
     /* border: 1px solid red; */
     ${props =>
       props.fixed &&

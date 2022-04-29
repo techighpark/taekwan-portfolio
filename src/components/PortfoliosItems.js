@@ -27,51 +27,56 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
       return false;
     }
   };
-  console.log(getBgColor("App"));
 
   return (
     <PortfolioContainer>
-      {portfolioDatas.map((data, index) => (
-        <ProjectItemContainer ref={el => (ref.current[index] = el)} key={index}>
-          <BottomArrow
-            onClick={() => onClickList(index + 1, ref)}
-            selected={ref.current[index] === currentTab}
-            last={ref.current.length - 1 === index}
-          />
-          <PortfolioPhoto src={data.src} />
-          <TitleContainer>
-            {data.coding ? (
-              <CodingContainer>
-                <Coding>Developed Soon</Coding>{" "}
-              </CodingContainer>
-            ) : null}
-            <PortfolioTitle>
-              {data.imgTitle}
-              <PortfolioSubtitle bgColor={getBgColor(data.imgSubtitle)}>
-                {data.imgSubtitle}
-              </PortfolioSubtitle>
-              <StackContainer>
-                {screenWidth
-                  ? data.stacks.stacksIcon.map((icon, index) => (
-                      <StackWrapper key={index}>{icon}</StackWrapper>
-                    ))
-                  : data.stacks.text.map((text, index) => (
-                      <StackWrapper key={index}>
-                        <Stack>{text}</Stack>
-                      </StackWrapper>
-                    ))}
-              </StackContainer>
-            </PortfolioTitle>
-          </TitleContainer>
-          <StyledLink
-            to={`/ex/${data.url}`}
-            target={screenWidth ? "_self" : "_blank"}
+      {portfolioDatas.map((data, index) => {
+        console.log(ref.current.length - 1 === index);
+        return (
+          <ProjectItemContainer
+            ref={el => (ref.current[index] = el)}
+            key={index}
           >
-            {screenWidth ? null : <LinkText>Visit Website</LinkText>}
-            <LinkIcon />
-          </StyledLink>
-        </ProjectItemContainer>
-      ))}
+            <BottomArrow
+              onClick={() => onClickList(index + 1, ref)}
+              selected={ref.current[index] === currentTab}
+              last={ref.current.length - 1 === index}
+            />
+            <PortfolioPhoto src={data.src} />
+            <TitleContainer>
+              {data.coding ? (
+                <CodingContainer>
+                  <Coding>Developed Soon</Coding>{" "}
+                </CodingContainer>
+              ) : null}
+              <PortfolioTitle>
+                {data.imgTitle}
+                <PortfolioSubtitle bgColor={getBgColor(data.imgSubtitle)}>
+                  {data.imgSubtitle}
+                </PortfolioSubtitle>
+                <StackContainer>
+                  {screenWidth
+                    ? data.stacks.stacksIcon.map((icon, index) => (
+                        <StackWrapper key={index}>{icon}</StackWrapper>
+                      ))
+                    : data.stacks.text.map((text, index) => (
+                        <StackWrapper key={index}>
+                          <Stack>{text}</Stack>
+                        </StackWrapper>
+                      ))}
+                </StackContainer>
+              </PortfolioTitle>
+            </TitleContainer>
+            <StyledLink
+              to={`/ex/${data.url}`}
+              target={screenWidth ? "_self" : "_blank"}
+            >
+              {screenWidth ? null : <LinkText>Visit Website</LinkText>}
+              <LinkIcon />
+            </StyledLink>
+          </ProjectItemContainer>
+        );
+      })}
     </PortfolioContainer>
   );
 });
@@ -209,8 +214,9 @@ const LinkText = styled.span`
 
 const StyledLink = styled(Link)`
   position: absolute;
-  bottom: -10px;
-  right: 0%;
+  top: 103%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   :hover {
@@ -222,23 +228,28 @@ const StyledLink = styled(Link)`
     }
   }
   @media screen and (max-width: 500px) {
-    bottom: 12px;
-    right: 6vw;
+    top: -10%;
+    left: unset;
+    right: 5%;
+    transform: translateX(0%);
   }
 `;
 
 const Stack = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   padding-bottom: 10px;
   @media screen and (max-width: 500px) {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
   }
 `;
 const StackWrapper = styled.div`
-  padding: 0 10px;
-  color: ${props => props.theme.lightWhiteColor};
+  color: ${props => props.theme.WhiteColor};
+
+  @media screen and (max-width: 500px) {
+    padding: 0 10px;
+  }
 `;
 const StackContainer = styled.div`
   position: absolute;
@@ -249,12 +260,14 @@ const StackContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  /* width: 100%; */
+  /* padding: 5px; */
+  /* background-color: rgba(255, 255, 255, 0.2); */
 
-  /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
-    left: 50%;
-    top: 320px;
-    transform: translateX(-50%);
+    left: 0%;
+    top: 300px;
+    transform: translateX(0%);
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -264,8 +277,8 @@ const StackContainer = styled.div`
 `;
 const PortfolioSubtitle = styled.div`
   position: absolute;
-  bottom: 101%;
-  right: 0;
+  top: 5%;
+  left: 100%;
   font-size: 14px;
   font-weight: 500;
   border: 1px solid
@@ -274,14 +287,15 @@ const PortfolioSubtitle = styled.div`
   border-radius: 20px;
   padding: 3px 5px;
   @media screen and (max-width: 500px) {
-    font-size: 12px;
+    left: 102%;
+    font-size: 8px;
     font-weight: 500;
   }
 `;
 
 const PortfolioTitle = styled.div`
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* font-style: italic; */
@@ -294,6 +308,8 @@ const PortfolioTitle = styled.div`
     font-size: 25px;
     top: -40px;
     font-weight: 500;
+    left: 5px;
+    transform: translateX(0%);
   }
 `;
 
@@ -304,6 +320,7 @@ const TitleContainer = styled.div`
   background-color: ${props => props.theme.bgColor};
   opacity: 0;
   overflow: hidden;
+  border-radius: 14px;
   :hover {
     opacity: 0.9;
   }
@@ -323,7 +340,7 @@ const PortfolioPhoto = styled.img`
   background-position: center;
   object-fit: cover;
   width: 700px;
-  /* border-radius: 30px; */
+  border-radius: 15px;
   box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
     10px 10px 5px 5px rgba(0, 0, 0, 0.2);
 

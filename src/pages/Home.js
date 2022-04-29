@@ -18,6 +18,8 @@ import {
   TypescriptIcon,
   WebrtcIcon,
   StyledcomponentsIcon,
+  TailwindcssIcon,
+  NextdotjsIcon,
 } from "../assets/Icons";
 
 const Home = () => {
@@ -54,10 +56,16 @@ const Home = () => {
               {/* React JS */}
             </Stack>
             <Stack>
-              <StyledcomponentsIcon />
+              <NextdotjsIcon />
             </Stack>
           </Row>
           <Row>
+            <Stack>
+              <StyledcomponentsIcon />
+            </Stack>
+            <Stack>
+              <TailwindcssIcon />
+            </Stack>
             <Stack>
               <WebrtcIcon />
               {/* WebRTC */}
@@ -145,20 +153,38 @@ const FieldText = styled.span`
     border: 5px solid ${props => props.theme.accentColor};
     box-sizing: border-box;
   }
-  @media screen and (max-width: 1000px) {
-    font-size: 50px;
+  @media screen and (max-width: 1100px) {
+    font-size: 70px;
+    &::after {
+      content: "";
+      bottom: 17px;
+      right: -14px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 60px;
+    &::after {
+      content: "";
+      bottom: 15px;
+      right: -14px;
+      height: 17px;
+      width: 17px;
+      border: 3px solid ${props => props.theme.accentColor};
+    }
   }
   @media screen and (max-width: 500px) {
     font-size: 45px;
     font-weight: 700;
+    /* width: 400px; */
     &::after {
       content: "";
       bottom: 10px;
       right: -14px;
       height: 15px;
       width: 15px;
-      border: 3px solid ${props => props.theme.accentColor};
-      box-sizing: border-box;
+      border: 2px solid ${props => props.theme.accentColor};
     }
   }
 `;

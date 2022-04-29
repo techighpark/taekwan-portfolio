@@ -5,7 +5,7 @@ function ExWeb() {
   const { url } = useParams();
 
   useEffect(() => {
-    window.location.href = `https://${url}.netlify.app`;
+    window.location.href = `https://${url}`;
   }, [url]);
 
   return (
