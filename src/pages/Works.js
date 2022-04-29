@@ -28,6 +28,7 @@ const Portfolio = () => {
       <Helmet>
         <title>WORKS | TAE KWAN</title>
       </Helmet>
+
       <PortfolioContainer>
         <FieldContainer>
           <FieldText>SKROW</FieldText>
@@ -45,7 +46,7 @@ const Portfolio = () => {
 };
 
 const PortfolioContainer = styled.div`
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;

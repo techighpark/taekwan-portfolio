@@ -131,11 +131,11 @@ const ListTitle = styled.div`
 const PortfolioList = styled.div`
   position: absolute;
   top: 970px;
-  left: 0;
+  left: 20px;
   padding: 20px 15px 10px 15px;
   text-align: right;
   overflow: hidden;
-  z-index: 999;
+  /* z-index: 999; */
   display: flex;
   flex-direction: column;
   background-color: #2f3030;

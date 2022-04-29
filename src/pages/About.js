@@ -16,6 +16,7 @@ const About = () => {
       <Helmet>
         <title>ABOUT | TAE KWAN</title>
       </Helmet>
+
       <AboutContainer>
         <FieldContainer>
           <FieldText>TUOBA</FieldText>
@@ -204,7 +205,7 @@ const FieldContainer = styled.div`
 `;
 
 const AboutContainer = styled.div`
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;

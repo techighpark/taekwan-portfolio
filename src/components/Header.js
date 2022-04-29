@@ -158,9 +158,9 @@ const PopUpWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 400vh;
   background-color: rgba(0, 0, 0, 0.9);
-
+  z-index: 99999;
   /* border: 0.5px solid blue; */
 `;
 

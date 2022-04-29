@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
 import { keyframes } from "styled-components";
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
+// import HighMarketDetail from "./HighMarketDetail";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth < 500);
@@ -70,6 +71,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
                 </StackContainer>
               </PortfolioTitle>
             </TitleContainer>
+
             <StyledLink
               to={`/ex/${data.url}`}
               target={screenWidth ? "_self" : "_blank"}
@@ -367,6 +369,7 @@ const PortfolioPhoto = styled.img`
 
 const ProjectItemContainer = styled.div`
   /* overflow: hidden; */
+
   height: 400px;
   position: relative;
   display: flex;
