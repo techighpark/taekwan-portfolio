@@ -13,10 +13,10 @@ const HighMarket = () => {
         <title>High-Market | TAE KWAN</title>
       </Helmet>
       <AboutContainer>
-        <TitleContainer>
-          <Title>High Market</Title>
-        </TitleContainer>
         <Container>
+          <TitleContainer>
+            <Title>High Market</Title>
+          </TitleContainer>
           <Grid>
             <DetailContainer>
               <TextContainer>
@@ -97,72 +97,6 @@ const HighMarket = () => {
   );
 };
 
-const TitleContainer = styled.div`
-  width: 800px;
-  display: flex;
-  justify-content: start;
-  margin-bottom: 50px;
-  /* border: 1px solid white; */
-`;
-const Title = styled.div`
-  font-size: 56px;
-  font-weight: 700;
-`;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  /* border: 1px solid green; */
-`;
-
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* margin-top: 50px; */
-  /* border: 1px solid blue; */
-`;
-
-const DetailContainer = styled.div`
-  width: 400px;
-  height: 600px;
-  background-color: #202124;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Text = styled.div``;
-const TextContainer = styled.div`
-  height: 200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 25px;
-  /* border: 1px solid yellow; */
-`;
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-
-  /* filter: brightness(80%) contrast(110%) grayscale(30%) saturate(110%)
-    sepia(10%); */
-  /* filter: grayscale(100%); */
-`;
-const ImageContainer = styled.div`
-  width: 300px;
-  height: 400px;
-  /* border: 0.5px solid green; */
-  overflow: hidden;
-  border: none;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-`;
 const AboutContainer = styled.div`
   position: relative;
   display: flex;
@@ -174,6 +108,88 @@ const AboutContainer = styled.div`
   margin-top: 150px;
 
   /* border: 1px solid orange; */
+`;
+
+const TitleContainer = styled.div`
+  /* display: flex; */
+  /* justify-content: start; */
+  margin-bottom: 50px;
+  /* border: 1px solid white; */
+  @media screen and (max-width: 500px) {
+    /* width: 100%; */
+  }
+`;
+
+const Title = styled.div`
+  font-size: 56px;
+  font-weight: 700;
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+    font-weight: 600;
+  }
+`;
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 50px; */
+  border: 1px solid blue;
+`;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  border: 1px solid green;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    row-gap: 30px;
+  }
+`;
+
+const DetailContainer = styled.div`
+  width: 400px;
+  height: 600px;
+  background-color: #202124;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
+const TextContainer = styled.div`
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  /* border: 1px solid yellow; */
+`;
+const Text = styled.div``;
+
+const ImageContainer = styled.div`
+  width: 300px;
+  height: 400px;
+  /* border: 0.5px solid green; */
+  overflow: hidden;
+  border: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+`;
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+
+  /* filter: brightness(80%) contrast(110%) grayscale(30%) saturate(110%)
+    sepia(10%); */
+  /* filter: grayscale(100%); */
 `;
 
 export default HighMarket;

@@ -46,7 +46,7 @@ const Portfolio = () => {
 };
 
 const PortfolioContainer = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

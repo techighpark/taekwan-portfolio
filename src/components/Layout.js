@@ -8,7 +8,7 @@ const StyledLayout = styled.div`
   align-items: center;
   width: 100%;
   padding: 20px;
-  /* overflow: hidden; */
+  overflow: hidden;
 
   /* border: 1px solid blue; */
   @media screen and (max-width: 500px) {
