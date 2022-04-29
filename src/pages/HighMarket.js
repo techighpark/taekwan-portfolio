@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
-import highmarket from "../assets/img/high-market.png";
-import main from "../assets/img/main.png";
-import chat from "../assets/img/chat.png";
-import product from "../assets/img/product.png";
+import highmarket from "../assets/img/high-market-min.png";
+import main from "../assets/img/highmarket/main-min.png";
+import chat from "../assets/img/highmarket/chat-min.png";
+import product from "../assets/img/highmarket/product-min.png";
 
 const HighMarket = () => {
   return (
@@ -107,7 +107,7 @@ const AboutContainer = styled.div`
   max-width: 2000px;
   margin-top: 150px;
 
-  /* border: 1px solid orange; */
+  border: 1px solid orange;
 `;
 
 const TitleContainer = styled.div`
