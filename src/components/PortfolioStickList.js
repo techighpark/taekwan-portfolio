@@ -82,11 +82,17 @@ const Portfolios = styled.div`
       height: 3px;
     } */
   }
+  @media screen and (max-width: 1000px) {
+    width: 150px;
+    /* border: 1px solid red; */
+  }
   @media screen and (max-width: 700px) {
     width: 20px;
   }
 `;
 const PortfoliosTitle = styled(Portfolios)`
+  width: 100%;
+  /* border: 1px solid yellow; */
   @media screen and (max-width: 1000px) {
     width: 50px;
   }
@@ -101,11 +107,12 @@ const ListTitle = styled.div`
   text-align: left;
   width: 100%;
   /* border: 1px solid yellow; */
+
   @media screen and (max-width: 1200px) {
     /* font-size: 10px; */
     /* font-weight: 400; */
     border: none;
-    /* border: 1px solid yellow; */
+    width: 100px;
 
     padding-left: 0px;
     letter-spacing: 0em;
@@ -123,7 +130,7 @@ const ListTitle = styled.div`
 
 const PortfolioList = styled.div`
   position: absolute;
-  top: 750px;
+  top: 970px;
   left: 0;
   padding: 20px 15px 10px 15px;
   text-align: right;
@@ -134,14 +141,14 @@ const PortfolioList = styled.div`
   background-color: #2f3030;
   /* opacity: 0.8; */
   border-radius: 10px;
-  /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor}; */
-  /* border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
+  /* border-top: 0.5px solid ${props => props.theme.lightWhiteColor};
+  border-bottom: 0.5px solid ${props => props.theme.lightWhiteColor}; */
 
   ${props =>
     props.fixed &&
     css`
       position: fixed;
-      top: 130px;
+      top: 150px;
       left: 20px;
       /* padding: 0px 20px; */
     `}
@@ -150,7 +157,7 @@ const PortfolioList = styled.div`
     and
     (max-width: 1200px) {
     position: relative;
-    top: 350px;
+    top: 400px;
     left: 0;
     width: 90vw;
     height: 40px;

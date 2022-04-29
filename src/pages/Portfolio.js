@@ -105,7 +105,7 @@ const ArrowPulse = keyframes`
 export const BottomArrow = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 620px;
+  top: 600px;
   left: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
@@ -149,6 +149,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
+    top: 260px;
     &::after {
       width: 10px;
       height: 10px;
@@ -160,7 +161,6 @@ export const BottomArrow = styled.div`
       height: 50px;
       border: 3px solid ${props => props.theme.lightWhiteColor};
     }
-    top: 220px;
   }
 `;
 

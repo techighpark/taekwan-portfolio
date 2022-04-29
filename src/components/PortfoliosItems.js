@@ -31,7 +31,6 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
   return (
     <PortfolioContainer>
       {portfolioDatas.map((data, index) => {
-        console.log(ref.current.length - 1 === index);
         return (
           <ProjectItemContainer
             ref={el => (ref.current[index] = el)}
@@ -126,7 +125,7 @@ const ArrowPulse = keyframes`
 export const BottomArrow = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 500px;
+  top: 510px;
   left: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 0 ${props => props.theme.accentColor};
@@ -236,9 +235,10 @@ const StyledLink = styled(Link)`
 `;
 
 const Stack = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   padding-bottom: 10px;
+
   @media screen and (max-width: 500px) {
     font-size: 12px;
     font-weight: 400;
@@ -258,9 +258,10 @@ const StackContainer = styled.div`
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  /* width: 100%; */
+  width: 100%;
+  /* border: 1px solid red; */
   /* padding: 5px; */
   /* background-color: rgba(255, 255, 255, 0.2); */
 
@@ -269,8 +270,9 @@ const StackContainer = styled.div`
     top: 300px;
     transform: translateX(0%);
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: center;
+    align-items: center; */
 
     /* margin-top: 200px; */
   }

@@ -7,6 +7,7 @@ import highBookerWeb from "../assets/img/high-booker.png";
 // import highVedio from "../assets/img/high-techigh-portfolio.png";
 import {
   ApollographqlIcon,
+  AwsIcon,
   GraphqlIcon,
   JavascriptIcon,
   NextdotjsIcon,
@@ -77,8 +78,9 @@ export const portfolioDatas = [
         "Javascript",
         "React JS",
         "Prisma",
-        "Apollographql",
         "GraphQL",
+        "Apollographql",
+        "AWS S3",
         "Styled Components",
       ],
       stacksIcon: [
@@ -87,6 +89,7 @@ export const portfolioDatas = [
         <PrismaIcon />,
         <ApollographqlIcon />,
         <GraphqlIcon />,
+        <AwsIcon />,
         <StyledcomponentsIcon />,
       ],
     },
