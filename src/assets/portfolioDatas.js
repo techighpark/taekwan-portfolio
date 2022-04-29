@@ -39,7 +39,8 @@ export const portfolioDatas = [
     url: "high-market.vercel.app",
     imgTitle: "High-Market",
     imgSubtitle: "Web",
-    src: highmarket,
+    link: "/highmarket",
+    imgSrc: highmarket,
     stacks: {
       text: ["Typescript", "Next JS", "Prisma", "Tailwindcss", "PlanetScale"],
       stacksIcon: [
@@ -56,7 +57,7 @@ export const portfolioDatas = [
     url: "techighportfolio.netlify.app",
     imgTitle: "Portfolio",
     imgSubtitle: "Web",
-    src: portfolio,
+    imgSrc: portfolio,
     stacks: {
       text: ["Javascript", "React JS", "Styled Components"],
       stacksIcon: [
@@ -72,7 +73,7 @@ export const portfolioDatas = [
     url: "high-booker.netlify.app",
     imgTitle: "High-Booker",
     imgSubtitle: "Web",
-    src: highBookerWeb,
+    imgSrc: highBookerWeb,
     stacks: {
       text: [
         "Javascript",
@@ -102,7 +103,7 @@ export const portfolioDatas = [
   //   url: "high-booker",
   //   imgTitle: "High-Booker",
   //   imgSubtitle: "Database",
-  //   src: highBookerDB,
+  //   imgSrc: highBookerDB,
   //   stacks: {
   //     text: ["Postgresql", "Prisma", "GraphQL", "Apollographql", "AWS S3"],
   //     stacksIcon: [
@@ -121,7 +122,7 @@ export const portfolioDatas = [
   //   url: "high-search-book",
   //   imgTitle: "High-Search-Books",
   //   imgSubtitle: "Web",
-  //   src: highSearchBook,
+  //   imgSrc: highSearchBook,
   //   stacks: {
   //     text: ["React JS", "Styled Components", "Rest API"],
   //     stacksIcon: [
@@ -138,7 +139,7 @@ export const portfolioDatas = [
   //   url: "high-search-book",
   //   imgTitle: "High-Video",
   //   imgSubtitle: "Web",
-  //   src: highVedio,
+  //   imgSrc: highVedio,
   //   stacks: {
   //     text: ["JavaScript", "Web RTC"],
   //     stacksIcon: [<JavascriptIcon />, <WebrtcIcon />],
@@ -151,7 +152,7 @@ export const portfolioDatas = [
   //   url: "high-booker",
   //   imgTitle: "High-Booker",
   //   imgSubtitle: "App",
-  //   src: highVedio,
+  //   imgSrc: highVedio,
   //   stacks: {
   //     text: ["React Native"],
   //     stacksIcon: [<ReactLogoIcon />],

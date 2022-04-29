@@ -2,10 +2,11 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { darkMode, GlobalStyles, lightMode } from "./themeStyles";
-import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import ExWeb from "./pages/ExWeb";
-import Skill from "./pages/Skill";
+import Works from "./pages/Works";
+import Skills from "./pages/Skills";
+import HighMarket from "./pages/HighMarket";
 
 function App() {
   const themeDarkMode = false;
@@ -15,8 +16,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/skill" element={<Skill />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="/highmarket" element={<HighMarket />} />
+          <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route path="/ex/:url" element={<ExWeb />} />
         </Routes>

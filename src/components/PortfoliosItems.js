@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { portfolioDatas } from "../assets/portfolioDatas";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
 import { keyframes } from "styled-components";
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
@@ -27,6 +27,10 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
       return false;
     }
   };
+  const navigate = useNavigate();
+  const onClickLink = link => {
+    navigate(link, { replace: true });
+  };
 
   return (
     <PortfolioContainer>
@@ -41,11 +45,11 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               selected={ref.current[index] === currentTab}
               last={ref.current.length - 1 === index}
             />
-            <PortfolioPhoto src={data.src} />
-            <TitleContainer>
+            <PortfolioPhoto src={data.imgSrc} />
+            <TitleContainer onClick={() => onClickLink(data.link)}>
               {data.coding ? (
                 <CodingContainer>
-                  <Coding>Developed Soon</Coding>{" "}
+                  <Coding>Developed Soon</Coding>
                 </CodingContainer>
               ) : null}
               <PortfolioTitle>
@@ -315,6 +319,7 @@ const PortfolioTitle = styled.div`
 `;
 
 const TitleContainer = styled.div`
+  cursor: pointer;
   position: absolute;
   width: 700px;
   height: 400px;
@@ -378,15 +383,14 @@ const PortfolioContainer = styled.div`
   margin-top: 600px;
   margin-bottom: 300px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
   row-gap: 400px;
 
   /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    width: 100%;
     margin-top: 500px;
-    margin-bottom: 320px;
-    row-gap: 500px;
+    margin-bottom: 300px;
+    row-gap: 400px;
   }
 `;
 

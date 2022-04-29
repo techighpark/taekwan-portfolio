@@ -176,7 +176,7 @@ const PortfolioList = styled.div`
   }
   @media screen and (max-width: 500px) {
     position: relative;
-    top: 350px;
+    top: 365px;
     width: 90vw;
     height: 40px;
     padding: 5px 20px;

@@ -27,7 +27,7 @@ let Header = () => {
       </Link>
       {/* <Line /> */}
       <HeaderLinks>
-        <Link to={"/portfolio"}>
+        <Link to={"/works"}>
           <HeaderLink
             ref={tabRef.current[1]}
             onClick={() => onClickTab(1)}
@@ -36,7 +36,7 @@ let Header = () => {
             WORKS
           </HeaderLink>
         </Link>
-        <Link to={"/skill"}>
+        <Link to={"/skills"}>
           <HeaderLink
             ref={tabRef.current[2]}
             onClick={() => onClickTab(2)}
@@ -131,7 +131,7 @@ const HeaderLinks = styled.div`
   @media screen and (max-width: 500px) {
     flex-direction: column;
     align-items: center;
-    padding-top: 110px;
+    padding-top: 80px;
   }
 `;
 const HeaderLink = styled.div`
@@ -148,7 +148,7 @@ const HeaderLink = styled.div`
 
   @media screen and (max-width: 500px) {
     padding-left: 0px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     font-size: 14px;
     font-weight: 500;
   }

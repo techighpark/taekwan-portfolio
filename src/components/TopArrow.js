@@ -32,7 +32,7 @@ const TopArrowAnimation = keyframes`
 
 const TopArrowP = styled.div`
   position: absolute;
-  bottom: 180px;
+  bottom: 200px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;

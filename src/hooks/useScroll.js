@@ -6,7 +6,7 @@ const useScroll = (defaultValue, screenWidth) => {
 
   const onClickList = (index, ref) => {
     const tab = ref.current[index];
-    const headerOffset = screenWidth ? 220 : 150;
+    const headerOffset = screenWidth ? 200 : 150;
     const tabPosition = tab.getBoundingClientRect().top;
     const bottomPosition = tab.getBoundingClientRect().bottom;
     console.log("bottomPosition", bottomPosition);
