@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { portfolioDatas } from "../assets/portfolioDatas";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useScroll from "../hooks/useScroll";
 import { keyframes } from "styled-components";
-import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
+// import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal";
 // import HighMarketDetail from "./HighMarketDetail";
 
 const PortfoliosItems = React.forwardRef((props, ref) => {
@@ -72,13 +72,13 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
               </PortfolioTitle>
             </TitleContainer>
 
-            <StyledLink
+            {/* <StyledLink
               to={`/ex/${data.url}`}
               target={screenWidth ? "_self" : "_blank"}
             >
               {screenWidth ? null : <LinkText>Visit Website</LinkText>}
               <LinkIcon />
-            </StyledLink>
+            </StyledLink> */}
           </ProjectItemContainer>
         );
       })}
@@ -195,50 +195,50 @@ export const BottomArrow = styled.div`
 //   padding-bottom: 2px;
 // `;
 
-const LinkIcon = styled(LinkExternal)`
-  width: 15px;
-  color: ${props => props.theme.lightAccentColor};
+// const LinkIcon = styled(LinkExternal)`
+//   width: 15px;
+//   color: ${props => props.theme.lightAccentColor};
 
-  @media screen and (max-width: 500px) {
-    color: ${props => props.theme.fontColor};
-    font-weight: 400;
-    opacity: 0.6;
-    /* border: 1px solid white; */
-  }
-`;
+//   @media screen and (max-width: 500px) {
+//     color: ${props => props.theme.fontColor};
+//     font-weight: 400;
+//     opacity: 0.6;
+//     /* border: 1px solid white; */
+//   }
+// `;
 
-const LinkText = styled.span`
-  color: ${props => props.theme.lightWhiteColor};
-  font-weight: 400;
-  padding-right: 5px;
-  @media screen and (max-width: 500px) {
-    /* color: ${props => props.theme.lightWhiteColor}; */
-    font-weight: 400;
-  }
-`;
+// const LinkText = styled.span`
+//   color: ${props => props.theme.lightWhiteColor};
+//   font-weight: 400;
+//   padding-right: 5px;
+//   @media screen and (max-width: 500px) {
+//     /* color: ${props => props.theme.lightWhiteColor}; */
+//     font-weight: 400;
+//   }
+// `;
 
-const StyledLink = styled(Link)`
-  position: absolute;
-  top: 103%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  :hover {
-    span {
-      color: ${props => props.theme.fontColor};
-    }
-    ${LinkIcon} {
-      color: ${props => props.theme.accentColor};
-    }
-  }
-  @media screen and (max-width: 500px) {
-    top: -10%;
-    left: unset;
-    right: 5%;
-    transform: translateX(0%);
-  }
-`;
+// const StyledLink = styled(Link)`
+//   position: absolute;
+//   top: 103%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   display: flex;
+//   align-items: center;
+//   :hover {
+//     span {
+//       color: ${props => props.theme.fontColor};
+//     }
+//     ${LinkIcon} {
+//       color: ${props => props.theme.accentColor};
+//     }
+//   }
+//   @media screen and (max-width: 500px) {
+//     top: -10%;
+//     left: unset;
+//     right: 5%;
+//     transform: translateX(0%);
+//   }
+// `;
 
 const Stack = styled.div`
   font-size: 14px;

@@ -2,17 +2,25 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import highmarket from "../assets/img/high-market-min.png";
-import main from "../assets/img/highmarket/main-min.png";
-import chat from "../assets/img/highmarket/chat-min.png";
-import product from "../assets/img/highmarket/product-min.png";
+import commentLike from "../assets/img/highmarket/commentLike.png";
+import community from "../assets/img/highmarket/community.png";
+import reserve from "../assets/img/highmarket/reserve.png";
+import selling from "../assets/img/highmarket/selling.png";
+import chat from "../assets/img/highmarket/chat.png";
+import recommand from "../assets/img/highmarket/recommand.png";
+import upload from "../assets/img/highmarket/upload.png";
 
 const HighMarket = () => {
+  const onClick = () => {
+    window.open("https://high-market.vercel.app/enter", "_blank");
+  };
   return (
     <Layout>
       <Helmet>
         <title>High-Market | TAE KWAN</title>
       </Helmet>
-      <TitleContainer>
+
+      <TitleContainer onClick={onClick}>
         <Title>High Market</Title>
       </TitleContainer>
       <AboutContainer>
@@ -59,69 +67,72 @@ const HighMarket = () => {
               <Body>
                 <BodyTitle>Authentication</BodyTitle>
                 <BodyTextContainer>
-                  <Text>Twilio / NodeMailer </Text>
-                  <Text>Email or Phone number login</Text>
-                  <Text>Using &rarr; Token &rarr; Session</Text>
+                  <Text>
+                    <Accent>Twilio</Accent> for Phone Login
+                    <Accent> Token</Accent>
+                  </Text>
+                  <Text>
+                    <Accent>NodeMailer</Accent> for Email Login
+                    <Accent> Token</Accent>
+                  </Text>
+                  <Text>
+                    <Accent>Iron-Session</Accent> for
+                    <Accent> Session</Accent>
+                  </Text>
                 </BodyTextContainer>
               </Body>
             </DetailContainer>
             <DetailContainer>
               <Body>
-                <BodyTitle>Main Page</BodyTitle>
+                <BodyTitle>Upload</BodyTitle>
                 <BodyTextContainer>
+                  <Text>
+                    <Accent>Cloudflare</Accent> for store, resize, optimize
+                    <br />
+                    and deliver images
+                  </Text>
+                </BodyTextContainer>
+              </Body>
+              <ImageContainer>
+                <Image src={upload} />
+              </ImageContainer>
+            </DetailContainer>
+            <DetailContainer>
+              <Body>
+                <BodyTitle>Comment, Like</BodyTitle>
+                <BodyTextContainer>
+                  <Text>
+                    <Accent>Incremental Static Regeneration </Accent>
+                    <br />
+                    for Comment and Like
+                  </Text>
+                </BodyTextContainer>
+              </Body>
+              <ImageContainer>
+                <Image src={commentLike} />
+              </ImageContainer>
+            </DetailContainer>
+            <DetailContainer>
+              <Body>
+                <BodyTitle>Recommand</BodyTitle>
+                <BodyTextContainer>
+                  <Text>Recommand based on Product Name</Text>
                   <Text></Text>
                   <Text></Text>
                 </BodyTextContainer>
               </Body>
               <ImageContainer>
-                <Image src={main} />
+                <Image src={recommand} />
               </ImageContainer>
             </DetailContainer>
             <DetailContainer>
               <Body>
-                <BodyTitle>Upload Page</BodyTitle>
-                <Text>Product / Upload</Text>
+                <BodyTitle>Chat</BodyTitle>
                 <BodyTextContainer>
-                  <Text></Text>
-                  <Text></Text>
-                </BodyTextContainer>
-              </Body>
-              <ImageContainer>
-                <Image></Image>
-              </ImageContainer>
-            </DetailContainer>
-            <DetailContainer>
-              <Body>
-                <BodyTitle>Product Page</BodyTitle>
-                <Text>Like / Comment / Chat / Recommand</Text>
-                <BodyTextContainer>
-                  <Text></Text>
-                  <Text></Text>
-                </BodyTextContainer>
-              </Body>
-              <ImageContainer>
-                <Image src={product} />
-              </ImageContainer>
-            </DetailContainer>
-            <DetailContainer>
-              <Body>
-                <BodyTitle>Community</BodyTitle>
-                <BodyTextContainer>
-                  <Text>Coords based / Answer</Text>
-                  <Text></Text>
-                  <Text></Text>
-                </BodyTextContainer>
-              </Body>
-              <ImageContainer>
-                <Image></Image>
-              </ImageContainer>
-            </DetailContainer>
-            <DetailContainer>
-              <Body>
-                <BodyTitle>Chat Page</BodyTitle>
-                <BodyTextContainer>
-                  <Text>Chat / Reserve / Done</Text>
-                  <Text></Text>
+                  <Text>
+                    <Accent>Incremental Static Regeneration </Accent>
+                    <br /> for Chat
+                  </Text>
                 </BodyTextContainer>
               </Body>
               <ImageContainer>
@@ -130,27 +141,39 @@ const HighMarket = () => {
             </DetailContainer>
             <DetailContainer>
               <Body>
-                <BodyTitle>Profile Page</BodyTitle>
+                <BodyTitle>Reserve</BodyTitle>
                 <BodyTextContainer>
-                  <Text>Sold / Purchased / Watchlist</Text>
-                  <Text></Text>
+                  <Text>Reservation to avoid double booking</Text>
                 </BodyTextContainer>
               </Body>
               <ImageContainer>
-                <Image></Image>
+                <Image src={reserve}></Image>
               </ImageContainer>
             </DetailContainer>
             <DetailContainer>
               <Body>
-                <BodyTitle>Profile Eidt Page</BodyTitle>
+                <BodyTitle>List</BodyTitle>
                 <BodyTextContainer>
-                  <Text>Change</Text>
-                  <Text></Text>
-                  <Text></Text>
+                  <Text>Selling List</Text>
+                  <Text>WishList</Text>
+                  <Text>Purchased List</Text>
                 </BodyTextContainer>
               </Body>
               <ImageContainer>
-                <Image></Image>
+                <Image src={selling} />
+              </ImageContainer>
+            </DetailContainer>
+            <DetailContainer>
+              <Body>
+                <BodyTitle>Community</BodyTitle>
+                <BodyTextContainer>
+                  <Text>
+                    Community based on <Accent>coordinates</Accent>
+                  </Text>
+                </BodyTextContainer>
+              </Body>
+              <ImageContainer>
+                <Image src={community} />
               </ImageContainer>
             </DetailContainer>
           </Grid>
@@ -186,8 +209,32 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.div`
+  position: relative;
   font-size: 56px;
   font-weight: 700;
+  cursor: pointer;
+
+  &::after {
+    content: "View Site";
+    position: absolute;
+    text-align: center;
+    bottom: 100%;
+    right: 0%;
+    width: 60px;
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 2px;
+    color: #cccccc;
+    border-bottom: 1px solid ${props => props.theme.bgColor};
+    box-sizing: border-box;
+    transition: all 300ms;
+  }
+  :hover {
+    &::after {
+      color: white;
+      border-bottom: 1px solid ${props => props.theme.accentColor};
+    }
+  }
   @media screen and (max-width: 500px) {
     font-size: 40px;
     font-weight: 600;
@@ -221,7 +268,7 @@ const Grid = styled.div`
 const DetailContainer = styled.div`
   width: 100%;
   height: 600px;
-  background-color: #323232;
+  background-color: #1e1e1e;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -272,16 +319,29 @@ const BodyTitle = styled.div`
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  /* border: 1px solid yellow; */
 `;
 const BodyTextContainer = styled.div`
-  width: 100%;
+  width: 300px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid yellow; */
 `;
-const Text = styled.div``;
+const Text = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 3;
+  text-align: center;
+`;
+const Accent = styled.span`
+  font-weight: 500;
+  color: #cccccc;
+`;
 
 const ImageContainer = styled.div`
-  width: 85%;
+  width: 75%;
   height: 400px;
   overflow: hidden;
   position: absolute;
@@ -289,6 +349,12 @@ const ImageContainer = styled.div`
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
+  transition-property: transform;
+  transition-duration: 100ms;
+
+  :hover {
+    transform: scale(1.02);
+  }
 `;
 const Image = styled.img`
   width: 100%;
@@ -328,7 +394,6 @@ const Wrapper = styled.div`
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 1), 0 4px 6px -4px rgb(0 0 0 / 1);
   transition-property: transform;
   transition-duration: 100ms;
-  cursor: pointer;
   :hover {
     transform: scale(1.03);
   }

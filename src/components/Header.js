@@ -106,10 +106,6 @@ const HeaderTitle = styled.div`
   font-size: 24px;
   font-weight: 600;
   :hover {
-    font-weight: 500;
-  }
-  ::first-letter {
-    /* color: ${props => props.theme.accentColor}; */
     /* font-weight: 500; */
   }
   /* border: 0.5px solid gray; */
@@ -137,18 +133,33 @@ const HeaderLinks = styled.div`
 const HeaderLink = styled.div`
   font-size: 16px;
   font-weight: 500;
-  padding-left: 50px;
+  margin-left: 50px;
   cursor: pointer;
+  position: relative;
+  &::after {
+    content: "";
+    width: 95%;
+    bottom: -3px;
+    left: 50%;
+    position: absolute;
+    border-bottom: 1px solid #cccccc;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 300ms;
+  }
 
   /* border: 0.5px solid gray; */
 
   :hover {
-    font-weight: 300;
+    /* font-weight: 300; */
+    &::after {
+      opacity: 1;
+    }
   }
 
   @media screen and (max-width: 500px) {
-    padding-left: 0px;
-    padding-bottom: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
     font-size: 14px;
     font-weight: 500;
   }
