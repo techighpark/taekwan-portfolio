@@ -122,7 +122,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   padding: 20px;
   /* overflow: hidden; */
-  background-color: black;
+  background-color: ${props => props.theme.bgColor};
   @media screen and (max-width: 700px) {
     padding: 20px;
     flex-direction: column;
@@ -154,16 +154,18 @@ const HeaderLinks = styled.div`
 
   @media screen and (max-width: 700px) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin-top: ${props => (props.hamburger ? "0" : "80px")};
-    margin-bottom: ${props => (props.hamburger ? "0" : "1000px")};
-    height: ${props => (props.hamburger ? "0" : "130px")};
+    /* margin-bottom: ${props => (props.hamburger ? "0" : "1000px")}; */
+    height: ${props => (props.hamburger ? "0" : "1000px")};
     /* display: ${props => (props.hamburger ? "none" : "flex")}; */
     opacity: ${props => (props.hamburger ? "0" : "1")};
     /* margin-top: 50px; */
     width: 100%;
     transition: all 1s ease;
+    /* transition: height 2s ease;
+    transition: margin 2s ease; */
   }
 `;
 const HeaderLink = styled.div`

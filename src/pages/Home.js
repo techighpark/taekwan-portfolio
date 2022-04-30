@@ -117,12 +117,13 @@ const MainContainer = styled.div`
   z-index: -1;
   max-width: 2000px;
   width: 100%;
-  height: 92vh;
+  height: 91vh;
+  top: 64px;
   position: relative;
 
   /* border: 3px solid tomato; */
   @media screen and (max-width: 500px) {
-    height: 115vh;
+    height: 130vh;
   }
 `;
 const FieldContainer = styled.div`
@@ -131,7 +132,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 160px;
+    margin-top: 350px;
     text-align: center;
   }
 `;
@@ -196,14 +197,18 @@ const MainStackContainer = styled.div`
   align-items: flex-end;
   position: absolute;
   bottom: 0px;
-  right: 1px;
-  /* border: 2px solid tomato; */
+  right: 0px;
+  /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
-    position: relative;
+    /* align-items: center; */
+    width: 100%;
+    padding-bottom: 50px;
+
+    /* position: relative; */
     /* height: 700px; */
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* bottom: 0px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     /* margin-top: 200px; */
     /* margin-bottom: 200px; */
   }
@@ -238,7 +243,7 @@ const Stack = styled.div`
   /* border: 1px solid burlywood; */
   @media screen and (max-width: 500px) {
     padding-left: 0px;
-    padding: 0px 10px;
+    padding: 0px 7px;
     padding-bottom: 20px;
     font-size: 12px;
     font-weight: 300;
