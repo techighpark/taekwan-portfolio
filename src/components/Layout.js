@@ -10,17 +10,20 @@ const StyledLayout = styled.div`
   padding: 0px 20px;
   /* overflow-x: hidden; */
 
-  /* border: 1px solid blue; */
   @media screen and (max-width: 500px) {
     padding: 0px;
   }
+`;
+const Container = styled.div`
+  padding-top: 64px;
+  width: 100%;
 `;
 
 const Layout = ({ children }) => {
   return (
     <StyledLayout>
       <Header />
-      {children}
+      <Container>{children}</Container>
     </StyledLayout>
   );
 };

@@ -57,6 +57,7 @@ export const portfolioDatas = [
     url: "techighportfolio.netlify.app",
     imgTitle: "Portfolio",
     imgSubtitle: "Web",
+    link: "/portfolio",
     imgSrc: portfolio,
     stacks: {
       text: ["Javascript", "React JS", "Styled Components"],

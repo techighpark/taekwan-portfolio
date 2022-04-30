@@ -20,8 +20,8 @@ const HighMarket = () => {
         <title>High-Market | TAE KWAN</title>
       </Helmet>
 
-      <TitleContainer onClick={onClick}>
-        <Title>High Market</Title>
+      <TitleContainer>
+        <Title onClick={onClick}>High Market</Title>
       </TitleContainer>
       <AboutContainer>
         <Container>
@@ -192,16 +192,18 @@ const AboutContainer = styled.div`
   height: 100%;
   max-width: 2000px;
   margin-top: 100px;
-
   /* border: 1px solid orange; */
+
   @media screen and (max-width: 500px) {
     /* width: 100%; */
-    width: 100%;
   }
 `;
 
 const TitleContainer = styled.div`
   margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid orange; */
 
   @media screen and (max-width: 500px) {
     /* width: 100%; */
@@ -213,7 +215,6 @@ const Title = styled.div`
   font-size: 56px;
   font-weight: 700;
   cursor: pointer;
-
   &::after {
     content: "View Site";
     position: absolute;
@@ -254,7 +255,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 30px;
-  row-gap: 130px;
+  row-gap: 180px;
   width: 100%;
   transition: ease all 2s;
   /* border: 1px solid orange; */
@@ -311,7 +312,7 @@ const DetailContainerMain = styled(DetailContainer)`
 const Body = styled.div`
   position: absolute;
   bottom: 0px;
-  height: 240px;
+  height: 220px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -357,11 +358,11 @@ const Accent = styled.span`
 `;
 
 const ImageContainer = styled.div`
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: 445px;
   overflow: hidden;
   position: absolute;
-  top: -70px;
+  top: -80px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);

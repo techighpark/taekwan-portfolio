@@ -49,7 +49,7 @@ const ScrollDownContainer = styled.div`
   margin-top: 250px;
   /* border: 1px solid red; */
   @media screen and (max-width: 500px) {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 `;
 

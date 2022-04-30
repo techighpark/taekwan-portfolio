@@ -30,7 +30,7 @@ const PortfoliosItems = React.forwardRef((props, ref) => {
   };
   const navigate = useNavigate();
   const onClickLink = link => {
-    navigate(link, { replace: true });
+    navigate(link, { replace: false });
   };
 
   return (

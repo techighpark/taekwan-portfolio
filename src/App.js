@@ -7,6 +7,7 @@ import ExWeb from "./pages/ExWeb";
 import Works from "./pages/Works";
 import Skills from "./pages/Skills";
 import HighMarket from "./pages/HighMarket";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   const themeDarkMode = false;
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<Works />} />
           <Route path="/highmarket" element={<HighMarket />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route path="/ex/:url" element={<ExWeb />} />

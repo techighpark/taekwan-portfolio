@@ -199,13 +199,13 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 350px;
+    margin-top: 300px;
     text-align: center;
   }
 `;
 
 const AboutContainer = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
