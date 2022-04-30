@@ -7,8 +7,8 @@ const StyledLayout = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 20px;
-  overflow: hidden;
+  padding: 0px 20px;
+  /* overflow-x: hidden; */
 
   /* border: 1px solid blue; */
   @media screen and (max-width: 500px) {

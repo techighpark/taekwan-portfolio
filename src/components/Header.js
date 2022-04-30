@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import { keyframes } from "styled-components";
+import { Menu } from "@styled-icons/boxicons-regular/Menu";
 
 let Header = () => {
   const [visible, setVisible] = useState(false);
@@ -15,18 +16,27 @@ let Header = () => {
     setCurrentTab(index);
   };
 
+  const [hamburger, setHamburger] = useState(true);
+  const onClickHamburger = () => {
+    setHamburger(prev => !prev);
+  };
+
   return (
     <HeaderContainer>
-      <Link
-        to={"/"}
-        ref={tabRef.current[0]}
-        onClick={() => onClickTab(0)}
-        selected={tabRef.current[0] === currentTab}
-      >
-        <HeaderTitle>TAE KWAN</HeaderTitle>
-      </Link>
-      {/* <Line /> */}
-      <HeaderLinks>
+      <HeaderHamburger>
+        <Link
+          to={"/"}
+          ref={tabRef.current[0]}
+          onClick={() => onClickTab(0)}
+          selected={tabRef.current[0] === currentTab}
+        >
+          <HeaderTitle>TAE KWAN</HeaderTitle>
+        </Link>
+        <Hamburger onClick={onClickHamburger}>
+          <Menu size={25} />
+        </Hamburger>
+      </HeaderHamburger>
+      <HeaderLinks hamburger={hamburger}>
         <Link to={"/works"}>
           <HeaderLink
             ref={tabRef.current[1]}
@@ -87,6 +97,21 @@ let Header = () => {
   );
 };
 
+const HeaderHamburger = styled.div`
+  cursor: pointer;
+`;
+
+const Hamburger = styled.div`
+  position: absolute;
+  display: none;
+  /* border: 0.5px solid brown; */
+  top: 20px;
+  right: 20px;
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
+`;
+
 const HeaderContainer = styled.div`
   width: 100%;
   max-width: 2000px;
@@ -94,24 +119,27 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-  /* border: 0.5px solid brown; */
+  position: fixed;
+  padding: 20px;
   /* overflow: hidden; */
-  @media screen and (max-width: 500px) {
+  background-color: black;
+  @media screen and (max-width: 700px) {
+    padding: 20px;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 `;
 
 const HeaderTitle = styled.div`
   font-size: 24px;
   font-weight: 600;
+  /* border: 1px solid orange; */
   :hover {
     /* font-weight: 500; */
   }
   /* border: 0.5px solid gray; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     text-align: center;
-    margin-top: 5vh;
     font-weight: 500;
   }
 `;
@@ -124,10 +152,18 @@ const HeaderLinks = styled.div`
 
   /* border: 0.5px solid gray; */
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 80px;
+    margin-top: ${props => (props.hamburger ? "0" : "80px")};
+    margin-bottom: ${props => (props.hamburger ? "0" : "1000px")};
+    height: ${props => (props.hamburger ? "0" : "130px")};
+    /* display: ${props => (props.hamburger ? "none" : "flex")}; */
+    opacity: ${props => (props.hamburger ? "0" : "1")};
+    /* margin-top: 50px; */
+    width: 100%;
+    transition: all 1s ease;
   }
 `;
 const HeaderLink = styled.div`
@@ -157,7 +193,7 @@ const HeaderLink = styled.div`
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     margin-left: 0px;
     margin-bottom: 20px;
     font-size: 14px;
@@ -171,8 +207,7 @@ const PopUpWrapper = styled.div`
   width: 100vw;
   height: 400vh;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 99999;
-  /* border: 0.5px solid blue; */
+  z-index: 999999;
 `;
 
 const PopUp = styled.div`
@@ -183,7 +218,7 @@ const PopUp = styled.div`
   right: -60px;
   transform: translate(-50%, -50%);
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.5);
 
   display: flex;
   flex-direction: column;
@@ -194,9 +229,9 @@ const PopUp = styled.div`
   /* border: 2px solid blue; */
 
   @media screen and (max-width: 500px) {
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     /* z-index: 999; */
   }
 `;

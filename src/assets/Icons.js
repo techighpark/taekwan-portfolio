@@ -25,16 +25,16 @@ import styled from "styled-components";
 const height = "20px";
 
 export const HerokuIcon = styled(Heroku)`
-  height: 20px;
+  height: ${height};
 `;
 export const VercelIcon = styled(Vercel)`
-  height: 20px;
+  height: ${height};
 `;
 export const NetlifyIcon = styled(Netlify)`
-  height: 20px;
+  height: ${height};
 `;
 export const GithubIcon = styled(Github)`
-  height: 20px;
+  height: ${height};
 `;
 export const TailwindcssIcon = styled(Tailwindcss)`
   height: 25px;

@@ -351,19 +351,15 @@ const PortfolioPhoto = styled.img`
   border-radius: 15px;
   box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
     10px 10px 5px 5px rgba(0, 0, 0, 0.2);
-
-  @media screen and (max-width: 500px) {
+  transition: all ease 1s;
+  @media screen and (max-width: 1000px) {
+    width: 600px;
+    border: none;
+  }
+  @media screen and (max-width: 700px) {
     width: 90vw;
     height: 250px;
-    /* border-radius: 20px; */
     border: none;
-    box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
-      10px 10px 5px 5px rgba(0, 0, 0, 0.2);
-
-    /* border: none; */
-    /* object-fit: contain; */
-
-    /* margin: 5px; */
   }
 `;
 
@@ -375,8 +371,12 @@ const ProjectItemContainer = styled.div`
   display: flex;
   justify-content: center;
   /* border: 1px solid yellow; */
+  transition: all ease 1s;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
+    height: 350px;
+  }
+  @media screen and (max-width: 700px) {
     height: 300px;
   }
 `;

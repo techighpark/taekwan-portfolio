@@ -9,7 +9,7 @@ import smoothscroll from "smoothscroll-polyfill";
 
 const PortfolioStickList = React.forwardRef((props, ref) => {
   const { currentTab, onClickList } = useScroll("");
-  const [listItem, setListItem] = useState(window.innerWidth < 500);
+  const [listItem, setListItem] = useState(window.innerWidth < 700);
   const { fixedPosition, stickyRef } = useSticky(false, listItem);
   useEffect(() => {
     const sizeDetect = () => {
@@ -129,9 +129,10 @@ const ListTitle = styled.div`
 `;
 
 const PortfolioList = styled.div`
+  z-index: 99;
   position: absolute;
   top: 970px;
-  left: 20px;
+  left: 0px;
   padding: 20px 15px 10px 15px;
   text-align: right;
   overflow: hidden;
@@ -168,7 +169,7 @@ const PortfolioList = styled.div`
       props.fixed &&
       css`
         position: fixed;
-        top: 20px;
+        top: 70px;
         left: 50%;
         transform: translateX(-50%);
         /* left: 50%;
@@ -176,6 +177,7 @@ const PortfolioList = styled.div`
       `}
   }
   @media screen and (max-width: 500px) {
+    display: none;
     position: relative;
     top: 365px;
     width: 90vw;

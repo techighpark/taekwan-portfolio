@@ -64,7 +64,7 @@ const FieldContainer = styled.div`
   /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
-    margin-top: 100px;
+    margin-top: 350px;
     text-align: center;
   }
 `;
@@ -150,7 +150,7 @@ export const BottomArrow = styled.div`
     }
   }
   @media screen and (max-width: 500px) {
-    top: 270px;
+    top: 500px;
     &::after {
       width: 10px;
       height: 10px;
