@@ -188,7 +188,7 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 900px;
+  width: 100%;
   height: 100%;
   max-width: 2000px;
   margin-top: 100px;
@@ -252,15 +252,22 @@ const Container = styled.div`
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 30px;
   row-gap: 130px;
-  /* margin-top: 50px; */
   width: 100%;
+  transition: ease all 2s;
   /* border: 1px solid orange; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* background-color: red; */
+  }
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* background-color: red; */
+  }
+  @media screen and (max-width: 700px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    row-gap: 130px;
     /* background-color: red; */
   }
 `;
@@ -285,8 +292,17 @@ const DetailContainer = styled.div`
 
 const DetailContainerMain = styled(DetailContainer)`
   height: 270px;
-  grid-column: span 2 / span 2;
-  @media screen and (max-width: 500px) {
+  grid-column: span 4 / span 4;
+  /* border: 1px solid white; */
+  @media screen and (max-width: 1500px) {
+    grid-column: span 3 / span 3;
+    /* height: 360px; */
+  }
+  @media screen and (max-width: 1000px) {
+    grid-column: span 2 / span 2;
+    height: 360px;
+  }
+  @media screen and (max-width: 700px) {
     grid-column: span 1 / span 1;
     height: 360px;
   }
@@ -309,7 +325,7 @@ const DetailBody = styled(Body)`
   height: 270px;
   position: unset;
   padding-top: 30px;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     height: 360px;
   }
 `;
@@ -341,7 +357,7 @@ const Accent = styled.span`
 `;
 
 const ImageContainer = styled.div`
-  width: 75%;
+  width: 300px;
   height: 400px;
   overflow: hidden;
   position: absolute;
@@ -378,7 +394,7 @@ const DetailBodyTextContainer = styled.div`
   gap: 20px;
   padding: 0 20px 0 20px;
   margin-top: 20px;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
