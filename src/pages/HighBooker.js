@@ -11,7 +11,7 @@ import recommand from "../assets/img/highmarket/recommand.png";
 import upload from "../assets/img/highmarket/upload.png";
 import { useEffect } from "react";
 
-const HighMarket = () => {
+const HighBooker = () => {
   const onClick = () => {
     window.open("https://high-market.vercel.app/enter", "_blank");
   };
@@ -432,4 +432,4 @@ const DetailBodyText = styled.div`
   color: #5d5d5d;
 `;
 
-export default HighMarket;
+export default HighBooker;

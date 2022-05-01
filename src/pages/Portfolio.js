@@ -1,69 +1,95 @@
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
-import { useEffect, useRef } from "react";
 
 const Portfolio = () => {
-  const onClick = () => {
-    window.open("https://high-market.vercel.app/enter", "_blank");
-  };
-
-  const onScroll = event => {
-    console.log(event.target);
-    if (event.deltaY > 0) event.target.scrollLeft += 100;
-    else event.target.scrollLeft -= 100;
-  };
-
   return (
     <Layout>
       <Helmet>
         <title>Portfolio | TAE KWAN</title>
       </Helmet>
-      <DetailContainer onWheel={onScroll}>
-        <Wrapper>
-          <DetailSection>
+      <DetailContainer>
+        <MediaScroller>
+          <MediaElement>
+            <Image />
             <DetailTitle>1</DetailTitle>
-          </DetailSection>
-          <DetailSection>
+          </MediaElement>
+          <MediaElement>
+            <Image />
             <DetailTitle>2</DetailTitle>
-          </DetailSection>
-          <DetailSection>
+          </MediaElement>
+          <MediaElement>
+            <Image />
             <DetailTitle>3</DetailTitle>
-          </DetailSection>
-          <DetailSection>
+          </MediaElement>
+          <MediaElement>
+            <Image />
             <DetailTitle>4</DetailTitle>
-          </DetailSection>
-        </Wrapper>
+          </MediaElement>
+          <MediaElement>
+            <Image />
+            <DetailTitle>5</DetailTitle>
+          </MediaElement>
+          <MediaElement>
+            <Image />
+            <DetailTitle>6</DetailTitle>
+          </MediaElement>
+          <MediaElement>
+            <Image />
+            <DetailTitle>7</DetailTitle>
+          </MediaElement>
+          <MediaElement>
+            <Image />
+            <DetailTitle>8</DetailTitle>
+          </MediaElement>
+        </MediaScroller>
       </DetailContainer>
     </Layout>
   );
 };
 const DetailContainer = styled.div`
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  /* display: flex; */
-  /* section:nth-child(even) {
-      color: white;
-    } */
+  border: 1px solid orange;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  width: auto;
+const MediaScroller = styled.div`
+  border: 1px solid yellow;
+
+  --_spacer: 1rem;
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: row;
+  grid-auto-columns: 30%;
+
+  padding: 0 var(--_spacer) var(--_spacer);
+
+  overscroll-behavior-inline: contain;
+
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+  * {
+    scroll-snap-align: start;
+  }
 `;
-const DetailSection = styled.div`
-  background-color: teal;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4ch;
+const MediaElement = styled.div`
+  display: grid;
+  grid-template-rows: min-content;
+  gap: var(--_spacer);
+  padding: var(--_spacer);
+  background: darkgray;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+`;
+const Image = styled.div`
+  background-color: gray;
+  border: 1px solid orange;
+  box-sizing: border-box;
+
+  aspect-ratio: 16/9;
+  inline-size: 100%;
+  object-fit: cover;
 `;
 const DetailTitle = styled.div`
-  margin: 0;
+  font-weight: 500;
+  font-size: 32px;
 `;
+
 export default Portfolio;

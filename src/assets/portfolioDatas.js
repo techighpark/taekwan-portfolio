@@ -74,6 +74,7 @@ export const portfolioDatas = [
     url: "high-booker.netlify.app",
     imgTitle: "High-Booker",
     imgSubtitle: "Web",
+    link: "/highbooker",
     imgSrc: highBookerWeb,
     stacks: {
       text: [

@@ -117,8 +117,7 @@ const MainContainer = styled.div`
   z-index: -1;
   max-width: 2000px;
   width: 100%;
-  height: 91vh;
-  top: 64px;
+  height: 90vh;
   position: relative;
 
   /* border: 3px solid tomato; */
@@ -198,7 +197,7 @@ const MainStackContainer = styled.div`
   position: absolute;
   bottom: 0px;
   right: 0px;
-  /* border: 1px solid tomato; */
+  border: 1px solid tomato;
   @media screen and (max-width: 500px) {
     /* align-items: center; */
     width: 100%;
