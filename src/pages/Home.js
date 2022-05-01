@@ -117,12 +117,12 @@ const MainContainer = styled.div`
   z-index: -1;
   max-width: 2000px;
   width: 100%;
-  height: 90vh;
-  position: relative;
+  height: 40vh;
+  /* position: relative; */
 
   /* border: 3px solid tomato; */
   @media screen and (max-width: 500px) {
-    height: 130vh;
+    height: 80vh;
   }
 `;
 const FieldContainer = styled.div`
@@ -196,11 +196,12 @@ const MainStackContainer = styled.div`
   align-items: flex-end;
   position: absolute;
   bottom: 0px;
-  right: 0px;
-  border: 1px solid tomato;
+  right: 20px;
+  /* border: 1px solid tomato; */
   @media screen and (max-width: 500px) {
     /* align-items: center; */
     width: 100%;
+    right: 0px;
     padding-bottom: 50px;
 
     /* position: relative; */
