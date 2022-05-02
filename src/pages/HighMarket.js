@@ -148,6 +148,10 @@ const HighMarket = () => {
                 <BodyTitle>Reserve</BodyTitle>
                 <BodyTextContainer>
                   <Text>Reservation to avoid double booking</Text>
+                  <Text>
+                    <Accent>Server Side Props + SWR - Bound Mutate</Accent>
+                    <br /> for Reserve
+                  </Text>
                 </BodyTextContainer>
               </DetailContent>
               <ImageContainer>
@@ -174,6 +178,10 @@ const HighMarket = () => {
                   <Text>
                     Community based on <Accent>coordinates</Accent>
                   </Text>
+                  <Text>
+                    <Accent>Server Side Props + SWR - Bound Mutate</Accent>
+                    <br /> for Comment
+                  </Text>
                 </BodyTextContainer>
               </DetailContent>
               <ImageContainer>
@@ -196,6 +204,7 @@ export const AboutContainer = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 100px;
+  margin-bottom: 100px;
 `;
 
 export const TitleContainer = styled.div`
@@ -295,6 +304,7 @@ const DetailContainerMain = styled(DetailContainer)`
   width: 100%;
   grid-column: span 4 / span 4;
   transition: 0.5s;
+  margin-bottom: 100px;
   @media screen and (max-width: 1500px) {
     grid-column: span 3 / span 3;
   }

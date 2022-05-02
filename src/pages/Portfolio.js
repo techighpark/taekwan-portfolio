@@ -23,7 +23,6 @@ import {
   Container,
   Wrapper,
 } from "./HighMarket";
-// import { useState } from "react";
 
 const Portfolio = () => {
   const itemDatas = [
@@ -37,7 +36,6 @@ const Portfolio = () => {
   const onClick = () => {
     window.open("https://high-market.vercel.app/enter", "_blank");
   };
-  // const [current, setCurrent] = useState(null);
 
   return (
     <Layout>
@@ -76,28 +74,10 @@ const Portfolio = () => {
           {itemDatas.map((item, idx) => (
             <Item key={idx}>
               <ImageContainer>
-                <Video
-                  // width={500}
-                  // onMouseOver={e => {
-                  //   e.target.play();
-                  // }}
-                  // onMouseOut={e => {
-                  //   e.target.pause();
-                  // }}
-                  loop
-                  autoPlay={true}
-                  muted="muted"
-                  playsInline
-                  // state={idx === current}
-                >
+                <Video loop autoPlay={true} muted="muted" playsInline>
                   <source src={item.vsrc} type="video/mp4" />
                 </Video>
-                {/* <Image
-                  src={item.src}
-                  onMouseOver={() => setCurrent(idx)}
-                  // onMouseOut={() => setCurrent(null)}
-                  state={idx === current}
-                /> */}
+                {/* <Image src={item.src} /> */}
               </ImageContainer>
             </Item>
           ))}
@@ -154,24 +134,22 @@ const Item = styled.div`
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
   display: flex;
   justify-content: center;
-  position: relative;
-
   :hover {
     z-index: 10;
     box-shadow: none;
     div {
-      transition: transform 200ms linear;
+      transition: transform 300ms linear;
       transform: translateY(-20%);
 
       video {
         width: 560px;
-        transition: transform 200ms linear;
+        transition: transform 300ms linear;
         transform: scale(1.1);
       }
 
       img {
         width: 560px;
-        transition: transform 200ms linear;
+        transition: transform 300ms linear;
         transform: scale(1.1);
       }
     }
@@ -243,7 +221,7 @@ const Item = styled.div`
   }
 `;
 const ImageContainer = styled.div`
-  position: relative;
+  position: absolute;
   height: max-content;
   transition-property: transform;
   transition-duration: 100ms;
@@ -254,7 +232,6 @@ const Video = styled.video`
   width: 300px;
   height: 300px;
   object-fit: cover;
-  /* display: ${props => (props.state ? "block" : "none")}; */
   border: 1px solid gray;
 
   @media screen and (max-width: 600px) {
@@ -267,30 +244,13 @@ const Video = styled.video`
 //   width: 300px;
 //   height: 300px;
 //   object-fit: cover;
-//   /* display: ${props => (props.state ? "none" : "block")}; */
 //   border: 2px solid gray;
-//   border-radius: var(--radius-1);
 
 //   @media screen and (max-width: 600px) {
 //     width: 350px;
 //     height: 100%;
 //     border: 2px solid gray;
-//     border-radius: var(--radius-1);
 //   }
 // `;
-// const Background = styled.div`
-//   position: absolute;
-//   inset: 0;
-//   background-color: var(--bgColor-back);
-//   z-index: -1;
-//   transform: scale(0.5);
-//   border-radius: 10px;
-//   opacity: 0;
-//   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
-// `;
-// const Back = styled.div`
-//   display: none;
-// `;
-// const Text = styled.div``;
 
 export default Portfolio;
