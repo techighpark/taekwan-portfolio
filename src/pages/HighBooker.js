@@ -23,7 +23,7 @@ import {
   Container,
   Wrapper,
 } from "./HighMarket";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Portfolio = () => {
   const itemDatas = [
@@ -37,7 +37,7 @@ const Portfolio = () => {
   const onClick = () => {
     window.open("https://high-market.vercel.app/enter", "_blank");
   };
-  const [current, setCurrent] = useState(null);
+  // const [current, setCurrent] = useState(null);
 
   return (
     <Layout>
@@ -84,18 +84,19 @@ const Portfolio = () => {
                   // onMouseOut={e => {
                   //   e.target.pause();
                   // }}
+                  loop
                   autoPlay={true}
                   muted="muted"
-                  state={idx === current}
+                  // state={idx === current}
                 >
                   <source src={item.vsrc} type="video/mp4" />
                 </Video>
-                <Image
+                {/* <Image
                   src={item.src}
                   onMouseOver={() => setCurrent(idx)}
                   // onMouseOut={() => setCurrent(null)}
                   state={idx === current}
-                />
+                /> */}
               </ImageContainer>
             </Item>
           ))}
@@ -261,7 +262,7 @@ const Video = styled.video`
   width: 300px;
   height: 300px;
   object-fit: cover;
-  display: ${props => (props.state ? "block" : "none")};
+  /* display: ${props => (props.state ? "block" : "none")}; */
   border: 2px solid gray;
   border-radius: var(--radius-1);
 
@@ -276,7 +277,7 @@ const Image = styled.img`
   width: 300px;
   height: 300px;
   object-fit: cover;
-  display: ${props => (props.state ? "none" : "block")};
+  /* display: ${props => (props.state ? "none" : "block")}; */
   border: 2px solid gray;
   border-radius: var(--radius-1);
 
