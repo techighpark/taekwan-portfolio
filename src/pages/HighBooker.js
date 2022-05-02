@@ -87,6 +87,7 @@ const Portfolio = () => {
                   loop
                   autoPlay={true}
                   muted="muted"
+                  playsInline
                   // state={idx === current}
                 >
                   <source src={item.vsrc} type="video/mp4" />
@@ -273,21 +274,21 @@ const Video = styled.video`
     border-radius: var(--radius-1);
   }
 `;
-const Image = styled.img`
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  /* display: ${props => (props.state ? "none" : "block")}; */
-  border: 2px solid gray;
-  border-radius: var(--radius-1);
+// const Image = styled.img`
+//   width: 300px;
+//   height: 300px;
+//   object-fit: cover;
+//   /* display: ${props => (props.state ? "none" : "block")}; */
+//   border: 2px solid gray;
+//   border-radius: var(--radius-1);
 
-  @media screen and (max-width: 600px) {
-    width: 350px;
-    height: 100%;
-    border: 2px solid gray;
-    border-radius: var(--radius-1);
-  }
-`;
+//   @media screen and (max-width: 600px) {
+//     width: 350px;
+//     height: 100%;
+//     border: 2px solid gray;
+//     border-radius: var(--radius-1);
+//   }
+// `;
 // const Background = styled.div`
 //   position: absolute;
 //   inset: 0;
