@@ -24,10 +24,10 @@ const HighMarket = () => {
         <title>High-Market | TAE KWAN</title>
       </Helmet>
 
-      <TitleContainer>
-        <Title onClick={onClick}>High Market</Title>
-      </TitleContainer>
       <AboutContainer>
+        <TitleContainer>
+          <Title onClick={onClick}>High Market</Title>
+        </TitleContainer>
         <Container>
           <Grid>
             <DetailContainerMain>
@@ -187,15 +187,17 @@ const HighMarket = () => {
   );
 };
 
-const AboutContainer = styled.div`
+export const AboutContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  max-width: 2000px;
+  /* max-width: 2000px; */
   margin-top: 100px;
+  /* margin-bottom: 100px; */
   /* border: 1px solid orange; */
 
   @media screen and (max-width: 500px) {
@@ -203,10 +205,13 @@ const AboutContainer = styled.div`
   }
 `;
 
-const TitleContainer = styled.div`
+export const TitleContainer = styled.div`
   margin-top: 150px;
   display: flex;
   justify-content: center;
+  max-width: 1500px;
+  margin-bottom: 100px;
+
   /* border: 1px solid orange; */
 
   @media screen and (max-width: 500px) {
@@ -214,7 +219,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   position: relative;
   font-size: 56px;
   font-weight: 700;
@@ -245,13 +250,14 @@ const Title = styled.div`
     font-weight: 600;
   }
 `;
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* margin-top: 50px; */
+  max-width: 1500px;
   padding: 15px;
   /* border: 1px solid blue; */
 `;
@@ -278,9 +284,10 @@ const Grid = styled.div`
 `;
 
 const DetailContainer = styled.div`
+  --bgColor-back: #1e1e1e;
   width: 100%;
   height: 600px;
-  background-color: #1e1e1e;
+  background-color: var(--bgColor-back);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -325,7 +332,7 @@ const DetailContent = styled.div`
   padding: 25px;
   /* border: 1px solid green; */
 `;
-const DetailBody = styled(DetailContent)`
+export const DetailBody = styled(DetailContent)`
   /* border: 1px solid green; */
   height: 270px;
   position: unset;
@@ -335,7 +342,7 @@ const DetailBody = styled(DetailContent)`
   }
 `;
 
-const BodyTitle = styled.div`
+export const BodyTitle = styled.div`
   /* width: 100%; */
   font-size: 24px;
   font-weight: 500;
@@ -391,7 +398,7 @@ const Image = styled.img`
   /* filter: grayscale(100%); */
 `;
 
-const DetailBodyTextContainer = styled.div`
+export const DetailBodyTextContainer = styled.div`
   /* border: 1px solid yellow; */
   width: 100%;
   display: grid;
@@ -403,7 +410,7 @@ const DetailBodyTextContainer = styled.div`
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
@@ -419,14 +426,14 @@ const Wrapper = styled.div`
     transform: scale(1.03);
   }
 `;
-const DetailBodyTitle = styled.div`
+export const DetailBodyTitle = styled.div`
   font-size: 12px;
   font-weight: 600;
   color: black;
   padding-top: 5px;
   padding-bottom: 10px;
 `;
-const DetailBodyText = styled.div`
+export const DetailBodyText = styled.div`
   font-size: 16px;
   font-weight: 600;
   color: #5d5d5d;

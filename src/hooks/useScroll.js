@@ -8,8 +8,6 @@ const useScroll = (defaultValue, screenWidth) => {
     const tab = ref.current[index];
     const headerOffset = screenWidth ? 200 : 150;
     const tabPosition = tab.getBoundingClientRect().top;
-    const bottomPosition = tab.getBoundingClientRect().bottom;
-    console.log("bottomPosition", bottomPosition);
     const offsetPosition = tabPosition + window.pageYOffset - headerOffset;
     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     smoothscroll.polyfill();
