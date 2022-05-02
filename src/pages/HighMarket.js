@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
-import highmarket from "../assets/img/high-market-min.png";
+import main from "../assets/img/highmarket/main.png";
 import commentLike from "../assets/img/highmarket/commentLike.png";
 import community from "../assets/img/highmarket/community.png";
 import reserve from "../assets/img/highmarket/reserve.png";
@@ -66,7 +66,7 @@ const HighMarket = () => {
             </DetailContainerMain>
             <DetailContainer>
               <ImageContainer>
-                <Image src={highmarket} />
+                <Image src={main} />
               </ImageContainer>
               <DetailContent>
                 <BodyTitle>Authentication</BodyTitle>
@@ -256,16 +256,26 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: 50px; */
   max-width: 1500px;
   padding: 15px;
   /* border: 1px solid blue; */
+  box-sizing: border-box;
+  min-width: 350px;
+  @media screen and (max-width: 1500px) {
+    max-width: 1200px;
+  }
+  @media screen and (max-width: 1200px) {
+    max-width: 900px;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 600px;
+  }
 `;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: 30px;
-  row-gap: 180px;
+  column-gap: 35px;
+  row-gap: 200px;
   width: 100%;
   transition: ease all 2s;
   /* border: 1px solid orange; */
@@ -273,7 +283,7 @@ const Grid = styled.div`
     grid-template-columns: repeat(3, minmax(0, 1fr));
     /* background-color: red; */
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     /* background-color: red; */
   }
@@ -297,20 +307,18 @@ const DetailContainer = styled.div`
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
     8px 4px 6px -4px rgb(0 0 0 / 0.3);
   /* border: 1px solid orange; */
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
 `;
 
 const DetailContainerMain = styled(DetailContainer)`
   height: 270px;
+  width: 100%;
   grid-column: span 4 / span 4;
   /* border: 1px solid white; */
   @media screen and (max-width: 1500px) {
     grid-column: span 3 / span 3;
     /* height: 360px; */
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     grid-column: span 2 / span 2;
     height: 360px;
   }
@@ -323,7 +331,7 @@ const DetailContainerMain = styled(DetailContainer)`
 const DetailContent = styled.div`
   position: absolute;
   bottom: 0px;
-  height: 220px;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -360,7 +368,7 @@ const Text = styled.div`
   font-size: 14px;
   font-weight: 400;
   color: #999999;
-  line-height: 3;
+  line-height: 2.5;
   text-align: center;
 `;
 const Accent = styled.span`
@@ -369,11 +377,11 @@ const Accent = styled.span`
 `;
 
 const ImageContainer = styled.div`
-  width: 250px;
-  height: 445px;
+  width: 300px;
+  /* height: 530px; */
   overflow: hidden;
   position: absolute;
-  top: -80px;
+  top: -150px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
@@ -381,13 +389,13 @@ const ImageContainer = styled.div`
   transition-duration: 100ms;
 
   :hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 `;
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
   filter: brightness(90%) contrast(110%);
 
@@ -423,7 +431,7 @@ export const Wrapper = styled.div`
   transition-property: transform;
   transition-duration: 100ms;
   :hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 `;
 export const DetailBodyTitle = styled.div`
