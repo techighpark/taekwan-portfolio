@@ -114,19 +114,15 @@ const DetailBodyPort = styled(DetailBody)`
   margin-bottom: 130px;
   background-color: #1e1e1e;
   border-radius: var(--radius-1);
-  /* border: 1px solid blue; */
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     height: 270px;
   }
-
   @media screen and (max-width: 700px) {
-    margin: 0px 20px 130px;
-    height: 440px;
+    height: 420px;
   }
 `;
 const DetailBodyTextConatinerPort = styled(DetailBodyTextContainer)`
   max-width: 1000px;
-  /* bottom: 180px; */
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
   @media screen and (max-width: 700px) {
@@ -166,22 +162,17 @@ const Item = styled.div`
     div {
       transition: transform 200ms linear;
       transform: translateY(-20%);
-      border-radius: var(--radius-1);
 
       video {
         width: 560px;
         transition: transform 200ms linear;
         transform: scale(1.1);
-        border-radius: var(--radius-1);
-        border: 2px solid gray;
       }
 
       img {
         width: 560px;
         transition: transform 200ms linear;
         transform: scale(1.1);
-        border-radius: var(--radius-1);
-        border: 2px solid gray;
       }
     }
   }
@@ -219,7 +210,7 @@ const Item = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     height: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     :hover {
       box-shadow: none;
@@ -264,14 +255,12 @@ const Video = styled.video`
   height: 300px;
   object-fit: cover;
   /* display: ${props => (props.state ? "block" : "none")}; */
-  border: 2px solid gray;
-  border-radius: var(--radius-1);
+  border: 1px solid gray;
 
   @media screen and (max-width: 600px) {
     width: 350px;
     height: 100%;
-    border: 2px solid gray;
-    border-radius: var(--radius-1);
+    border: 1px solid gray;
   }
 `;
 // const Image = styled.img`

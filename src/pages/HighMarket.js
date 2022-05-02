@@ -195,14 +195,7 @@ export const AboutContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* max-width: 2000px; */
   margin-top: 100px;
-  /* margin-bottom: 100px; */
-  /* border: 1px solid orange; */
-
-  @media screen and (max-width: 500px) {
-    /* width: 100%; */
-  }
 `;
 
 export const TitleContainer = styled.div`
@@ -211,12 +204,6 @@ export const TitleContainer = styled.div`
   justify-content: center;
   max-width: 1500px;
   margin-bottom: 100px;
-
-  /* border: 1px solid orange; */
-
-  @media screen and (max-width: 500px) {
-    /* width: 100%; */
-  }
 `;
 
 export const Title = styled.div`
@@ -258,7 +245,6 @@ export const Container = styled.div`
   justify-content: center;
   max-width: 1500px;
   padding: 15px;
-  /* border: 1px solid blue; */
   box-sizing: border-box;
   min-width: 350px;
   @media screen and (max-width: 1500px) {
@@ -268,7 +254,7 @@ export const Container = styled.div`
     max-width: 900px;
   }
   @media screen and (max-width: 700px) {
-    max-width: 600px;
+    max-width: 500px;
   }
 `;
 const Grid = styled.div`
@@ -278,18 +264,14 @@ const Grid = styled.div`
   row-gap: 200px;
   width: 100%;
   transition: ease all 2s;
-  /* border: 1px solid orange; */
   @media screen and (max-width: 1500px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* background-color: red; */
   }
   @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* background-color: red; */
   }
   @media screen and (max-width: 700px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    /* background-color: red; */
   }
 `;
 
@@ -306,25 +288,22 @@ const DetailContainer = styled.div`
   position: relative;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3),
     8px 4px 6px -4px rgb(0 0 0 / 0.3);
-  /* border: 1px solid orange; */
 `;
 
 const DetailContainerMain = styled(DetailContainer)`
   height: 270px;
   width: 100%;
   grid-column: span 4 / span 4;
-  /* border: 1px solid white; */
+  transition: 0.5s;
   @media screen and (max-width: 1500px) {
     grid-column: span 3 / span 3;
-    /* height: 360px; */
   }
   @media screen and (max-width: 1200px) {
     grid-column: span 2 / span 2;
-    height: 360px;
+    height: 340px;
   }
   @media screen and (max-width: 700px) {
     grid-column: span 1 / span 1;
-    height: 360px;
   }
 `;
 
@@ -345,13 +324,12 @@ export const DetailBody = styled(DetailContent)`
   height: 270px;
   position: unset;
   padding-top: 30px;
-  @media screen and (max-width: 1000px) {
-    height: 360px;
+  @media screen and (max-width: 1200px) {
+    height: 340px;
   }
 `;
 
 export const BodyTitle = styled.div`
-  /* width: 100%; */
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -362,7 +340,6 @@ const BodyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid yellow; */
 `;
 const Text = styled.div`
   font-size: 14px;
@@ -412,21 +389,23 @@ export const DetailBodyTextContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  padding: 0 20px 0 20px;
   margin-top: 20px;
-  @media screen and (max-width: 1000px) {
+  transition: 0.5s;
+
+  @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 export const Wrapper = styled.div`
-  /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   background-color: #e5e5e5;
-  padding: 10px;
+  /* margin-left: 40px;
+  margin-right: 40px; */
+  padding: 10px 0;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 1), 0 4px 6px -4px rgb(0 0 0 / 1);
   transition-property: transform;
   transition-duration: 100ms;
@@ -438,7 +417,7 @@ export const DetailBodyTitle = styled.div`
   font-size: 12px;
   font-weight: 600;
   color: black;
-  padding-top: 5px;
+  /* padding-top: 5px; */
   padding-bottom: 10px;
 `;
 export const DetailBodyText = styled.div`

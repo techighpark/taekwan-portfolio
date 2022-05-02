@@ -1,66 +1,43 @@
-// import styled from "styled-components";
+import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
-
-// import {
-//   AboutContainer,
-//   BodyTitle,
-//   DetailBody,
-//   DetailBodyText,
-//   DetailBodyTextContainer,
-//   DetailBodyTitle,
-//   Title,
-//   TitleContainer,
-//   Container,
-//   Wrapper,
-// } from "./HighMarket";
-// import { useEffect, useRef } from "react";
+import homei from "../assets/img/portfolio/porthome.png";
+import homev from "../assets/img/portfolio/porthome.mp4";
+import worksi from "../assets/img/portfolio/portwokrs.png";
+import worksv from "../assets/img/portfolio/portwokrs.mp4";
+import abouti from "../assets/img/portfolio/portabout.png";
+import aboutv from "../assets/img/portfolio/portabout.mp4";
+import skillsi from "../assets/img/portfolio/portskills.png";
+import skillsv from "../assets/img/portfolio/portskills.mp4";
+import highmarketi from "../assets/img/portfolio/porthighmarket.png";
+import highmarketv from "../assets/img/portfolio/porthighmarket.mp4";
+import {
+  AboutContainer,
+  BodyTitle,
+  DetailBody,
+  DetailBodyText,
+  DetailBodyTextContainer,
+  DetailBodyTitle,
+  Title,
+  TitleContainer,
+  Container,
+  Wrapper,
+} from "./HighMarket";
+// import { useState } from "react";
 
 const Portfolio = () => {
-  // const onClick = () => {
-  //   window.open("https://high-market.vercel.app/enter", "_blank");
-  // };
+  const itemDatas = [
+    { src: homei, vsrc: homev },
+    { src: worksi, vsrc: worksv },
+    { src: abouti, vsrc: aboutv },
+    { src: skillsi, vsrc: skillsv },
+    { src: highmarketi, vsrc: highmarketv },
+  ];
 
-  // const boxref = useRef([]);
-
-  // function intersectionCallback(entries, observer) {
-  //   entries.forEach(entry => {
-  //     entry.target.classList.toggle("show", entry.isIntersecting);
-  //     // if (entry.intersectionRatio !== 0.7) observer.unobserve(entry.target);
-  //   });
-  // }
-
-  // useEffect(() => {
-  //   var intersectionOptions = {
-  //     root: null, // .container class를 가진 엘리먼트를 root로 설정. null일 경우 브라우저 viewport
-  //     rootMargin: "300px -200px 300px -20px", // rootMargin을 '10px 10px 10px 10px'로 설정
-  //     threshold: 1,
-  //   };
-  //   var io = new IntersectionObserver(
-  //     intersectionCallback,
-  //     intersectionOptions
-  //   );
-
-  //   boxref.current.forEach(el => {
-  //     io.observe(el);
-  //   });
-  // }, []);
-
-  // const [show, setShow] = useState(false);
-
-  // useEffect(() => {
-  //   if (!boxref.current) return;
-  //   const offset = window.innerWidth / 2;
-  //   boxref.current.forEach(ref => {
-  //     if (ref.getBoundingClientRect().left < offset) {
-  //       setShow(true);
-  //     }
-  //     if (ref.getBoundingClientRect().right < offset) {
-  //       setShow(false);
-  //     }
-  //   });
-  // }, []);
-  // console.log(show);
+  const onClick = () => {
+    window.open("https://high-market.vercel.app/enter", "_blank");
+  };
+  // const [current, setCurrent] = useState(null);
 
   return (
     <Layout>
@@ -68,7 +45,7 @@ const Portfolio = () => {
         <title>Portfolio | TAE KWAN</title>
       </Helmet>
 
-      {/* <AboutContainer>
+      <AboutContainer>
         <TitleContainer>
           <Title onClick={onClick}>Portfolio</Title>
         </TitleContainer>
@@ -97,127 +74,223 @@ const Portfolio = () => {
         </Container>
         <Slider>
           {itemDatas.map((item, idx) => (
-            <ItemContainer key={idx}>
-              <Item ref={el => (boxref.current[idx] = el)} className="">
-                <ImageContainer>
-                  <Image src={item.src} />
-                </ImageContainer>
-              </Item>
-            </ItemContainer>
+            <Item key={idx}>
+              <ImageContainer>
+                <Video
+                  // width={500}
+                  // onMouseOver={e => {
+                  //   e.target.play();
+                  // }}
+                  // onMouseOut={e => {
+                  //   e.target.pause();
+                  // }}
+                  loop
+                  autoPlay={true}
+                  muted="muted"
+                  playsInline
+                  // state={idx === current}
+                >
+                  <source src={item.vsrc} type="video/mp4" />
+                </Video>
+                {/* <Image
+                  src={item.src}
+                  onMouseOver={() => setCurrent(idx)}
+                  // onMouseOut={() => setCurrent(null)}
+                  state={idx === current}
+                /> */}
+              </ImageContainer>
+            </Item>
           ))}
         </Slider>
-      </AboutContainer> */}
+      </AboutContainer>
     </Layout>
   );
 };
 
-// const DetailBodyPort = styled(DetailBody)`
-//   --radius-1: 1rem;
-//   width: 100%;
-//   max-width: 1000px;
-//   margin-bottom: 130px;
-//   background-color: #1e1e1e;
-//   border-radius: var(--radius-1);
-//   /* border: 1px solid blue; */
+const DetailBodyPort = styled(DetailBody)`
+  --radius-1: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 130px;
+  background-color: #1e1e1e;
+  border-radius: var(--radius-1);
+  @media screen and (max-width: 1200px) {
+    height: 270px;
+  }
+  @media screen and (max-width: 700px) {
+    height: 420px;
+  }
+`;
+const DetailBodyTextConatinerPort = styled(DetailBodyTextContainer)`
+  max-width: 1000px;
 
-//   @media screen and (max-width: 1000px) {
-//     margin: 0px 20px 130px;
-//     height: 440px;
-//   }
-// `;
-// const DetailBodyTextConatinerPort = styled(DetailBodyTextContainer)`
-//   max-width: 1000px;
-//   /* bottom: 180px; */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+`;
 
-//   grid-template-columns: repeat(2, minmax(0, 1fr));
-//   @media screen and (max-width: 700px) {
-//     grid-template-columns: repeat(1, minmax(0, 1fr));
-//   }
-// `;
-// const Slider = styled.div`
-//   --spacer: 1rem;
-//   --radius-1: 1rem;
-//   /* border: 2px solid orange; */
-//   display: grid;
-//   gap: 10%;
-//   grid-auto-flow: column;
-//   grid-auto-columns: 50%;
-//   margin-bottom: 200px;
-//   width: 100%;
+const Slider = styled.div`
+  margin-bottom: 200px;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+`;
 
-//   padding-left: 15%;
-//   padding-right: 15%;
+const Item = styled.div`
+  --radius-1: 1rem;
+  --bgColor-back: #1e1e1e;
+  width: 300px;
+  height: 300px;
+  box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
+  display: flex;
+  justify-content: center;
+  position: relative;
 
-//   overflow-x: auto;
-//   overscroll-behavior-inline: contain;
+  :hover {
+    z-index: 10;
+    box-shadow: none;
+    div {
+      transition: transform 200ms linear;
+      transform: translateY(-20%);
 
-//   scroll-snap-type: inline mandatory;
-//   /* scroll-padding-inline: 1rem;  */
-//   /* background-color: red; */
-//   div {
-//     border: 1px solid green;
-//     scroll-snap-align: center;
-//     scroll-snap-stop: always;
-//   }
-//   /* .show {
-//     border: 2px solid white;
-//     opacity: 1;
-//     transform-origin: bottom;
-//   } */
+      video {
+        width: 560px;
+        transition: transform 200ms linear;
+        transform: scale(1.1);
+      }
 
-//   @media screen and (max-width: 1000px) {
-//     overflow-x: scroll;
-//     padding-left: 20px;
-//     padding-right: 20px;
-//   }
-// `;
+      img {
+        width: 560px;
+        transition: transform 200ms linear;
+        transform: scale(1.1);
+      }
+    }
+  }
 
-// const ItemContainer = styled.div`
-//   /* border: 1px solid white; */
-//   height: 700px;
-//   /* width: 1000px; */
-//   /* width: 100%; */
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-end;
-// `;
+  @media screen and (max-width: 1200px) {
+    :hover {
+      transform: translateY(10%);
+      div {
+        video {
+          width: 500px;
+          height: 260px;
+        }
+        img {
+          width: 500px;
+          height: 260px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    :hover {
+      transform: translateY(15%);
+      div {
+        video {
+          width: 440px;
+          height: 230px;
+        }
+        img {
+          width: 440px;
+          height: 230px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
 
-// const Item = styled.div`
-//   --bgColor-back: #1e1e1e;
-//   width: 50%;
-//   display: grid;
-//   grid-template-rows: min-content;
-//   gap: var(--spacer);
-//   padding: 50px 50px 100px;
+    :hover {
+      box-shadow: none;
+      transform: none;
+      div {
+        transition: none;
+        transform: none;
+        border-radius: none;
 
-//   background-color: var(--bgColor-back);
-//   border-radius: var(--radius-1);
+        video {
+          width: 350px;
+          height: 100%;
+          transition: none;
+          transform: none;
+          border-radius: none;
+          border: 2px solid gray;
+        }
 
-//   transition: 200ms;
-//   opacity: 0.2;
+        img {
+          width: 350px;
+          height: 100%;
 
-//   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
-//   @media screen and (max-width: 1000px) {
-//     padding: 20px 20px 100px;
-//   }
-// `;
-// const ImageContainer = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   border-radius: var(--radius-1);
-//   overflow: hidden;
-//   transition-property: transform;
-//   transition-duration: 100ms;
-//   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
-//   /* :hover {
-//     transform: scale(1.02);
-//   } */
-// `;
+          transition: none;
+          transform: none;
+          border-radius: none;
+          border: 2px solid gray;
+        }
+      }
+    }
+  }
+`;
+const ImageContainer = styled.div`
+  position: relative;
+  height: max-content;
+  transition-property: transform;
+  transition-duration: 100ms;
+  box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
+`;
+
+const Video = styled.video`
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  /* display: ${props => (props.state ? "block" : "none")}; */
+  border: 1px solid gray;
+
+  @media screen and (max-width: 600px) {
+    width: 350px;
+    height: 100%;
+    border: 1px solid gray;
+  }
+`;
 // const Image = styled.img`
-//   --ratio: 1.89;
-//   width: 100%;
-//   height: 100%;
+//   width: 300px;
+//   height: 300px;
 //   object-fit: cover;
+//   /* display: ${props => (props.state ? "none" : "block")}; */
+//   border: 2px solid gray;
+//   border-radius: var(--radius-1);
+
+//   @media screen and (max-width: 600px) {
+//     width: 350px;
+//     height: 100%;
+//     border: 2px solid gray;
+//     border-radius: var(--radius-1);
+//   }
 // `;
+// const Background = styled.div`
+//   position: absolute;
+//   inset: 0;
+//   background-color: var(--bgColor-back);
+//   z-index: -1;
+//   transform: scale(0.5);
+//   border-radius: 10px;
+//   opacity: 0;
+//   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
+// `;
+// const Back = styled.div`
+//   display: none;
+// `;
+// const Text = styled.div``;
 
 export default Portfolio;

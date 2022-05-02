@@ -208,7 +208,6 @@ const SkillLvRef = styled.div`
   border-radius: 10px;
   padding: 5px 0px;
   border: 1px solid ${props => props.skillLv};
-  /* border: 1px solid white; */
 
   @media screen and (max-width: 500px) {
     margin: 5px 0px;
@@ -216,8 +215,7 @@ const SkillLvRef = styled.div`
 `;
 const SkillLvRefContainer = styled.div`
   display: flex;
-  /* border: 1px solid white; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
   }
 `;
@@ -225,12 +223,10 @@ const StackSkillLv = styled.div`
   width: 100px;
   font-weight: 500;
   font-size: 10px;
-  /* color: ${props => props.theme.bgColor}; */
   text-align: center;
   border-radius: 10px;
   padding: 5px 0px;
   border: 1px solid ${props => props.skillLv};
-  /* background-color: ${props => props.skillLv}; */
   @media screen and (max-width: 500px) {
   }
 `;
@@ -241,8 +237,7 @@ const StackText = styled.div`
   font-weight: 500;
   font-size: 14px;
 
-  /* border: 1px solid white; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     width: 120px;
     margin-left: 10px;
     font-weight: 500;
@@ -256,12 +251,10 @@ const StackIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid white; */
 `;
 const StackWrapper = styled.div`
   display: flex;
   align-items: center;
-  /* border: 1px solid white; */
 `;
 
 const StackContainer = styled.div`
@@ -271,10 +264,8 @@ const StackContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  /* border: 1px solid red; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     width: 320px;
-    /* justify-content: center; */
   }
 `;
 
@@ -346,9 +337,7 @@ const EndLvContainer = styled.div`
   width: 500px;
   display: flex;
   background-color: ${props => props.theme.darkLine};
-
-  /* border: 1px solid blue; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     width: 300px;
   }
 `;
@@ -356,7 +345,6 @@ const EndText = styled.div`
   width: 200px;
   font-weight: 500;
   font-size: 20px;
-  /* border: 1px solid yellow; */
 `;
 const EndTextWrapper = styled.div``;
 
@@ -365,30 +353,22 @@ const EndWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid yellow; */
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     width: 300px;
   }
 `;
 const EndContainer = styled.div`
-  /* width: 50%; */
   margin: 0 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid green; */
-  @media screen and (max-width: 500px) {
-    width: 100%;
-    margin: 0px;
-  }
 `;
 const FrontBackContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 150px;
-  /* justify-content: center; */
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     row-gap: 120px;
   }
@@ -400,16 +380,8 @@ const BodyContainer = styled.div`
   padding-bottom: 200px;
   display: flex;
   justify-content: center;
-  /* border: 2px solid tomato; */
-  @media screen and (max-width: 500px) {
-    width: 100%;
-    margin-top: 300px;
-    margin-bottom: 0px;
-    /* row-gap: 500px; */
-  }
 `;
 const FieldText = styled.div`
-  /* font-style: italic; */
   font-size: 70px;
   font-weight: 700;
   letter-spacing: 0.5em;
@@ -420,9 +392,7 @@ const FieldText = styled.div`
     letter-spacing: 0em;
   }
 
-  /* border: 1px solid yellow; */
-
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1000px) {
     font-size: 50px;
     font-weight: 700;
   }
@@ -434,11 +404,7 @@ const FieldContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  /* border: 0.5px solid yellow; */
-
   @media screen and (max-width: 500px) {
-    margin-top: 300px;
-
     text-align: center;
   }
 `;
@@ -455,8 +421,6 @@ const AboutContainer = styled.div`
   @media screen and (max-width: 500px) {
     height: 100%;
   }
-
-  /* border: 1px solid orange; */
 `;
 
 export default Skill;

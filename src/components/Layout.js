@@ -10,9 +10,9 @@ const StyledLayout = styled.div`
   padding: 0px 20px;
   /* overflow-x: hidden; */
 
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     padding: 0px;
-  }
+  } */
 `;
 const Container = styled.div`
   padding-top: 64px;
