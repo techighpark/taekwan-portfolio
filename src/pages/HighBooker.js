@@ -78,13 +78,13 @@ const Portfolio = () => {
               <ImageContainer>
                 <Video
                   // width={500}
-                  onMouseOver={e => {
-                    e.target.play();
-                  }}
-                  onMouseOut={e => {
-                    e.target.pause();
-                  }}
-                  // autoPlay={true}
+                  // onMouseOver={e => {
+                  //   e.target.play();
+                  // }}
+                  // onMouseOut={e => {
+                  //   e.target.pause();
+                  // }}
+                  autoPlay={true}
                   muted="muted"
                   state={idx === current}
                 >
@@ -214,6 +214,40 @@ const Item = styled.div`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+
+    :hover {
+      box-shadow: none;
+      transform: none;
+      div {
+        transition: none;
+        transform: none;
+        border-radius: none;
+
+        video {
+          width: 350px;
+          height: 100%;
+          transition: none;
+          transform: none;
+          border-radius: none;
+          border: 2px solid gray;
+        }
+
+        img {
+          width: 350px;
+          height: 100%;
+
+          transition: none;
+          transform: none;
+          border-radius: none;
+          border: 2px solid gray;
+        }
+      }
+    }
+  }
 `;
 const ImageContainer = styled.div`
   position: relative;
@@ -228,12 +262,30 @@ const Video = styled.video`
   height: 300px;
   object-fit: cover;
   display: ${props => (props.state ? "block" : "none")};
+  border: 2px solid gray;
+  border-radius: var(--radius-1);
+
+  @media screen and (max-width: 600px) {
+    width: 350px;
+    height: 100%;
+    border: 2px solid gray;
+    border-radius: var(--radius-1);
+  }
 `;
 const Image = styled.img`
   width: 300px;
   height: 300px;
   object-fit: cover;
   display: ${props => (props.state ? "none" : "block")};
+  border: 2px solid gray;
+  border-radius: var(--radius-1);
+
+  @media screen and (max-width: 600px) {
+    width: 350px;
+    height: 100%;
+    border: 2px solid gray;
+    border-radius: var(--radius-1);
+  }
 `;
 // const Background = styled.div`
 //   position: absolute;
