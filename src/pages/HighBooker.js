@@ -16,13 +16,13 @@ import {
 import { useRef, useEffect } from "react";
 
 const HighMarket = () => {
-  // const contents = [
-  //   { name: "name", body: "body" },
-  //   { name: "A", body: "lorem is sidklfs" },
-  //   { name: "C", body: "react react react " },
-  //   { name: "D", body: "next next next" },
-  //   { name: "E", body: "useref useref useref" },
-  // ];
+  const importAll = img => {
+    return img.keys().map(img);
+  };
+  const images = importAll(
+    require.context("../assets/img/booker", false, /\.(png|jpeg|svg)$/)
+  );
+  console.log(images);
 
   const onClick = () => {
     window.open("https://high-booker.netlify.app", "_blank");
@@ -31,7 +31,6 @@ const HighMarket = () => {
   const cardRef = useRef([]);
 
   function intersectionCallback(entries, observer) {
-    console.log(entries);
     entries.forEach(entry => {
       entry.target.classList.toggle("show", entry.isIntersecting);
     });
@@ -40,19 +39,33 @@ const HighMarket = () => {
   useEffect(() => {
     var intersectionOptions = {
       root: null,
-      threshold: 1,
+      rootMargin: "0px",
+      threshold: 0.5,
     };
     var io = new IntersectionObserver(
       intersectionCallback,
       intersectionOptions
     );
-
     cardRef.current.forEach(el => {
       io.observe(el);
     });
   }, []);
 
-  console.log(cardRef);
+  useEffect(() => {
+    cardRef.current.forEach((item, idx) => {
+      idx % 2 === 0
+        ? (item.children[1].style.left = "0%")
+        : (item.children[1].style.right = "0%");
+    });
+  }, []);
+  useEffect(() => {
+    cardRef.current.forEach((item, idx) => {
+      console.log(item);
+      idx % 2 === 0
+        ? (item.children[0].style.left = "35%")
+        : (item.children[0].style.left = "20%");
+    });
+  }, []);
 
   return (
     <Layout>
@@ -96,19 +109,39 @@ const HighMarket = () => {
         </Container>
         <ContentContainer>
           <Contents>
-            {[1, 2, 3, 4, 5].map((_, i) => {
-              return (
-                <CardContainer ref={el => (cardRef.current[i] = el)} key={i}>
-                  <Card>
-                    <Front>abcdefg</Front>
-                    <Back>ㄱㄴㄷㄹㅁ</Back>
-                  </Card>
-                </CardContainer>
-              );
-            })}
-            <CardContainer ref={el => (cardRef.current[5] = el)}>
-              askflja;slkfj;askfj
-            </CardContainer>
+            <Content ref={el => (cardRef.current[0] = el)}>
+              <ContentTextContainer sizeHeight>
+                <ContentHeaderWrapper>
+                  <ContentHeaderText>Dark Mode</ContentHeaderText>
+                </ContentHeaderWrapper>
+                <ContentBodyWrapper>
+                  <ContantBodyText>Using Styled-Components</ContantBodyText>
+                </ContentBodyWrapper>
+              </ContentTextContainer>
+              <ContentBodyImageWrapper sizeHeight>
+                <ContentBodyImage src={images[3]} />
+              </ContentBodyImageWrapper>
+            </Content>
+            <Content ref={el => (cardRef.current[1] = el)}>
+              <ContentTextContainer>
+                <ContentHeaderWrapper>
+                  <ContentHeaderText>Recommnad</ContentHeaderText>
+                </ContentHeaderWrapper>
+              </ContentTextContainer>
+              <ContentBodyImageWrapper>
+                <ContentBodyImage src={images[2]} />
+              </ContentBodyImageWrapper>
+            </Content>
+            <Content ref={el => (cardRef.current[2] = el)}>
+              <ContentTextContainer sizeHeight>
+                <ContentHeaderWrapper>
+                  <ContentHeaderText>Follow</ContentHeaderText>
+                </ContentHeaderWrapper>
+              </ContentTextContainer>
+              <ContentBodyImageWrapper sizeHeight id="wide">
+                <ContentBodyImage src={images[4]} sizeWide />
+              </ContentBodyImageWrapper>
+            </Content>
           </Contents>
         </ContentContainer>
       </AboutContainer>
@@ -125,71 +158,103 @@ const DetailBodyBooker = styled(DetailBody)`
 `;
 
 const ContentContainer = styled.div`
-  border: 0.5px solid white;
   width: 100%;
   height: 100%;
+  max-width: 1500px;
+  transition: all 0.5s;
+  @media screen and (max-width: 1500px) {
+    max-width: 1200px;
+  }
+  @media screen and (max-width: 1200px) {
+    max-width: 900px;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 500px;
+  }
 `;
 
 const Contents = styled.div`
-  border: 0.5px solid blue;
+  margin-top: 200px;
+
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .show {
-    transform: translateX(0);
     opacity: 1;
-    div {
-      transform: rotateY(180deg);
+  }
+  .show > div:nth-child(1) {
+    opacity: 1;
+  }
+  .show > div:nth-child(2) {
+    width: 50%;
+    /* right: 10%; */
+    opacity: 1;
+    @media screen and (max-width: 700px) {
+      width: 100%;
     }
   }
-`;
+  .show > #wide {
+    width: 700px;
+  }
 
-const CardContainer = styled.div`
-  position: relative;
-  width: 250px;
-  height: 320px;
-  transform: translateX(500px);
-  opacity: 0;
-  transition: all 1s;
-`;
-
-const Card = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  transition: all 0.5s ease;
-  :hover {
-    transform: rotateY(180deg);
+  .show img {
+    transform: scale(1);
   }
 `;
 
-const Front = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+const Content = styled.div`
+  height: 80vh;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: goldenrod;
-  color: black;
+  position: relative;
+  inset: auto;
+  opacity: 0;
+
+  transition: opacity 1000ms;
 `;
-const Back = styled.div`
+
+const ContentTextContainer = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  opacity: 0;
+  z-index: 2;
+  top: ${props => (props.sizeHeight ? "240px" : "300px")};
+  width: max-content;
+  transition: opacity 1500ms;
+  transition-delay: 800ms;
+`;
+const ContentHeaderWrapper = styled.div``;
+const ContentHeaderText = styled.div`
+  opacity: 1;
+  font-size: 24px;
+  font-weight: 600;
+`;
+const ContentBodyWrapper = styled.div``;
+const ContantBodyText = styled.div`
+  opacity: 1;
+
+  font-size: 16px;
+  font-weight: 500;
+`;
+
+const ContentBodyImageWrapper = styled.div`
+  position: absolute;
+  top: 0%;
+  width: 1px;
+  height: ${props => (props.sizeHeight ? "220px" : "400px")};
+  opacity: 0;
+  transition: opacity 1500ms, width 1500ms;
+  overflow: hidden;
+`;
+const ContentBodyImage = styled.img`
+  width: ${props => (props.sizeWide ? "700px" : "100%")};
   height: 100%;
-  backface-visibility: hidden;
-
-  background-color: green;
-  color: white;
-
-  transform: rotateY(180deg);
+  object-fit: cover;
+  transition: 1000ms;
+  transform: scale(1.6);
+  filter: grayscale(100%);
 `;
 
 export default HighMarket;
