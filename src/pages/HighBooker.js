@@ -63,30 +63,31 @@ const HighMarket = () => {
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       idx % 2 === 0
-        ? (item.children[1].style.left = "0%")
-        : (item.children[1].style.right = "0%");
+        ? (item.children[0].style.left = "0%")
+        : (item.children[0].style.right = "0%");
     });
   }, []);
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       idx % 2 === 0
-        ? (item.children[1].style.top = "20%")
-        : (item.children[1].style.top = "10%");
+        ? (item.children[0].style.top = "20%")
+        : (item.children[0].style.top = "10%");
     });
   }, []);
+
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       idx % 2 === 0
-        ? (item.children[0].style.left = "60%")
-        : (item.children[0].style.left = "15%");
+        ? (item.children[1].style.left = "60%")
+        : (item.children[1].style.left = "15%");
     });
   }, []);
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       console.log(item);
       idx % 2 === 0
-        ? (item.children[0].style.top = "25%")
-        : (item.children[0].style.top = "30%");
+        ? (item.children[1].style.top = "25%")
+        : (item.children[1].style.top = "30%");
     });
   }, []);
 
@@ -152,6 +153,9 @@ const HighMarket = () => {
         <ContentContainer>
           <Contents>
             <Content ref={el => (cardRef.current[0] = el)}>
+              <ContentImageContainer>
+                <ContentBodyImage src={images[5]} />
+              </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
                   <ContentHeaderText>Reader's Social Network</ContentHeaderText>
@@ -165,11 +169,11 @@ const HighMarket = () => {
                   </ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
-              <ContentImageContainer>
-                <ContentBodyImage src={images[5]} />
-              </ContentImageContainer>
             </Content>
             <Content ref={el => (cardRef.current[1] = el)}>
+              <ContentImageContainer>
+                <ContentBodyImage src={images[4]} />
+              </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
                   <ContentHeaderText>Dark Mode</ContentHeaderText>
@@ -178,11 +182,11 @@ const HighMarket = () => {
                   <ContantBodyText>Using Styled-Components</ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
-              <ContentImageContainer>
-                <ContentBodyImage src={images[4]} />
-              </ContentImageContainer>
             </Content>
             <Content ref={el => (cardRef.current[2] = el)}>
+              <ContentImageContainer long>
+                <ContentBodyImage src={images[2]} />
+              </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
                   <ContentHeaderText>Recommand</ContentHeaderText>
@@ -193,11 +197,11 @@ const HighMarket = () => {
                   </ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
-              <ContentImageContainer long>
-                <ContentBodyImage src={images[2]} />
-              </ContentImageContainer>
             </Content>
             <Content ref={el => (cardRef.current[3] = el)}>
+              <ContentImageContainer>
+                <ContentBodyImage src={images[7]} />
+              </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
                   <ContentHeaderText>Profile</ContentHeaderText>
@@ -209,11 +213,11 @@ const HighMarket = () => {
                   </ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
-              <ContentImageContainer>
-                <ContentBodyImage src={images[7]} />
-              </ContentImageContainer>
             </Content>
             <Content ref={el => (cardRef.current[4] = el)}>
+              <ContentImageContainer>
+                <ContentBodyImage src={images[3]} />
+              </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
                   <ContentHeaderText>Follow</ContentHeaderText>
@@ -225,9 +229,6 @@ const HighMarket = () => {
                   </ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
-              <ContentImageContainer>
-                <ContentBodyImage src={images[3]} />
-              </ContentImageContainer>
             </Content>
           </Contents>
         </ContentContainer>
@@ -257,7 +258,6 @@ const ContentContainer = styled.div`
   }
   @media screen and (max-width: 700px) {
     max-width: 500px;
-    border: 1px solid orange;
   }
 `;
 
@@ -275,10 +275,10 @@ const Contents = styled.div`
     opacity: 1;
   }
   .show > div:nth-child(1) {
+    width: 50%;
     opacity: 1;
   }
   .show > div:nth-child(2) {
-    width: 50%;
     opacity: 1;
   }
 
@@ -288,7 +288,7 @@ const Contents = styled.div`
   }
 
   @media screen and (max-width: 700px) {
-    .show > div:nth-child(2) {
+    .show > div:nth-child(1) {
       width: 100%;
     }
   }
@@ -305,9 +305,8 @@ const Content = styled.div`
 
   @media screen and (max-width: 700px) {
     height: 70vh;
-    width: 300px;
+    width: 100%;
     display: flex;
-    border: 1px solid green;
     flex-direction: column;
   }
 `;
@@ -344,15 +343,16 @@ const ContantBodyText = styled.div`
 const ContentImageContainer = styled.div`
   position: absolute;
   top: 0%;
-  height: 300px;
-  width: 100%;
+  height: 500px;
+  width: 1px;
   /* height: 300px; */
   opacity: 0;
   transition: opacity 1000ms linear, width 1000ms linear;
-  /* overflow: ${props => (props.long ? "none" : "hidden")}; */
-  overflow: hidden;
+  /* overflow: hidden; */
   @media screen and (max-width: 700px) {
     position: initial;
+    height: max-content;
+    margin-bottom: 30px;
   }
 `;
 
@@ -366,7 +366,7 @@ const ContentBodyImage = styled.img`
   opacity: 0;
   filter: brightness(1);
   border-radius: 10px;
-  border: 1px solid ${props => props.theme.lightWhiteColor};
+
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
 
   @media screen and (max-width: 700px) {
