@@ -22,8 +22,15 @@ import {
   TitleContainer,
   Container,
   Wrapper,
+  IconWrapper,
 } from "./HighMarket";
 import { useEffect } from "react";
+import {
+  JavascriptIcon,
+  NetlifyIcon,
+  ReactLogoIcon,
+  StyledcomponentsIcon,
+} from "../assets/Icons";
 
 const Portfolio = () => {
   const itemDatas = [
@@ -59,18 +66,30 @@ const Portfolio = () => {
               <Wrapper>
                 <DetailBodyTitle>Language</DetailBodyTitle>
                 <DetailBodyText>Javascript</DetailBodyText>
+                <IconWrapper>
+                  <JavascriptIcon />
+                </IconWrapper>
               </Wrapper>
               <Wrapper>
                 <DetailBodyTitle>Framework</DetailBodyTitle>
                 <DetailBodyText>React JS</DetailBodyText>
+                <IconWrapper>
+                  <ReactLogoIcon />
+                </IconWrapper>
               </Wrapper>
               <Wrapper>
                 <DetailBodyTitle>CSS</DetailBodyTitle>
                 <DetailBodyText>Styled-Components</DetailBodyText>
+                <IconWrapper>
+                  <StyledcomponentsIcon />
+                </IconWrapper>
               </Wrapper>
               <Wrapper>
                 <DetailBodyTitle>Deploy</DetailBodyTitle>
                 <DetailBodyText>Netlify</DetailBodyText>
+                <IconWrapper>
+                  <NetlifyIcon />
+                </IconWrapper>
               </Wrapper>
             </DetailBodyTextContainerPort>
           </DetailBodyPort>
@@ -100,23 +119,17 @@ export const DetailBodyPort = styled(DetailBody)`
   background-color: #1e1e1e;
   border-radius: var(--radius-1);
   @media screen and (max-width: 1200px) {
-    height: 270px;
-  }
-  @media screen and (max-width: 700px) {
-    height: 420px;
+    /* height: 270px; */
   }
 `;
 const DetailBodyTextContainerPort = styled(DetailBodyTextContainer)`
   max-width: 1000px;
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  @media screen and (max-width: 700px) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
 `;
 
 const Slider = styled.div`
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -135,7 +148,7 @@ const Item = styled.div`
   --radius-1: 1rem;
   --bgColor-back: #1e1e1e;
   width: 300px;
-  height: 300px;
+  /* height: 300px; */
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
   display: flex;
   justify-content: center;
@@ -191,42 +204,12 @@ const Item = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 40px;
-
+    margin-bottom: 100px;
     :hover {
-      box-shadow: none;
-      transform: none;
-      div {
-        transition: none;
-        transform: none;
-        border-radius: none;
-
-        video {
-          width: 350px;
-          height: 100%;
-          transition: none;
-          transform: none;
-          border-radius: none;
-          border: 2px solid gray;
-        }
-
-        img {
-          width: 350px;
-          height: 100%;
-
-          transition: none;
-          transform: none;
-          border-radius: none;
-          border: 2px solid gray;
-        }
-      }
     }
   }
 `;
 const ImageContainer = styled.div`
-  /* position: absolute; */
   height: max-content;
   transition-property: transform;
   transition-duration: 100ms;
@@ -237,13 +220,13 @@ const Video = styled.video`
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border: 2px solid gray;
+  border: 2px solid #202124;
   border-radius: 15px;
 
   @media screen and (max-width: 600px) {
-    width: 350px;
+    width: 330px;
     height: 100%;
-    border: 2px solid gray;
+    border: 2px solid #202124;
   }
 `;
 // const Image = styled.img`

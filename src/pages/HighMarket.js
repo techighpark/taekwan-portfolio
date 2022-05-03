@@ -10,6 +10,14 @@ import chat from "../assets/img/highmarket/chat.png";
 import recommand from "../assets/img/highmarket/recommand.png";
 import upload from "../assets/img/highmarket/upload.png";
 import { useEffect } from "react";
+import {
+  NextdotjsIcon,
+  PrismaIcon,
+  TailwindcssIcon,
+  TypescriptIcon,
+  VercelIcon,
+} from "../assets/Icons";
+import planetscaleIcon from "../assets/img/planetscale.jpeg";
 
 const HighMarket = () => {
   const onClick = () => {
@@ -40,26 +48,44 @@ const HighMarket = () => {
                   <Wrapper>
                     <DetailBodyTitle>Language</DetailBodyTitle>
                     <DetailBodyText>Typescript</DetailBodyText>
+                    <IconWrapper>
+                      <TypescriptIcon />
+                    </IconWrapper>
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>Framework</DetailBodyTitle>
                     <DetailBodyText>Next JS</DetailBodyText>
+                    <IconWrapper>
+                      <NextdotjsIcon />
+                    </IconWrapper>
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>DataBase</DetailBodyTitle>
                     <DetailBodyText>PlanetScale</DetailBodyText>
+                    <IconWrapper>
+                      <Planetscale src={planetscaleIcon} />
+                    </IconWrapper>
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>ORM</DetailBodyTitle>
                     <DetailBodyText>Prisma</DetailBodyText>
+                    <IconWrapper>
+                      <PrismaIcon />
+                    </IconWrapper>
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>CSS</DetailBodyTitle>
                     <DetailBodyText>Tailwindcss</DetailBodyText>
+                    <IconWrapper>
+                      <TailwindcssIcon />
+                    </IconWrapper>
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>Deploy</DetailBodyTitle>
                     <DetailBodyText>Vercel</DetailBodyText>
+                    <IconWrapper>
+                      <VercelIcon />
+                    </IconWrapper>
                   </Wrapper>
                 </DetailBodyTextContainer>
               </DetailBody>
@@ -253,9 +279,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 1500px;
-  padding: 15px;
+  /* padding: 15px; */
   box-sizing: border-box;
-  min-width: 350px;
+  min-width: 330px;
   @media screen and (max-width: 1500px) {
     max-width: 1200px;
   }
@@ -285,7 +311,7 @@ const Grid = styled.div`
 `;
 
 const DetailContainer = styled.div`
-  --bgColor-back: #1e1e1e;
+  --bgColor-back: #202124;
   width: 100%;
   height: 600px;
   background-color: var(--bgColor-back);
@@ -300,7 +326,7 @@ const DetailContainer = styled.div`
 `;
 
 const DetailContainerMain = styled(DetailContainer)`
-  height: 270px;
+  height: 260px;
   width: 100%;
   grid-column: span 4 / span 4;
   transition: 0.5s;
@@ -314,29 +340,25 @@ const DetailContainerMain = styled(DetailContainer)`
   }
   @media screen and (max-width: 700px) {
     grid-column: span 1 / span 1;
+    height: 360px;
   }
 `;
 
 const DetailContent = styled.div`
   position: absolute;
-  bottom: 0px;
-  height: 200px;
+  top: 400px;
   width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-end;
   align-items: center;
   padding: 25px;
-  /* border: 1px solid green; */
 `;
 export const DetailBody = styled(DetailContent)`
-  /* border: 1px solid green; */
-  height: 270px;
+  height: max-content;
   position: unset;
   padding-top: 30px;
-  @media screen and (max-width: 1200px) {
-    height: 340px;
-  }
 `;
 
 export const BodyTitle = styled.div`
@@ -394,7 +416,6 @@ const Image = styled.img`
 `;
 
 export const DetailBodyTextContainer = styled.div`
-  /* border: 1px solid yellow; */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -413,12 +434,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   border-radius: 10px;
   background-color: #e5e5e5;
-  /* margin-left: 40px;
-  margin-right: 40px; */
   padding: 10px 0;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 1), 0 4px 6px -4px rgb(0 0 0 / 1);
   transition-property: transform;
   transition-duration: 100ms;
+
   :hover {
     transform: scale(1.05);
   }
@@ -431,9 +451,32 @@ export const DetailBodyTitle = styled.div`
   padding-bottom: 10px;
 `;
 export const DetailBodyText = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #5d5d5d;
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  color: ${props => props.theme.bgColor};
+  display: none;
+  @media screen and (max-width: 700px) {
+    display: block;
+    svg {
+      margin: 0px 3px;
+    }
+  }
+`;
+
+const Planetscale = styled.img`
+  height: 20px;
+  width: 20px;
+  display: none;
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
 `;
 
 export default HighMarket;

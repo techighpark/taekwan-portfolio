@@ -44,7 +44,8 @@ export const NextdotjsIcon = styled(Nextdotjs)`
 `;
 export const StyledcomponentsIcon = styled(Styledcomponents)`
   /* margin-top: 5px; */
-  height: 30px;
+  height: 20px;
+  transform: scale(1.5);
 `;
 export const Html5Icon = styled(Html5)`
   height: ${height};
