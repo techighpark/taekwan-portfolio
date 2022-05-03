@@ -8,6 +8,7 @@ import meEng from "../assets/img/meEng.JPG";
 import { aboutData } from "../assets/aboutData";
 import TopArrow from "../components/TopArrow";
 import ScrollDown from "../components/ScrollDown";
+import { GithubIcon } from "../assets/Icons";
 // import { stacks } from "../assets/stackdata";
 
 const About = () => {
@@ -22,6 +23,16 @@ const About = () => {
           <FieldText>TUOBA</FieldText>
         </FieldContainer>
         <ScrollDown />
+        <GithubContainer>
+          <a
+            href={"https://github.com/techighpark"}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GithubIcon />
+            My Github
+          </a>
+        </GithubContainer>
         <AboutItemContainer>
           <AboutPhotoItems>
             <ImageContainer>
@@ -42,6 +53,8 @@ const About = () => {
     </Layout>
   );
 };
+
+const GithubContainer = styled.div``;
 
 const TextSub = styled.div`
   padding: 20px;
@@ -136,9 +149,8 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   @media screen and (max-width: 500px) {
-    /* width: 400px; */
   }
 `;
 const AboutPhotoItems = styled(AboutItems)`
@@ -157,15 +169,11 @@ const AboutItemContainer = styled.div`
   margin-bottom: 200px;
   display: grid;
   grid-template-columns: 1fr;
-  /* row-gap: 50px; */
 
-  /* border: 2px solid tomato; */
   @media screen and (max-width: 500px) {
-    /* width: 100%; */
     width: 100%;
     margin-top: 300px;
     margin-bottom: 300px;
-    /* row-gap: 500px; */
   }
 `;
 

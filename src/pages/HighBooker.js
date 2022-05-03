@@ -49,7 +49,7 @@ const HighMarket = () => {
     var intersectionOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.3,
     };
     var io = new IntersectionObserver(
       intersectionCallback,
@@ -78,8 +78,8 @@ const HighMarket = () => {
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       idx % 2 === 0
-        ? (item.children[1].style.left = "60%")
-        : (item.children[1].style.left = "15%");
+        ? (item.children[1].style.left = "70%")
+        : (item.children[1].style.left = "12%");
     });
   }, []);
   useEffect(() => {
@@ -87,10 +87,13 @@ const HighMarket = () => {
       console.log(item);
       idx % 2 === 0
         ? (item.children[1].style.top = "25%")
-        : (item.children[1].style.top = "30%");
+        : (item.children[1].style.top = "40%");
     });
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
       <Helmet>
@@ -275,16 +278,18 @@ const Contents = styled.div`
     opacity: 1;
   }
   .show > div:nth-child(1) {
-    width: 50%;
+    width: 60vw;
     opacity: 1;
+    transition: opacity 0s, width 1000ms;
   }
   .show > div:nth-child(2) {
     opacity: 1;
+    transition: 3s;
   }
 
   .show img {
     transform: scale(1);
-    opacity: 1;
+    transition: 1s ease-out;
   }
 
   @media screen and (max-width: 700px) {
@@ -300,8 +305,7 @@ const Content = styled.div`
   position: relative;
   inset: auto;
   opacity: 0;
-
-  transition: opacity 1000ms;
+  transition: opacity 500ms;
 
   @media screen and (max-width: 700px) {
     height: 70vh;
@@ -315,12 +319,13 @@ const ContentTextContainer = styled.div`
   position: absolute;
   opacity: 0;
   z-index: 2;
-  top: 0;
+  top: 70%;
   width: max-content;
-  transition: opacity 1500ms;
-  transition-delay: 800ms;
+  transition: 0.5s;
+  transition-delay: 300ms;
   @media screen and (max-width: 700px) {
     position: initial;
+    margin-top: 30px;
   }
 `;
 const ContentHeaderWrapper = styled.div`
@@ -342,13 +347,15 @@ const ContantBodyText = styled.div`
 
 const ContentImageContainer = styled.div`
   position: absolute;
-  top: 0%;
-  height: 500px;
+  top: 40%;
+  height: 50%;
   width: 1px;
-  /* height: 300px; */
   opacity: 0;
-  transition: opacity 1000ms linear, width 1000ms linear;
-  /* overflow: hidden; */
+  overflow: hidden;
+  border-radius: 10px;
+
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
+
   @media screen and (max-width: 700px) {
     position: initial;
     height: max-content;
@@ -357,20 +364,21 @@ const ContentImageContainer = styled.div`
 `;
 
 const ContentBodyImage = styled.img`
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 100%;
   /* height: 100%; */
   object-fit: cover;
+  object-position: top;
   transition: 1500ms;
   transform: scale(1.3);
-  position: absolute;
-  opacity: 0;
   filter: brightness(1);
-  border-radius: 10px;
-
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
 
   @media screen and (max-width: 700px) {
     position: initial;
+    width: 100%;
   }
 `;
 
