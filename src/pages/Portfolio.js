@@ -118,9 +118,9 @@ const DetailBodyTextContainerPort = styled(DetailBodyTextContainer)`
 const Slider = styled.div`
   margin-bottom: 200px;
   display: grid;
-  gap: 1px;
+  gap: 30px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1600px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   @media screen and (max-width: 1200px) {
@@ -237,12 +237,13 @@ const Video = styled.video`
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border: 1px solid gray;
+  border: 2px solid gray;
+  border-radius: 15px;
 
   @media screen and (max-width: 600px) {
     width: 350px;
     height: 100%;
-    border: 1px solid gray;
+    border: 2px solid gray;
   }
 `;
 // const Image = styled.img`
