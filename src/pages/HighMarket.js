@@ -35,7 +35,7 @@ const HighMarket = () => {
                 <Image src={highmarket} />
               </ImageContainer> */}
               <DetailBody>
-                <BodyTitle>FullStack</BodyTitle>
+                <BodyTitle>Full Stack</BodyTitle>
                 <DetailBodyTextContainer>
                   <Wrapper>
                     <DetailBodyTitle>Language</DetailBodyTitle>

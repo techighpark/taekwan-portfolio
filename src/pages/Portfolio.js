@@ -23,6 +23,7 @@ import {
   Container,
   Wrapper,
 } from "./HighMarket";
+import { useEffect } from "react";
 
 const Portfolio = () => {
   const itemDatas = [
@@ -37,6 +38,10 @@ const Portfolio = () => {
     window.open("https://high-market.vercel.app/enter", "_blank");
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Layout>
       <Helmet>
@@ -50,7 +55,7 @@ const Portfolio = () => {
         <Container>
           <DetailBodyPort>
             <BodyTitle>Front-end</BodyTitle>
-            <DetailBodyTextConatinerPort>
+            <DetailBodyTextContainerPort>
               <Wrapper>
                 <DetailBodyTitle>Language</DetailBodyTitle>
                 <DetailBodyText>Javascript</DetailBodyText>
@@ -67,7 +72,7 @@ const Portfolio = () => {
                 <DetailBodyTitle>Deploy</DetailBodyTitle>
                 <DetailBodyText>Netlify</DetailBodyText>
               </Wrapper>
-            </DetailBodyTextConatinerPort>
+            </DetailBodyTextContainerPort>
           </DetailBodyPort>
         </Container>
         <Slider>
@@ -87,7 +92,7 @@ const Portfolio = () => {
   );
 };
 
-const DetailBodyPort = styled(DetailBody)`
+export const DetailBodyPort = styled(DetailBody)`
   --radius-1: 1rem;
   width: 100%;
   max-width: 1000px;
@@ -101,7 +106,7 @@ const DetailBodyPort = styled(DetailBody)`
     height: 420px;
   }
 `;
-const DetailBodyTextConatinerPort = styled(DetailBodyTextContainer)`
+const DetailBodyTextContainerPort = styled(DetailBodyTextContainer)`
   max-width: 1000px;
 
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -221,7 +226,7 @@ const Item = styled.div`
   }
 `;
 const ImageContainer = styled.div`
-  position: absolute;
+  /* position: absolute; */
   height: max-content;
   transition-property: transform;
   transition-duration: 100ms;
