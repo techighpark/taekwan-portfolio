@@ -100,10 +100,6 @@ const HighMarket = () => {
                     <Accent> Token</Accent>
                   </Text>
                   <Text>
-                    <Accent>NodeMailer</Accent> for Email Login
-                    <Accent> Token</Accent>
-                  </Text>
-                  <Text>
                     <Accent>Iron-Session</Accent> for
                     <Accent> Session</Accent>
                   </Text>
@@ -360,7 +356,7 @@ export const DetailBody = styled(DetailContent)`
 `;
 
 export const BodyTitle = styled.div`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
 `;

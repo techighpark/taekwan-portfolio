@@ -23,6 +23,9 @@ const Portfolio = () => {
     };
     window.onresize = sizeDetect;
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
       <Helmet>
