@@ -235,7 +235,7 @@ const HighMarket = () => {
             </Content>
             <Content ref={el => (cardRef.current[5] = el)} last>
               <ContentImageContainer>
-                <ContentBodyImage src={images[8]} />
+                <ContentBodyImage src={images[8]} bottom />
               </ContentImageContainer>
               <ContentTextContainer>
                 <ContentHeaderWrapper>
@@ -298,7 +298,7 @@ const Contents = styled.div`
   .show > div:nth-child(1) {
     width: 50vw;
     opacity: 1;
-    transition: opacity 0s, width 1000ms shadow 1000ms;
+    transition: opacity 0s, width 1000ms, shadow 1000ms;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
   }
   .show > div:nth-child(2) {
@@ -370,6 +370,7 @@ const ContentImageContainer = styled.div`
   /* max-width: 800px; */
   overflow: hidden;
   border-radius: 10px;
+  /* border: 1px solid white; */
 
   @media screen and (max-width: 1200px) {
     height: 50%;
@@ -390,9 +391,9 @@ const ContentBodyImage = styled.img`
   width: 50vw;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: ${props => (props.bottom ? "bottom" : "top")};
   transition: 1500ms;
-  transform: scale(1.3);
+  transform: scale(1.6);
   filter: brightness(1);
 
   @media screen and (max-width: 700px) {
