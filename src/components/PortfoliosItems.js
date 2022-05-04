@@ -242,45 +242,55 @@ export const BottomArrow = styled.div`
 
 const Stack = styled.div`
   font-size: 14px;
-  font-weight: 400;
-  padding-bottom: 10px;
+  font-weight: 500;
 
   @media screen and (max-width: 500px) {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
   }
 `;
 const StackWrapper = styled.div`
-  color: ${props => props.theme.WhiteColor};
+  color: ${props => props.theme.bgColor};
+  background-color: ${props => props.theme.fontColor};
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: max-content;
+  padding: 3px 8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 500px) {
+    display: block;
+    width: unset;
     padding: 0 10px;
+    color: ${props => props.theme.whiteColor};
+    background-color: transparent;
+    margin-bottom: 0px;
   }
 `;
 const StackContainer = styled.div`
   position: absolute;
   left: 50%;
-  top: 200%;
+  top: 150%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  /* border: 1px solid red; */
-  /* padding: 5px; */
-  /* background-color: rgba(255, 255, 255, 0.2); */
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  padding-top: 30px;
 
   @media screen and (max-width: 500px) {
     left: 0%;
     top: 300px;
     transform: translateX(0%);
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    /* justify-content: center;
-    align-items: center; */
-
-    /* margin-top: 200px; */
+    align-items: flex-start;
+    padding-top: 0px;
+    width: 100%;
+    column-gap: 0px;
   }
 `;
 const PortfolioSubtitle = styled.div`
@@ -348,6 +358,7 @@ const PortfolioPhoto = styled.img`
   background-position: center;
   object-fit: cover;
   width: 700px;
+  height: 100%;
   border-radius: 15px;
   box-shadow: 3px 5px 5px 5px rgba(0, 0, 0, 0.3),
     10px 10px 5px 5px rgba(0, 0, 0, 0.2);
@@ -356,7 +367,7 @@ const PortfolioPhoto = styled.img`
     width: 600px;
     border: none;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 500px) {
     width: 90vw;
     height: 250px;
     border: none;
@@ -376,7 +387,7 @@ const ProjectItemContainer = styled.div`
   @media screen and (max-width: 1000px) {
     height: 350px;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 500px) {
     height: 300px;
   }
 `;

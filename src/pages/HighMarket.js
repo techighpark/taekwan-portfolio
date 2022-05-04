@@ -12,12 +12,12 @@ import upload from "../assets/img/highmarket/upload.png";
 import { useEffect } from "react";
 import {
   NextdotjsIcon,
+  PlanetScaleIcon,
   PrismaIcon,
   TailwindcssIcon,
   TypescriptIcon,
   VercelIcon,
 } from "../assets/Icons";
-import planetscaleIcon from "../assets/img/planetscale.jpeg";
 
 const HighMarket = () => {
   const onClick = () => {
@@ -62,9 +62,7 @@ const HighMarket = () => {
                   <Wrapper>
                     <DetailBodyTitle>DataBase</DetailBodyTitle>
                     <DetailBodyText>PlanetScale</DetailBodyText>
-                    <IconWrapper>
-                      <Planetscale src={planetscaleIcon} />
-                    </IconWrapper>
+                    <PlanetScaleIcon />
                   </Wrapper>
                   <Wrapper>
                     <DetailBodyTitle>ORM</DetailBodyTitle>
@@ -467,15 +465,9 @@ export const IconWrapper = styled.div`
     svg {
       margin: 0px 3px;
     }
-  }
-`;
-
-const Planetscale = styled.img`
-  height: 20px;
-  width: 20px;
-  display: none;
-  @media screen and (max-width: 700px) {
-    display: block;
+    img {
+      margin: 4px 0px;
+    }
   }
 `;
 

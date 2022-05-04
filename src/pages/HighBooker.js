@@ -91,9 +91,9 @@ const HighMarket = () => {
     });
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   return (
     <Layout>
       <Helmet>
@@ -218,7 +218,7 @@ const HighMarket = () => {
               </ContentTextContainer>
             </Content>
             <Content ref={el => (cardRef.current[4] = el)}>
-              <ContentImageContainer>
+              <ContentImageContainer shortImg>
                 <ContentBodyImage src={images[3]} />
               </ContentImageContainer>
               <ContentTextContainer>
@@ -229,6 +229,24 @@ const HighMarket = () => {
                   <ContantBodyText>
                     You can follow users who you want
                     <br /> Also authors and books you can follow
+                  </ContantBodyText>
+                </ContentBodyTextWrapper>
+              </ContentTextContainer>
+            </Content>
+            <Content ref={el => (cardRef.current[5] = el)} last>
+              <ContentImageContainer>
+                <ContentBodyImage src={images[8]} />
+              </ContentImageContainer>
+              <ContentTextContainer>
+                <ContentHeaderWrapper>
+                  <ContentHeaderText>Upload Post</ContentHeaderText>
+                </ContentHeaderWrapper>
+                <ContentBodyTextWrapper>
+                  <ContantBodyText>
+                    Upload post related to authors or books
+                  </ContantBodyText>
+                  <ContantBodyText>
+                    Post related to a book can be uploaded only once
                   </ContantBodyText>
                 </ContentBodyTextWrapper>
               </ContentTextContainer>
@@ -254,10 +272,10 @@ const ContentContainer = styled.div`
   max-width: 1500px;
   transition: all 0.5s;
   @media screen and (max-width: 1500px) {
-    max-width: 1200px;
+    max-width: 1400px;
   }
   @media screen and (max-width: 1200px) {
-    max-width: 900px;
+    max-width: 1000px;
   }
   @media screen and (max-width: 700px) {
     max-width: 500px;
@@ -300,7 +318,7 @@ const Contents = styled.div`
 `;
 
 const Content = styled.div`
-  height: 100vh;
+  height: ${props => (props.last ? "60vh" : "100vh")};
   width: 100%;
   position: relative;
   inset: auto;
@@ -308,10 +326,6 @@ const Content = styled.div`
   transition: opacity 500ms;
 
   @media screen and (max-width: 700px) {
-    height: 70vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
   }
 `;
 
@@ -348,7 +362,8 @@ const ContantBodyText = styled.div`
 const ContentImageContainer = styled.div`
   position: absolute;
   top: 40%;
-  height: 50%;
+  height: ${props => (props.shortImg ? "30%" : "60%")};
+
   width: 1px;
   opacity: 0;
   overflow: hidden;
@@ -356,10 +371,15 @@ const ContentImageContainer = styled.div`
 
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
 
+  @media screen and (max-width: 1200px) {
+    height: 50%;
+  }
+  @media screen and (max-width: 900px) {
+    height: 40%;
+  }
   @media screen and (max-width: 700px) {
+    height: 30%;
     position: initial;
-    height: max-content;
-    margin-bottom: 30px;
   }
 `;
 
@@ -369,7 +389,6 @@ const ContentBodyImage = styled.img`
   left: 0;
   width: 60vw;
   height: 100%;
-  /* height: 100%; */
   object-fit: cover;
   object-position: top;
   transition: 1500ms;
@@ -377,8 +396,8 @@ const ContentBodyImage = styled.img`
   filter: brightness(1);
 
   @media screen and (max-width: 700px) {
-    position: initial;
     width: 100%;
+    position: initial;
   }
 `;
 

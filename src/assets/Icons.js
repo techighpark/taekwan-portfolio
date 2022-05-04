@@ -21,8 +21,27 @@ import { Vercel } from "@styled-icons/simple-icons/Vercel";
 import { Heroku } from "@styled-icons/simple-icons/Heroku";
 
 import styled from "styled-components";
+import planetscaleIcon from "../assets/img/planetscale.jpeg";
+import { IconWrapper } from "../pages/HighMarket";
 
 const height = "20px";
+
+export const PlanetScaleIcon = () => {
+  return (
+    <IconWrapper>
+      <Planetscale src={planetscaleIcon} />
+    </IconWrapper>
+  );
+};
+
+const Planetscale = styled.img`
+  height: 20px;
+  width: 20px;
+  display: none;
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
+`;
 
 export const HerokuIcon = styled(Heroku)`
   height: ${height};
