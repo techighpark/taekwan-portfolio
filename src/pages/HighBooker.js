@@ -78,8 +78,8 @@ const HighMarket = () => {
   useEffect(() => {
     cardRef.current.forEach((item, idx) => {
       idx % 2 === 0
-        ? (item.children[1].style.left = "70%")
-        : (item.children[1].style.left = "12%");
+        ? (item.children[1].style.left = "60%")
+        : (item.children[1].style.left = "20%");
     });
   }, []);
   useEffect(() => {

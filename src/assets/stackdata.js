@@ -19,6 +19,7 @@ import {
   VercelIcon,
   NetlifyIcon,
   GithubIcon,
+  ReduxIcon,
 } from "../assets/Icons";
 
 export const frontEndStacks = [
@@ -26,6 +27,7 @@ export const frontEndStacks = [
   { stack: "CSS3", skillLv: "Advanced", icon: <Css3Icon /> },
   { stack: "JavaScript", skillLv: "Advanced", icon: <JavascriptIcon /> },
   { stack: "TypeScript", skillLv: "Advanced", icon: <TypescriptIcon /> },
+  { stack: "Redux", skillLv: "Beginner", icon: <ReduxIcon /> },
   { stack: "React JS", skillLv: "Advanced", icon: <ReactLogoIcon /> },
   { stack: "Next JS", skillLv: "Advanced", icon: <NextdotjsIcon /> },
   { stack: "React Native", skillLv: "Beginner", icon: <ReactLogoIcon /> },

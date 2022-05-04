@@ -24,6 +24,7 @@ import {
   NetlifyIcon,
   HerokuIcon,
   GithubIcon,
+  ReduxIcon,
 } from "../assets/Icons";
 
 const Home = () => {
@@ -55,6 +56,9 @@ const Home = () => {
             </Stack>
             <Stack>
               <NextdotjsIcon />
+            </Stack>
+            <Stack>
+              <ReduxIcon />
             </Stack>
             <Stack>
               <StyledcomponentsIcon />

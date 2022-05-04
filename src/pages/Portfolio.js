@@ -213,6 +213,8 @@ const ImageContainer = styled.div`
   height: max-content;
   transition-property: transform;
   transition-duration: 100ms;
+  border-radius: 15px;
+
   box-shadow: 5px 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
 `;
 

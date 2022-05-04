@@ -19,6 +19,7 @@ import { Github } from "@styled-icons/simple-icons/Github";
 import { Netlify } from "@styled-icons/simple-icons/Netlify";
 import { Vercel } from "@styled-icons/simple-icons/Vercel";
 import { Heroku } from "@styled-icons/simple-icons/Heroku";
+import { Redux } from "@styled-icons/simple-icons/Redux";
 
 import styled from "styled-components";
 import planetscaleIcon from "../assets/img/planetscale.jpeg";
@@ -43,6 +44,9 @@ const Planetscale = styled.img`
   }
 `;
 
+export const ReduxIcon = styled(Redux)`
+  height: ${height};
+`;
 export const HerokuIcon = styled(Heroku)`
   height: ${height};
 `;
