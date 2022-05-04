@@ -23,18 +23,19 @@ const About = () => {
           <FieldText>TUOBA</FieldText>
         </FieldContainer>
         <ScrollDown />
-        <GithubContainer>
-          <a
-            href={"https://github.com/techighpark"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GithubIcon />
-            My Github
-          </a>
-        </GithubContainer>
+
         <AboutItemContainer>
           <AboutPhotoItems>
+            <a
+              href={"https://github.com/techighpark"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubContainer>
+                <GithubIcon />
+                <GithubText>My Github</GithubText>
+              </GithubContainer>
+            </a>
             <ImageContainer>
               <MeEngImg src={meEng} />
             </ImageContainer>
@@ -54,25 +55,53 @@ const About = () => {
   );
 };
 
-const GithubContainer = styled.div``;
+const GithubContainer = styled.div`
+  border: 1px solid ${props => props.theme.fontColor};
+  color: ${props => props.theme.fontColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-top: 30px;
+  width: max-content;
+
+  :hover {
+    background-color: ${props => props.theme.fontColor};
+    color: ${props => props.theme.bgColor};
+  }
+  @media screen and (max-width: 500px) {
+    margin-top: 15px;
+    width: max-content;
+  }
+`;
+const GithubText = styled.div`
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 5px;
+  @media screen and (max-width: 500px) {
+    /* display: none; */
+  }
+`;
 
 const TextSub = styled.div`
-  padding: 20px;
-  width: 800px;
+  padding: 10px;
+  /* width: 800px; */
   font-size: 14px;
   font-weight: 300;
   line-height: 2.5;
   color: ${props => props.theme.lightWhiteColor};
-  /* border: 1px solid yellow; */
 
   @media screen and (max-width: 500px) {
     width: 100%;
-    font-weight: 300;
+    font-size: 12px;
   }
 `;
 const TextMain = styled.div`
-  padding: 20px 50px;
-  width: 800px;
+  padding: 30px 50px;
+  /* width: 800px; */
   font-size: 16px;
   font-weight: 600;
   line-height: 2;
@@ -80,31 +109,25 @@ const TextMain = styled.div`
   opacity: 0.9;
   letter-spacing: 0.2em;
 
-  /* border: 1px solid green; */
   @media screen and (max-width: 500px) {
+    font-size: 14px;
+    padding: 0px 20px;
     width: 100%;
-    font-weight: 600;
     letter-spacing: 0.1em;
   }
 `;
 
 const TextContainer = styled.div`
-  /* width: 400px; */
-  /* height: 400px; */
   padding: 40px;
   font-family: ${fonts.Gothic};
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin-bottom: 100px;
-  /* background-color: #181818;
-  border-radius: 30px; */
-
-  /* border: 1px solid green; */
+  width: 100%;
   @media screen and (max-width: 500px) {
-    width: 100%;
-    padding: 20px;
+    padding: 0px 0px;
   }
 `;
 
@@ -112,16 +135,17 @@ const MeEngImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   filter: brightness(80%) contrast(110%) grayscale(30%) saturate(110%)
     sepia(10%);
-  /* filter: grayscale(100%); */
 `;
 
 const ImageContainer = styled.div`
   width: 700px;
   height: 350px;
-  margin-bottom: 150px;
   position: relative;
+  transition: 500ms;
+
   ::after {
     content: "TAEKWAN";
     position: absolute;
@@ -129,18 +153,26 @@ const ImageContainer = styled.div`
     font-weight: 800;
     left: -20px;
     top: 30px;
-    /* z-index: 30; */
   }
-  /* padding: 50px; */
-  /* border: 1px solid green; */
+  @media screen and (max-width: 1000px) {
+    width: 600px;
+    height: 300px;
+    ::after {
+      top: 0px;
+      transform: rotate(270deg);
+    }
+  }
+  @media screen and (max-width: 700px) {
+    width: 450px;
+    height: 250px;
+  }
   @media screen and (max-width: 500px) {
-    width: 350px;
+    width: 300px;
     height: 200px;
     ::after {
       top: 0px;
       transform: rotate(270deg);
     }
-    /* padding: 20px; */
   }
 `;
 
@@ -149,18 +181,13 @@ const AboutItems = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
-  @media screen and (max-width: 500px) {
-  }
 `;
 const AboutPhotoItems = styled(AboutItems)`
-  justify-content: flex-end;
+  flex-direction: column-reverse;
   width: 100%;
-
-  @media screen and (max-width: 500px) {
-    flex-direction: row;
-    justify-content: center;
-  }
+  align-items: flex-end;
+  justify-content: end;
+  margin-bottom: 150px;
 `;
 
 const AboutItemContainer = styled.div`
@@ -169,6 +196,17 @@ const AboutItemContainer = styled.div`
   margin-bottom: 200px;
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
+  max-width: 1000px;
+  @media screen and (max-width: 1000px) {
+    max-width: 800px;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 600px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -178,7 +216,6 @@ const AboutItemContainer = styled.div`
 `;
 
 const FieldText = styled.div`
-  /* font-style: italic; */
   font-size: 70px;
   font-weight: 700;
   letter-spacing: 0.5em;
@@ -188,9 +225,6 @@ const FieldText = styled.div`
   ::first-letter {
     letter-spacing: 0em;
   }
-  /* background-color: black; */
-
-  /* border: 1px solid yellow; */
 
   @media screen and (max-width: 500px) {
     font-size: 50px;
@@ -203,8 +237,6 @@ const FieldContainer = styled.div`
   margin-top: 300px;
   display: flex;
   justify-content: center;
-
-  /* border: 0.5px solid yellow; */
 
   @media screen and (max-width: 500px) {
     margin-top: 300px;
@@ -220,8 +252,6 @@ const AboutContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 2000px;
-
-  /* border: 1px solid orange; */
 `;
 
 export default About;
