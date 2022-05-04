@@ -296,9 +296,10 @@ const Contents = styled.div`
     opacity: 1;
   }
   .show > div:nth-child(1) {
-    width: 60vw;
+    width: 50vw;
     opacity: 1;
-    transition: opacity 0s, width 1000ms;
+    transition: opacity 0s, width 1000ms shadow 1000ms;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
   }
   .show > div:nth-child(2) {
     opacity: 1;
@@ -366,10 +367,9 @@ const ContentImageContainer = styled.div`
 
   width: 1px;
   opacity: 0;
+  /* max-width: 800px; */
   overflow: hidden;
   border-radius: 10px;
-
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 1), 0 8px 10px -6px rgb(0 0 0 / 1);
 
   @media screen and (max-width: 1200px) {
     height: 50%;
@@ -387,7 +387,7 @@ const ContentBodyImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  width: 60vw;
+  width: 50vw;
   height: 100%;
   object-fit: cover;
   object-position: top;
